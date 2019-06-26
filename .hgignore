@@ -1,0 +1,2 @@
+# Ignore all temporary and compiled directories
+(tmp|\.idea|node_modules|_hgstatus.txt|dist)
