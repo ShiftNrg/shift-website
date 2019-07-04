@@ -1,0 +1,40 @@
+footer#footer {
+    .socials {
+        display:flex; flex-direction:row; justify-content:space-between; align-items:center;
+        @include vw-font-size(14);
+        @include vw-margin(0,-7.5);
+        > * {
+            @include vw-margin(0,7.5);
+        }
+        > .label {
+            font-weight:600;
+            &::after {
+                width:34/14*1em; height:1px; display:inline-block; vertical-align:middle; background:currentColor;
+                position:relative; content:'';
+                margin-left:15/14*1em;
+            }
+        }
+        > a {
+            @include vw-font-size(34); color:$themecolor3;
+            &:hover { color:#fff; }
+        }
+    }
+
+    #footer-bottom {
+        background:$xdgrey; color:rgba(#fff,0.5);
+        padding:$smalloffset $pageoffset;
+        @include vw-font-size(12);
+        display:flex; flex-direction:row; justify-content:space-between; align-items:center;
+
+        .nav.footernav {
+            margin: 0 -7.5/12*1em;
+            > * {
+                margin: 0 7.5/12*1em;
+                &:first-child { margin-right:17.5/12*1em; }
+                a {
+                    &:hover { color:#fff; }
+                }
+            }
+        }
+    }
+}
