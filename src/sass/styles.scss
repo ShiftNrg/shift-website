@@ -1,6 +1,8 @@
 @import "mixins";
 @import "variables";
 @import "fonts";
+
+// -- Framework
 @import "framework/reset";
 @import "framework/animate-properties";
 @import "framework/animate";
@@ -10,9 +12,13 @@
 @import "framework/header";
 @import "framework/footer";
 
+// -- Modules
+@import "modules/textblock";
+@import "modules/form";
+
 html {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.43;
     -ms-overflow-style: scrollbar;
     overflow-y: scroll;
 }
@@ -37,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $heading;
     font-weight: 600;
     @include spacing(40);
-    @include vw-margin(0,0,30);
+    margin-bottom:5px;
 
     a, a:hover, a:focus {
         color: inherit;
@@ -49,11 +55,48 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 0;
     }
 }
-h1 {
+h1, .maincontainer > * > .inner > h3 {
     @include heading1;
+    @include vw-margin(0,0,30);
+}
+h2, .maincontainer > * > .inner > h4 {
+    @include heading2;
+    color:$themecolor;
+}
+
+p, ul, ol {
+    @include vw-margin(0,0,30);
+    &:last-child { margin-bottom:0; }
 }
 
 .Intro {
-    @include vw-font-size(20);
+    @include vw-font-size(20); line-height:1.4;
     @include media("min",1600,0) { font-size:20/16*1rem; }
+}
+
+.Intro, .Text {
+    @include vw-margin(0,0,30);
+    &:last-child { margin-bottom:0; }
+
+    ul {
+        list-style:none; margin-left:0;
+        margin-bottom:-30/14*1em;
+        padding:0;
+        @include media("min",768,0) {
+            display:flex; flex-direction:row; justify-content:flex-start; align-items:flex-start; flex-wrap:wrap;
+            width:calc(100% + 20px); margin-right:-20px;
+            > li { width:50%; }
+        }
+        > li {
+            position:relative; padding:0 20px 30/14*1em 35/14*1em;
+        }
+        > li::before {
+            content:'\f00c'; font-family: 'FontAwesome';
+            position:absolute; left:0; top:0;
+            text-align:center;
+            font-size:9/14*1em; padding:3.5/9*1em; line-height:1.2; width:18/9*1em; height:18/9*1em;
+            border-radius:50%; background:$lgrey; color:$themecolor;
+            display:block;
+        }
+    }
 }

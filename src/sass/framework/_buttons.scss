@@ -24,4 +24,16 @@ nav {
         border-radius:22.5/16*1em;
         font-weight:600;
     }
+    .more-inline {
+        @include vw-font-size(16); line-height:20/16*1em;
+        padding:11.5/16*1em 0;
+        color:$themecolor;
+        background:none transparent;
+        border:0;
+        border-radius:0;
+        font-weight:normal;
+        &::after {
+            content:'\f105'; font-family:$icons; margin-left:10/16*1em; font-weight:normal; font-weight:normal;
+        }
+    }
 }

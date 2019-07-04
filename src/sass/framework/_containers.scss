@@ -30,11 +30,14 @@
 
 .maincontainer {
     padding:0 $pageoffset;
+    > section, > article {
+        margin: $inneroffset 0;
+        padding: 0 $inneroffset;
+    }
     > section {
-        padding:$inneroffset;
         &.maintext {
-            padding-top:$inneroffset * 0.7777;
-            padding-bottom:$inneroffset * 0.7777;
+            margin-top:$inneroffset * 0.7777;
+            margin-bottom:$inneroffset * 0.7777;
             > .inner {
                 width:600/1600*100vw; max-width:100%;
                 text-align:center;

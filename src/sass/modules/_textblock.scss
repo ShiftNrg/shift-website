@@ -1,0 +1,28 @@
+.textblock {
+    @include media("min",768,0) {
+        flex-direction:row; align-items:center;
+        > figure, > .inner {
+            width:50%;
+        }
+        &:nth-of-type(2n-1) {
+            > .inner {
+                padding-left:$pageoffset;
+            }
+        }
+        &:nth-of-type(2n) {
+            flex-direction:row-reverse;
+            > .inner {
+                padding-right:$pageoffset;
+            }
+        }
+    }
+    > .inner {
+        > nav {
+            border-top:1px solid $lgrey; margin-right:0; margin-left:0;
+            width:100%;
+            > *:last-child {
+                margin-right:0;
+            }
+        }
+    }
+}

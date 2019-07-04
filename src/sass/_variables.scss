@@ -39,7 +39,7 @@ $gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2
 
 
 @mixin heading1(){
-    line-height: 1.2;
+    line-height: 1;
     font-family: $heading;
     font-weight: 600;
     @include spacing(40);
