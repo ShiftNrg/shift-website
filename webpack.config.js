@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
     entry: './src/javascript/index.js',
@@ -75,6 +76,19 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "bundle.css"
-        })
+        }),
+        new SVGSpritemapPlugin(
+            'src/icons/*.svg',
+            {
+                output: {
+                    filename: 'icons/sprite.svg',
+                    svgo: {
+                        removeDoctype: true,
+                        removeXMLProcInst: true,
+                        removeTitle: true
+                    }
+                }
+            }
+        )
     ]
 };
