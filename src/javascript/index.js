@@ -8,7 +8,8 @@ document.body.className = document.body.className.replace("no-js","");
 var ajax = new XMLHttpRequest();
 ajax.open("GET", "/dist/icons/sprite.svg", true);
 ajax.send();
-ajax.onload = function(e) {
+ajax.onload = function(e)
+{
     var div = document.createElement("div");
     div.style.display = "none";
     div.innerHTML = ajax.responseText;
@@ -23,3 +24,27 @@ function calculateHeight()
 }
 window.addEventListener('resize', calculateHeight);
 calculateHeight();
+
+// Scroll to animation
+// document.getElementsByClassName(".banner .scrollto").
+//     function () {
+//         $("html,body").animate({scrollTop: $(window).width() <= 767 ? $(".grid > .banner + *").offset().top - 50 : $(".grid > .banner + *").offset().top}, 1000);
+//     }
+// );
+
+
+document.addEventListener(
+    "click",
+    function (e) {
+        const element = this.activeElement;
+        const action = element.dataset.action;
+
+        if (action) {
+            if (action === "scrollto") {
+                document.getElementsByClassName("maincontainer")[0].scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+    }
+);
