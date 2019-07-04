@@ -31,6 +31,7 @@
 .maincontainer {
     padding:0 $pageoffset;
     > section, > article {
+        position: relative;
         margin: $inneroffset 0;
         padding: 0 $inneroffset;
     }
@@ -69,6 +70,10 @@
             > .inner {
                 padding:$inneroffset $pageoffset $inneroffset $inneroffset;
             }
+        }
+        &.usps + .roadmap {
+            margin-top:0;
+            > .inner { padding-top:0; }
         }
     }
 }

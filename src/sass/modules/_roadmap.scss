@@ -1,0 +1,20 @@
+.roadmap {
+    background: $xdgrey;
+    color:#fff;
+    padding-bottom: $pageoffset;
+    align-items:stretch;
+    @include media("min", 768, 0) {
+        @include before($xdgrey);
+        > .inner {
+            > .Intro {
+                width:650/1600*100vw;
+            }
+        }
+    }
+    > .inner {
+        > .Intro {
+            opacity:0.5;
+        }
+    }
+
+}

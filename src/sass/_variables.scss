@@ -60,3 +60,17 @@ $gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2
     @include spacing(40);
     @include vw-font-size(32);
 }
+
+@mixin before($color:$xdgrey) {
+    position: relative;
+    &::before {
+        content: '';
+        right: 100%;
+        top: 0;
+        bottom: 0;
+        width: $pageoffset;
+        background: $color;
+        position: absolute;
+        display: block;
+    }
+}

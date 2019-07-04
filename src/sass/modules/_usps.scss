@@ -3,20 +3,10 @@
     > section.usps {
         --grid-margin: #{45/1600*100vw};
 
-        position: relative;
         @include media("min", 768, 0) {
             background: $xdgrey;
             padding-bottom: $pageoffset;
-            &::before {
-                content: '';
-                right: 100%;
-                top: 0;
-                bottom: -1px;
-                width: $pageoffset;
-                background: $xdgrey;
-                position: absolute;
-                display: block;
-            }
+            @include before($xdgrey);
         }
 
         > .inner {
