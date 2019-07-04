@@ -123,3 +123,74 @@ a, button, input[type="submit"] { cursor:pointer; outline:none; }
         }
     }
 }
+
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; // For form validation feedback
+    align-items: stretch;
+    width: 100%;
+    $input-border-width:1px;
+    @include vw-padding(17.5);
+    background:rgba(#fff,0.2);
+    border-radius:40/1600*100vw;
+    > .form-control {
+        position: relative; // For focus state's z-index
+        flex: 1 1 auto;
+        // Add width 1% and flex-basis auto to ensure that button will not wrap out
+        // the column. Applies to IE Edge+ and Firefox. Chrome does not require this.
+        width: 1%;
+        margin-bottom: 0;
+    }
+    @mixin inputsize($size:14) {
+        @include vw-font-size($size); line-height:20/$size*1em; padding:12.5/$size*1em 25/$size*1em;
+    }
+    > .input-group-addon, > .form-control, > .input-group-btn .btn {
+        border:0;
+    }
+    > .input-group-addon, > .form-control {
+        $size: 14;
+        @include inputsize($size);
+        &:first-child {
+            border-top-left-radius:22.5/$size*1em;
+            border-bottom-left-radius:22.5/$size*1em;
+        }
+        &:last-child {
+            border-top-right-radius:22.5/$size*1em;
+            border-bottom-right-radius:22.5/$size*1em;
+        }
+    }
+    > .input-group-addon {
+        border-right:1px solid $lgrey;
+        background:#fff; color:rgba($themecolor,0.2);
+        span.icon {
+            margin:0; display:block; margin-right:-5/14*1em;
+            > svg {
+                display:block; @include vw-font-size(20);
+            }
+        }
+    }
+    > .form-control {
+        color:$themecolor;
+        &::placeholder {
+            color:rgba($themecolor,0.5);
+        }
+    }
+    > .input-group-btn {
+        $size: 16;
+        .btn {
+            @include inputsize($size);
+            background:$gradient1; color:#fff; font-weight:600;
+        }
+        &:first-child .btn {
+            border-top-left-radius:22.5/$size*1em;
+            border-bottom-left-radius:22.5/$size*1em;
+        }
+        &:last-child .btn {
+            border-top-right-radius:22.5/$size*1em;
+            border-bottom-right-radius:22.5/$size*1em;
+        }
+    }
+
+}

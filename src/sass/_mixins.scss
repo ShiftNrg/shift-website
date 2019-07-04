@@ -116,6 +116,8 @@
     }
 }
 @mixin vw-padding($top:0,$right:$top,$bottom:$top,$left:$right) {
+    $container : 1600px;
+    $strip_container : 1600;
     @if $top != 0 { padding-top:$top/$strip_container*100vw; }
     @if $right != 0 { padding-right:$right/$strip_container*100vw; }
     @if $bottom != 0 { padding-bottom:$bottom/$strip_container*100vw; }

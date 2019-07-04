@@ -22,18 +22,43 @@ footer#footer {
         }
     }
 
-    #footer-middle {
-        position:relative;
-        @include media("min",768,0) {
-            display:flex; flex-direction:row; justify-content:flex-start; align-items:flex-start;
-            > .left { width:15%; }
-            > .right { width:85%; }
-        }
-
+    #footer-top, #footer-middle {
         color:#fff; background:$gradient1;
         margin-left:$pageoffset;
         width:calc(100% - #{$pageoffset});
         padding:$inneroffset $pageoffset $inneroffset $inneroffset;
+        @include media("min",768,0) {
+            display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start;
+        }
+    }
+
+    #footer-top {
+        position:relative;
+        &::before {
+            content:''; left:0; top:0; right:0; bottom:0; background:#fff; opacity:0.1;
+            display:block; position:absolute;
+        }
+        > .left {
+            .subtitle {
+                @include heading2;
+                opacity:0.5;
+            }
+            .title {
+                @include heading1;
+            }
+        }
+        @include media("min",768,0) {
+            > .left { width:35%; }
+            > .right { width:65%; }
+        }
+    }
+    #footer-middle {
+        position:relative;
+        @include media("min",768,0) {
+            > .left { width:15%; }
+            > .right { width:85%; }
+        }
+
         &::before {
             content:''; right:100%; top:0; bottom:-1px; width:$pageoffset;
             background:$xdgrey; position:absolute; display:block;
