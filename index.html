@@ -6,11 +6,10 @@
 
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body>
-<div id="topcontainer">
+<div id="topcontainer" style="opacity:0;">
     <div class="backlayer"></div>
     <div class="frontlayer"></div>
     <div class="scene">
@@ -106,5 +105,14 @@
     </div>
 </div>
 <script src="dist/bundle.js"></script>
+
+<style>
+    a, input[type="submit"], button,
+    a::before, a::after,
+    input[type="submit"]::before, input[type="submit"]::after,
+    button::before, button::after {
+        transition:all .3s ease-in-out;
+    }
+</style>
 </body>
 </html>

@@ -17,7 +17,7 @@ nav {
     }
     .more {
         @include vw-font-size(16); line-height:20/16*1em;
-        padding:12.5/16*1em 35/16*1em;
+        padding:11.5/16*1em 35/16*1em;
         color:$themecolor;
         background:none transparent;
         border:1px solid currentColor;

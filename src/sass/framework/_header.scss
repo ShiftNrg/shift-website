@@ -19,8 +19,31 @@
 .nav {
     list-style:none; margin:0; padding:0;
     display:flex; flex-direction:row; justify-content:flex-start; align-items:center; flex-wrap:wrap;
+    @mixin button($size) {
+        @include vw-font-size($size); line-height:20/$size*1em;
+        padding:12.5/$size*1em 20/$size*1em; border-radius:22.5/$size*1em;
+    }
     > li {
-
+        > a {
+            text-decoration:none; font-weight:600;
+            @include button(15); display:block;
+            &:hover {
+                color:rgba(#fff,0.5);
+            }
+        }
+    }
+    &.topnav {
+        @include vw-margin(0,0,0,20);
+        > li {
+            > a {
+                font-weight:500;
+            }
+            &.cta > a {
+                @include button(16); font-weight:600;
+                border:1px solid currentColor;
+                padding:11.5/16*1em 25/16*1em;
+            }
+        }
     }
 }
 
