@@ -52,7 +52,7 @@ module.exports = {
                         loader: "file-loader",
                         options: {
                             outputPath: 'images',
-                            name: '[path][name].[ext]?[hash]'
+                            name: '[name].[ext]?[hash]'
                         }
                     }
                 ]
@@ -64,7 +64,7 @@ module.exports = {
                         loader: "file-loader",
                         options: {
                             outputPath: 'fonts',
-                            name: '[path][name].[ext]?[hash]'
+                            name: '[name].[ext]?[hash]'
                         }
                     }
                 ]
