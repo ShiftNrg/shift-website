@@ -35,6 +35,22 @@
         padding: 0 $inneroffset;
     }
     > section {
+        .payoff {
+            display:none;
+        @include media("min",768,0) {
+                font-size:15px; writing-mode: vertical-lr;
+                position:absolute; width:$pageoffset;
+                color:$textcolor; background:$xlgrey;
+                left:-$pageoffset; top:0;
+                display:flex; flex-direction:row; justify-content:flex-start; align-items:center;
+                padding-bottom:$smalloffset;
+            white-space:nowrap;
+        .line {
+                content:''; width:1px; margin-top:10/15*1em; vertical-align: middle;
+                height:30/15*1em; background:currentColor;
+            }
+        }
+        }
         &.maintext {
             margin-top:$inneroffset * 0.7777;
             margin-bottom:$inneroffset * 0.7777;
