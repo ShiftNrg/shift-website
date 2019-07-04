@@ -41,6 +41,9 @@ figure {
 figure img {
     display: block;
 }
+.logo {
+    img { display:block; }
+}
 
 
 
@@ -68,4 +71,55 @@ a, button, input[type="submit"] { cursor:pointer; outline:none; }
     display:none;
     position:absolute;
     left:50%; top:100%; transform:translate(-50%,0);
+}
+
+
+.block-grid {
+    overflow: hidden; padding: 0; list-style:none;
+    display: flex; flex-direction:row; justify-content:flex-start; align-items:stretch; flex-wrap:wrap;
+    width: calc(100% + var(--grid-margin));
+    margin:0 calc(var(--grid-margin) * -0.5) calc(var(--grid-margin) * -1);
+    > li {
+        list-style:none; display:block; width:100%;
+        padding-left:calc(var(--grid-margin) / 2);
+        padding-right:calc(var(--grid-margin) / 2);
+        article {
+            margin-bottom:var(--grid-margin);
+        }
+    }
+    @include media("min",768,0) {
+        &.up2 > li {
+            width: 50%;
+        }
+        &.up3 > li {
+            width: 33.33333%;
+        }
+        &.up4 > li {
+            width: 25%;
+        }
+        &.up5 > li {
+            width: 20%;
+        }
+        &.up6 > li {
+            width: 16.66667%;
+        }
+        &.up7 > li {
+            width: 14.28571%;
+        }
+        &.up8 > li {
+            width: 12.5%;
+        }
+        &.up9 > li {
+            width: 11.11111%;
+        }
+        &.up10 > li {
+            width: 10%;
+        }
+        &.up11 > li {
+            width: 9.09091%;
+        }
+        &.up12 > li {
+            width: 8.33333%;
+        }
+    }
 }

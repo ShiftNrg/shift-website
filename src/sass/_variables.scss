@@ -9,6 +9,12 @@ $smalloffset            : 50px;
 
 $headerheight           : 100px;
 
+:root {
+    // SIZING
+    --padding: #{$inneroffset};
+    --grid-margin: 30px;
+}
+
 // -- Fonts
 $icons                  : "FontAwesome";
 $text                   : "neue-haas-grotesk-display", "helvetica", arial, sans-serif;
@@ -29,3 +35,5 @@ $themecolor3            : #9891da; // 60%
 
 // -- Gradients
 $gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2 100%);
+
+
