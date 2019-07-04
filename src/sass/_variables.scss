@@ -1,23 +1,26 @@
 
 // -- Containers
-$mobile_vw_base : 750;
+$mobile_vw_base         : 750;
 
 // -- Paddings & Margins
-$pageoffset     : 130px;
-$inneroffset    : 90px;
-$headerheight   : 100px;
+$pageoffset             : 130px;
+$inneroffset            : 90px;
+$headerheight           : 100px;
 
 // -- Fonts
-$text           : "neue-haas-grotesk-display", "helvetica", arial, sans-serif;
-$heading        : $text;
+$icons                  : "FontAwesome";
+$text                   : "neue-haas-grotesk-display", "helvetica", arial, sans-serif;
+$heading                : $text;
 
 // -- Colors
-$textcolor      : #393d44;
+$textcolor              : #393d44;
 
-$xlgrey         : #f7fafe;
+$xlgrey                 : #f7fafe;
+$grey                   : #51cbce;
 
-$themecolor     : #5347c2;
-$themecolor2    : #6459c8;
+$themecolor-multiply    : #211898;
+$themecolor             : #5347c2;
+$themecolor2            : #6459c8;
 
 // -- Gradients
-$gradient1      : linear-gradient(to right, $themecolor 0%, $themecolor2 100%);
+$gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2 100%);

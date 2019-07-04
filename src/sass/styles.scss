@@ -56,5 +56,3 @@ h1 {
     @include vw-font-size(20);
     @include media("min",1600,0) { font-size:20/16*1rem; }
 }
-
-

@@ -15,6 +15,24 @@
         }
     }
 
+    > .newsflash {
+        background:$themecolor-multiply; color:#fff;
+        @include vw-font-size(12); padding:4/12*1em; line-height:22/12*1em;
+        display:flex; flex-direction:row; justify-content:center; align-items:center;
+        border-radius:15/12*1em;
+        @include vw-margin(0,0,30);
+        > .label, > .title {
+            padding:0 10/12*1em;
+        }
+        > .label {
+    background:$grey; color:#fff; font-weight:600;
+            border-radius:11/12*1em;
+        }
+        > .title {
+        }
+
+    }
+
     > .slogan {
         width:750/1600*100vw;
         text-align:center;
@@ -31,7 +49,7 @@
         }
     }
     > .image {
-        margin:50/1600*100vw 0 0;
+        @include vw-margin(30,0,0);
     }
 
     > .socials {
@@ -40,5 +58,17 @@
         padding:15px $pageoffset;
         min-height:$headerheight;
         left:0; bottom:0; right:0;
+        @include vw-font-size(14);
+        margin:0 -7.5/14*1em;
+        > * {
+            margin:0 7.5/14*1em;
+        }
+        > .label, > .seperator {
+            font-weight:600;
+        }
+        > a {
+            color:rgba(#fff,0.6);
+            &:hover { color:rgba(#fff,1); }
+        }
     }
 }

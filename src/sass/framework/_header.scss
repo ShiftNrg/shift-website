@@ -31,6 +31,9 @@
                 color:rgba(#fff,0.5);
             }
         }
+        &.dropdown > a::after {
+            content:'\f107'; font-family:$icons; margin-left:5/15*1em; font-weight:normal;
+        }
     }
     &.topnav {
         @include vw-margin(0,0,0,20);
