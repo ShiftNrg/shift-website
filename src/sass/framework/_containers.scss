@@ -3,10 +3,12 @@
 }
 #topcontainer {
     position: relative;
+    opacity:0;
+    animation-duration:1.6s;animation-fill-mode:both; animation-name:fadeIn;
     min-height: 100vh; min-height:var(--vh);
 
     > * {
-        background: #5f54c6;
+        background: #fff;
     }
     > .backlayer, > .frontlayer {
         visibility: hidden; pointer-events: none; user-select: none;
@@ -23,4 +25,12 @@
         min-height: 100vh; min-height:var(--vh);
     }
     > .frontlayer { z-index:3; }
+}
+
+
+.maincontainer {
+    padding:0 $pageoffset;
+    > section {
+        padding:$inneroffset;
+    }
 }

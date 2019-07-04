@@ -1,0 +1,43 @@
+.banner {
+    position:relative;
+    background:$gradient1;
+    color:#fff;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    padding:$headerheight 0;
+    min-height: 100vh; min-height:var(--vh);
+
+    &::before {
+        content:''; left:0; top:0; right:0; bottom:0; position:absolute; display:block;
+        background:url(../images/decoration.png) no-repeat left bottom;
+
+        @media (max-width:915px) {
+            background-size:auto 100%;
+        }
+    }
+
+    > .slogan {
+        width:750/1600*100vw;
+        > * {
+            &.line1 {
+                font-size: 64/1600*100vw;
+                line-height: 1.01;
+            }
+            &.line2 {
+                font-size: 20/1600*100vw;
+                line-height: 1.4;
+                margin-top:20/1600*100vw;
+            }
+        }
+    }
+    > .image {
+        margin:50/1600*100vw 0 0;
+    }
+
+    > .socials {
+        display:flex; flex-direction:row; justify-content:flex-end; align-items:center;
+        position:absolute; z-index:3;
+        padding:15px $pageoffset;
+        min-height:$headerheight;
+        left:0; bottom:0; right:0;
+    }
+}

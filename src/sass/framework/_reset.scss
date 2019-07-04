@@ -1,0 +1,26 @@
+* {
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    &, &::before, &::after {
+        box-sizing: border-box;
+    }
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display:block; }
+
+article, section {
+    display:flex; flex-direction:column; width:100%;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+}
+figure {
+    margin: 0;
+    float: none;
+    clear: both;
+}
+figure img {
+    display:block;
+}
