@@ -17,13 +17,14 @@
 
     > .slogan {
         width:750/1600*100vw;
+        text-align:center;
         > * {
             &.line1 {
-                font-size: 64/1600*100vw;
-                line-height: 1.01;
+                @include vw-font-size(64);
+                line-height: 1.01; font-weight:600;
             }
             &.line2 {
-                font-size: 20/1600*100vw;
+                @include vw-font-size(20);
                 line-height: 1.4;
                 margin-top:20/1600*100vw;
             }

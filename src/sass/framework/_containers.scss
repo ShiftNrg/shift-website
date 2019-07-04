@@ -33,8 +33,14 @@
     > section {
         padding:$inneroffset;
         &.maintext {
+            padding-top:$inneroffset * 0.7777;
+            padding-bottom:$inneroffset * 0.7777;
             > .inner {
                 width:600/1600*100vw; max-width:100%;
+                text-align:center;
+                nav {
+                    justify-content:center; @include vw-margin(25,0,0);
+                }
             }
         }
     }

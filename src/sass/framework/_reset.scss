@@ -33,3 +33,12 @@ figure {
 figure img {
     display: block;
 }
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    &:hover, &:focus { color: inherit; }
+}
