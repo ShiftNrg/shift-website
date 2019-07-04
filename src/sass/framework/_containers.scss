@@ -1,0 +1,26 @@
+#topcontainer {
+    width: 100%;
+}
+#topcontainer {
+    position: relative;
+    min-height: 100vh; min-height:var(--vh);
+
+    > * {
+        background: #5f54c6;
+    }
+    > .backlayer, > .frontlayer {
+        visibility: hidden; pointer-events: none; user-select: none;
+        position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+
+        @include media("max",767,0) {
+            width:100vw;
+        }
+    }
+
+    > .backlayer { z-index:1; }
+    > .scene {
+        position: absolute; width: 100%; z-index:2; overflow:hidden;
+        min-height: 100vh; min-height:var(--vh);
+    }
+    > .frontlayer { z-index:3; }
+}

@@ -1,0 +1,53 @@
+
+// ex. @include media("min",768,0) {  }
+@mixin media($type : "min", $par1 : 0, $par2 : 0, $extra : ""){
+
+    $mobile : 767;
+    $tablet : 1024;
+
+    @if $type == "min" and $par2 != 0 {
+                // min and max
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (min-width:($par1*1px)) and (max-width:($par2*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (min-width:($par1*1px)) and (max-width:($par2*1px)) {
+                        @content
+                    }
+                }
+    }
+    @if $type == "min" and $par2 == 0 {
+                // min
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (min-width:($par1*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (min-width:($par1*1px)) {
+                        @content
+                    }
+                }
+    }
+    @if $type == "max" and $par1 != 0 {
+                // max
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (max-width:($par1*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (max-width:($par1*1px)) {
+                        @content
+                    }
+                }
+    }
+}

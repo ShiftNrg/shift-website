@@ -1,6 +1,8 @@
+@import "mixins";
+@import "framework/containers";
+
 body {
     min-height: 100vh;
-    background: #5f54c6;
     color: white;
     padding:0; margin:0;
 }
