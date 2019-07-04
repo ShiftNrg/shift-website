@@ -25,6 +25,7 @@ $textcolor              : #393d44;
 
 $xlgrey                 : #f7fafe;
 $lgrey                  : #e3eaee;
+$llgrey                 : #e6f2fe;
 $grey                   : #51cbce;
 $xdgrey                 : #191934;
 
@@ -51,4 +52,11 @@ $gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2
     font-weight: 600;
     @include spacing(40);
     @include vw-font-size(19);
+}
+@mixin heading3(){
+    line-height: 1.2;
+    font-family: $heading;
+    font-weight: 600;
+    @include spacing(40);
+    @include vw-font-size(32);
 }

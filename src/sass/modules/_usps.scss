@@ -1,0 +1,47 @@
+
+.maincontainer {
+    > section.usps {
+        --grid-margin: #{45/1600*100vw};
+
+        position: relative;
+        @include media("min", 768, 0) {
+            background: $xdgrey;
+            padding-bottom: $pageoffset;
+            &::before {
+                content: '';
+                right: 100%;
+                top: 0;
+                bottom: -1px;
+                width: $pageoffset;
+                background: $xdgrey;
+                position: absolute;
+                display: block;
+            }
+        }
+
+        > .inner {
+            background: $llgrey;
+
+            > .block-grid {
+                @include vw-margin(50, 0, 0);
+            }
+        }
+
+        article {
+            width: 230/1600*100vw;
+            text-align: center;
+
+            span.icon {
+                @include vw-font-size(60);
+                color: $themecolor;
+                @include vw-margin(0, 0, 15);
+                display: block;
+            }
+
+            h5 {
+                @include vw-font-size(20);
+                @include vw-margin(0, 0, 20);
+            }
+        }
+    }
+}

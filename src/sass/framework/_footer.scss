@@ -57,12 +57,12 @@ footer#footer {
         @include media("min",768,0) {
             > .left { width:15%; }
             > .right { width:85%; }
+            &::before {
+                content:''; right:100%; top:0; bottom:-1px; width:$pageoffset;
+                background:$xdgrey; position:absolute; display:block;
+            }
         }
 
-        &::before {
-            content:''; right:100%; top:0; bottom:-1px; width:$pageoffset;
-            background:$xdgrey; position:absolute; display:block;
-        }
         .logo {
             width:117px; display:block;
             margin-top:-$inneroffset * 0.2222;

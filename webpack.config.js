@@ -78,7 +78,7 @@ module.exports = {
             filename: "bundle.css"
         }),
         new SVGSpritemapPlugin(
-            'src/icons/*.svg',
+            ['src/icons/*.svg','src/icons/**/*.svg'],
             {
                 output: {
                     filename: 'icons/sprite.svg',
