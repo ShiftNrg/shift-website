@@ -78,7 +78,6 @@ p {
 
 .Intro {
     @include vw-font-size(20); line-height:1.4;
-    @include media("min",1600,0) { font-size:20/16*1rem; }
 }
 
 .Intro, .Text {

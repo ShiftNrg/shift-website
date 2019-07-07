@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
-    entry: './src/javascript/index.js',
+    entry: './src/javascript',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'

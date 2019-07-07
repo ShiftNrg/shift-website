@@ -33,6 +33,7 @@ calculateHeight();
 // );
 
 
+// Call to actions
 document.addEventListener(
     "click",
     function (e) {
