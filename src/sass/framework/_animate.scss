@@ -2,7 +2,6 @@
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
-
 @mixin fadeIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeIn);
     @include count($count);
@@ -11,4 +10,85 @@
     @include function($function);
     @include fill-mode($fill);
     @include visibility($visibility);
+}
+
+@include keyframes(fadeInDownTransform) {
+    0% {opacity: 0;transform:translate(0,-50%)}
+    100% {opacity: 1;transform:translate(0,0%)}
+}
+@mixin fadeInDownTransform($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInDownTransform);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
+@include keyframes(fadeInNewsflashLabel) {
+    0% {opacity: 0;transform:scaleX(0);}
+    100% {opacity: 1;transform:scaleX(1);}
+}
+@mixin fadeInNewsflashLabel($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInNewsflashLabel);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+@include keyframes(fadeInNewsflash) {
+    0% {opacity: 0;max-width:0;padding-left:0;padding-right:0;}
+    100% {opacity: 1;max-width:500px;padding-left:7.5/14*1em;padding-right:7.5/14*1em;}
+}
+@mixin fadeInNewsflash($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInNewsflash);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+.invisible {
+    opacity:0;
+    &.visible { opacity:1; }
+}
+
+.banner.invisible {
+    .newsflash {
+        opacity:0;
+        //> .label {
+        //    opacity:0; transform:scale(0);
+        //    position:relative;
+        //}
+        > .title {
+            display:block;
+                opacity:0;
+                max-width:0;
+                width:auto;
+                white-space:nowrap;
+                overflow:hidden;
+        }
+    }
+
+    &.visible {
+        .newsflash {
+            @include fadeInDownTransform;
+            @include delay(1.2s);
+            @include duration(.7s);
+            //> .label {
+            //    @include fadeInNewsflashLabel;
+            //    @include delay(1.5s);
+            //    @include duration(.7s);
+            //}
+            > .title {
+                @include fadeInNewsflash();
+                @include delay(2s);
+                @include duration(1.2s);
+            }
+        }
+    }
 }
