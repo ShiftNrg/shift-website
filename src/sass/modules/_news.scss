@@ -13,13 +13,18 @@
         article {
             @include vw-padding(70);
             min-height:100%;
-            background:$themecolor; color:#fff;
-            position:relative;
+            color:#fff;
+            position:relative; z-index:2;
             &::before {
                 content:''; left:70/1600*100vw; top:0; right:0; height:281/1600*100vw;
                 background:url(../images/decoration2.png) no-repeat right top / 100% auto;
                 background-size:contain;
                 position:absolute;
+            }
+            &::after {
+                content:''; left:0; top:0; right:0; bottom:100%;
+                background:$themecolor;
+                position:absolute; display:block; z-index:-1;
             }
             > .inner {
                 width:100%;
@@ -47,10 +52,22 @@
             padding-bottom:$smalloffset;
             > .block-grid.up3 > li {
                 &:nth-child(3n-1) article {
-                    background:$cta1;
+                    &::after {
+                        background:$cta1;
+                        @include delay(.15s);
+                    }
+                    > .inner {
+                        @include delay(1.25s);
+                    }
                 }
                 &:nth-child(3n) article {
-                    background:$xdgrey;
+                    &::after {
+                        background:$xdgrey;
+                        @include delay(.3s);
+                    }
+                    > .inner {
+                        @include delay(1.45s);
+                    }
                 }
             }
             @include media("min",768,0) {

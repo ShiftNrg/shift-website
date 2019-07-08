@@ -21,6 +21,20 @@
     @include visibility($visibility);
 }
 
+@include keyframes(fadeInDownBackground) {
+    0% {opacity: 0;bottom:100%;}
+    100% {opacity: 1;bottom:0;}
+}
+@mixin fadeInDownBackground($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInDownBackground);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
 @include keyframes(fadeInUpSmall) {
     0% {opacity: 0;transform: translate(0,20px);}
     100% {opacity: 1;transform: translate(0,0);}
@@ -232,32 +246,72 @@ opacity:0;
         > * {
             opacity:0;
         }
-        > .block-grid > li {
-            opacity:0;
-            > article {
-                opacity:1;
-            }
-        }
     }
     &.visible {
         > .inner {
             > * {
                 @include fadeInUp;
             }
-            > .block-grid > li {
+            > .block-grid > li > article {
                 @include animation-name(fadeInUp);
             }
         }
     }
 }
 .roadmap.invisible {
-    opacity:1; 
+    opacity:1;
+    > .inner {
+        opacity:0;
+        article {
+            opacity:0;
+        }
+    }
+    &.visible {
+        > .inner {
+            @include fadeInUp;
+            article {
+                @include fadeIn;
+            }
+            .glide__slide:first-child + *  {
+                article { @include delay(.3s); }
+
+                + * {
+                    article { @include delay(.6s); }
+                    + * {
+                        article {  @include delay(.9s); }
+                    }
+                }
+            }
+        }
+    }
+}
+.news.invisible {
+    opacity:1;
     > .inner {
         opacity:0;
     }
     &.visible {
         > .inner {
-            @include fadeInUp;
+            @include fadeIn;
+        }
+    }
+
+
+    article {
+        > .inner {
+            opacity:0;
+        }
+    }
+    &.visible {
+        article {
+            &::after {
+                @include fadeInDownBackground;
+                @include duration(1.35s);
+            }
+            > .inner {
+                @include fadeInUp;
+                @include delay(1s);
+            }
         }
     }
 }

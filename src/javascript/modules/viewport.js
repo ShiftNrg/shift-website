@@ -36,7 +36,7 @@ if (typeof studioibizz === 'undefined') {
     studioibizz = new Object();
 }
 studioibizz.fakepreload = {
-    selectors: '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible), .scene .block-grid > li:not(.visible)',
+    selectors: '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible)',
     init: function () {
         this.attach();
         this.onscroll();
