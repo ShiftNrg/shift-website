@@ -1,3 +1,12 @@
+@mixin animate($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
 @include keyframes(fadeIn) {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -12,12 +21,39 @@
     @include visibility($visibility);
 }
 
-@include keyframes(fadeInUp) {
+@include keyframes(fadeInUpSmall) {
     0% {opacity: 0;transform: translate(0,20px);}
+    100% {opacity: 1;transform: translate(0,0);}
+}
+@mixin fadeInUpSmall($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInUpSmall);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+@include keyframes(fadeInUp) {
+    0% {opacity: 0;transform: translate(0,70px);}
     100% {opacity: 1;transform: translate(0,0);}
 }
 @mixin fadeInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInUp);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
+@include keyframes(fadeInRight) {
+    0% {opacity: 0;transform: translate(-20px,0);}
+    100% {opacity: 1;transform: translate(0,0);}
+}
+@mixin fadeInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInRight);
     @include count($count);
     @include duration($duration);
     @include delay($delay);
@@ -82,6 +118,7 @@
 }
 .invisible {
     opacity:0;
+    @include animate;
     &.visible { opacity:1; }
 }
 
@@ -94,11 +131,11 @@
         //}
         > .title {
             display:block;
-                opacity:0;
-                max-width:0;
-                width:auto;
-                white-space:nowrap;
-                overflow:hidden;
+            opacity:0;
+            max-width:0;
+            width:auto;
+            white-space:nowrap;
+            overflow:hidden;
         }
     }
     .slogan {
@@ -136,7 +173,7 @@
         }
         .socials {
             > * {
-                @include fadeInUp();
+                @include fadeInUpSmall();
                 @include duration(.8s);
                 @include delay(4s);
                 + * {
@@ -151,6 +188,73 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+.maintext.invisible {
+opacity:0;
+    &.visible {
+            @include fadeInUp;
+    }
+}
+
+.textblock.invisible {
+    opacity:1;
+    > figure, > .inner {
+        opacity:0;
+    }
+    > .inner {
+        > nav > .more-inline {
+            opacity:0;
+        }
+    }
+    &.visible {
+        @include fadeInUp;
+        > figure, > .inner {
+            @include fadeInUp;
+        }
+        > figure {
+            @include delay(.5s);
+        }
+        > .inner {
+            > nav > .more-inline {
+                @include fadeInRight();
+                @include delay(1.3s);
+            }
+        }
+    }
+}
+.usps.invisible {
+        opacity:0;
+    &.visible {
+            @include fadeInUp;
+    }
+    > .inner {
+        > .block-grid > li {
+            opacity:0;
+            > article {
+                opacity:1;
+            }
+        }
+    }
+    &.visible {
+        > .inner {
+            > .block-grid > li {
+                @include animation-name(fadeInUp);
+            }
+        }
+    }
+}
+.roadmap.invisible {
+    opacity:1;
+    > .inner {
+        opacity:0;
+    }
+    &.visible {
+        > .inner {
+            @include fadeInUp;
         }
     }
 }

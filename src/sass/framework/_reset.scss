@@ -88,38 +88,38 @@ a, button, input[type="submit"] { cursor:pointer; outline:none; }
         }
     }
     @include media("min",768,0) {
+        > li {
+            @include delay(.2s);
+        }
         &.up2 > li {
             width: 50%;
+            &:nth-child(2n) { @include delay(.4s); }
         }
         &.up3 > li {
             width: 33.33333%;
+            &:nth-child(3n) { @include delay(.6s); }
+            &:nth-child(3n-1) { @include delay(.4s); }
         }
         &.up4 > li {
             width: 25%;
+            &:nth-child(4n) { @include delay(.8s); }
+            &:nth-child(4n-1) { @include delay(.6s); }
+            &:nth-child(4n-2) { @include delay(.4s); }
         }
         &.up5 > li {
             width: 20%;
+            &:nth-child(5n) { @include delay(1.0s); }
+            &:nth-child(5n-1) { @include delay(.8s); }
+            &:nth-child(5n-2) { @include delay(.6s); }
+            &:nth-child(5n-3) { @include delay(.4s); }
         }
         &.up6 > li {
             width: 16.66667%;
-        }
-        &.up7 > li {
-            width: 14.28571%;
-        }
-        &.up8 > li {
-            width: 12.5%;
-        }
-        &.up9 > li {
-            width: 11.11111%;
-        }
-        &.up10 > li {
-            width: 10%;
-        }
-        &.up11 > li {
-            width: 9.09091%;
-        }
-        &.up12 > li {
-            width: 8.33333%;
+            &:nth-child(6n) { @include delay(1.2s); }
+            &:nth-child(6n-1) { @include delay(1.0s); }
+            &:nth-child(6n-2) { @include delay(.8s); }
+            &:nth-child(6n-3) { @include delay(.6s); }
+            &:nth-child(6n-4) { @include delay(.4s); }
         }
     }
 }

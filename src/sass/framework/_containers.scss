@@ -53,7 +53,7 @@
         }
         }
         &.maintext {
-            margin-top:$inneroffset * 0.7777;
+            padding-top:$inneroffset * 0.7777; margin-top:0;
             margin-bottom:$inneroffset * 0.7777;
             > .inner {
                 width:600/1600*100vw; max-width:100%;

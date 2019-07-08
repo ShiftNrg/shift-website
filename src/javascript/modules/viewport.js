@@ -9,7 +9,7 @@ const isInView = el => {
 
     const viewport = {
         top: scroll,
-        bottom: scroll + window.innerHeight,
+        bottom: scroll + window.innerHeight  - 200,
     }
 
     const bounds = {

@@ -79,7 +79,7 @@ studioibizz.banner = {
                             easing: "easeOutQuart",
                             offset: '-=400',
                             duration: 700,
-                            delay: 150
+                            delay: 0
                         }
                     )
                     .add(
@@ -172,7 +172,7 @@ studioibizz.banner = {
                         }
                     )
             },
-            200
+            150
         );
     },
     detach: function() {
