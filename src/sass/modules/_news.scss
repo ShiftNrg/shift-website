@@ -1,0 +1,70 @@
+
+.maincontainer {
+    > section.news {
+        //--grid-margin: #{45/1600*100vw};
+.payoff {
+    background:#fff;
+    &::before {
+        content:''; left:0; bottom:0; width:100vw; max-width:100vw; top:-$pageoffset;
+        background:#fff; z-index:-1; position:absolute; display:block;
+    }
+}
+        padding-right:0;
+        article {
+            @include vw-padding(70);
+            min-height:100%;
+            background:$themecolor; color:#fff;
+            position:relative;
+            &::before {
+                content:''; left:70/1600*100vw; top:0; right:0; height:281/1600*100vw;
+                background:url(../images/decoration2.png) no-repeat right top / 100% auto;
+                background-size:contain;
+                position:absolute;
+            }
+            > .inner {
+                width:100%;
+                @include vw-padding(261,0,0);
+                > .category {
+                    border:1px solid currentColor; text-transform:uppercase; font-weight:600;
+                    @include vw-font-size(11);
+                    min-width:112/11*1em; line-height:14/11*1em; padding:5/11*1em 20/11*1em;
+                    display:inline-block;
+                    border-radius:12/11*1em;
+                    text-align:center;
+                    opacity:0.5;
+                    margin-bottom:25/11*1em;
+                }
+                > h3 {
+                    @include vw-font-size(24);
+                }
+                > nav {
+                    justify-content:flex-start;
+                }
+            }
+        }
+        > .inner {
+            margin-right:-$pageoffset;
+            padding-bottom:$smalloffset;
+            > .block-grid.up3 > li {
+                &:nth-child(3n-1) article {
+                    background:$cta1;
+                }
+                &:nth-child(3n) article {
+                    background:$xdgrey;
+                }
+            }
+            @include media("min",768,0) {
+                > h3 {
+                    padding-right:200px;
+                    @include vw-padding(0,0,0,70);
+                }
+                > nav {
+                    position:absolute; right:$pageoffset; top:0; width:auto; left:auto;
+                    > * {
+                        margin-top:0;
+                    }
+                }
+            }
+        }
+    }
+}
