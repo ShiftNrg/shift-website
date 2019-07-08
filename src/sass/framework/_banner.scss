@@ -101,8 +101,8 @@
         left:50%; top:calc(100% - #{$headerheight / 2});
         transform:translate(-50%,-50%);
         color:#fff;
-        opacity:0.6;
         span.icon {
+            opacity:0.6;
             @include vw-font-size(34);
             svg path:first-of-type + path {
                 animation:bounce_scroll 5s infinite;

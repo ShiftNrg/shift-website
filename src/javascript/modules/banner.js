@@ -69,7 +69,7 @@ studioibizz.banner = {
                             scaleY: [0, 1],
                             opacity: [0, 1],
                             easing: "easeOutExpo",
-                            duration: 900
+                            duration: 800
                         }
                     )
                     .add(
@@ -78,8 +78,8 @@ studioibizz.banner = {
                             translateX: [0, studioibizz.banner.line1.offsetWidth],
                             easing: "easeOutQuart",
                             offset: '-=400',
-                            duration: 1300,
-                            delay: 200
+                            duration: 700,
+                            delay: 150
                         }
                     )
                     .add(
@@ -87,10 +87,10 @@ studioibizz.banner = {
                             targets: '.slogan .line1 .letter',
                             opacity: [0, 1],
                             easing: "easeOutQuad",
-                            duration: 650,
-                            offset: '-=1150',
+                            duration: 500,
+                            offset: '-=750',
                             delay: function (el, i) {
-                                return 45 * (i + 1)
+                                return 25 * (i + 1)
                             }
                         }
                     )
@@ -109,7 +109,8 @@ studioibizz.banner = {
                             opacity: [0, 1],
                             easing: "easeOutExpo",
                             delay: 0,
-                            duration: 150
+                            offset: '-=350',
+                            duration: 250
                         }
                     )
                     .add(
@@ -117,8 +118,8 @@ studioibizz.banner = {
                             targets: '.slogan .line2 .spacer',
                             translateX: [0, studioibizz.banner.line2.offsetWidth],
                             easing: "easeOutQuart",
-                            duration: 1100,
-                            delay: 200
+                            duration: 800,
+                            delay: 0
                         }
                     )
                     .add(
@@ -126,10 +127,10 @@ studioibizz.banner = {
                             targets: '.slogan .line2 .letter',
                             opacity: [0, 1],
                             easing: "easeOutQuad",
-                            duration: 650,
-                            offset: '-=1100',
+                            duration: 500,
+                            offset: '-=750',
                             delay: function (el, i) {
-                                return 45 * (i + 1)
+                                return 30 * (i + 1)
                             }
                         }
                     )
@@ -139,6 +140,34 @@ studioibizz.banner = {
                             opacity: 0,
                             duration: 220,
                             offset: '-=260',
+                            easing: "easeOutQuad"
+                        }
+                    )
+                    .add(
+                        {
+                            targets: '.slogan .line3',
+                            opacity: [0, 1],
+                            translateY: ["50px", 0],
+                            duration: 800,
+                            easing: "easeOutQuad",
+                            offset: '-=350'
+                        }
+                    )
+                    .add(
+                        {
+                            targets: '.banner .image',
+                            opacity: [0, 1],
+                            translateY: ["-50px", 0],
+                            duration: 800,
+                            easing: "easeOutQuad",
+                            offset: '-=350'
+                        }
+                    )
+                    .add(
+                        {
+                            targets: '.banner .scrollto',
+                            opacity: [0, 1],
+                            duration: 600,
                             easing: "easeOutQuad"
                         }
                     )

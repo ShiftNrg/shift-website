@@ -12,6 +12,34 @@
     @include visibility($visibility);
 }
 
+@include keyframes(fadeInUp) {
+    0% {opacity: 0;transform: translate(0,20px);}
+    100% {opacity: 1;transform: translate(0,0);}
+}
+@mixin fadeInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInUp);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
+@include keyframes(fadeInLeft) {
+    0% {opacity: 0;transform: translate(20px,0);}
+    100% {opacity: 1;transform: translate(0,0);}
+}
+@mixin fadeInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(fadeInLeft);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
 @include keyframes(fadeInDownTransform) {
     0% {opacity: 0;transform:translate(0,-50%)}
     100% {opacity: 1;transform:translate(0,0%)}
@@ -80,12 +108,21 @@
             &.animating { opacity:1; }
         }
     }
+    .image {
+        opacity:0;
+    }
+    .scrollto { opacity:0; }
+    .socials {
+        > * {
+            opacity:0;
+        }
+    }
 
     &.visible {
         .newsflash {
             @include fadeInDownTransform;
-            @include delay(4.2s);
-            @include duration(.7s);
+            @include delay(2.9s);
+            @include duration(.5s);
             //> .label {
             //    @include fadeInNewsflashLabel;
             //    @include delay(1.5s);
@@ -93,8 +130,26 @@
             //}
             > .title {
                 @include fadeInNewsflash();
-                @include delay(5s);
-                @include duration(1.2s);
+                @include delay(3.5s);
+                @include duration(.8s);
+            }
+        }
+        .socials {
+            > * {
+                @include fadeInUp();
+                @include duration(.8s);
+                @include delay(4s);
+                + * {
+                    + * {
+                        @include delay(4.3s);
+                        + * {
+                            @include delay(4.6s);
+                            + * {
+                                @include delay(4.9s);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
