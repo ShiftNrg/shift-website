@@ -227,11 +227,11 @@ opacity:0;
     }
 }
 .usps.invisible {
-        opacity:0;
-    &.visible {
-            @include fadeInUp;
-    }
+    opacity:1;
     > .inner {
+        > * {
+            opacity:0;
+        }
         > .block-grid > li {
             opacity:0;
             > article {
@@ -241,6 +241,9 @@ opacity:0;
     }
     &.visible {
         > .inner {
+            > * {
+                @include fadeInUp;
+            }
             > .block-grid > li {
                 @include animation-name(fadeInUp);
             }
@@ -248,7 +251,7 @@ opacity:0;
     }
 }
 .roadmap.invisible {
-    opacity:1;
+    opacity:1; 
     > .inner {
         opacity:0;
     }

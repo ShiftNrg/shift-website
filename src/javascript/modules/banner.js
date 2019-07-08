@@ -1,4 +1,4 @@
-const anime = require("../libraries/anime.min.js");
+const anime = require("../../../node_modules/animejs/anime.min");
 
 /**
  * Wraps a string around each character/letter

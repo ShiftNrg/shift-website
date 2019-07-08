@@ -6,6 +6,7 @@ require("./modules/svgsprite");
 require("./modules/dimensions");
 require("./modules/viewport");
 require("./modules/banner");
+require("./modules/roadmap");
 
 // Call to actions
 document.addEventListener(

@@ -17,5 +17,9 @@
     "svg-spritemap-webpack-plugin": "^3.3.5",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.3.0",
+    "animejs": "^2.2.0"
   }
 }

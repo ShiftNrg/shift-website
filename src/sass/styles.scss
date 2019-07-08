@@ -6,6 +6,7 @@
 @import "framework/animate-properties";
 @import "framework/animate";
 @import "framework/reset";
+@import "framework/glide";
 @import "framework/buttons";
 @import "framework/containers";
 @import "framework/banner";
@@ -108,4 +109,18 @@ p, ul, ol {
             display:block;
         }
     }
+}
+.Content ul {
+
+        list-style:none; margin-left:0; padding-left:0;
+        > li {
+            position:relative; padding:0 0 0 16/16*1em;
+        }
+        > li::before {
+            content:''; font-family: 'FontAwesome';
+            position:absolute; left:0; top:8/16*1em;
+            width:6/16*1em; height:6/16*1em; background:$themecolor4;
+            border-radius:50%;
+            display:block;
+        }
 }
