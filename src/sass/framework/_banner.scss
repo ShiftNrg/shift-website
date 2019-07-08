@@ -38,16 +38,36 @@
     > .slogan {
         width:750/1600*100vw;
         text-align:center;
+        display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
         > * {
-            &.line1 {
+            position:relative;
+            &.line1, &.line2 {
                 @include vw-font-size(64);
                 line-height: 1.01; font-weight:600;
             }
-            &.line2 {
+            &.line3 {
                 @include vw-font-size(20);
                 line-height: 1.4;
                 margin-top:20/1600*100vw;
             }
+        }
+
+
+        .spacer {
+            opacity: 0;
+            position: absolute;
+            top:14/90*1em; bottom:10/90*1em; margin:0 20px;
+            width: 3px;
+            background-color: #fff;
+            transform-origin: 0 50%;
+        }
+        .letter {
+            display: inline-block;
+            line-height: 1em;
+            transform-origin: 0 0;
+        }
+        .word {
+            display:inline-block; white-space:nowrap;
         }
     }
     > .image {

@@ -5,6 +5,7 @@ require("./modules/nojs");
 require("./modules/svgsprite");
 require("./modules/dimensions");
 require("./modules/viewport");
+require("./modules/banner");
 
 // Call to actions
 document.addEventListener(

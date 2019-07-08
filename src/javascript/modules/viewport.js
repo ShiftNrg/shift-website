@@ -48,12 +48,18 @@ studioibizz.fakepreload = {
             });
         }
     },
+    detach: function () {
+
+    },
     onscroll: function () {
 
         const handler = () => raf(() => {
             document.querySelectorAll(studioibizz.fakepreload.selectors).forEach(function (element,) {
                 if (isInView(element)) {
                     element.classList.add("visible");
+                    if(element.classList.contains("banner")) {
+                        studioibizz.banner.animate();
+                    }
                 }
             });
         });

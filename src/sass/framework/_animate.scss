@@ -73,11 +73,18 @@
                 overflow:hidden;
         }
     }
+    .slogan {
+        > * {
+            opacity:0;
+            .spacer, .letter { opacity:0; }
+            &.animating { opacity:1; }
+        }
+    }
 
     &.visible {
         .newsflash {
             @include fadeInDownTransform;
-            @include delay(1.2s);
+            @include delay(4.2s);
             @include duration(.7s);
             //> .label {
             //    @include fadeInNewsflashLabel;
@@ -86,7 +93,7 @@
             //}
             > .title {
                 @include fadeInNewsflash();
-                @include delay(2s);
+                @include delay(5s);
                 @include duration(1.2s);
             }
         }
