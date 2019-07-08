@@ -1,6 +1,9 @@
 footer#footer {
     @include vw-font-size(16);
     @include media("min",768,0) { font-size:16px; }
+
+    .invisible { opacity:1; }
+
     .socials {
         display:flex; flex-direction:row; justify-content:space-between; align-items:center;
         @include vw-font-size(14);
