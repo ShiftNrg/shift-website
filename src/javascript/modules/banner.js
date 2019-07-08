@@ -148,9 +148,9 @@ studioibizz.banner = {
                             targets: '.slogan .line3',
                             opacity: [0, 1],
                             translateY: ["50px", 0],
-                            duration: 800,
+                            duration: 750,
                             easing: "easeOutQuad",
-                            offset: '-=350'
+                            offset: '-=600'
                         }
                     )
                     .add(
@@ -158,9 +158,9 @@ studioibizz.banner = {
                             targets: '.banner .image',
                             opacity: [0, 1],
                             translateY: ["-50px", 0],
-                            duration: 800,
+                            duration: 750,
                             easing: "easeOutQuad",
-                            offset: '-=350'
+                            offset: '-=500'
                         }
                     )
                     .add(

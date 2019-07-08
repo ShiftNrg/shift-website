@@ -121,7 +121,7 @@
     &.visible {
         .newsflash {
             @include fadeInDownTransform;
-            @include delay(2.9s);
+            @include delay(2.8s);
             @include duration(.5s);
             //> .label {
             //    @include fadeInNewsflashLabel;
@@ -130,7 +130,7 @@
             //}
             > .title {
                 @include fadeInNewsflash();
-                @include delay(3.5s);
+                @include delay(3.4s);
                 @include duration(.8s);
             }
         }
