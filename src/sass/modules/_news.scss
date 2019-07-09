@@ -51,7 +51,9 @@
         }
         > .inner {
             margin-right:calc(var(--pageoffset) * -1);
-            padding-bottom:var(--smalloffset);
+            @include media("min",768,0) {
+                padding-bottom:var(--smalloffset);
+            }
             > .block-grid.up3 > li {
                 &:nth-child(3n-1) article {
                     &::after {
