@@ -3,7 +3,7 @@ $hamburger-padding-y: 15px;
 $hamburger-layer-width: 20px; // width of the icon box
 $hamburger-layer-height: 1px; // line height
 $hamburger-layer-spacing: 5px; // space between lines
-$hamburger-layer-color: currentColor;
+$hamburger-layer-color: $themecolor;
 $hamburger-layer-border-radius: 0px;
 $hamburger-hover-opacity: 1 !default;
 $hamburger-active-layer-color: $hamburger-layer-color;
@@ -55,11 +55,13 @@ $hamburger-types: (
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    outline:none;
+    overflow:hidden;
 
  border-radius:50%;
     padding:18.5px 15px;
     border:0;
-    background:$cta1;
+    background:#fff;
 
     .hamburger-label {
         //@include spacing(100); @include font-size(14); text-transform:uppercase; font-weight:600;
