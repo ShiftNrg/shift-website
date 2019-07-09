@@ -9,7 +9,9 @@
         background:#fff; z-index:-1; position:absolute; display:block;
     }
 }
-        padding-right:0;
+        @include media("min",768,0) {
+            padding-right:0;
+        }
         article {
             @include vw-padding(70);
             min-height:100%;

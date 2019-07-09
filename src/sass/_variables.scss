@@ -1,26 +1,29 @@
 
 // -- Containers
-$mobile_vw_base         : 750;
+$mobile_vw_base         : 800;
 
 // -- Paddings & Margins & Sizes
 :root {
     // SIZING
     --padding           : 90px;
-    --grid-margin       : 30px;
 
     @include media("min",768,0) {
-        --pageoffset: 130px;
-        --inneroffset: 90px;
-        --smalloffset: 50px;
+        --pageoffset        : 130px;
+        --inneroffset       : 90px;
+        --smalloffset       : 50px;
 
-        --headerheight : 100px;
+        --headerheight      : 100px;
+
+        --grid-margin       : 30px;
     }
     @include media("max",767,0) {
-        --pageoffset: 0px;
-        --inneroffset: 30px;
-        --smalloffset: 30px;
+        --pageoffset        : 0px;
+        --inneroffset       : #{30/400*100vw};
+        --smalloffset       : #{30/400*100vw};
 
-        --headerheight : 60px;
+        --headerheight      : 60px;
+
+        --grid-margin       : 20px;
     }
 }
 

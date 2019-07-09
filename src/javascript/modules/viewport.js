@@ -64,7 +64,7 @@ studioibizz.fakepreload = {
             });
         });
 
-        handler()
-        window.addEventListener('scroll', handler)
+        window.addEventListener('scroll', handler);
+        setTimeout(handler,500);
     }
 };

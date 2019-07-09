@@ -1,7 +1,12 @@
 
 .maincontainer {
     > section.usps {
-        --grid-margin: #{45/1600*100vw};
+        @include media("min",768,0) {
+            --grid-margin: #{45/1600*100vw};
+        }
+        @include media("max",767,0) {
+            --grid-margin: #{30/$mobile_vw_base*100vw};
+        }
 
         @include media("min", 768, 0) {
             background: $xdgrey;
@@ -14,12 +19,19 @@
 
             > .block-grid {
                 @include vw-margin(50, 0, 0);
+                > li {
+                    @include media("max",767,0) {
+                        width:50%;
+                    }
+                }
             }
         }
 
         article {
-            width: 230/1600*100vw;
             text-align: center;
+            @include media("min",1025,0) {
+                width: 230/1600*100vw;
+            }
 
             span.icon {
                 @include vw-font-size(60);

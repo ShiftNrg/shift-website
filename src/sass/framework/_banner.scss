@@ -31,7 +31,9 @@
         > .title {
             overflow:hidden;
             position:relative;
+            text-overflow: ellipsis;
         }
+        a { text-decoration:none; color:inherit; outline:none; }
 
     }
 
@@ -47,9 +49,14 @@
                 line-height: 1.01; font-weight:600;
             }
             &.line3 {
-                @include vw-font-size(20);
                 line-height: 1.4;
-                margin-top:20/1600*100vw;
+                @include vw-margin(20,0,0);
+                @include media("min",768,0) {
+                    @include vw-font-size(20);
+                }
+                @include media("max",767,0) {
+                    @include vw-font-size(16);
+                }
             }
         }
 
@@ -76,16 +83,18 @@
     }
 
     > .socials {
-        display:flex; flex-direction:row; justify-content:flex-end; align-items:center;
+        display:flex; flex-direction:row; align-items:center;
         position:absolute; z-index:3;
         left:0; bottom:0; right:0;
         margin:0 -7.5/14*1em;
         @include media("min",768,0) {
+            justify-content:flex-end;
             min-height:var(--headerheight);
             @include vw-font-size(14);
             padding:15px var(--pageoffset);
         }
         @include media("max",767,0) {
+            justify-content:center;
             @include vw-font-size(10);
             padding:15px var(--smalloffset);
         }

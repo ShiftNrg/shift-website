@@ -77,12 +77,15 @@
             padding:0;
             margin-bottom:0;
             > .inner {
-                padding:var(--inneroffset) var(--pageoffset) var(--inneroffset) var(--inneroffset);
+                padding:var(--inneroffset);
+                @include media("min",768,0) { padding-right:var(--pageoffset); }
             }
         }
         &.usps + .roadmap {
             margin-top:0;
-            > .inner { padding-top:0; }
+            @include media("min",768,0) {
+                > .inner { padding-top:0; }
+            }
         }
     }
 }

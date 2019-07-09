@@ -18,7 +18,6 @@
 @import "modules/usps";
 @import "modules/roadmap";
 @import "modules/news";
-@import "modules/form";
 
 html {
     font-size: 16px;
@@ -78,7 +77,13 @@ p {
 }
 
 .Intro {
-    @include vw-font-size(20); line-height:1.4;
+    line-height:1.4;
+    @include media("min",768,0) {
+        @include vw-font-size(20);
+    }
+    @include media("max",767,0) {
+        @include vw-font-size(16);
+    }
 }
 
 .Intro, .Text {
@@ -90,15 +95,17 @@ p, ul, ol {
 }
     ul {
         list-style:none; margin-left:0;
-        margin-bottom:-30/14*1em;
+        margin-bottom:-30/14*1em; margin-right:-20px;
         padding:0;
         @include media("min",768,0) {
             display:flex; flex-direction:row; justify-content:flex-start; align-items:flex-start; flex-wrap:wrap;
-            width:calc(100% + 20px); margin-right:-20px;
+            width:calc(100% + 20px);
             > li { width:50%; }
         }
         > li {
-            position:relative; padding:0 20px 30/14*1em 35/14*1em;
+            position:relative;
+            @include media("min",768,0) { padding:0 20px 30/14*1em 35/14*1em; }
+            @include media("max",767,0) { padding:0 20px 20/14*1em 30/14*1em; }
         }
         > li::before {
             content:'\f00c'; font-family: 'FontAwesome';
