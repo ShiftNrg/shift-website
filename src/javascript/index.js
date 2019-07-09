@@ -20,6 +20,14 @@ document.addEventListener(
                 document.getElementsByClassName("maincontainer")[0].scrollIntoView({
                     behavior: "smooth"
                 });
+            } else if (action === "togglemenu") {
+                if (document.body.classList.contains("menu-open")) {
+                    document.body.classList.remove("menu-open");
+                    element.classList.remove("is-active");
+                } else {
+                    document.body.classList.add("menu-open");
+                    element.classList.add("is-active");
+                }
             }
         }
     }

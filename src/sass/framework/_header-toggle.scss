@@ -47,7 +47,7 @@ $hamburger-types: (
 @import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 .responsive-menu-button {
-    position:fixed; left:10px; top:10px;
+    position:fixed; left:20px; top:20px;
     z-index:1001; text-align: center; background:none transparent;
     transform:rotate(0); transition:all .5s ease-in-out; cursor: pointer;
     margin: 0;
