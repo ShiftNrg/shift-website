@@ -3,7 +3,7 @@
     background:$gradient1;
     color:#fff;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
-    padding:($headerheight * 1.3) 0;
+    padding:calc(var(--headerheight) * 1.3) 0;
     min-height: 100vh; min-height:var(--vh);
 
     &::before {
@@ -36,9 +36,10 @@
     }
 
     > .slogan {
-        width:750/1600*100vw;
         text-align:center;
         display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
+        @include media("min",768,0) { width:750/1600*100vw; }
+        @include media("max",767,0) { width:calc(100% - #{80/750*100vw}); }
         > * {
             position:relative;
             &.line1, &.line2 {
@@ -77,13 +78,22 @@
     > .socials {
         display:flex; flex-direction:row; justify-content:flex-end; align-items:center;
         position:absolute; z-index:3;
-        padding:15px $pageoffset;
-        min-height:$headerheight;
         left:0; bottom:0; right:0;
-        @include vw-font-size(14);
         margin:0 -7.5/14*1em;
+        @include media("min",768,0) {
+            min-height:var(--headerheight);
+            @include vw-font-size(14);
+            padding:15px var(--pageoffset);
+        }
+        @include media("max",767,0) {
+            @include vw-font-size(10);
+            padding:15px var(--smalloffset);
+        }
         > * {
             margin:0 7.5/14*1em;
+            @include media("max",767,0) {
+                &.seperator { display:none; }
+            }
         }
         > .label, > .seperator {
             font-weight:600;
@@ -98,7 +108,7 @@
         border:0; background:none transparent;
         position:absolute; display:block;
         z-index:10;
-        left:50%; top:calc(100% - #{$headerheight / 2});
+        left:50%; top:calc(100% - calc(var(--headerheight) * .5));
         transform:translate(-50%,-50%);
         color:#fff;
         span.icon {
@@ -108,6 +118,7 @@
                 animation:bounce_scroll 5s infinite;
             }
         }
+        @include media("max",767,0) { display:none !important; }
     }
 }
 

@@ -5,7 +5,7 @@
 
         @include media("min", 768, 0) {
             background: $xdgrey;
-            padding-bottom: $pageoffset;
+            padding-bottom: var(--pageoffset);
             @include before($xdgrey);
         }
 

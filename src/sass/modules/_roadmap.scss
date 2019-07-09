@@ -1,7 +1,7 @@
 .roadmap {
     background: $xdgrey;
     color:#fff;
-    padding-bottom: $pageoffset;
+    padding-bottom: var(--pageoffset);
     align-items:stretch;
     @include media("min", 768, 0) {
         @include before($xdgrey);
@@ -18,7 +18,7 @@
     }
 
     .roadmapCarousel {
-        margin-right:-$pageoffset;
+        margin-right:calc(var(--pageoffset) * -1);
         .glide__slide {
             @include vw-padding(0,0,65); position:relative;
             &::before, &::after {

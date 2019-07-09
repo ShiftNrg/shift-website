@@ -579,5 +579,9 @@
         transition: all .3s ease-in-out;
     }
 </style>
+<script>
+    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        document.write('<script src="/polyfills/css-vars-ponyfill.min.js"><\/script>');
+</script>
 </body>
 </html>

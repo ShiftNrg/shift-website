@@ -29,22 +29,22 @@
 
 
 .maincontainer {
-    padding:0 $pageoffset;
+    padding:0 var(--pageoffset);
     > section, > article {
         position: relative;
-        margin: $inneroffset 0;
-        padding: 0 $inneroffset;
+        margin: var(--inneroffset) 0;
+        padding: 0 var(--inneroffset);
     }
     > section {
         .payoff {
             display:none;
         @include media("min",768,0) {
                 font-size:15px; writing-mode: vertical-lr;
-                position:absolute; width:$pageoffset;
+                position:absolute; width:var(--pageoffset);
                 color:$textcolor; background:$xlgrey;
-                left:-$pageoffset; top:0;
+                left:calc(var(--pageoffset) * -1); top:0;
                 display:flex; flex-direction:row; justify-content:flex-start; align-items:center;
-                padding-bottom:$smalloffset;
+                padding-bottom:var(--smalloffset);
             white-space:nowrap;
         &::after {
                 content:''; width:1px; margin-top:10/15*1em; vertical-align: middle;
@@ -53,22 +53,31 @@
         }
         }
         &.maintext {
-            padding-top:$inneroffset * 0.7777; margin-top:0;
-            margin-bottom:$inneroffset * 0.7777;
+            margin-top:0;
+            @include media("min",768,0) {
+                padding-top:calc(var(--inneroffset) * 0.7777);
+                margin-bottom:calc(var(--inneroffset) * 0.7777);
+            }
+            @include media("max",767,0) {
+                padding-top:calc(var(--inneroffset) * 1.25);
+                margin-bottom:calc(var(--inneroffset) * 1.25);
+            }
             > .inner {
-                width:600/1600*100vw; max-width:100%;
+
+                max-width:100%;
                 text-align:center;
+                @include media("min",768,0) { width:600/1600*100vw; }
                 nav {
                     justify-content:center; @include vw-margin(25,0,0);
                 }
             }
         }
         &.usps, &.roadmap {
-            margin-right:-$pageoffset; width:calc(100% + #{$pageoffset});
+            margin-right:calc(var(--pageoffset) * -1); width:calc(100% + var(--pageoffset));
             padding:0;
             margin-bottom:0;
             > .inner {
-                padding:$inneroffset $pageoffset $inneroffset $inneroffset;
+                padding:var(--inneroffset) var(--pageoffset) var(--inneroffset) var(--inneroffset);
             }
         }
         &.usps + .roadmap {
