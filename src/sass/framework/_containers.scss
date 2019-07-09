@@ -79,6 +79,7 @@
             > .inner {
                 padding:var(--inneroffset);
                 @include media("min",768,0) { padding-right:var(--pageoffset); }
+                @include media("max",767,0) { padding-top:calc(var(--inneroffset) * 1.5); padding-bottom:calc(var(--inneroffset) * 1.5); }
             }
         }
         &.usps + .roadmap {

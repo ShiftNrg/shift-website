@@ -4,7 +4,7 @@
     color:#fff;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     padding:calc(var(--headerheight) * 1.3) 0;
-    min-height: 100vh; min-height:var(--vh);
+    min-height: 100vh; min-height:var(--vh); min-height: -webkit-fill-available;
 
     &::before {
         content:''; left:0; top:0; right:0; bottom:0; position:absolute; display:block;
@@ -96,7 +96,7 @@
         @include media("max",767,0) {
             justify-content:center;
             @include vw-font-size(10);
-            padding:15px var(--smalloffset);
+            padding:var(--smalloffset) 10px;
         }
         > * {
             margin:0 7.5/14*1em;

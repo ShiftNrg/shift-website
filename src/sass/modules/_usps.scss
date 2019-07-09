@@ -34,10 +34,15 @@
             }
 
             span.icon {
-                @include vw-font-size(60);
                 color: $themecolor;
                 @include vw-margin(0, 0, 15);
                 display: block;
+                @include media("min",768,0) {
+                    @include vw-font-size(60);
+                }
+                @include media("max",767,0) {
+                    @include vw-font-size(100);
+                }
             }
 
             h5 {
