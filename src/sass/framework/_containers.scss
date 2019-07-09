@@ -5,7 +5,7 @@
     position: relative;
     opacity:0;
     animation-duration:1.6s;animation-fill-mode:both; animation-name:fadeIn;
-    min-height: 100vh; min-height:var(--vh);
+    min-height: 100vh; min-height:var(--vh); min-height: -webkit-fill-available;
 
     > * {
         background: $xlgrey;

@@ -1,0 +1,73 @@
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 20px; // width of the icon box
+$hamburger-layer-height: 1px; // line height
+$hamburger-layer-spacing: 5px; // space between lines
+$hamburger-layer-color: currentColor;
+$hamburger-layer-border-radius: 0px;
+$hamburger-hover-opacity: 1 !default;
+$hamburger-active-layer-color: $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+// Types (Remove or comment out what you don’t need)
+$hamburger-types: (
+    //3dx,
+    //3dx-r,
+    //3dy,
+    //3dy-r,
+    //3dxy,
+    //3dxy-r,
+    //arrow,
+    //arrow-r,
+    //arrowalt,
+    //arrowalt-r,
+    //arrowturn,
+    //arrowturn-r,
+    //boring,
+    //collapse,
+    //collapse-r,
+    //elastic,
+    //elastic-r,
+    //emphatic,
+    //emphatic-r,
+    //minus,
+    //slider,
+    //slider-r,
+    //spring,
+    //spring-r,
+    //stand,
+    //stand-r,
+    //spin,
+    //spin-r,
+        squeeze,
+    //vortex,
+    //vortex-r
+);
+
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+.responsive-menu-button {
+    position:fixed; left:10px; top:10px;
+    z-index:1001; text-align: center; background:none transparent;
+    transform:rotate(0); transition:all .5s ease-in-out; cursor: pointer;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+ border-radius:50%;
+    padding:18.5px 15px;
+    border:0;
+    background:$themecolor;
+
+    .hamburger-label {
+        //@include spacing(100); @include font-size(14); text-transform:uppercase; font-weight:600;
+        &:first-child {
+            margin-right: 10px;
+        }
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
+}

@@ -145,6 +145,7 @@
 }
 
 .banner.invisible {
+    opacity:1;
     .newsflash {
         opacity:0;
         //> .label {
@@ -240,7 +241,12 @@ opacity:0;
         > .inner {
             > nav > .more-inline {
                 @include fadeInRight();
-                @include delay(1.3s);
+                @include media("min",768,0) {
+                    @include delay(1.3s);
+                }
+                @include media("max",767,0) {
+                    @include delay(.9s);
+                }
             }
         }
         @include media("min",768,0) {
