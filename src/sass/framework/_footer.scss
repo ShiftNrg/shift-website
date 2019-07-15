@@ -6,6 +6,10 @@ footer#footer {
     @include media("max",767,0) {
         @include vw-font-size(11);
     }
+    @include media("min",768,991) {
+        font-size:11px;
+        --inneroffset: var(--pageoffset);
+    }
 
     .invisible { opacity:1; }
 
@@ -84,7 +88,7 @@ footer#footer {
         }
 
         .logo {
-            width:117px; display:block;
+            width:117px; max-width:calc(100% - 20px); overflow:hidden; display:block;
             margin-top:calc(var(--inneroffset) * -0.2222);
             @include media("max",767,0) { @include vw-margin(0,0,40); }
         }
@@ -97,6 +101,9 @@ footer#footer {
             display:flex; flex-direction:row; justify-content:space-between; align-items:center;
             width:100%;
             padding:var(--smalloffset) var(--pageoffset);
+        }
+        @include media("min",768,1024) {
+            .socials > .label { display:none; }
         }
         @include media("max",767,0) {
             padding:var(--smalloffset);

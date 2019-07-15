@@ -46,6 +46,14 @@
                     &:hover {
                         color:rgba(#fff,0.5);
                     }
+                    @include media("min",768,1024) {
+                        font-size:12px;
+                    }
+                }
+                @include media("min",768,1024) {
+                    &:not(.cta) > a {
+                        padding-left:1em; padding-right:1em;
+                    }
                 }
                 &.dropdown > a::after {
                     content:'\f107'; font-family:$icons; margin-left:5/15*1em; font-weight:normal;
@@ -58,9 +66,12 @@
                         font-weight:500;
                     }
                     &.cta > a {
-                        @include button(16); font-weight:600;
+                        font-weight:600;
                         border:1px solid currentColor;
-                        padding:11.5/16*1em 25/16*1em;
+                        @include media("min",1025,0) {
+                            @include button(16);
+                            padding:11.5/16*1em 25/16*1em;
+                        }
                     }
                 }
             }

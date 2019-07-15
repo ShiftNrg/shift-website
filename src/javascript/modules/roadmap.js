@@ -11,7 +11,7 @@ studioibizz.roadmap = {
                 type: 'slider',
                 startAt: 0,
                 perView: screenWidth <= 767 ? 1.5 : 3.6,
-                gap: 30,
+                gap: screenWidth <= 1024 ? 10 : 30,
                 rewind: false,
                 bound: true
             });

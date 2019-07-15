@@ -5,6 +5,8 @@
     align-items:stretch;
     @include media("min", 768, 0) {
         @include before($xdgrey);
+    }
+    @include media("min",1025,0) {
         > .inner {
             > .Intro {
                 width:650/1600*100vw;
