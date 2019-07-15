@@ -18,12 +18,12 @@
             min-height:100%;
             color:#fff;
             position:relative; z-index:2;
-            &::before {
-                content:''; left:70/1600*100vw; top:0; right:0; height:281/1600*100vw;
-                background:url(../images/decoration2.png) no-repeat right top / 100% auto;
-                background-size:contain;
-                position:absolute;
-            }
+            //&::before {
+            //    content:''; left:70/1600*100vw; top:0; right:0; height:281/1600*100vw;
+            //    background:url(../images/decoration2.png) no-repeat right top / 100% auto;
+            //    background-size:contain;
+            //    position:absolute;
+            //}
             &::after {
                 content:''; left:0; top:0; right:0; bottom:0;
                 background:$themecolor;
@@ -32,6 +32,22 @@
             > .inner {
                 width:100%;
                 @include vw-padding(261,0,0);
+                > time {
+                    @include vw-margin(-105,-105,0,0);
+                    position:absolute; right:0; top:0; white-space:nowrap;
+                    color:rgba(#fff,0.4); line-height:0.8; font-weight:600; text-transform: uppercase;
+                    @include spacing(20);
+                    text-align:right;
+                    > span {
+                        display:block;
+                        &.day {
+                            @include vw-font-size(235);
+                        }
+                        &.month {
+                            @include vw-font-size(145); @include vw-margin(0,20,0,0);
+                        }
+                    }
+                }
                 > .category {
                     border:1px solid currentColor; text-transform:uppercase; font-weight:600;
                     @include vw-font-size(11);
