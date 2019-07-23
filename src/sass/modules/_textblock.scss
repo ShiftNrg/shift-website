@@ -32,12 +32,18 @@
             content:''; position:absolute; z-index:-1;
             left:50%; top:0; bottom:0; width:100vw; max-width:100vw; transform:translate(-50%,0);
             background:$llgrey;
-            margin-left:var(--inneroffset);
         }
     }
-    &:nth-of-type(4n) {
-        &::before {
-            margin-left:calc(var(--inneroffset) * -1);
+    @include media("min",768,0) {
+        &:nth-of-type(2n) {
+            &::before {
+                margin-left: var(--inneroffset);
+            }
+        }
+        &:nth-of-type(4n) {
+            &::before {
+                margin-left:calc(var(--inneroffset) * -1);
+            }
         }
     }
 }
