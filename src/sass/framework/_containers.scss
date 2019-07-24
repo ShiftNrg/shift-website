@@ -97,5 +97,10 @@
                 > .inner { padding-top:0; }
             }
         }
+        &.roadmap {
+            > .inner {
+                padding-left:0;
+            }
+        }
     }
 }
