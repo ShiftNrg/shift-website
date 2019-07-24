@@ -24,33 +24,33 @@ nav {
         border-radius:22.5/16*1em;
         font-weight:600;
     }
-    .more-inline {
-        @include vw-font-size(16); line-height:20/16*1em;
-        padding:11.5/16*1em 0;
-        color:$themecolor;
-        background:none transparent;
-        border:0;
-        border-radius:0;
-        font-weight:normal;
-        &::after {
-            content:'\f105'; font-family:$icons; margin-left:10/16*1em; font-weight:normal; font-weight:normal;
-        }
+}
+.more-inline {
+    @include vw-font-size(16); line-height:20/16*1em;
+    padding:11.5/16*1em 0;
+    color:$themecolor;
+    background:none transparent;
+    border:0;
+    border-radius:0;
+    font-weight:normal;
+    &::after {
+        content:'\f105'; font-family:$icons; margin-left:10/16*1em; font-weight:normal; font-weight:normal;
     }
-    .more-inline2 {
-        @include vw-font-size(16); line-height:20/16*1em;
-        padding:5.5/16*1em 0;
-        color:inherit;
-        background:none transparent;
-        border:0;
-        border-radius:0;
-        font-weight:normal;
-        position:relative;
-        &::before {
-            content:''; left:0; right:0; bottom:0; height:2px;
-            background:currentColor; position:absolute; display:block;
-        }
-        &:hover::before {
-            content:''; left:100%;
-        }
+}
+.more-inline2 {
+    @include vw-font-size(16); line-height:20/16*1em;
+    padding:5.5/16*1em 0;
+    color:inherit;
+    background:none transparent;
+    border:0;
+    border-radius:0;
+    font-weight:normal;
+    position:relative;
+    &::before {
+        content:''; left:0; right:0; bottom:0; height:2px;
+        background:currentColor; position:absolute; display:block;
+    }
+    &:hover::before {
+        content:''; left:100%;
     }
 }

@@ -15,6 +15,7 @@
 @import "framework/footer";
 
 // -- Modules
+@import "modules/locknload";
 @import "modules/textblock";
 @import "modules/usps";
 @import "modules/roadmap";
@@ -80,7 +81,7 @@ p {
 .Intro {
     line-height:1.4;
     @include media("min",768,0) {
-        @include vw-font-size(20);
+        @include vw-font-size(19);
     }
     @include media("max",767,0) {
         @include vw-font-size(16);

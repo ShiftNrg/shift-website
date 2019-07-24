@@ -57,7 +57,7 @@
             }
         }
         }
-        &.maintext {
+        &.locknload {
             margin-top:0;
             @include media("min",768,1024) {
                 padding-top:calc(var(--inneroffset) * 1.5);
@@ -72,10 +72,9 @@
                 margin-bottom:calc(var(--inneroffset) * 1.25);
             }
             > .inner {
-
                 max-width:100%;
                 text-align:center;
-                @include media("min",1025,0) { width:600/1600*100vw; }
+                @include media("min",1025,0) { width:990/1600*100vw; }
                 nav {
                     justify-content:center; @include vw-margin(25,0,0);
                 }

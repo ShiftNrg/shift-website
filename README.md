@@ -1,4 +1,4 @@
-# Shift Projects Installation
+# Shift Project Installation
 
 
 Install all packages:

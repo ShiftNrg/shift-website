@@ -78,7 +78,7 @@ $gradient1              : linear-gradient(to right, $themecolor 0%, $themecolor2
     font-family: $heading;
     font-weight: 600;
     @include spacing(40);
-    @include vw-font-size(48);
+    @include vw-font-size(46);
 }
 @mixin heading2(){
     line-height: 1.2;
