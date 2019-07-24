@@ -1,17 +1,19 @@
 .textblock {
     @include media("min",768,0) {
-        flex-direction:row; align-items:center;
-        > figure, > .inner {
-            width:50%;
+        > .inner {
+            display: flex; flex-direction: row; justify-content: flex-start; align-items:center; width:100%;
+            > figure, > .aside {
+                width:50%;
+            }
         }
-        &:nth-of-type(2n-1) {
-            > .inner {
+        &:nth-child(2n-1) > .inner {
+            > .aside {
                 padding-left:var(--pageoffset);
             }
         }
-        &:nth-of-type(2n) {
+        &:nth-child(2n) > .inner {
             flex-direction:row-reverse;
-            > .inner {
+            > .aside {
                 padding-right:var(--pageoffset);
             }
         }

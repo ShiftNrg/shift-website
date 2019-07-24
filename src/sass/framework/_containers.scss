@@ -35,6 +35,20 @@
         margin: var(--inneroffset) 0;
         padding: 0 var(--inneroffset);
     }
+    > *:not(.news):not(.roadmap) {
+        &:nth-child(4n-3) {
+            // white
+        }
+        &:nth-child(4n-2) {
+            // light grey margin-right
+        }
+        &:nth-child(4n-1) {
+            // dark purple
+        }
+        &:nth-child(4n) {
+            // light grey margin-left
+        }
+    }
     > section {
         .payoff {
             display:none;
@@ -58,19 +72,19 @@
         }
         }
         &.locknload {
-            margin-top:0;
-            @include media("min",768,1024) {
-                padding-top:calc(var(--inneroffset) * 1.5);
-                margin-bottom:calc(var(--inneroffset) * 1.5);
-            }
-            @include media("min",1025,0) {
-                padding-top:calc(var(--inneroffset) * 0.7777);
-                margin-bottom:calc(var(--inneroffset) * 0.7777);
-            }
-            @include media("max",767,0) {
-                padding-top:calc(var(--inneroffset) * 1.25);
-                margin-bottom:calc(var(--inneroffset) * 1.25);
-            }
+            //margin-top:0;
+            //@include media("min",768,1024) {
+            //    padding-top:calc(var(--inneroffset) * 1.5);
+            //    margin-bottom:calc(var(--inneroffset) * 1.5);
+            //}
+            //@include media("min",1025,0) {
+            //    padding-top:calc(var(--inneroffset) * 0.7777);
+            //    margin-bottom:calc(var(--inneroffset) * 0.7777);
+            //}
+            //@include media("max",767,0) {
+            //    padding-top:calc(var(--inneroffset) * 1.25);
+            //    margin-bottom:calc(var(--inneroffset) * 1.25);
+            //}
             > .inner {
                 max-width:100%;
                 text-align:center;

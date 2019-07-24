@@ -147,7 +147,8 @@
                 }
                 > nav {
                     position: absolute;
-                    right: var(--pageoffset);
+                    //right: var(--pageoffset);
+                    right:0;
                     top: 0;
                     width: auto;
                     left: auto;
