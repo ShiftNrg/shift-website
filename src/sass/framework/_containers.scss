@@ -105,6 +105,13 @@
                 color: #fff;
             }
 
+            > .inner {
+                > .aside {
+                    > nav {
+                        border-color:rgba(#fff,0.3);
+                    }
+                }
+            }
             @include media("min", 768, 0) {
                 &::before {
                     content: '';

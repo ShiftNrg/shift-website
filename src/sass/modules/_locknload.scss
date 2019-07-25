@@ -18,15 +18,17 @@ ol.steps {
     overflow:visible;
     &, > li { list-style:none;  }
     > li {
-        margin:0; padding:0; @include vw-padding(0,40);
+        margin:0; padding:0;
         counter-increment: section;
         position:relative;
         overflow:visible;
         @include media("min",768,0) {
             width:25%;
+            @include vw-padding(0,40);
         }
         @include media("max",767,0) {
             width:50%;
+            @include vw-padding(0,10);
         }
 
         .next {
@@ -83,8 +85,10 @@ ol.steps {
         }
     }
     &.reversed {
-        flex-direction:row-reverse;
         opacity:0; visibility: hidden;
+        @include media("min",768,0) {
+            flex-direction:row-reverse;
+        }
         > li {
             article {
                 margin-bottom:-300px;
@@ -109,27 +113,29 @@ ol.steps {
     }
     &.inactive {
         --iconopacity: 0.3;
-        > li {
-            &:nth-child(4n) {
-                .next {
-                    opacity:1; visibility: visible;
+        @include media("min",768,0) {
+            > li {
+                &:nth-child(4n) {
+                    .next {
+                        opacity:1; visibility: visible;
+                    }
                 }
-            }
-            &:nth-child(4n-3), &:nth-child(4n) {
-                article {
-                    padding-top:60%;
+                &:nth-child(4n-3), &:nth-child(4n) {
+                    article {
+                        padding-top:60%;
+                    }
                 }
-            }
-            &:nth-child(4n-3) {
-                .next {
-                    top:50%; margin-top:0;
-                    svg { transform:rotate(-45deg); }
+                &:nth-child(4n-3) {
+                    .next {
+                        top:50%; margin-top:0;
+                        svg { transform:rotate(-45deg); }
+                    }
                 }
-            }
-            &:nth-child(4n-1) {
-                .next {
-                    top:100%; margin-top:0;
-                    svg { transform:rotate(45deg); }
+                &:nth-child(4n-1) {
+                    .next {
+                        top:100%; margin-top:0;
+                        svg { transform:rotate(45deg); }
+                    }
                 }
             }
         }

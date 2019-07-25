@@ -6,6 +6,10 @@
         }
         @include media("max",767,0) {
             --grid-margin: #{30/$mobile_vw_base*100vw};
+            > .inner {
+                padding-top:calc(var(--inneroffset) * 2);
+                padding-bottom:calc(var(--inneroffset) * 2);
+            }
         }
 
         > .inner {
