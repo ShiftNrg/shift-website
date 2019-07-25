@@ -48,7 +48,9 @@ ol.steps {
         }
 
         article {
+            padding-top:0;
             @include vw-font-size(16);
+            transition:all .3s ease-in-out;
             span.icon {
                 @include vw-font-size(58);
                 color:$themecolor;
@@ -82,8 +84,13 @@ ol.steps {
     }
     &.reversed {
         flex-direction:row-reverse;
-        display:none;
+        opacity:0; visibility: hidden;
         > li {
+            article {
+                margin-bottom:-300px;
+                opacity:0; visibility: hidden;
+                transition:all .3s ease-in-out;
+            }
             .next {
                 left:0;
                 svg {
@@ -125,7 +132,12 @@ ol.steps {
             }
         }
         + .reversed {
-            display:flex;
+            opacity:1; visibility: visible;
+            > li {
+                article {
+                    margin-bottom:0; opacity:1; visibility: visible;
+                }
+            }
         }
     }
     + .Intro {

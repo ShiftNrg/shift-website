@@ -30,7 +30,7 @@ document.addEventListener(
                 }
             } else if (action === "locknload") {
                 if (document.getElementsByClassName("steps")[0].classList.contains("inactive")) {
-                    document.getElementsByClassName("steps")[0].classLis.remove("inactive");
+                    document.getElementsByClassName("steps")[0].classList.remove("inactive");
                 } else {
                     document.getElementsByClassName("steps")[0].classList.add("inactive");
                 }
