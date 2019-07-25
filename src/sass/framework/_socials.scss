@@ -54,13 +54,13 @@ footer#footer .socials, .stickysocials {
             @include animate;
             @include fadeInUpSmall();
             + * {
-                animation-delay:.3s;
+                animation-delay:.2s;
                 + * {
-                    animation-delay:.6s;
+                    animation-delay:.4s;
                     + * {
-                        animation-delay:.9s;
+                        animation-delay:.6s;
                         + * {
-                            animation-delay:1.2s;
+                            animation-delay:.8s;
                         }
                     }
                 }

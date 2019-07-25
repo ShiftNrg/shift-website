@@ -216,10 +216,30 @@
 }
 
 
-.maintext.invisible {
-opacity:0;
+.locknload.invisible {
+    opacity:0;
+    .steps > li {
+        opacity:0;
+        position:relative;
+    }
     &.visible {
             @include fadeInUp;
+        .steps > li {
+            @include fadeInUp;
+            @include delay(.4s);
+            @include duration(1s);
+            + li {
+                @include delay(.7s);
+                @include media("min",768,0) {
+                    + li {
+                        @include delay(1.0s);
+                        + li {
+                            @include delay(1.3s);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
