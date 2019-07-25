@@ -53,6 +53,7 @@
 .maincontainer {
     > section, > article {
         position: relative;
+        @include media("max",767,0) { padding: 0 var(--inneroffset); }
     }
 
     > * {
@@ -68,8 +69,8 @@
         &:nth-child(4n-3) {
             // white
             > .inner {
-                padding-left: var(--pageoffset);
-                padding-right: var(--pageoffset);
+                padding-left: calc(var(--pageoffset) + var(--inneroffset));
+                padding-right: calc(var(--pageoffset) + var(--inneroffset));
             }
         }
         &:nth-child(4n-2) {
@@ -158,7 +159,7 @@
                     @include reveal-bg(1,1.65s,0s);
                 }
                 > .inner {
-                    @include fadeIn(1,.3s,.35s);
+                    @include fadeIn(1,.3s,.375s);
                 }
             }
         }

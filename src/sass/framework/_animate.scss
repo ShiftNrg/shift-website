@@ -273,7 +273,7 @@
             }
             ~ .Intro, ~ nav {
                 @include fadeInUp;
-                @include delay(.4s);
+                @include delay(.9s);
                 @include duration(1s);
             }
         }
@@ -319,8 +319,8 @@
             }
         }
     }
-    &:nth-child(4n-1) {
-        // dark purple
+    &:nth-child(4n-1), &:nth-child(4n-3) {
+        // dark purple & white
         > .inner {
             > figure, > .aside {
                 @include delay(.4s);
