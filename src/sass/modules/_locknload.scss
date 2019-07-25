@@ -93,6 +93,8 @@ ol.steps {
             }
             .next {
                 left:0;
+                opacity:0;
+                visibility: hidden;
                 svg {
                     transform:rotate(180deg);
                 }
@@ -136,6 +138,9 @@ ol.steps {
             > li {
                 article {
                     margin-bottom:0; opacity:1; visibility: visible;
+                }
+                .next {
+                    opacity:1; visibility: visible;
                 }
             }
         }
