@@ -28,6 +28,12 @@ document.addEventListener(
                     document.body.classList.add("menu-open");
                     element.classList.add("is-active");
                 }
+            } else if (action === "locknload") {
+                if (document.getElementsByClassName("steps")[0].classList.contains("inactive")) {
+                    document.getElementsByClassName("steps")[0].classLis.remove("inactive");
+                } else {
+                    document.getElementsByClassName("steps")[0].classList.add("inactive");
+                }
             }
         }
     }

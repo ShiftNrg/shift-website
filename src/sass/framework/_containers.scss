@@ -13,7 +13,7 @@
     min-height: -webkit-fill-available;
 
     > * {
-        background: $xlgrey;
+        background: #fff;
     }
 
     > .backlayer, > .frontlayer {
@@ -157,10 +157,13 @@
 
         &.locknload {
             > .inner {
-                max-width: 100%;
                 text-align: center;
-                @include media("min", 1025, 0) {
-                    width: 1200/1600*100vw;
+                > h1, > .Intro {
+                    max-width: 100%;
+                    margin-left:auto; margin-right:auto;
+                    @include media("min", 1025, 0) {
+                        width: 1000/1600*100vw;
+                    }
                 }
 
                 nav {
