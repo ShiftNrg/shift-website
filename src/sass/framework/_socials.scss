@@ -1,0 +1,72 @@
+
+footer#footer .socials, .stickysocials {
+    display:flex; flex-direction:row; justify-content:space-between; align-items:center;
+    @include vw-font-size(14);
+    @include vw-margin(0,-7.5);
+    > * {
+        @include vw-margin(0,7.5);
+    }
+    > .label {
+        font-weight:600;
+        &::after {
+            width:34/14*1em; height:1px; display:inline-block; vertical-align:middle; background:currentColor;
+            position:relative; content:'';
+            margin-left:15/14*1em;
+        }
+    }
+    > a {
+        color:$themecolor3;
+        &:hover { color:#fff; }
+        @include media("min",768,0) {
+            @include vw-font-size(34);
+        }
+        @include media("max",767,0) {
+            @include vw-font-size(55);
+        }
+    }
+}
+
+.stickysocials {
+    flex-direction:column;
+    margin:0;
+    position:fixed; right:0; transform:translate(0,-50%); top:50%;
+    z-index:1010; width:var(--pageoffset);
+    opacity:0;
+    transition:.3s ease-in-out;
+    > * {
+        @include vw-margin(2.5,0); line-height:1;
+    }
+    > .label {
+        display: flex; flex-direction: column; justify-content: center; align-items:center;
+        width:100/1600*100vw;
+        text-align:center;
+        color:#8c8c9a;
+        pointer-events:none;
+        &::after {
+            height:34/14*1em; width:1px; margin:10/14*1em 0;
+        }
+    }
+}
+.banner.past ~ .stickysocials, header#header + .maincontainer ~ .stickysocials {
+    opacity:1;
+        > * {
+            @include animate;
+            @include fadeInUpSmall();
+            + * {
+                animation-delay:.3s;
+                + * {
+                    animation-delay:.6s;
+                    + * {
+                        animation-delay:.9s;
+                        + * {
+                            animation-delay:1.2s;
+                        }
+                    }
+                }
+            }
+        }
+}
+.scene > .maincontainer.past ~ .stickysocials {
+    // Overrules the banner past.
+    opacity:0;
+}

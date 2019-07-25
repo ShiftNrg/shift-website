@@ -14,33 +14,6 @@ footer#footer {
 
     .invisible { opacity:1; }
 
-    .socials {
-        display:flex; flex-direction:row; justify-content:space-between; align-items:center;
-        @include vw-font-size(14);
-        @include vw-margin(0,-7.5);
-        > * {
-            @include vw-margin(0,7.5);
-        }
-        > .label {
-            font-weight:600;
-            &::after {
-                width:34/14*1em; height:1px; display:inline-block; vertical-align:middle; background:currentColor;
-                position:relative; content:'';
-                margin-left:15/14*1em;
-            }
-        }
-        > a {
-            color:$themecolor3;
-            &:hover { color:#fff; }
-            @include media("min",768,0) {
-                @include vw-font-size(34);
-            }
-            @include media("max",767,0) {
-                @include vw-font-size(55);
-            }
-        }
-    }
-
     #footer-top, #footer-middle {
         color:#fff; background:$gradient1;
         margin-left:var(--pageoffset);
@@ -130,6 +103,7 @@ footer#footer {
         }
     }
 }
+
 
 .linkgroups {
     margin-bottom:-20px;

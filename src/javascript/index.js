@@ -39,4 +39,21 @@ document.addEventListener(
     }
 );
 
+window.addEventListener("scroll", function() {
+    var bannerTarget = document.getElementsByClassName("banner")[0];
+    if (bannerTarget) {
+        if (window.scrollY > (bannerTarget.offsetTop + bannerTarget.offsetHeight - 200)) {
+            bannerTarget.classList.add("past");
+        } else {
+            bannerTarget.classList.remove("past");
+        }
+    }
+    var maincontainerTarget = document.getElementsByClassName("maincontainer")[0];
+    if (window.scrollY > (maincontainerTarget.offsetTop + maincontainerTarget.offsetHeight - window.innerHeight)) {
+        maincontainerTarget.classList.add("past");
+    } else {
+        maincontainerTarget.classList.remove("past");
+    }
+});
+
 studioibizz.fakepreload.init();
