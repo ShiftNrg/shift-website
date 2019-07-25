@@ -13,7 +13,8 @@ studioibizz.roadmap = {
                 perView: screenWidth <= 767 ? 1.5 : 3.6,
                 gap: screenWidth <= 1024 ? 10 : 30,
                 rewind: false,
-                bound: true
+                bound: true,
+                animationDuration: 900
             });
             studioibizz.roadmap.slider.mount();
     },

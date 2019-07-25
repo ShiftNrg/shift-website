@@ -22,6 +22,12 @@
     .roadmapCarousel {
         @include media("max",767,0) { --pageoffset: var(--inneroffset); }
         margin-right:calc(var(--pageoffset) * -1);
+position:relative;
+        color:inherit;
+        .glide__arrows {
+            position:absolute; right:var(--pageoffset); bottom:100%;
+            @include vw-margin(0,0,50);
+        }
         .glide__slide {
             @include vw-padding(0,0,65); position:relative;
             &::before, &::after {
@@ -94,4 +100,26 @@
         }
     }
 
+}
+.glide__arrows {
+    display: flex; flex-direction: row; justify-content: flex-start; align-items:center;
+    > .glide__arrow {
+        color:inherit; margin-left:10px;
+        border:1px solid currentColor; line-height:20/20*1em; padding:20/20*1em;
+        font-size:20px;
+        background:none transparent; display:block;
+        border-radius:50%;
+        span.icon {
+            color:$themecolor;
+            transition:all .3s ease-in-out;
+        }
+        &.glide__arrow--left {
+            span.icon {
+                transform:scaleX(-1); color:$themecolor3;
+            }
+        }
+        &.glide__arrow--right { }
+
+        &:hover span.icon { color:#fff; }
+    }
 }
