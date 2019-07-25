@@ -38,8 +38,11 @@ body {
     font-family: $text;
     line-height: inherit;
     font-weight: 500;
-    @include spacing(40);
     @include vw-font-size(14);
+    @include media("min",768,0) {
+        @include spacing(40);
+    }
+
 }
 
 /* titles & text */

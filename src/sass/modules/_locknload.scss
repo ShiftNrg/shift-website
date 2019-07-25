@@ -8,6 +8,14 @@
         }
 
         counter-reset: section;
+
+        > .inner {
+            > nav {
+                @include media("max",767,0) {
+                    width:auto; margin-left:auto; margin-right:auto; flex-direction:column; align-items:stretch;
+                }
+            }
+        }
     }
 }
 
@@ -27,7 +35,7 @@ ol.steps {
             @include vw-padding(0,40);
         }
         @include media("max",767,0) {
-            width:50%;
+            width:50%; margin-bottom:20px;
             @include vw-padding(0,10);
         }
 
@@ -54,11 +62,16 @@ ol.steps {
             @include vw-font-size(16);
             transition:all .3s ease-in-out;
             span.icon {
-                @include vw-font-size(58);
                 color:$themecolor;
                 width:1em; height:1em;
                 opacity:var(--iconopacity,1);
                 transition:all .3s ease-in-out;
+                @include media("min",768,0) {
+                    @include vw-font-size(58);
+                }
+                @include media("max",767,0) {
+                    @include vw-font-size(90);
+                }
             }
             > h3 {
                 font-size:20/16*1em; font-weight:bold;
@@ -76,11 +89,42 @@ ol.steps {
                 }
             }
         }
-        &:nth-child(4n) {
-            .next {
-                opacity:0; visibility: hidden;
-                left:0; top:100%; margin-top:0;
-                svg { transform:rotate(135deg); }
+        @include media("min",768,0) {
+            &:nth-child(4n) {
+                .next {
+                    opacity:0; visibility: hidden;
+                    left:0; top:100%; margin-top:0;
+                    svg { transform:rotate(135deg); }
+                }
+            }
+        }
+        @include media("max",767,0) {
+            &:nth-child(4n) {
+                left:-50%;
+                .next {
+                    left:50%; top:100%; margin-top:10px;
+                    opacity:0;
+                    svg {
+                        transform:rotate(90deg);
+                    }
+                }
+            }
+            &:nth-child(4n-1) {
+                left:50%;
+                .next {
+                    left:0;
+                    svg {
+                        transform:rotate(180deg);
+                    }
+                }
+            }
+            &:nth-child(4n-2) {
+                .next {
+                    left:50%; top:100%; margin-top:10px;
+                    svg {
+                        transform:rotate(90deg);
+                    }
+                }
             }
         }
     }
@@ -91,35 +135,43 @@ ol.steps {
         }
         > li {
             article {
-                margin-bottom:-300px;
+                @include media("min",768,0) {
+                    margin-bottom:-300px;
+                }
+                @include media("max",767,0) {
+                    margin-bottom:-500px;
+                }
                 opacity:0; visibility: hidden;
                 transition:all .3s ease-in-out;
             }
             .next {
-                left:0;
                 opacity:0;
                 visibility: hidden;
-                svg {
-                    transform:rotate(180deg);
+                @include media("min",768,0) {
+                    left:0;
+                    svg {
+                        transform:rotate(180deg);
+                    }
                 }
             }
             &:last-child {
                 .next {
                     margin-top:0;
                     svg { transform:rotate(225deg); }
+                    @include media("max",767,0) { display:none; }
                 }
             }
         }
     }
     &.inactive {
         --iconopacity: 0.3;
-        @include media("min",768,0) {
             > li {
                 &:nth-child(4n) {
                     .next {
                         opacity:1; visibility: visible;
                     }
                 }
+                @include media("min",768,0) {
                 &:nth-child(4n-3), &:nth-child(4n) {
                     article {
                         padding-top:60%;
@@ -152,6 +204,11 @@ ol.steps {
         }
     }
     + .Intro {
-        @include vw-margin(50,0,0);
+        @include media("min",768,0) {
+            @include vw-margin(50,0,0);
+        }
+        @include media("max",767,0) {
+            @include vw-margin(20,0,0);
+        }
     }
 }
