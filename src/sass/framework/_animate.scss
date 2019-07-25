@@ -104,6 +104,31 @@
     @include visibility($visibility);
 }
 
+@include keyframes(reveal-bg) {
+
+        0% {
+            transform: translate(-100%, 0);
+        }
+        33% {
+            transform: translate(0%, 0);
+        }
+        66% {
+            transform: translate(100%, 0);
+        }
+        100% {
+            transform: translate(100%, 0);
+        }
+}
+@mixin reveal-bg($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name(reveal-bg);
+    @include count($count);
+    @include duration($duration);
+    @include delay($delay);
+    @include function($function);
+    @include fill-mode($fill);
+    @include visibility($visibility);
+}
+
 @include keyframes(fadeInNewsflashLabel) {
     0% {opacity: 0;transform:scaleX(0);}
     100% {opacity: 1;transform:scaleX(1);}
@@ -201,11 +226,11 @@
                 @include delay(4s);
                 + * {
                     + * {
-                        @include delay(4.3s);
+                        @include delay(4.2s);
                         + * {
-                            @include delay(4.6s);
+                            @include delay(4.4s);
                             + * {
-                                @include delay(4.9s);
+                                @include delay(4.6s);
                             }
                         }
                     }
@@ -257,33 +282,51 @@
 
 .textblock.invisible {
     opacity:1;
-    > figure, > .inner {
-        opacity:0;
-    }
     > .inner {
-        > nav > .more-inline {
+        > figure, > .aside {
             opacity:0;
         }
     }
-    &.visible {
-        @include fadeInUp;
-        > figure, > .inner {
-            @include fadeInUp;
-        }
-        > .inner {
+    > .inner {
+        > .aside {
             > nav > .more-inline {
-                @include fadeInRight();
-                @include media("min",768,0) {
-                    @include delay(1.3s);
+                opacity:0;
+            }
+        }
+    }
+    &.visible {
+        //@include fadeInUp;
+        > .inner {
+            > figure, > .aside {
+                @include fadeInUp;
+                @include delay(.95s);
+            }
+            > .aside {
+                > nav > .more-inline {
+                    @include fadeInRight();
+                    @include media("min",768,0) {
+                        @include delay(1.3s);
+                    }
+                    @include media("max",767,0) {
+                        @include delay(.9s);
+                    }
                 }
-                @include media("max",767,0) {
-                    @include delay(.9s);
+            }
+            @include media("min",768,0) {
+                > figure {
+                    @include delay(1.25s);
                 }
             }
         }
-        @include media("min",768,0) {
-            > figure {
-                @include delay(.5s);
+    }
+    &:nth-child(4n-1) {
+        // dark purple
+        > .inner {
+            > figure, > .aside {
+                @include delay(.4s);
+            }
+            @include media("min",768,0) {
+                > figure { @include delay(.8s); }
             }
         }
     }

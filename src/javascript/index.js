@@ -56,4 +56,9 @@ window.addEventListener("scroll", function() {
     }
 });
 
+// Force to start at top of page, because of the animations.
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 studioibizz.fakepreload.init();

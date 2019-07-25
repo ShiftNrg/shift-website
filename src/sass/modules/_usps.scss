@@ -23,6 +23,7 @@
             text-align: center;
             @include media("min",1025,0) {
                 width: 230/1600*100vw;
+                margin-left:auto; margin-right:auto;
             }
 
             span.icon {
