@@ -8,9 +8,14 @@
 }
 
 @include keyframes(fadeIn) {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 @mixin fadeIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeIn);
     @include count($count);
@@ -22,9 +27,16 @@
 }
 
 @include keyframes(fadeInDownBackground) {
-    0% {opacity: 0;bottom:100%;}
-    100% {opacity: 1;bottom:0;}
+    0% {
+        opacity: 0;
+        bottom: 100%;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
 }
+
 @mixin fadeInDownBackground($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInDownBackground);
     @include count($count);
@@ -36,9 +48,16 @@
 }
 
 @include keyframes(fadeInUpSmall) {
-    0% {opacity: 0;transform: translate(0,20px);}
-    100% {opacity: 1;transform: translate(0,0);}
+    0% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
+
 @mixin fadeInUpSmall($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInUpSmall);
     @include count($count);
@@ -48,10 +67,18 @@
     @include fill-mode($fill);
     @include visibility($visibility);
 }
+
 @include keyframes(fadeInUp) {
-    0% {opacity: 0;transform: translate(0,70px);}
-    100% {opacity: 1;transform: translate(0,0);}
+    0% {
+        opacity: 0;
+        transform: translate(0, 70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
+
 @mixin fadeInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInUp);
     @include count($count);
@@ -63,9 +90,16 @@
 }
 
 @include keyframes(fadeInRight) {
-    0% {opacity: 0;transform: translate(-20px,0);}
-    100% {opacity: 1;transform: translate(0,0);}
+    0% {
+        opacity: 0;
+        transform: translate(-20px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
+
 @mixin fadeInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInRight);
     @include count($count);
@@ -77,9 +111,16 @@
 }
 
 @include keyframes(fadeInLeft) {
-    0% {opacity: 0;transform: translate(20px,0);}
-    100% {opacity: 1;transform: translate(0,0);}
+    0% {
+        opacity: 0;
+        transform: translate(20px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
+
 @mixin fadeInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInLeft);
     @include count($count);
@@ -91,9 +132,16 @@
 }
 
 @include keyframes(fadeInDownTransform) {
-    0% {opacity: 0;transform:translate(0,-50%)}
-    100% {opacity: 1;transform:translate(0,0%)}
+    0% {
+        opacity: 0;
+        transform: translate(0, -50%)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0%)
+    }
 }
+
 @mixin fadeInDownTransform($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInDownTransform);
     @include count($count);
@@ -106,19 +154,20 @@
 
 @include keyframes(reveal-bg) {
 
-        0% {
-            transform: translate(-100%, 0);
-        }
-        33% {
-            transform: translate(0%, 0);
-        }
-        66% {
-            transform: translate(100%, 0);
-        }
-        100% {
-            transform: translate(100%, 0);
-        }
+    0% {
+        transform: translate(-100%, 0);
+    }
+    33% {
+        transform: translate(0%, 0);
+    }
+    66% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
+    }
 }
+
 @mixin reveal-bg($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(reveal-bg);
     @include count($count);
@@ -130,9 +179,16 @@
 }
 
 @include keyframes(fadeInNewsflashLabel) {
-    0% {opacity: 0;transform:scaleX(0);}
-    100% {opacity: 1;transform:scaleX(1);}
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
+
 @mixin fadeInNewsflashLabel($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInNewsflashLabel);
     @include count($count);
@@ -142,18 +198,41 @@
     @include fill-mode($fill);
     @include visibility($visibility);
 }
-@include media("min",768,0) {
+
+@include media("min", 768, 0) {
     @include keyframes(fadeInNewsflash) {
-        0% {opacity: 0;max-width:0;padding-left:0;padding-right:0;}
-        100% {opacity: 1;max-width:500px;padding-left:7.5/14*1em;padding-right:7.5/14*1em;}
+        0% {
+            opacity: 0;
+            max-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        100% {
+            opacity: 1;
+            max-width: 500px;
+            padding-left: 7.5/14*1em;
+            padding-right: 7.5/14*1em;
+        }
     }
 }
-@include media("max",767,0) {
+
+@include media("max", 767, 0) {
     @include keyframes(fadeInNewsflash) {
-        0% {opacity: 0;max-width:0;padding-left:0;padding-right:0;}
-        100% {opacity: 1;max-width:calc(100vw - calc(var(--smalloffset) * 5));padding-left:7.5/14*1em;padding-right:7.5/14*1em;}
+        0% {
+            opacity: 0;
+            max-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        100% {
+            opacity: 1;
+            max-width: calc(100vw - calc(var(--smalloffset) * 5));
+            padding-left: 7.5/14*1em;
+            padding-right: 7.5/14*1em;
+        }
     }
 }
+
 @mixin fadeInNewsflash($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
     @include animation-name(fadeInNewsflash);
     @include count($count);
@@ -163,43 +242,60 @@
     @include fill-mode($fill);
     @include visibility($visibility);
 }
+
 .invisible {
-    opacity:0;
+    opacity: 0;
     @include animate;
-    &.visible { opacity:1; }
+
+    &.visible {
+        opacity: 1;
+    }
 }
 
 .banner.invisible {
-    opacity:1;
+    opacity: 1;
+
     .newsflash {
-        opacity:0;
+        opacity: 0;
         //> .label {
         //    opacity:0; transform:scale(0);
         //    position:relative;
         //}
         > .title {
-            display:block;
-            opacity:0;
-            max-width:0;
-            width:auto;
-            white-space:nowrap;
-            overflow:hidden;
+            display: block;
+            opacity: 0;
+            max-width: 0;
+            width: auto;
+            white-space: nowrap;
+            overflow: hidden;
         }
     }
+
     .slogan {
         > * {
-            opacity:0;
-            .spacer, .letter { opacity:0; }
-            &.animating { opacity:1; }
+            opacity: 0;
+
+            .spacer, .letter {
+                opacity: 0;
+            }
+
+            &.animating {
+                opacity: 1;
+            }
         }
     }
+
     .image {
-        opacity:0;
+        opacity: 0;
     }
-    .scrollto { opacity:0; }
+
+    .scrollto {
+        opacity: 0;
+    }
+
     .socials {
         > * {
-            opacity:0;
+            opacity: 0;
         }
     }
 
@@ -219,16 +315,20 @@
                 @include duration(.8s);
             }
         }
+
         .socials {
             > * {
                 @include fadeInUpSmall();
                 @include duration(.8s);
                 @include delay(4s);
+
                 + * {
                     + * {
                         @include delay(4.2s);
+
                         + * {
                             @include delay(4.4s);
+
                             + * {
                                 @include delay(4.6s);
                             }
@@ -242,28 +342,35 @@
 
 
 .locknload.invisible {
-    opacity:0;
+    opacity: 0;
+
     .steps {
         > li {
-            opacity:0;
-            position:relative;
+            opacity: 0;
+            position: relative;
         }
+
         ~ .Intro, ~ nav {
-            opacity:0; position:relative;
+            opacity: 0;
+            position: relative;
         }
     }
+
     &.visible {
-            @include fadeInUp;
+        @include fadeInUp;
+
         .steps {
             > li {
                 @include fadeInUp;
                 @include delay(.4s);
                 @include duration(1s);
+
                 + li {
                     @include delay(.7s);
-                    @include media("min",768,0) {
+                    @include media("min", 768, 0) {
                         + li {
                             @include delay(1.0s);
+
                             + li {
                                 @include delay(1.3s);
                             }
@@ -271,6 +378,7 @@
                     }
                 }
             }
+
             ~ .Intro, ~ nav {
                 @include fadeInUp;
                 @include delay(.9s);
@@ -281,19 +389,22 @@
 }
 
 .textblock.invisible {
-    opacity:1;
+    opacity: 1;
+
     > .inner {
         > figure, > .aside {
-            opacity:0;
+            opacity: 0;
         }
     }
+
     > .inner {
         > .aside {
             > nav > .more-inline {
-                opacity:0;
+                opacity: 0;
             }
         }
     }
+
     &.visible {
         //@include fadeInUp;
         > .inner {
@@ -301,86 +412,131 @@
                 @include fadeInUp;
                 @include delay(.95s);
             }
+
             > .aside {
                 > nav > .more-inline {
                     @include fadeInRight();
-                    @include media("min",768,0) {
+                    @include media("min", 768, 0) {
                         @include delay(1.3s);
                     }
-                    @include media("max",767,0) {
+                    @include media("max", 767, 0) {
                         @include delay(.9s);
                     }
                 }
             }
-            @include media("min",768,0) {
+
+            @include media("min", 768, 0) {
                 > figure {
-                    @include delay(1.25s);
+                    @include delay(1.15s);
                 }
             }
         }
     }
+
     &:nth-child(4n-1), &:nth-child(4n-3) {
         // dark purple & white
         > .inner {
             > figure, > .aside {
                 @include delay(.4s);
             }
-            @include media("min",768,0) {
-                > figure { @include delay(.8s); }
+
+            @include media("min", 768, 0) {
+                > figure {
+                    @include delay(.8s);
+                }
             }
         }
     }
 }
+
 .usps.invisible {
-    opacity:1;
+    opacity: 1;
+
     > .inner {
         > * {
-            opacity:0;
+            opacity: 0;
         }
     }
+
     &.visible {
         > .inner {
             > * {
                 @include fadeInUp;
             }
-            > .block-grid > li > article {
-                @include animation-name(fadeInUp);
-            }
-        }
-    }
-}
-.roadmap.invisible {
-    opacity:1;
-    > .inner {
-        opacity:0;
-        article {
-            opacity:0;
-        }
-    }
-    &.visible {
-        > .inner {
-            @include fadeInUp;
-            article {
-                @include fadeIn;
-            }
-            .glide__slide:first-child + *  {
-                article { @include delay(.3s); }
 
-                + * {
-                    article { @include delay(.6s); }
-                    + * {
-                        article {  @include delay(.9s); }
+            > .block-grid > li {
+                > article {
+                    @include animation-name(fadeInUp);
+                    @include delay(.8s);
+                }
+                @include media("min", 768, 0) {
+                    &:nth-child(4n) > article {
+                        @include delay(1.4s);
+                    }
+                    &:nth-child(4n-1) > article {
+                        @include delay(1.2s);
+                    }
+                    &:nth-child(4n-2) > article {
+                        @include delay(1.0s);
+                    }
+                }
+                @include media("max", 767, 0) {
+                    &:nth-child(2n) > article {
+                        @include delay(1s);
                     }
                 }
             }
         }
     }
 }
-.news.invisible {
-    opacity:1;
+
+.roadmap.invisible {
+    opacity: 1;
+
     > .inner {
-        opacity:0;
+        opacity: 0;
+
+        article {
+            opacity: 0;
+        }
     }
+
+    &.visible {
+        > .inner {
+            @include fadeInUp;
+
+            article {
+                @include fadeIn;
+            }
+
+            .glide__slide:first-child + * {
+                article {
+                    @include delay(.3s);
+                }
+
+                + * {
+                    article {
+                        @include delay(.6s);
+                    }
+
+                    + * {
+                        article {
+                            @include delay(.9s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.news.invisible {
+    opacity: 1;
+
+    > .inner {
+        opacity: 0;
+    }
+
     &.visible {
         > .inner {
             @include fadeIn;
@@ -390,15 +546,17 @@
 
     article {
         > .inner {
-            opacity:0;
+            opacity: 0;
         }
     }
+
     &.visible {
         article {
             &::after {
                 @include fadeInDownBackground;
                 @include duration(1.35s);
             }
+
             > .inner {
                 @include fadeInUp;
                 @include delay(1s);

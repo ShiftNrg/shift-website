@@ -91,37 +91,37 @@ a, button, input[type="submit"] { cursor:pointer; outline:none; }
     }
     @include media("min",768,0) {
         > li > article {
-            @include delay(.8s);
+            @include delay(.2s);
         }
         &.up2 > li {
             width: 50%;
-            &:nth-child(2n) > article { @include delay(1.0s); }
+            &:nth-child(2n) > article { @include delay(.4s); }
         }
         &.up3 > li {
             width: 33.33333%;
-            &:nth-child(3n) > article { @include delay(1.2s); }
-            &:nth-child(3n-1) > article { @include delay(1.0s); }
+            &:nth-child(3n) > article { @include delay(.6s); }
+            &:nth-child(3n-1) > article { @include delay(.4s); }
         }
         &.up4 > li {
             width: 25%;
-            &:nth-child(4n) > article { @include delay(1.4s); }
-            &:nth-child(4n-1) > article { @include delay(1.2s); }
-            &:nth-child(4n-2) > article { @include delay(1.0s); }
+            &:nth-child(4n) > article { @include delay(.8s); }
+            &:nth-child(4n-1) > article { @include delay(.6s); }
+            &:nth-child(4n-2) > article { @include delay(.4s); }
         }
         &.up5 > li {
             width: 20%;
-            &:nth-child(5n) > article { @include delay(1.6s); }
-            &:nth-child(5n-1) > article { @include delay(1.4s); }
-            &:nth-child(5n-2) > article { @include delay(1.2s); }
-            &:nth-child(5n-3) > article { @include delay(1.0s); }
+            &:nth-child(5n) > article { @include delay(1.0s); }
+            &:nth-child(5n-1) > article { @include delay(.8s); }
+            &:nth-child(5n-2) > article { @include delay(.6s); }
+            &:nth-child(5n-3) > article { @include delay(.4s); }
         }
         &.up6 > li {
             width: 16.66667%;
-            &:nth-child(6n) > article { @include delay(1.8s); }
-            &:nth-child(6n-1) > article { @include delay(1.6s); }
-            &:nth-child(6n-2) > article { @include delay(1.4s); }
-            &:nth-child(6n-3) > article { @include delay(1.2s); }
-            &:nth-child(6n-4) > article { @include delay(1.0s); }
+            &:nth-child(6n) > article { @include delay(1.2s); }
+            &:nth-child(6n-1) > article { @include delay(1.0s); }
+            &:nth-child(6n-2) > article { @include delay(.8s); }
+            &:nth-child(6n-3) > article { @include delay(.6s); }
+            &:nth-child(6n-4) > article { @include delay(.4s); }
         }
     }
 }

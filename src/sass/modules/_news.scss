@@ -32,6 +32,8 @@
             color: #fff;
             position: relative;
             z-index: 2;
+            animation:none;
+            opacity: 1;
             //&::before {
             //    content:''; left:70/1600*100vw; top:0; right:0; height:281/1600*100vw;
             //    background:url(../images/decoration2.png) no-repeat right top / 100% auto;

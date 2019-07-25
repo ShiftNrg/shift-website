@@ -53,7 +53,6 @@
 .maincontainer {
     > section, > article {
         position: relative;
-        @include media("max",767,0) { padding: 0 var(--inneroffset); }
     }
 
     > * {
@@ -68,23 +67,44 @@
 
         &:nth-child(4n-3) {
             // white
-            > .inner {
-                padding-left: calc(var(--pageoffset) + var(--inneroffset));
-                padding-right: calc(var(--pageoffset) + var(--inneroffset));
+            @include media("min",768,0) {
+                > .inner {
+                    padding-left: calc(var(--pageoffset) + var(--inneroffset));
+                    padding-right: calc(var(--pageoffset) + var(--inneroffset));
+                }
             }
         }
         &:nth-child(4n-2) {
             // light grey margin-right
-            padding-right: var(--pageoffset);
             > .inner {
                 background: $llgrey;
-                padding-left: var(--pageoffset);
+            }
+            @include media("min",768,0) {
+                padding-right: var(--pageoffset);
+                > .inner {
+                    padding-left: var(--pageoffset);
+                }
             }
         }
         &:nth-child(4n-1) {
             // dark purple
             position: relative;
             z-index: 1;
+
+            > .inner {
+                background: $xdgrey;
+                color: #fff;
+            }
+
+            .Intro ul > li::before, .Text ul > li::before {
+                color: #fff;
+                background: rgba(#fff, 0.2);
+            }
+
+            .more-inline {
+                color: #fff;
+            }
+
             @include media("min", 768, 0) {
                 &::before {
                     content: '';
@@ -108,30 +128,22 @@
                         bottom: -600px;
                     }
                 }
-            }
-
-            > .inner {
-                background: $xdgrey;
-                color: #fff;
-                padding-left: var(--pageoffset);
-                padding-right: var(--pageoffset);
-            }
-
-            .Intro ul > li::before, .Text ul > li::before {
-                color: #fff;
-                background: rgba(#fff, 0.2);
-            }
-
-            .more-inline {
-                color: #fff;
+                > .inner {
+                    padding-left: var(--pageoffset);
+                    padding-right: var(--pageoffset);
+                }
             }
         }
         &:nth-child(4n) {
             // light grey margin-left
-            padding-left: var(--pageoffset);
             > .inner {
                 background: $llgrey;
-                padding-right: var(--pageoffset);
+            }
+            @include media("min",768,0) {
+                padding-left: var(--pageoffset);
+                > .inner {
+                    padding-right: var(--pageoffset);
+                }
             }
         }
 
@@ -213,6 +225,10 @@
                     left: 50%;
                 }
             }
+        }
+
+        &.news {
+            @include media("max",767,0) { padding: 0 var(--inneroffset); }
         }
 
         &.locknload {

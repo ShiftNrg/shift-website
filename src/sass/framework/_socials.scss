@@ -47,6 +47,7 @@ footer#footer .socials, .stickysocials {
             height:34/14*1em; width:1px; margin:10/14*1em 0;
         }
     }
+    > a:hover { color:$themecolor }
 }
 .banner.past ~ .stickysocials, header#header + .maincontainer ~ .stickysocials {
     opacity:1;
