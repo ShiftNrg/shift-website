@@ -33,6 +33,7 @@ footer#footer .socials, .stickysocials {
     z-index:1010; width:var(--pageoffset);
     opacity:0;
     transition:.3s ease-in-out;
+    @include media("max",767,0) { display:none !important; }
     > * {
         @include vw-margin(2.5,0); line-height:1;
     }
