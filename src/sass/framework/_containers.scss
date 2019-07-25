@@ -54,7 +54,9 @@
     > section, > article {
         position: relative;
     }
-
+> * {
+    position:relative; z-index:3;
+}
     > *:not(.news) {
         > .inner {
             padding: var(--inneroffset);
@@ -78,11 +80,33 @@
 
         &:nth-child(4n-1) {
             // dark purple
+            position:relative; z-index:1;
+            @include media("min",768,0) {
+                &::before {
+                    content:''; background:$xdgrey; display:block; position:absolute; z-index:-1;
+                    left:50%; width:100.2vw; max-width:100.2vw; bottom:0;
+                    top:-600/1600*100vw;
+                    transform:translate(-50%,0);
+                    @include media("min",1600,0) {
+                        top:-600px;
+                    }
+                }
+                &:not(:last-child)::before {
+                        bottom:-600/1600*100vw;
+                        @include media("min",1600,0) {
+                            bottom:-600px;
+                        }
+                }
+            }
             > .inner {
                 background:$xdgrey; color:#fff;
                 padding-left:var(--pageoffset);
                 padding-right:var(--pageoffset);
             }
+            .Intro ul > li::before, .Text ul > li::before {
+                color:#fff; background:rgba(#fff,0.2);
+            }
+            .more-inline { color:#fff; }
         }
 
         &:nth-child(4n) {
