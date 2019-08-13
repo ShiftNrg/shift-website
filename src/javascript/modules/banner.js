@@ -28,7 +28,9 @@ studioibizz.banner = {
     line2: null,
     spacer2: null,
     init: function() {
-        studioibizz.banner.attach();
+        if (document.querySelector('.banner')) {
+            studioibizz.banner.attach();
+        }
     },
     attach: function() {
 
