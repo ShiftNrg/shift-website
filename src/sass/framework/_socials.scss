@@ -49,7 +49,7 @@ footer#footer .socials, .stickysocials {
     }
     > a:hover { color:$themecolor }
 }
-.banner.past ~ .stickysocials, header#header + .maincontainer ~ .stickysocials {
+.banner.past ~ .stickysocials, .maincontainer:first-child ~ .stickysocials {
     opacity:1;
         > * {
             @include animate;

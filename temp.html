@@ -9,68 +9,68 @@
     <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body>
+<div id="mobile-toggle">
+    <button class="hamburger hamburger--squeeze responsive-menu-button" type="button" data-action="togglemenu">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+    </button>
+    <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
+</div>
+<header id="header">
+    <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
+    <ol class="nav mainnav">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Blog & updates</a>
+            <div class="dropdown-menu">
+                <div class="aside">
+                    <figure>
+                        <img src="/files/navigation/dropdown.jpg" alt="">
+                        <figcaption>
+                            Foundation of <br>a new token utility.
+                        </figcaption>
+                    </figure>
+                    <ol class="nav dropdown-list">
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Contact</a></li>
+    </ol>
+    <ol class="nav topnav">
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Resources</a></li>
+        <li class="cta"><a href="#">Get started</a></li>
+    </ol>
+</header>
 <div id="topcontainer" style="opacity:0;">
     <div class="backlayer"></div>
     <div class="frontlayer"></div>
     <div class="scene">
-        <div id="mobile-toggle">
-            <button class="hamburger hamburger--squeeze responsive-menu-button" type="button" data-action="togglemenu">
-                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
-            </button>
-            <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
-        </div>
-        <header id="header">
-            <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
-            <ol class="nav mainnav">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Blog & updates</a>
-                    <div class="dropdown-menu">
-                        <div class="aside">
-                            <figure>
-                                <img src="/files/navigation/dropdown.jpg" alt="">
-                                <figcaption>
-                                    Foundation of <br>a new token utility.
-                                </figcaption>
-                            </figure>
-                            <ol class="nav dropdown-list">
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Contact</a></li>
-            </ol>
-            <ol class="nav topnav">
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Resources</a></li>
-                <li class="cta"><a href="#">Get started</a></li>
-            </ol>
-        </header>
         <div class="maincontainer">
             <section class="news">
                 <div class="payoff">updates</div>
@@ -248,7 +248,7 @@
     }
 </style>
 <script>
-    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
         document.write('<script src="/polyfills/css-vars-ponyfill.min.js"><\/script>');
 </script>
 </body>

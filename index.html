@@ -9,68 +9,68 @@
     <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body>
+<div id="mobile-toggle">
+    <button class="hamburger hamburger--squeeze responsive-menu-button" type="button" data-action="togglemenu">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+    </button>
+    <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
+</div>
+<header id="header">
+    <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
+    <ol class="nav mainnav">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Blog & updates</a>
+            <div class="dropdown-menu">
+                <div class="aside">
+                    <figure>
+                        <img src="/files/navigation/dropdown.jpg" alt="">
+                        <figcaption>
+                            Foundation of <br>a new token utility.
+                        </figcaption>
+                    </figure>
+                    <ol class="nav dropdown-list">
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <span class="title">Overview</span>
+                                <span class="subtitle">Learn more about our blockchain systems</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Contact</a></li>
+    </ol>
+    <ol class="nav topnav">
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Resources</a></li>
+        <li class="cta"><a href="#">Get started</a></li>
+    </ol>
+</header>
 <div id="topcontainer" style="opacity:0;">
     <div class="backlayer"></div>
     <div class="frontlayer"></div>
     <div class="scene">
-        <div id="mobile-toggle">
-            <button class="hamburger hamburger--squeeze responsive-menu-button" type="button" data-action="togglemenu">
-                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
-            </button>
-            <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
-        </div>
-        <header id="header">
-            <a href="/" class="logo"><img src="/dist/images/logo.png" alt="Shift Project"></a>
-            <ol class="nav mainnav">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Blog & updates</a>
-                    <div class="dropdown-menu">
-                        <div class="aside">
-                            <figure>
-                                <img src="/files/navigation/dropdown.jpg" alt="">
-                                <figcaption>
-                                    Foundation of <br>a new token utility.
-                                </figcaption>
-                            </figure>
-                            <ol class="nav dropdown-list">
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#2">
-                                        <span class="title">Overview</span>
-                                        <span class="subtitle">Learn more about our blockchain systems</span>
-                                    </a>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Contact</a></li>
-            </ol>
-            <ol class="nav topnav">
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Resources</a></li>
-                <li class="cta"><a href="#">Get started</a></li>
-            </ol>
-        </header>
         <div class="banner">
             <div class="newsflash">
                 <div class="label">Update</div>
@@ -109,22 +109,26 @@
                     <ol class="steps">
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-locknload--lock"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-locknload--lock"></svg></span>
                                 <h3>Lock</h3>
                                 <div class="Text">
                                     <p>Start by locking some SHIFT to receive storage</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-locknload--upload"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-locknload--upload"></svg></span>
                                 <h3>Upload</h3>
                                 <div class="Text">
                                     <p>Next, select a file to upload</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                         <li>
@@ -134,39 +138,46 @@
                                 <div class="Text">
                                     <p>Here’s your hash! Now, record it permanently on the blockchain</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-locknload--load"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-locknload--load"></svg></span>
                                 <h3>Load</h3>
                                 <div class="Text">
                                     <p>Lift off! Open your file using our gateway</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                     </ol>
                     <ol class="steps reversed">
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-locknload--unpin"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-locknload--unpin"></svg></span>
                                 <h3>Unpin it</h3>
                                 <div class="Text">
                                     <p>Select the hash of a file you no longer wish to have saved</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-locknload--unlock"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-locknload--unlock"></svg></span>
                                 <h3>Unlock</h3>
                                 <div class="Text">
                                     <p>Are you done? Unlock your SHIFT</p>
                                 </div>
-                                <span class="next"><svg width="42" height="42"><use xlink:href="#sprite-step"></svg></span>
+                                <span class="next"><svg width="42" height="42"><use
+                                        xlink:href="#sprite-step"></svg></span>
                             </article>
                         </li>
                     </ol>
@@ -196,41 +207,45 @@
                         </div>
                         <div class="Text">
                             <ul>
-                                <li>Decentralized storage marketplaces using smart contracts are complex and </li>
-                                <li>IPFS is a groundbreaking distributed file system. However, it does not offer an easy or reliable way to allocate and </li>
+                                <li>Decentralized storage marketplaces using smart contracts are complex and</li>
+                                <li>IPFS is a groundbreaking distributed file system. However, it does not offer an easy
+                                    or reliable way to allocate and
+                                </li>
                                 <li>Most decentralized cloud hosting platforms do not support the same tools and</li>
                                 <li>Decentralized cloud hosting platforms using Proof-of-Work protocols are slow</li>
                             </ul>
                         </div>
                         <nav>
-                            <a href="#" class="more-inline">Join our growing community  </a>
+                            <a href="#" class="more-inline">Join our growing community </a>
                         </nav>
                     </div>
                 </div>
             </article>
             <article class="textblock">
                 <div class="inner">
-                <figure>
-                    <img src="/files/textblock/2.png" alt="">
-                </figure>
-                <div class="aside">
-                    <h4>Traditional web development</h4>
-                    <h3>Simpy a better <br>use case</h3>
-                    <div class="Intro">
-                        <p>Shift enables traditional web development in a decentralized world.
-                        </p>
+                    <figure>
+                        <img src="/files/textblock/2.png" alt="">
+                    </figure>
+                    <div class="aside">
+                        <h4>Traditional web development</h4>
+                        <h3>Simpy a better <br>use case</h3>
+                        <div class="Intro">
+                            <p>Shift enables traditional web development in a decentralized world.
+                            </p>
+                        </div>
+                        <div class="Text">
+                            <ul>
+                                <li>Host your website or application-specific assets in under 60 seconds at</li>
+                                <li>Bring your website or API to life by running custom code (Java, C#, Go, JavaScript,
+                                    Scala and Python are all suppor
+                                </li>
+                                <li>Choose to use strong client-side encryption for secure storage of your per</li>
+                            </ul>
+                        </div>
+                        <nav>
+                            <a href="#" class="more-inline">Join our growing community </a>
+                        </nav>
                     </div>
-                    <div class="Text">
-                        <ul>
-                            <li>Host your website or application-specific assets in under 60 seconds at</li>
-                            <li>Bring your website or API to life by running custom code (Java, C#, Go, JavaScript, Scala and Python are all suppor</li>
-                            <li>Choose to use strong client-side encryption for secure storage of your per</li>
-                        </ul>
-                    </div>
-                    <nav>
-                        <a href="#" class="more-inline">Join our growing community  </a>
-                    </nav>
-                </div>
                 </div>
             </article>
             <section class="usps">
@@ -239,7 +254,8 @@
                     <ul class="block-grid up4">
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--block"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--block"></svg></span>
                                 <h5>Commodo</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -249,7 +265,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--stats"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--stats"></svg></span>
                                 <h5>Adipiscing</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -269,7 +286,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--lock"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--lock"></svg></span>
                                 <h5>Aenenan elit</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -279,7 +297,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--secure"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--secure"></svg></span>
                                 <h5>Ipsum ligula</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -289,7 +308,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--checklist"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--checklist"></svg></span>
                                 <h5>Merol muspi</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -299,7 +319,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--check"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--check"></svg></span>
                                 <h5>Aenean tile</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -309,7 +330,8 @@
                         </li>
                         <li>
                             <article>
-                                <span class="icon"><svg width="60" height="60"><use xlink:href="#sprite-usps--usage"></svg></span>
+                                <span class="icon"><svg width="60" height="60"><use
+                                        xlink:href="#sprite-usps--usage"></svg></span>
                                 <h5>Rolod tis tema</h5>
                                 <div class="Text">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
@@ -322,57 +344,70 @@
             </section>
             <article class="textblock">
                 <div class="inner">
-                <figure>
-                    <img src="/files/textblock/4.png" alt="">
-                </figure>
-                <div class="aside">
-                    <h4>Software applications that communicate</h4>
-                    <h3>Platform overview</h3>
-                    <div class="Intro">
-                        <p>The current Shift platform incorporates two software applications that communicate with each other. There is Phoenix and the Shift blockchain.
-                        </p>
+                    <figure>
+                        <img src="/files/textblock/4.png" alt="">
+                    </figure>
+                    <div class="aside">
+                        <h4>Software applications that communicate</h4>
+                        <h3>Platform overview</h3>
+                        <div class="Intro">
+                            <p>The current Shift platform incorporates two software applications that communicate with
+                                each other. There is Phoenix and the Shift blockchain.
+                            </p>
+                        </div>
+                        <div class="Text">
+                            <ul>
+                                <li>Phoenix-core is a p2p library and responsible for networking and message relaying
+                                    between peers
+                                </li>
+                                <li>Phoenix-cluster is a pinset orchestration layer for IPFS and responsible for the
+                                    allocation and replication of data (pin
+                                </li>
+                                <li>IPFS (InterPlanetary File System) is a p2p distributed file system and responsible
+                                    for storing and accessing
+                                </li>
+                                <li>In addition to the standard Lisk transaction types, Shift has created four unique
+                                </li>
+                                <li>Likewise, Shift has extended the standard block format to include cluster</li>
+                            </ul>
+                        </div>
+                        <nav>
+                            <a href="#" class="more-inline">Join our growing community </a>
+                        </nav>
                     </div>
-                    <div class="Text">
-                        <ul>
-                            <li>Phoenix-core is a p2p library and responsible for networking and message relaying between peers </li>
-                            <li>Phoenix-cluster is a pinset orchestration layer for IPFS and responsible for the allocation and replication of data (pin</li>
-                            <li>IPFS (InterPlanetary File System) is a p2p distributed file system and responsible for storing and accessing </li>
-                            <li>In addition to the standard Lisk transaction types, Shift has created four unique </li>
-                            <li>Likewise, Shift has extended the standard block format to include cluster </li>
-                        </ul>
-                    </div>
-                    <nav>
-                        <a href="#" class="more-inline">Join our growing community  </a>
-                    </nav>
-                </div>
                 </div>
             </article>
             <article class="textblock">
                 <div class="inner">
-                <figure>
-                    <img src="/files/textblock/5.png" alt="">
-                </figure>
-                <div class="aside">
-                    <h4>Using a Lisk-based Delegated Proof-of-Stake</h4>
-                    <h3>Blockchain core</h3>
-                    <div class="Intro">
-                        <p>Shift envisions a core that securely scales to meet the needs of a popular, global cloud hosting platform no other blockchain project can match.
-                        </p>
+                    <figure>
+                        <img src="/files/textblock/5.png" alt="">
+                    </figure>
+                    <div class="aside">
+                        <h4>Using a Lisk-based Delegated Proof-of-Stake</h4>
+                        <h3>Blockchain core</h3>
+                        <div class="Intro">
+                            <p>Shift envisions a core that securely scales to meet the needs of a popular, global cloud
+                                hosting platform no other blockchain project can match.
+                            </p>
+                        </div>
+                        <div class="Text">
+                            <ul>
+                                <li>The Chain of Command (CoC) blockchain provides the heartbeat of the plat</li>
+                                <li>Shift accounts each have their own blockchain, which removes the need for
+                                    transactions to be bundled into blocks.
+                                </li>
+                                <li>The account that generates the next block of the CoC is determined using
+                                    Verifiable
+                                </li>
+                                <li>Byzantine Fault Detection (BFD) is used to prevent double spends and network</li>
+                                <li>With trillions of potential shards, nodes can decide</li>
+                                <li>Token weight can be assigned to pools which increa</li>
+                            </ul>
+                        </div>
+                        <nav>
+                            <a href="#" class="more-inline">Join our growing community </a>
+                        </nav>
                     </div>
-                    <div class="Text">
-                        <ul>
-                            <li>The Chain of Command (CoC) blockchain provides the heartbeat of the plat</li>
-                            <li>Shift accounts each have their own blockchain, which removes the need for transactions to be bundled into blocks.</li>
-                            <li>The account that generates the next block of the CoC is determined using Verifiable </li>
-                            <li>Byzantine Fault Detection (BFD) is used to prevent double spends and network </li>
-                            <li>With trillions of potential shards, nodes can decide </li>
-                            <li>Token weight can be assigned to pools which increa</li>
-                        </ul>
-                    </div>
-                    <nav>
-                        <a href="#" class="more-inline">Join our growing community  </a>
-                    </nav>
-                </div>
                 </div>
             </article>
             <section class="roadmap">
@@ -380,111 +415,121 @@
                     <h4>Milestones to Production</h4>
                     <h3>Roadmap shift project</h3>
                     <div class="Intro">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean com modo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean com modo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus.
                         </p>
                     </div>
 
-                        <div class="roadmapCarousel">
-                            <div class="glide__track" data-glide-el="track">
-                                <ul class="glide__slides">
+                    <div class="roadmapCarousel">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
 
-                        <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--inventory"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--blocks"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--global"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--usage"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--blocks"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    <li class="glide__slide">
-                            <article>
-                                <span class="icon"><svg width="58" height="58"><use xlink:href="#sprite-roadmap--global"></svg></span>
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="Content">
-                                    <ul>
-                                        <li>Inventory Management</li>
-                                        <li>p2p Trade of Inventory Items</li>
-                                        <li>Aliquam lorem ante</li>
-                                        <li>Eget condimentum rhoncus</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                                </ul>
-                            </div>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--inventory"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--blocks"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--global"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--usage"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--blocks"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="glide__slide">
+                                    <article>
+                                        <span class="icon"><svg width="58" height="58"><use
+                                                xlink:href="#sprite-roadmap--global"></svg></span>
+                                        <h3>Lorem ipsum dolor</h3>
+                                        <div class="Content">
+                                            <ul>
+                                                <li>Inventory Management</li>
+                                                <li>p2p Trade of Inventory Items</li>
+                                                <li>Aliquam lorem ante</li>
+                                                <li>Eget condimentum rhoncus</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <div class="glide__arrows" data-glide-el="controls">
-                                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                                    <span class="icon"><svg width="20" height="20"><use xlink:href="#sprite-arrow"></svg></span>
-                                </button>
-                                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                                    <span class="icon"><svg width="20" height="20"><use xlink:href="#sprite-arrow"></svg></span>
-                                </button>
-                            </div>
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                                <span class="icon"><svg width="20" height="20"><use
+                                        xlink:href="#sprite-arrow"></svg></span>
+                            </button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                                <span class="icon"><svg width="20" height="20"><use
+                                        xlink:href="#sprite-arrow"></svg></span>
+                            </button>
                         </div>
                     </div>
+                </div>
             </section>
             <section class="news">
                 <div class="payoff">updates</div>
@@ -662,7 +707,7 @@
     }
 </style>
 <script>
-    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
         document.write('<script src="/polyfills/css-vars-ponyfill.min.js"><\/script>');
 </script>
 </body>

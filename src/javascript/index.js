@@ -20,12 +20,25 @@ function getParentWithMatchingSelector (target, selector) {
 
 function handleHref(href, target = "_self", linkdiv = null) {
     console.log("handleHref", href, target);
+
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
             console.log("Handle newsarticle animation");
         }
     }
+
+    // Preload new Href
+    var xmlhttp;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        xmlhttp.readyState == 4 && xmlhttp.status == 200 && setPage(xmlhttp.responseText);
+    }
+    xmlhttp.open("GET", href, true);
+    xmlhttp.send();
+}
+function setPage(result) {
+    console.log("result",result);
 }
 
 // Call to actions
