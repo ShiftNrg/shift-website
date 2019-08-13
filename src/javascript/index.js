@@ -10,9 +10,10 @@ require("./modules/roadmap");
 
 // Constants
 const anime = require("../../node_modules/animejs/anime.min");
-const backLayer = document.querySelector("#topcontainer > .backlayer");
-const frontLayer = document.querySelector("#topcontainer > .frontlayer");
-const oldLayer = document.querySelector("#topcontainer > .scene");
+let topcontainer = document.querySelector("#topcontainer");
+let backLayer = document.querySelector("#topcontainer > .backlayer");
+let frontLayer = document.querySelector("#topcontainer > .frontlayer");
+let oldLayer = document.querySelector("#topcontainer > .scene");
 let newNode;
 let isAnimatingOut = false;
 
@@ -62,6 +63,15 @@ const disableScrolling = () => {
     window.onmousewheel = preventEvent; // older browsers, IE
     window.ontouchmove = preventEvent; // mobile
 }
+const enableScrolling = () => {
+    // enable real scroll events
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', preventEvent, false);
+    }
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+}
 const detachAll = () => {
     // Detach all events, so the ram won't overload.
 
@@ -69,8 +79,6 @@ const detachAll = () => {
 
 // Handle href
 const handleHref = (href, target = "_self", linkdiv = null) => {
-    console.log("handleHref", href, target);
-
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
@@ -119,7 +127,33 @@ const _isAnimatingOut = () => {
     return isAnimatingOut;
 }
 const animatePage = (newNode) => {
-    console.log("Animate in", newNode);
+    setStyles(
+        backLayer,
+        {
+            opacity: 0,
+            visibility: "visible"
+        }
+    );
+    backLayer.appendChild(newNode),
+    oldLayer.remove(),
+
+        anime({
+            targets: backLayer,
+            opacity: 1,
+            duration: 600,
+            complete: function(){
+                setTimeout(enableScrolling(), 20);
+                topcontainer.appendChild(newNode);
+                frontLayer.style.visibility = backLayer.style.visibility = "hidden";
+                newNode = "";
+            }
+        });
+
+        // this.setBrowserTitle(),
+        // studioibizz.eventManager.attachAll(),
+        // this.GoogleAnalytics.send(this.pageURL, this.browserTitle),
+        // TweenLite.killTweensOf(studioibizz.jsonFramework.frontLayer),
+        // this.animatePageTween = {};
 }
 const loadPage = (href) => {
     return new Promise((resolve) => {
@@ -262,12 +296,15 @@ document.addEventListener(
 
 window.addEventListener("scroll", function () {
     var bannerTarget = document.getElementsByClassName("banner")[0];
+    var socialTarget = document.getElementsByClassName("stickysocials")[0];
     if (bannerTarget) {
         if (window.scrollY > (bannerTarget.offsetTop + bannerTarget.offsetHeight - 200)) {
-            bannerTarget.classList.add("past");
+            socialTarget.classList.add("show");
         } else {
-            bannerTarget.classList.remove("past");
+            socialTarget.classList.remove("show");
         }
+    } else {
+        socialTarget.classList.add("show");
     }
     var maincontainerTarget = document.getElementsByClassName("maincontainer")[0];
     if (window.scrollY > (maincontainerTarget.offsetTop + maincontainerTarget.offsetHeight - window.innerHeight)) {
