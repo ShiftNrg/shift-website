@@ -9,26 +9,34 @@ require("./modules/banner");
 require("./modules/roadmap");
 
 // Constants
+const anime = require("../../node_modules/animejs/anime.min");
 const backLayer = document.querySelector("#topcontainer > .backlayer");
 const frontLayer = document.querySelector("#topcontainer > .frontlayer");
+const oldLayer = document.querySelector("#topcontainer > .scene");
 let newNode;
 let isAnimatingOut = false;
 
 // Helpers
-function getParentWithMatchingSelector (target, selector) {
+const setStyles = (t, e) => {
+    var n;
+    for (n in e) {
+        t.style[n] = e[n];
+    }
+}
+const getParentWithMatchingSelector = (target, selector) => {
     let result = null;
-    [...document.querySelectorAll(selector)].forEach(function(el) {
+    [...document.querySelectorAll(selector)].forEach(function (el) {
         if (el !== target && el.contains(target)) {
             result = el;
         }
     });
     return result;
 }
-function waitfor(test, expectedValue, msec, count, callback) {
+const waitfor = (test, expectedValue, msec, count, callback) => {
     // Check if condition met. If not, re-check later (msec).
     while (test() !== expectedValue) {
         count++;
-        setTimeout(function() {
+        setTimeout(function () {
             waitfor(test, expectedValue, msec, count, callback);
         }, msec);
         return;
@@ -36,16 +44,16 @@ function waitfor(test, expectedValue, msec, count, callback) {
     // Condition finally met. callback() can be executed.
     callback();
 }
-
-// Detach and disable events
-function preventEvent(e) {
+const preventEvent = (e) => {
     e = e || window.event;
     if (e.preventDefault) {
         e.preventDefault();
     }
     e.returnValue = false;
 }
-function disableScrolling() {
+
+// Detach and disable events
+const disableScrolling = () => {
     // disable real scroll events
     if (window.addEventListener) { // older FF
         window.addEventListener('DOMMouseScroll', preventEvent, false);
@@ -54,7 +62,7 @@ function disableScrolling() {
     window.onmousewheel = preventEvent; // older browsers, IE
     window.ontouchmove = preventEvent; // mobile
 }
-function detachAll() {
+const detachAll = () => {
     // Detach all events, so the ram won't overload.
 
 }
@@ -66,17 +74,34 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
-            console.log("Handle newsarticle animation");
+            console.log(linkdiv.parentNode);
+            const li = linkdiv.parentNode;
+            const index = Array.prototype.slice.call(li.parentNode.children).indexOf(li);
 
-            setTimeout(function(){
-                isAnimatingOut = true;
-            }, 5000);
+                makeCloneThatScales(linkdiv,index);
+            anime({
+                targets: oldLayer,
+                opacity: 0,
+                duration: 600,
+                easing: 'easeInOutQuad'
+            });
+        } else {
+            // Just animate out the oldLayer
+            anime({
+                targets: oldLayer,
+                opacity: 0,
+                duration: 600,
+                easing: 'easeInOutQuad',
+                complete: function () {
+                    isAnimatingOut = true;
+                }
+            });
         }
     }
 
     if (target === "_self") {
         loadPage(href).then(newNode => {
-            waitfor(_isAnimatingOut,true,50,0, function(){
+            waitfor(_isAnimatingOut, true, 50, 0, function () {
                 animatePage(newNode);
             });
         });
@@ -102,7 +127,7 @@ const loadPage = (href) => {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 setPage(xmlhttp.responseText).then(newNode => {
-                   resolve(newNode);
+                    resolve(newNode);
                 });
             }
         }
@@ -121,6 +146,71 @@ const setPage = (result) => {
         resolve(newNode);
     });
 }
+
+// Scaleable clone
+// Scale transition helper
+let clonedBaseNode = null;
+let pageOffset = (window.innerWidth >= 1301 ? 130 : (window.innerWidth >= 1025 ? 90 : (window.innerWidth >= 768 ? 30 : 0)));
+
+const makeCloneThatScales = (target, index = 0) => {
+    console.log(String("clone index" + index));
+    let i = target.getBoundingClientRect();
+    // clonedBaseNode = target.cloneNode(!0);
+    clonedBaseNode = document.createElement("div");
+    clonedBaseNode.classList.add("clone");
+    clonedBaseNode.classList.add("index" + index);
+    document.body.appendChild(clonedBaseNode);
+
+    setStyles(
+        clonedBaseNode,
+        {
+            position: "fixed",
+            left: i.left + "px",
+            top: i.top + "px",
+            width: i.width + "px",
+            height: i.height + "px",
+            margin: "0",
+            zIndex: "500"
+        }
+    );
+
+    anime.timeline({loop: false})
+        .add({
+            targets: clonedBaseNode,
+            duration: 600,
+            left: pageOffset,
+            width: (window.innerWidth - pageOffset),
+            easing: 'easeInOutQuad'
+        })
+        .add({
+            targets: clonedBaseNode,
+            duration: 400,
+            height: window.innerHeight,
+            easing: 'easeInOutQuad',
+            complete: function () {
+                // Set finished boolean, so we can animate in the new page.
+                isAnimatingOut = true;
+            }
+        })
+        .add({
+            targets: clonedBaseNode,
+            duration: 400,
+            top: window.innerHeight,
+            height: 0,
+            easing: 'easeInOutQuad'
+        })
+
+};
+// const removeCloneThatScales = () => {
+//     $(this.clonedBaseNode).fadeOut(
+//         600,
+//         function () {
+//             $(this).remove(),
+//                 studioibizz.jsonFramework.clonedBaseNode = studioibizz.jsonFramework._scalableSection = null,
+//                 studioibizz.jsonFramework.IS_ZOOMTRANSITION = !1;
+//         }
+//     );
+// },
 
 // Call to actions
 document.addEventListener(
@@ -152,27 +242,27 @@ document.addEventListener(
         } else {
             var e = e || window.event;
             const element = e.target || e.srcElement;
-                const linkdiv = getParentWithMatchingSelector(element, '.linkdiv');
-                if (linkdiv) {
-                    e.preventDefault();
-                    // Href with linkdiv & custom animations when needed
-                    if (linkdiv.querySelector("a")) {
-                        const href = linkdiv.querySelector("a").getAttribute("href");
-                        let target = linkdiv.querySelector("a").getAttribute("target");
-                        handleHref(href, target ? target : "_self", linkdiv);
-                    }
-                } else if (element.hasAttribute("href")) {
-                    e.preventDefault();
-                    // Normal href without linkdiv
-                    const href = element.getAttribute("href");
-                    const target = element.getAttribute("target");
-                    handleHref(href, target);
+            const linkdiv = element.classList.contains("linkdiv") ? element : getParentWithMatchingSelector(element, '.linkdiv');
+            if (linkdiv) {
+                e.preventDefault();
+                // Href with linkdiv & custom animations when needed
+                if (linkdiv.querySelector("a")) {
+                    const href = linkdiv.querySelector("a").getAttribute("href");
+                    let target = linkdiv.querySelector("a").getAttribute("target");
+                    handleHref(href, target ? target : "_self", linkdiv);
                 }
+            } else if (element.hasAttribute("href")) {
+                e.preventDefault();
+                // Normal href without linkdiv
+                const href = element.getAttribute("href");
+                const target = element.getAttribute("target");
+                handleHref(href, target);
+            }
         }
     }
 );
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
     var bannerTarget = document.getElementsByClassName("banner")[0];
     if (bannerTarget) {
         if (window.scrollY > (bannerTarget.offsetTop + bannerTarget.offsetHeight - 200)) {

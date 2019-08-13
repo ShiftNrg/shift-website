@@ -1,4 +1,14 @@
 
+.clone {
+    background:$themecolor;
+    &.index1 {
+        background: $cta1;
+    }
+    &.index2 {
+        background: $xdgrey;
+    }
+}
+
 .maincontainer {
     > section.news {
         background:#fff;
