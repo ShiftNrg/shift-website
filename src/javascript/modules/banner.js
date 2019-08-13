@@ -28,36 +28,34 @@ studioibizz.banner = {
     line2: null,
     spacer2: null,
     init: function() {
-        if (document.querySelector('.banner')) {
             studioibizz.banner.attach();
-        }
     },
     attach: function() {
+        if (document.querySelector('.banner')) {
+            // Line 1
+            studioibizz.banner.spacer1 = document.createElement("span");
+            studioibizz.banner.spacer1.className = "spacer";
+            studioibizz.banner.line1 = document.querySelector(".slogan .line1");
+            studioibizz.banner.line1.innerHTML = wrapWords(studioibizz.banner.line1.innerHTML);
+            const line1words = document.querySelectorAll(".slogan .line1 .word");
+            line1words.forEach(function(word){
+               word.innerHTML = wrapChars(word.innerHTML);
+            });
+            studioibizz.banner.line1.insertBefore(studioibizz.banner.spacer1, studioibizz.banner.line1.childNodes[0]);
+            studioibizz.banner.line1.classList.add("animating");
 
-        // Line 1
-        studioibizz.banner.spacer1 = document.createElement("span");
-        studioibizz.banner.spacer1.className = "spacer";
-        studioibizz.banner.line1 = document.querySelector(".slogan .line1");
-        studioibizz.banner.line1.innerHTML = wrapWords(studioibizz.banner.line1.innerHTML);
-        const line1words = document.querySelectorAll(".slogan .line1 .word");
-        line1words.forEach(function(word){
-           word.innerHTML = wrapChars(word.innerHTML);
-        });
-        studioibizz.banner.line1.insertBefore(studioibizz.banner.spacer1, studioibizz.banner.line1.childNodes[0]);
-        studioibizz.banner.line1.classList.add("animating");
-
-        // Line 2
-        studioibizz.banner.spacer2 = document.createElement("span");
-        studioibizz.banner.spacer2.className = "spacer";
-        studioibizz.banner.line2 = document.querySelector(".slogan .line2");
-        studioibizz.banner.line2.innerHTML = wrapWords(studioibizz.banner.line2.innerHTML);
-        const line2words = document.querySelectorAll(".slogan .line2 .word");
-        line2words.forEach(function(word){
-            word.innerHTML = wrapChars(word.innerHTML);
-        });
-        studioibizz.banner.line2.insertBefore(studioibizz.banner.spacer2, studioibizz.banner.line2.childNodes[0]);
-        studioibizz.banner.line2.classList.add("animating");
-
+            // Line 2
+            studioibizz.banner.spacer2 = document.createElement("span");
+            studioibizz.banner.spacer2.className = "spacer";
+            studioibizz.banner.line2 = document.querySelector(".slogan .line2");
+            studioibizz.banner.line2.innerHTML = wrapWords(studioibizz.banner.line2.innerHTML);
+            const line2words = document.querySelectorAll(".slogan .line2 .word");
+            line2words.forEach(function(word){
+                word.innerHTML = wrapChars(word.innerHTML);
+            });
+            studioibizz.banner.line2.insertBefore(studioibizz.banner.spacer2, studioibizz.banner.line2.childNodes[0]);
+            studioibizz.banner.line2.classList.add("animating");
+        }
     },
     animate: function () {
         setTimeout(

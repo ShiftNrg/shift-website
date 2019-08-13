@@ -7,6 +7,7 @@ studioibizz.roadmap = {
         this.attach();
     },
     attach: function () {
+        if (document.querySelector('.roadmapCarousel')) {
             studioibizz.roadmap.slider = new Glide('.roadmapCarousel', {
                 type: 'slider',
                 startAt: 0,
@@ -17,6 +18,7 @@ studioibizz.roadmap = {
                 animationDuration: 900
             });
             studioibizz.roadmap.slider.mount();
+        }
     },
     detach: function () {
 

@@ -8,6 +8,26 @@ require("./modules/viewport");
 require("./modules/banner");
 require("./modules/roadmap");
 
+function getParentWithMatchingSelector (target, selector) {
+    let result = null;
+    [...document.querySelectorAll(selector)].forEach(function(el) {
+        if (el !== target && el.contains(target)) {
+            result = el;
+        }
+    });
+    return result;
+}
+
+function handleHref(href, linkdiv = null) {
+    console.log("handleHref", href);
+    if (linkdiv) {
+        // Handle linkdiv animations when needed
+        if (linkdiv.classList.contains("newsarticle")) {
+            console.log("Handle newsarticle animation");
+        }
+    }
+}
+
 // Call to actions
 document.addEventListener(
     "click",
@@ -35,6 +55,23 @@ document.addEventListener(
                     document.getElementsByClassName("steps")[0].classList.add("inactive");
                 }
             }
+        } else {
+            var e = e || window.event;
+            const target = e.target || e.srcElement;
+                const linkdiv = getParentWithMatchingSelector(target, '.linkdiv');
+                if (linkdiv) {
+                    e.preventDefault();
+                    // Href with linkdiv & custom animations when needed
+                    if (linkdiv.querySelector("a")) {
+                        const href = linkdiv.querySelector("a").getAttribute("href");
+                        handleHref(href, linkdiv);
+                    }
+                } else if (target.hasAttribute("href")) {
+                    e.preventDefault();
+                    // Normal href without linkdiv
+                    const href = target.getAttribute("href");
+                    handleHref(href);
+                }
         }
     }
 );
