@@ -18,8 +18,8 @@ function getParentWithMatchingSelector (target, selector) {
     return result;
 }
 
-function handleHref(href, linkdiv = null) {
-    console.log("handleHref", href);
+function handleHref(href, target = "_self", linkdiv = null) {
+    console.log("handleHref", href, target);
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
@@ -57,20 +57,22 @@ document.addEventListener(
             }
         } else {
             var e = e || window.event;
-            const target = e.target || e.srcElement;
-                const linkdiv = getParentWithMatchingSelector(target, '.linkdiv');
+            const element = e.target || e.srcElement;
+                const linkdiv = getParentWithMatchingSelector(element, '.linkdiv');
                 if (linkdiv) {
                     e.preventDefault();
                     // Href with linkdiv & custom animations when needed
                     if (linkdiv.querySelector("a")) {
                         const href = linkdiv.querySelector("a").getAttribute("href");
-                        handleHref(href, linkdiv);
+                        let target = linkdiv.querySelector("a").getAttribute("target");
+                        handleHref(href, target ? target : "_self", linkdiv);
                     }
-                } else if (target.hasAttribute("href")) {
+                } else if (element.hasAttribute("href")) {
                     e.preventDefault();
                     // Normal href without linkdiv
-                    const href = target.getAttribute("href");
-                    handleHref(href);
+                    const href = element.getAttribute("href");
+                    const target = element.getAttribute("target");
+                    handleHref(href, target);
                 }
         }
     }
