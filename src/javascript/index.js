@@ -74,11 +74,11 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
-            console.log(linkdiv.parentNode);
             const li = linkdiv.parentNode;
             const index = Array.prototype.slice.call(li.parentNode.children).indexOf(li);
 
-                makeCloneThatScales(linkdiv,index);
+            // Create clone with correct color based on index
+            makeCloneThatScales(linkdiv, index);
             anime({
                 targets: oldLayer,
                 opacity: 0,
@@ -103,6 +103,9 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
         loadPage(href).then(newNode => {
             waitfor(_isAnimatingOut, true, 50, 0, function () {
                 animatePage(newNode);
+                if (linkdiv.classList.contains("newsarticle")) {
+                    removeCloneThatScales();
+                }
             });
         });
     } else {
@@ -153,7 +156,6 @@ let clonedBaseNode = null;
 let pageOffset = (window.innerWidth >= 1301 ? 130 : (window.innerWidth >= 1025 ? 90 : (window.innerWidth >= 768 ? 30 : 0)));
 
 const makeCloneThatScales = (target, index = 0) => {
-    console.log(String("clone index" + index));
     let i = target.getBoundingClientRect();
     // clonedBaseNode = target.cloneNode(!0);
     clonedBaseNode = document.createElement("div");
@@ -192,25 +194,21 @@ const makeCloneThatScales = (target, index = 0) => {
                 isAnimatingOut = true;
             }
         })
+
+};
+const removeCloneThatScales = () => {
+    anime.timeline({loop: false})
         .add({
             targets: clonedBaseNode,
             duration: 400,
             top: window.innerHeight,
             height: 0,
-            easing: 'easeInOutQuad'
-        })
-
-};
-// const removeCloneThatScales = () => {
-//     $(this.clonedBaseNode).fadeOut(
-//         600,
-//         function () {
-//             $(this).remove(),
-//                 studioibizz.jsonFramework.clonedBaseNode = studioibizz.jsonFramework._scalableSection = null,
-//                 studioibizz.jsonFramework.IS_ZOOMTRANSITION = !1;
-//         }
-//     );
-// },
+            easing: 'easeInOutQuad',
+            complete: function () {
+                clonedBaseNode.remove();
+            }
+        });
+}
 
 // Call to actions
 document.addEventListener(
