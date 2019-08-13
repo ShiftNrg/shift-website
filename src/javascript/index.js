@@ -8,6 +8,13 @@ require("./modules/viewport");
 require("./modules/banner");
 require("./modules/roadmap");
 
+// Constants
+const backLayer = document.querySelector("#topcontainer > .backlayer");
+const frontLayer = document.querySelector("#topcontainer > .frontlayer");
+let newNode;
+let isAnimatingOut = false;
+
+// Helpers
 function getParentWithMatchingSelector (target, selector) {
     let result = null;
     [...document.querySelectorAll(selector)].forEach(function(el) {
@@ -17,28 +24,102 @@ function getParentWithMatchingSelector (target, selector) {
     });
     return result;
 }
+function waitfor(test, expectedValue, msec, count, callback) {
+    // Check if condition met. If not, re-check later (msec).
+    while (test() !== expectedValue) {
+        count++;
+        setTimeout(function() {
+            waitfor(test, expectedValue, msec, count, callback);
+        }, msec);
+        return;
+    }
+    // Condition finally met. callback() can be executed.
+    callback();
+}
 
-function handleHref(href, target = "_self", linkdiv = null) {
+// Detach and disable events
+function preventEvent(e) {
+    e = e || window.event;
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+    e.returnValue = false;
+}
+function disableScrolling() {
+    // disable real scroll events
+    if (window.addEventListener) { // older FF
+        window.addEventListener('DOMMouseScroll', preventEvent, false);
+    }
+    window.onwheel = preventEvent; // modern standard
+    window.onmousewheel = preventEvent; // older browsers, IE
+    window.ontouchmove = preventEvent; // mobile
+}
+function detachAll() {
+    // Detach all events, so the ram won't overload.
+
+}
+
+// Handle href
+const handleHref = (href, target = "_self", linkdiv = null) => {
     console.log("handleHref", href, target);
 
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
             console.log("Handle newsarticle animation");
+
+            setTimeout(function(){
+                isAnimatingOut = true;
+            }, 5000);
         }
     }
 
-    // Preload new Href
-    var xmlhttp;
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        xmlhttp.readyState == 4 && xmlhttp.status == 200 && setPage(xmlhttp.responseText);
+    if (target === "_self") {
+        loadPage(href).then(newNode => {
+            waitfor(_isAnimatingOut,true,50,0, function(){
+                animatePage(newNode);
+            });
+        });
+    } else {
+        window.location.href = href;
     }
-    xmlhttp.open("GET", href, true);
-    xmlhttp.send();
+
 }
-function setPage(result) {
-    console.log("result",result);
+
+
+const _isAnimatingOut = () => {
+    return isAnimatingOut;
+}
+const animatePage = (newNode) => {
+    console.log("Animate in", newNode);
+}
+const loadPage = (href) => {
+    return new Promise((resolve) => {
+        // Preload new page
+        // Should be changed to vue(?) page based on the target href
+        var xmlhttp;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                setPage(xmlhttp.responseText).then(newNode => {
+                   resolve(newNode);
+                });
+            }
+        }
+        xmlhttp.open("GET", href, true);
+        xmlhttp.send();
+    });
+}
+const setPage = (result) => {
+    return new Promise((resolve) => {
+        // Destory previous page events
+        detachAll(), disableScrolling();
+        // Reset positions
+        frontLayer.style.top = backLayer.style.top = 0;
+        //
+        newNode = document.createElement('div'), newNode.className = "scene", newNode.innerHTML = result;
+        resolve(newNode);
+    });
 }
 
 // Call to actions
