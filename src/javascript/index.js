@@ -74,6 +74,7 @@ const enableScrolling = () => {
 }
 const attachAll = () => {
     studioibizz.roadmap.attach();
+    studioibizz.banner.attach();
 }
 const detachAll = () => {
     // Detach all events, so the ram won't overload.
