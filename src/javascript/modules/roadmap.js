@@ -21,7 +21,9 @@ studioibizz.roadmap = {
         }
     },
     detach: function () {
-
+        if (document.querySelector('.roadmapCarousel')) {
+            studioibizz.roadmap.slider.destroy();
+        }
     }
 };
 studioibizz.roadmap.init();

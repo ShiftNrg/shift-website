@@ -72,13 +72,19 @@ const enableScrolling = () => {
     window.onwheel = null;
     window.ontouchmove = null;
 }
+const attachAll = () => {
+    studioibizz.roadmap.attach();
+}
 const detachAll = () => {
     // Detach all events, so the ram won't overload.
-
+    studioibizz.roadmap.detach();
 }
 
 // Handle href
 const handleHref = (href, target = "_self", linkdiv = null) => {
+    console.log("href",href);
+    console.log("target",target);
+    console.log("linkdiv",linkdiv);
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
@@ -93,25 +99,25 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
                 duration: 600,
                 easing: 'easeInOutQuad'
             });
-        } else {
-            // Just animate out the oldLayer
-            anime({
-                targets: oldLayer,
-                opacity: 0,
-                duration: 600,
-                easing: 'easeInOutQuad',
-                complete: function () {
-                    hasAnimatedOut = true;
-                }
-            });
         }
+    } else {
+        // Just animate out the oldLayer
+        anime({
+            targets: oldLayer,
+            opacity: 0,
+            duration: 600,
+            easing: 'easeInOutQuad',
+            complete: function () {
+                hasAnimatedOut = true;
+            }
+        });
     }
 
     if (target === "_self") {
         loadPage(href).then(newNode => {
             waitfor(_hasAnimatedOut, true, 50, 0, function () {
                 animatePage(newNode);
-                if (linkdiv.classList.contains("newsarticle")) {
+                if (linkdiv && linkdiv.classList.contains("newsarticle")) {
                     removeCloneThatScales();
                 }
                 hasAnimatedOut = false;
@@ -150,6 +156,7 @@ const animatePage = (newNode) => {
             frontLayer.style.visibility = backLayer.style.visibility = "hidden";
             newNode = "";
             oldLayer = document.querySelector("#topcontainer > .scene");
+            attachAll();
         }
     });
 }
@@ -246,6 +253,7 @@ const removeCloneThatScales = () => {
 document.addEventListener(
     "click",
     function (e) {
+        e.preventDefault();
         const element = this.activeElement;
         const action = element.dataset.action;
 
@@ -271,22 +279,28 @@ document.addEventListener(
             }
         } else {
             var e = e || window.event;
-            const element = e.target || e.srcElement;
+            let element = e.target || e.srcElement;
             const linkdiv = element.classList.contains("linkdiv") ? element : getParentWithMatchingSelector(element, '.linkdiv');
+
             if (linkdiv) {
-                e.preventDefault();
                 // Href with linkdiv & custom animations when needed
                 if (linkdiv.querySelector("a")) {
                     const href = linkdiv.querySelector("a").getAttribute("href");
-                    let target = linkdiv.querySelector("a").getAttribute("target");
+                    const target = linkdiv.querySelector("a").getAttribute("target");
                     handleHref(href, target ? target : "_self", linkdiv);
                 }
-            } else if (element.hasAttribute("href")) {
-                e.preventDefault();
-                // Normal href without linkdiv
-                const href = element.getAttribute("href");
-                const target = element.getAttribute("target");
-                handleHref(href, target);
+            } else {
+                while (element) {
+                    // Loop untill the <a is found, instead of the child.
+                    if (element instanceof HTMLAnchorElement) {
+                        const href = element.getAttribute("href");
+                        const target = element.getAttribute("target");
+                        handleHref(href, target ? target : "_self");
+                        break;
+                    }
+
+                    element = element.parentNode;
+                }
             }
         }
     }

@@ -61,6 +61,9 @@
                     display:block; clear:both; margin-right:auto;
                     @include media("min",768,0) { width:790/1600*100vw; max-width:100%; }
                 }
+                > .Intro {
+                    @include vw-font-size(22);
+                }
             }
         }
         &.overview {

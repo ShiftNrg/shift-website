@@ -102,7 +102,7 @@ p, ul, ol {
     &:last-child { margin-bottom:0; }
 }
     h4 {
-        @include vw-font-size(20); line-height:1.1;
+        @include vw-font-size(19); line-height:1.1;
         @include vw-margin(0,0,15);
     }
     ul {
