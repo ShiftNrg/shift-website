@@ -1,13 +1,16 @@
 .banner {
     position:relative;
     background:$gradient1;
-    color:#fff;
+    color:#fff; overflow:visible;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
-    padding:calc(var(--headerheight) * 1.3) 0;
-    min-height: 100vh; min-height:var(--vh); min-height: -webkit-fill-available;
+    padding:calc(var(--headerheight) * 1.3) 0 20px;
+    min-height:100vh; min-height:var(--vh);
+    @include media("min",768,0) {
+        min-height: calc(100vh - var(--inneroffset)); min-height:calc(var(--vh) - var(--inneroffset));
+    }
 
     &::before {
-        content:''; left:0; top:0; right:0; bottom:0; position:absolute; display:block;
+        content:''; left:0; top:0; right:0; bottom:calc(var(--inneroffset) * -1); position:absolute; display:block;
         background:url(../images/decoration.png) no-repeat left bottom;
 
         @media (max-width:915px) {
@@ -86,15 +89,18 @@
     > .socials {
         display:flex; flex-direction:row; align-items:center;
         position:absolute; z-index:3;
-        left:0; bottom:0; right:0;
+        left:0; right:0;
         margin:0 -7.5/14*1em;
         @include media("min",768,0) {
+            color:$themecolor;
+            top:100%; bottom:auto;
             justify-content:flex-end;
-            min-height:var(--headerheight);
+            min-height:var(--inneroffset);
             @include vw-font-size(14);
             padding:15px var(--pageoffset);
         }
         @include media("max",767,0) {
+            bottom:0; top:auto;
             justify-content:center;
             @include vw-font-size(10);
             padding:var(--smalloffset) 10px;
@@ -111,6 +117,10 @@
         > a {
             color:rgba(#fff,0.6);
             &:hover { color:rgba(#fff,1); }
+            @include media("min",768,0) {
+                color:rgba($themecolor,0.6);
+                &:hover { color:rgba($themecolor,1); }
+            }
         }
     }
 
@@ -129,6 +139,30 @@
             }
         }
         @include media("max",767,0) { display:none !important; }
+    }
+    > .scrollto2 {
+        position:absolute; z-index:10;
+        left:0; top:100%; width:var(--inneroffset); height:var(--inneroffset);
+        background:$themecolor; color:#fff;
+        border:0;
+        span.icon {
+            font-size:20px;
+            transform:rotate(90deg);
+            display:block; margin:0 auto;
+            position:relative;
+            width:1em; height:1em;
+        }
+        @include media("min",768,0) {
+            &::before {
+                content:''; left:0; top:0; right:0; bottom:0; position:absolute; display:block;
+                background:url(../images/decoration.png) no-repeat left bottom;
+            }
+        }
+        @include media("max",767,0) { display:none !important; }
+    }
+
+    ~ .maincontainer {
+        margin-top:var(--inneroffset);
     }
 }
 

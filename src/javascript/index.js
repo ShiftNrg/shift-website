@@ -249,6 +249,14 @@ const removeCloneThatScales = () => {
         });
 }
 
+const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+    };
+}
 // Call to actions
 document.addEventListener(
     "click",
@@ -259,8 +267,11 @@ document.addEventListener(
 
         if (action) {
             if (action === "scrollto") {
-                document.getElementsByClassName("maincontainer")[0].scrollIntoView({
-                    behavior: "smooth"
+                anime({
+                    targets: scrollElement,
+                    scrollTop: getOffset(document.getElementsByClassName("maincontainer")[0]).top,
+                    duration: 700,
+                    easing: 'easeInOutQuad'
                 });
             } else if (action === "togglemenu") {
                 if (document.body.classList.contains("menu-open")) {
