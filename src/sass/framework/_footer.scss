@@ -9,7 +9,7 @@ footer#footer {
     }
     @include media("min",768,991) {
         font-size:11px;
-        --inneroffset: var(--pageoffset);
+        --inneroffset: 30px;
     }
 
     .invisible { opacity:1; }

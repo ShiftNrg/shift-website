@@ -16,72 +16,6 @@
     }
 }
 
-.socialshare {
-    position:relative;
-    ul.social {
-        overflow:visible;
-        margin:0; padding:0; list-style:none;
-            position:absolute;
-        @include media("max",767,0) {
-            display:flex; flex-direction:row; justify-content:flex-start; align-items:center;
-        }
-        > li {
-            list-style: none;
-            float:none; clear:both; margin:10px 0 0;
-            overflow:visible;
-            &::after { content:""; display:table; clear:both; }
-            &:first-child { margin-top:0; }
-            @include media("max",767,0) { float:left; margin:0 10px 0 0; clear:none; }
-            a, button {
-                position:relative;
-                background:none transparent; color:$themecolor; overflow:visible;
-                width:60px; height:60px; border:1px solid rgba($themecolor4,0.5);
-                line-height:30px; padding:15px; border-radius:50%;
-                font-size:20px;
-                font-family:"FontAwesome";
-                text-align:center;
-                display:block;
-                span { display:none; }
-
-                @include media("max",767,0) {
-                    width:30px; height:30px; line-height:20px; padding:5px; font-size:15px;
-                }
-            }
-            a {
-                &:hover {
-                    border-color:$themecolor;
-                }
-            }
-
-            &.toggle {
-                span {
-                    display:block; font-size:25px; margin-left:auto; margin-right:auto;
-                    @include media("max",767,0) { font-size:17px; }
-                }
-                ~ .notshown {
-                    opacity:0; visibility:hidden;
-                    transition:all .3s ease-in-out;
-                    @include media("min",768,0) {
-                        transform: translate(0px, -100%);
-                    }
-                }
-                + .notshown { margin-top:0; }
-            }
-        }
-
-        &:hover {
-            > li {
-                &.toggle {
-                    ~ .notshown { opacity: 1; visibility: visible; }
-                    @include media("min",768,0) {
-                        button { opacity:0; visibility: hidden; }
-                    }
-                }
-            }
-        }
-    }
-}
-
 .maincontainer {
     > .news {
         .category {
@@ -108,7 +42,7 @@
                 position:relative; z-index:2;
                 padding-left: calc(var(--pageoffset) + var(--inneroffset));
                 padding-right: var(--pageoffset);
-                padding-top:190/1600*100vw; padding-bottom:90/1600*100vw;
+                padding-top:210/1600*100vw; padding-bottom:90/1600*100vw;
                 @include media("min",1600,0) { padding-top:140px; padding-bottom:90px; }
 
                 &::before {
@@ -123,7 +57,7 @@
 
                 @include media("min",768,0) {
                     > h1 {
-                        max-width:770/1600*100vw;
+                        max-width:770px;
                     }
                 }
                 @include media("max",767,0) {
@@ -144,7 +78,9 @@
                 width:calc(100% - var(--pageoffset));
                 > .Intro, > .Text {
                     display:block; clear:both; margin-right:auto;
-                    @include media("min",768,0) { width:790/1600*100vw; max-width:100%; }
+                    @include media("min",768,0) {
+                        width:790px; max-width:100%;
+                    }
                 }
                 > .Intro {
                     @include vw-font-size(22);
@@ -171,6 +107,10 @@
                             width: 100%;
                             color: rgba(255, 255, 255, 0.8);
                             background: $themecolor;
+
+                            @include media("min",768,1024) {
+                                height:50px;
+                            }
 
                             &:hover {
                                 color: rgba(255, 255, 255, 1);
@@ -227,9 +167,6 @@
 
             @include media("min", 768, 0) {
                 padding-right: 0;
-            }
-            @include media("min", 768, 1024) {
-                padding-left: 0;
             }
 
             article {
@@ -303,6 +240,9 @@
                 margin-right: calc(var(--pageoffset) * -1);
                 @include media("min", 768, 0) {
                     padding-bottom: var(--smalloffset);
+                }
+                @include media("min",768,991) {
+                    margin-right:-30px;
                 }
 
                 > .block-grid.up3 > li {

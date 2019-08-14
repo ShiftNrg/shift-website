@@ -4,6 +4,13 @@
     @include media("min", 768, 0) {
         @include before($xdgrey);
     }
+    @include media("min",768,1024) {
+        > .inner {
+            > h3, > h4, > .Intro {
+                width:calc(100% - 150px);
+            }
+        }
+    }
     @include media("min",1025,0) {
         > .inner {
             > .Intro {

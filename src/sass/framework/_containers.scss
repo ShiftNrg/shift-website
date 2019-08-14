@@ -67,7 +67,7 @@
 
         &:nth-child(4n-3) {
             // white
-            @include media("min",768,0) {
+            @include media("min",1025,0) {
                 > .inner {
                     padding-left: calc(var(--pageoffset) + var(--inneroffset));
                     padding-right: calc(var(--pageoffset) + var(--inneroffset));

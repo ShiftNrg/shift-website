@@ -192,7 +192,7 @@ const setPage = (result) => {
 // Scaleable clone
 // Scale transition helper
 let clonedBaseNode = null;
-let pageOffset = (window.innerWidth >= 1301 ? 130 : (window.innerWidth >= 1025 ? 90 : (window.innerWidth >= 768 ? 30 : 0)));
+let pageOffset = (window.innerWidth >= 1301 ? 130 : (window.innerWidth >= 1025 ? 90 : (window.innerWidth >= 768 ? 50 : 0)));
 
 const makeCloneThatScales = (target, index = 0) => {
     let i = target.getBoundingClientRect();
