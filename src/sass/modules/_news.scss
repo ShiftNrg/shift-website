@@ -52,6 +52,16 @@
                     max-width:770/1600*100vw;
                 }
             }
+            > .inner {
+                margin-left: var(--pageoffset);
+                padding:var(--inneroffset);
+                background:$xlgrey;
+                width:calc(100% - var(--pageoffset));
+                > .Intro, > .Text {
+                    display:block; clear:both; margin-right:auto;
+                    @include media("min",768,0) { width:790/1600*100vw; max-width:100%; }
+                }
+            }
         }
         &.overview {
             background:#fff;

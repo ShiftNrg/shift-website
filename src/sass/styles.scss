@@ -101,6 +101,10 @@ p, ul, ol {
     @include vw-margin(0,0,30);
     &:last-child { margin-bottom:0; }
 }
+    h4 {
+        @include vw-font-size(20); line-height:1.1;
+        @include vw-margin(0,0,15);
+    }
     ul {
         list-style:none; margin-left:0;
         margin-bottom:-30/14*1em; margin-right:-20px;
