@@ -234,10 +234,6 @@
             }
         }
 
-        &.news.overview {
-            @include media("max",767,0) { padding: 0 var(--inneroffset); }
-        }
-
         &.locknload {
             > .inner {
                 text-align: center;
