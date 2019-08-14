@@ -142,7 +142,7 @@
     }
     > .scrollto2 {
         position:absolute; z-index:10;
-        left:0; top:100%; width:var(--inneroffset); height:var(--inneroffset);
+        left:0; top:100%; width:var(--pageoffset); height:var(--inneroffset);
         background:$themecolor; color:#fff;
         border:0;
         span.icon {
