@@ -82,9 +82,6 @@ const detachAll = () => {
 
 // Handle href
 const handleHref = (href, target = "_self", linkdiv = null) => {
-    console.log("href",href);
-    console.log("target",target);
-    console.log("linkdiv",linkdiv);
     if (linkdiv) {
         // Handle linkdiv animations when needed
         if (linkdiv.classList.contains("newsarticle")) {
@@ -102,15 +99,17 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
         }
     } else {
         // Just animate out the oldLayer
-        anime({
-            targets: oldLayer,
-            opacity: 0,
-            duration: 600,
-            easing: 'easeInOutQuad',
-            complete: function () {
-                hasAnimatedOut = true;
-            }
-        });
+        anime.timeline({loop: false})
+            .add({
+                targets: oldLayer,
+                opacity: 0,
+                top: "-200px",
+                duration: 600,
+                easing: 'easeInOutQuad',
+                complete: function () {
+                    hasAnimatedOut = true;
+                }
+            })
     }
 
     if (target === "_self") {
