@@ -15,7 +15,7 @@ let backLayer = document.querySelector("#topcontainer > .backlayer");
 let frontLayer = document.querySelector("#topcontainer > .frontlayer");
 let oldLayer = document.querySelector("#topcontainer > .scene");
 let newNode;
-let isAnimatingOut = false;
+let hasAnimatedOut = false;
 
 // Helpers
 const setStyles = (t, e) => {
@@ -101,7 +101,7 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
                 duration: 600,
                 easing: 'easeInOutQuad',
                 complete: function () {
-                    isAnimatingOut = true;
+                    hasAnimatedOut = true;
                 }
             });
         }
@@ -109,11 +109,12 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
 
     if (target === "_self") {
         loadPage(href).then(newNode => {
-            waitfor(_isAnimatingOut, true, 50, 0, function () {
+            waitfor(_hasAnimatedOut, true, 50, 0, function () {
                 animatePage(newNode);
                 if (linkdiv.classList.contains("newsarticle")) {
                     removeCloneThatScales();
                 }
+                hasAnimatedOut = false;
             });
         });
     } else {
@@ -123,8 +124,8 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
 }
 
 
-const _isAnimatingOut = () => {
-    return isAnimatingOut;
+const _hasAnimatedOut = () => {
+    return hasAnimatedOut;
 }
 const animatePage = (newNode) => {
     setStyles(
@@ -136,7 +137,7 @@ const animatePage = (newNode) => {
     );
     backLayer.appendChild(newNode);
     oldLayer.remove();
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
         anime({
             targets: backLayer,
@@ -147,6 +148,7 @@ const animatePage = (newNode) => {
                 topcontainer.appendChild(newNode);
                 frontLayer.style.visibility = backLayer.style.visibility = "hidden";
                 newNode = "";
+                oldLayer = document.querySelector("#topcontainer > .scene");
             }
         });
 
@@ -226,7 +228,7 @@ const makeCloneThatScales = (target, index = 0) => {
             easing: 'easeInOutQuad',
             complete: function () {
                 // Set finished boolean, so we can animate in the new page.
-                isAnimatingOut = true;
+                hasAnimatedOut = true;
             }
         })
 

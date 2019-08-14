@@ -63,7 +63,7 @@
             }
 
             > .inner {
-                width: 100%;
+                width: 100%; position:relative;
                 @include vw-padding(261, 0, 0);
 
                 > time {
