@@ -11,6 +11,48 @@
 
 .maincontainer {
     > .news {
+        .category {
+            border: 1px solid currentColor;
+            text-transform: uppercase;
+            font-weight: 600;
+            @include vw-font-size(11);
+            min-width: 112/11*1em;
+            line-height: 14/11*1em;
+            padding: 5/11*1em 20/11*1em;
+            display: inline-block;
+            border-radius: 12/11*1em;
+            text-align: center;
+            opacity: 0.5;
+            margin-bottom: 25/11*1em;
+        }
+
+        &.view {
+            > .heading {
+                display: flex; flex-direction: column; justify-content: center; align-items:flex-start;
+                width:100%;
+                height:445/1600*100vw;
+                background:$themecolor; color:#fff;
+                position:relative; z-index:2;
+                padding-left: calc(var(--pageoffset) + var(--inneroffset));
+                padding-right: var(--pageoffset);
+                padding-top:100/1600*100vw;
+                @include media("min",1600,0) { padding-top:100px; }
+
+                &::before {
+                    content:''; left:0; top:0; right:0; bottom:0; position:absolute; display:block;
+                    background:url(../images/decoration.png) no-repeat left bottom;
+                    transform:scaleX(-1);
+
+                    @media (max-width:915px) {
+                        background-size:auto 100%;
+                    }
+                }
+
+                > h1 {
+                    max-width:770/1600*100vw;
+                }
+            }
+        }
         &.overview {
             background:#fff;
             position:relative; z-index:3;
@@ -92,21 +134,6 @@
                                 @include vw-margin(0, 20, 0, 0);
                             }
                         }
-                    }
-
-                    > .category {
-                        border: 1px solid currentColor;
-                        text-transform: uppercase;
-                        font-weight: 600;
-                        @include vw-font-size(11);
-                        min-width: 112/11*1em;
-                        line-height: 14/11*1em;
-                        padding: 5/11*1em 20/11*1em;
-                        display: inline-block;
-                        border-radius: 12/11*1em;
-                        text-align: center;
-                        opacity: 0.5;
-                        margin-bottom: 25/11*1em;
                     }
 
                     > h3 {

@@ -143,6 +143,7 @@ const animatePage = (newNode) => {
         targets: backLayer,
         opacity: 1,
         duration: 600,
+        easing: 'easeInOutQuad',
         complete: function () {
             setTimeout(enableScrolling(), 20);
             topcontainer.appendChild(newNode);
