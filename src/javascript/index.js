@@ -134,8 +134,9 @@ const animatePage = (newNode) => {
             visibility: "visible"
         }
     );
-    backLayer.appendChild(newNode),
-    oldLayer.remove(),
+    backLayer.appendChild(newNode);
+    oldLayer.remove();
+    window.scrollTo(0, 0);
 
         anime({
             targets: backLayer,
@@ -221,7 +222,7 @@ const makeCloneThatScales = (target, index = 0) => {
         .add({
             targets: clonedBaseNode,
             duration: 400,
-            height: window.innerHeight,
+            height: window.innerHeight * 1.2,
             easing: 'easeInOutQuad',
             complete: function () {
                 // Set finished boolean, so we can animate in the new page.
