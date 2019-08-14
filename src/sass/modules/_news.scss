@@ -9,6 +9,62 @@
     }
 }
 
+.socialshare {
+    ul.social {
+        overflow:visible;
+        margin:0; padding:0; list-style:none;
+        &::after { content:""; display:table; clear:both; }
+        > li {
+            list-style: none;
+            float:none; clear:both; margin:10px 0 0;
+            overflow:visible;
+            &::after { content:""; display:table; clear:both; }
+            &:first-child { margin-top:0; }
+            a, button {
+                background:none transparent; color:$textcolor; overflow:visible;
+                &::after { content:""; display:table; clear:both; }
+                @include socialsize(38,0,0,0.5); position:relative;
+                &::before {
+                    content:''; position:absolute; left:-3px; top:-3px; right:-3px; bottom:-3px;
+                    display:block;
+                    //background:url(../images/share2.png) no-repeat center center / 44px 44px;
+                    display:block;
+                    opacity:0.25;
+                }
+            }
+            a {
+                &:hover {
+                    &::before {
+                        transform:rotate(90deg); opacity:1;
+                    }
+                }
+            }
+
+            &.toggle {
+                button {
+                    font-family:$text; font-weight:bold; line-height:20px;
+                    span { line-height:15px; margin-top:-12px; display:block; }
+                }
+                ~ .notshown {
+                    transform: translate(0px, -100%);
+                    opacity:0; visibility:hidden;
+                    transition:all .3s ease-in-out;
+                }
+                + .notshown { margin-top:0; }
+            }
+        }
+
+        &:hover {
+            > li {
+                &.toggle {
+                    button { opacity:0; visibility: hidden; }
+                    ~ .notshown { opacity: 1; visibility: visible; }
+                }
+            }
+        }
+    }
+}
+
 .maincontainer {
     > .news {
         .category {
@@ -53,6 +109,7 @@
                 }
             }
             > .inner {
+                position:relative;
                 margin-left: var(--pageoffset);
                 padding:var(--inneroffset);
                 background:$xlgrey;
@@ -63,6 +120,30 @@
                 }
                 > .Intro {
                     @include vw-font-size(22);
+                }
+
+                > .aside {
+                    width:var(--pageoffset);
+                    position:absolute;
+                    display: flex; flex-direction: column; justify-content: flex-start; align-items:stretch;
+                    z-index:10;
+                    left:calc(var(--pageoffset) * -1);
+                    top:0;
+                    > .back {
+                        height:180px;
+                        display: flex; flex-direction: column; justify-content: center; align-items:center; width:100%;
+                        color:rgba(255,255,255,0.8);  background:$themecolor;
+                        font-size:20px;
+                        span.icon {
+                            transform:scaleX(-1);
+                        }
+                        &:hover { color:rgba(255,255,255,1); }
+                    }
+                    > .socialshare {
+                        height:var(--pageoffset);
+                        display: flex; flex-direction: column; justify-content: center; align-items:center; width:100%;
+
+                    }
                 }
             }
         }

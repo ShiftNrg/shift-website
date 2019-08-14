@@ -139,3 +139,29 @@
         }
     }
 }
+
+
+
+@mixin socialsize($size : 30, $decrease : 2, $border : 0, $fontsize : 0.7) {
+
+    width:$size + $border * 1px; height:$size + $border * 1px; line-height:$size - $border * 1px;
+    font-size:$size*$fontsize * 1px; border-width:$border * 1px; border-style:solid;
+
+    @if $decrease != 0 {
+        @include media("max",strip_units($max_container),0) {
+            $newsize : $size - $decrease;
+            width:$newsize + $border * 1px; height:$newsize + $border * 1px; line-height:$newsize - $border * 1px;
+            font-size:$newsize*$fontsize * 1px; border-width:$border * 1px;
+        }
+        @include media("max",991,0) {
+            $newsize : $size - $decrease - $decrease;
+            width:$newsize + $border * 1px; height:$newsize + $border * 1px; line-height:$newsize - $border * 1px;
+            font-size:$newsize*$fontsize * 1px; border-width:$border * 1px;
+        }
+        @include media("max",767,0) {
+            $newsize : $size - $decrease - $decrease - $decrease;
+            width:$newsize + $border * 1px; height:$newsize + $border * 1px; line-height:$newsize - $border * 1px;
+            font-size:$newsize*$fontsize * 1px; border-width:$border * 1px;
+        }
+    }
+}
