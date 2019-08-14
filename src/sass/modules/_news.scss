@@ -9,19 +9,29 @@
     }
 }
 
+.back {
+    font-size: 20px;
+    span.icon {
+        transform: scaleX(-1);
+    }
+}
+
 .socialshare {
     position:relative;
     ul.social {
-        position:absolute;
         overflow:visible;
         margin:0; padding:0; list-style:none;
-        &::after { content:""; display:table; clear:both; }
+            position:absolute;
+        @include media("max",767,0) {
+            display:flex; flex-direction:row; justify-content:flex-start; align-items:center;
+        }
         > li {
             list-style: none;
             float:none; clear:both; margin:10px 0 0;
             overflow:visible;
             &::after { content:""; display:table; clear:both; }
             &:first-child { margin-top:0; }
+            @include media("max",767,0) { float:left; margin:0 10px 0 0; clear:none; }
             a, button {
                 position:relative;
                 background:none transparent; color:$themecolor; overflow:visible;
@@ -32,6 +42,10 @@
                 text-align:center;
                 display:block;
                 span { display:none; }
+
+                @include media("max",767,0) {
+                    width:30px; height:30px; line-height:20px; padding:5px; font-size:15px;
+                }
             }
             a {
                 &:hover {
@@ -42,11 +56,14 @@
             &.toggle {
                 span {
                     display:block; font-size:25px; margin-left:auto; margin-right:auto;
+                    @include media("max",767,0) { font-size:17px; }
                 }
                 ~ .notshown {
-                    transform: translate(0px, -100%);
                     opacity:0; visibility:hidden;
                     transition:all .3s ease-in-out;
+                    @include media("min",768,0) {
+                        transform: translate(0px, -100%);
+                    }
                 }
                 + .notshown { margin-top:0; }
             }
@@ -55,8 +72,10 @@
         &:hover {
             > li {
                 &.toggle {
-                    button { opacity:0; visibility: hidden; }
                     ~ .notshown { opacity: 1; visibility: visible; }
+                    @include media("min",768,0) {
+                        button { opacity:0; visibility: hidden; }
+                    }
                 }
             }
         }
@@ -131,28 +150,58 @@
                     @include vw-font-size(22);
                 }
 
-                > .aside {
-                    width:var(--pageoffset);
-                    position:absolute;
-                    display: flex; flex-direction: column; justify-content: flex-start; align-items:stretch;
-                    z-index:10;
-                    left:calc(var(--pageoffset) * -1);
-                    top:0;
-                    > .back {
-                        height:180px;
-                        display: flex; flex-direction: column; justify-content: center; align-items:center; width:100%;
-                        color:rgba(255,255,255,0.8);  background:$themecolor;
-                        font-size:20px;
-                        span.icon {
-                            transform:scaleX(-1);
-                        }
-                        &:hover { color:rgba(255,255,255,1); }
-                    }
-                    > .socialshare {
-                        height:var(--pageoffset);
-                        padding-top:40px;
-                        display: flex; flex-direction: column; justify-content: flex-start; align-items:center; width:100%;
+                @include media("min",768,0) {
+                    > .aside {
+                        width: var(--pageoffset);
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: stretch;
+                        z-index: 10;
+                        left: calc(var(--pageoffset) * -1);
+                        top: 0;
 
+                        > .back {
+                            height: 180px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            color: rgba(255, 255, 255, 0.8);
+                            background: $themecolor;
+
+                            &:hover {
+                                color: rgba(255, 255, 255, 1);
+                            }
+                        }
+
+                        > .socialshare {
+                            height: var(--pageoffset);
+                            padding-top: 40px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: center;
+                            width: 100%;
+
+                        }
+                    }
+                }
+                @include media("max",767,0) {
+                    > .aside {
+                        position:relative;
+                        display: flex; flex-direction: row; justify-content: flex-start; align-items:center; width:100%;
+                        > .back {
+                            margin-right:15px;
+                            width:30px; height:30px; line-height:30px; text-align:center;
+                            color:$themecolor;
+                            display:flex; flex-direction:row; justify-content:center; align-items:center;
+                        }
+                        > .socialshare {
+                            width:30px; height:30px;
+                        }
                     }
                 }
             }
