@@ -10,7 +10,9 @@
 }
 
 .socialshare {
+    position:relative;
     ul.social {
+        position:absolute;
         overflow:visible;
         margin:0; padding:0; list-style:none;
         &::after { content:""; display:table; clear:both; }
@@ -21,29 +23,25 @@
             &::after { content:""; display:table; clear:both; }
             &:first-child { margin-top:0; }
             a, button {
-                background:none transparent; color:$textcolor; overflow:visible;
-                &::after { content:""; display:table; clear:both; }
-                @include socialsize(38,0,0,0.5); position:relative;
-                &::before {
-                    content:''; position:absolute; left:-3px; top:-3px; right:-3px; bottom:-3px;
-                    display:block;
-                    //background:url(../images/share2.png) no-repeat center center / 44px 44px;
-                    display:block;
-                    opacity:0.25;
-                }
+                position:relative;
+                background:none transparent; color:$themecolor; overflow:visible;
+                width:60px; height:60px; border:1px solid rgba($themecolor4,0.5);
+                line-height:30px; padding:15px; border-radius:50%;
+                font-size:20px;
+                font-family:"FontAwesome";
+                text-align:center;
+                display:block;
+                span { display:none; }
             }
             a {
                 &:hover {
-                    &::before {
-                        transform:rotate(90deg); opacity:1;
-                    }
+                    border-color:$themecolor;
                 }
             }
 
             &.toggle {
-                button {
-                    font-family:$text; font-weight:bold; line-height:20px;
-                    span { line-height:15px; margin-top:-12px; display:block; }
+                span {
+                    display:block; font-size:25px; margin-left:auto; margin-right:auto;
                 }
                 ~ .notshown {
                     transform: translate(0px, -100%);
@@ -141,7 +139,8 @@
                     }
                     > .socialshare {
                         height:var(--pageoffset);
-                        display: flex; flex-direction: column; justify-content: center; align-items:center; width:100%;
+                        padding-top:40px;
+                        display: flex; flex-direction: column; justify-content: flex-start; align-items:center; width:100%;
 
                     }
                 }

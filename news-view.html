@@ -24,7 +24,9 @@
                 <div class="socialshare">
                     <ul class="social">
                         <li class="toggle">
-                            <button type="button"><span>...</span></button>
+                            <button type="button">
+                                <span class="icon"><svg width="25" height="25"><use xlink:href="#sprite-share"></svg></span>
+                            </button>
                         </li>
                         <li class="notshown"><a target="_blank" href="http://www.twitter.com/share?url={$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}" class="tw" rel="noopener"><span> Twitter</span></a></li>
                         <li class="notshown"><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}" class="fb" rel="noopener"><span> Facebook</span></a></li>
