@@ -137,26 +137,20 @@ const animatePage = (newNode) => {
     );
     backLayer.appendChild(newNode);
     oldLayer.remove();
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
-        anime({
-            targets: backLayer,
-            opacity: 1,
-            duration: 600,
-            complete: function(){
-                setTimeout(enableScrolling(), 20);
-                topcontainer.appendChild(newNode);
-                frontLayer.style.visibility = backLayer.style.visibility = "hidden";
-                newNode = "";
-                oldLayer = document.querySelector("#topcontainer > .scene");
-            }
-        });
-
-        // this.setBrowserTitle(),
-        // studioibizz.eventManager.attachAll(),
-        // this.GoogleAnalytics.send(this.pageURL, this.browserTitle),
-        // TweenLite.killTweensOf(studioibizz.jsonFramework.frontLayer),
-        // this.animatePageTween = {};
+    anime({
+        targets: backLayer,
+        opacity: 1,
+        duration: 600,
+        complete: function () {
+            setTimeout(enableScrolling(), 20);
+            topcontainer.appendChild(newNode);
+            frontLayer.style.visibility = backLayer.style.visibility = "hidden";
+            newNode = "";
+            oldLayer = document.querySelector("#topcontainer > .scene");
+        }
+    });
 }
 const loadPage = (href) => {
     return new Promise((resolve) => {
