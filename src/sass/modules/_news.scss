@@ -55,9 +55,9 @@
                     }
                 }
 
-                @include media("min",768,0) {
+                @include media("min",1025,0) {
                     > h1 {
-                        max-width:770px;
+                        max-width:770/1600*100vw;
                     }
                 }
                 @include media("max",767,0) {
