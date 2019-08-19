@@ -17,9 +17,7 @@ sameHeight = {
         return colHeight;
     },
     assign: function (className, useHeight, colHeight) {
-        console.log("className", className, "colHeight", colHeight);
         document.querySelectorAll(className).forEach(function(target) {
-            console.log("target",target,colHeight);
             if (useHeight) {
                 target.style.height = colHeight + "px";
             } else {
