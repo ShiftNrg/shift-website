@@ -1,0 +1,57 @@
+.maincontainer {
+    > section.issues {
+        > .inner {
+            > .block-grid {
+                @include vw-margin(50, 0, 0);
+            }
+        }
+
+        article {
+            text-align: center;
+
+            span.icon {
+                @include vw-font-size(60);
+                display: block;
+                @include vw-margin(10, 0);
+                width: 1em;
+                margin-left: auto;
+                margin-right: auto;
+                color: $themecolor;
+            }
+
+            > .issue, > .answer {
+                padding: calc(var(--smalloffset) * 0.6);
+                //border:1px solid $lgrey;
+            }
+
+            > .issue {
+                background: rgba(#fff, 0.5);
+            }
+
+            > .answer {
+                //@include vw-margin(10,0,0);
+                background: #fff;
+                border: 0;
+            }
+
+            .Content {
+                @include media("min", 768, 0) {
+                    @include vw-font-size(16);
+                    @include media("min", 1600, 0) {
+                        font-size: 16px;
+                    }
+                }
+                @include media("max", 767, 0) {
+                    @include vw-font-size(11);
+                }
+                @include media("min", 768, 991) {
+                    font-size: 11px;
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

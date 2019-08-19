@@ -7,6 +7,7 @@ require("./modules/dimensions");
 require("./modules/viewport");
 require("./modules/banner");
 require("./modules/roadmap");
+require("./modules/sameheight");
 
 // Constants
 const anime = require("../../node_modules/animejs/anime.min");
