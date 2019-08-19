@@ -48,7 +48,7 @@
         > * {
             position:relative;
             &.line1, &.line2 {
-                @include vw-font-size(64);
+                @include vw-font-size(56);
                 line-height: 1.01; font-weight:600;
             }
             &.line3 {
@@ -84,6 +84,7 @@
     }
     > .image {
         @include vw-margin(30,0,0);
+        > img { max-height:35vh; width:auto; height:100%; }
     }
 
     > .socials {
