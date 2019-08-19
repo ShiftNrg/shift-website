@@ -90,6 +90,16 @@ position:relative;
                 user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
             }
+            > .state {
+                display:block; margin:0; @include vw-margin(0,0,20);
+
+                > .label {
+                    display:block; position:absolute; right:0; top:0; @include vw-margin(30,30,0,0);
+                    background:$themecolor3; color:#fff; @include vw-font-size(11);
+                    line-height:15/11*1em; padding:2/11*1em 10/11*1em;
+                    border-radius:3/11*1em;
+                }
+            }
             > span.icon {
                 @include vw-margin(0,0,20);
                 @include media("min",768,0) {

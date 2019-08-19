@@ -94,8 +94,9 @@
             > .inner {
                 background: $xdgrey;
                 color: #fff;
+
+                > h4, > .aside > h4 { color:$themecolor3; }
                 > .aside {
-                    > h4 { color:$themecolor3; }
                     > nav {
                         border-color:rgba(#fff,0.3);
                     }
