@@ -63,6 +63,12 @@ $hamburger-types: (
     border:0;
     background:#fff;
 
+    @include media("min",768,0) {
+        left:calc(var(--pageoffset) * 0.5); top:calc(var(--pageoffset) * 0.5);
+        transform:translate(-50%,-50%);
+        box-shadow:5px 5px 10px rgba(#000,0.15);
+    }
+
     .hamburger-label {
         //@include spacing(100); @include font-size(14); text-transform:uppercase; font-weight:600;
         &:first-child {

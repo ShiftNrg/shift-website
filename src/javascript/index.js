@@ -4,7 +4,6 @@ import '../sass/styles.scss';
 require("./modules/nojs");
 require("./modules/svgsprite");
 require("./modules/dimensions");
-require("./modules/header");
 require("./modules/viewport");
 require("./modules/banner");
 require("./modules/roadmap");
@@ -280,9 +279,17 @@ document.addEventListener(
             } else if (action === "togglemenu") {
                 if (document.body.classList.contains("menu-open")) {
                     document.body.classList.remove("menu-open");
+                    if (window.innerWidth > 767) {
+                        document.body.classList.remove("menu-mobile");
+                    }
                     element.classList.remove("is-active");
                 } else {
-                    document.body.classList.add("menu-open");
+                    if (window.innerWidth > 767) {
+                        document.body.classList.add("menu-mobile");
+                    }
+                    setTimeout(function(){
+                        document.body.classList.add("menu-open");
+                    }, window.innerWidth > 767 ? 450 : 10);
                     element.classList.add("is-active");
                 }
             } else if (action === "locknload") {
@@ -321,6 +328,10 @@ document.addEventListener(
     }
 );
 
+if (window.innerWidth <= 767) {
+    document.body.classList.add("menu-mobile");
+}
+
 window.addEventListener("scroll", function () {
     var bannerTarget = document.getElementsByClassName("banner")[0];
     var socialTarget = document.getElementsByClassName("stickysocials")[0];
@@ -338,6 +349,13 @@ window.addEventListener("scroll", function () {
         maincontainerTarget.classList.add("past");
     } else {
         maincontainerTarget.classList.remove("past");
+    }
+
+    // Set mobile-toggle visible for desktop when past first screen
+    if (window.scrollY > window.innerHeight) {
+        document.getElementById("mobile-toggle").classList.add("show");
+    } else {
+        document.getElementById("mobile-toggle").classList.remove("show");
     }
 });
 
