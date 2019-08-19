@@ -283,6 +283,7 @@ document.addEventListener(
                         document.body.classList.remove("menu-mobile");
                     }
                     element.classList.remove("is-active");
+                    enableScrolling();
                 } else {
                     if (window.innerWidth > 767) {
                         document.body.classList.add("menu-mobile");
@@ -291,6 +292,7 @@ document.addEventListener(
                         document.body.classList.add("menu-open");
                     }, window.innerWidth > 767 ? 450 : 10);
                     element.classList.add("is-active");
+                    disableScrolling();
                 }
             } else if (action === "locknload") {
                 if (document.getElementsByClassName("steps")[0].classList.contains("inactive")) {
