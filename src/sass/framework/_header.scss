@@ -98,7 +98,7 @@ body.menu-open #mobile-toggle {
 }
 // Set toggle header display none for mobile
 @include media("min",768,0) {
-    #mobile-toggle {
+    #mobile-toggle:not(.show) {
             display:none;
     }
 }

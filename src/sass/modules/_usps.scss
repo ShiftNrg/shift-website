@@ -84,6 +84,9 @@
                 width:400%;
                 transition: all .3s ease-in-out;
 
+                display:flex; flex-direction:column; justify-content:center; align-items:stretch;
+                min-height:235px;
+
                 p:last-child { margin-bottom:0; }
             }
 

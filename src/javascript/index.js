@@ -4,6 +4,7 @@ import '../sass/styles.scss';
 require("./modules/nojs");
 require("./modules/svgsprite");
 require("./modules/dimensions");
+require("./modules/header");
 require("./modules/viewport");
 require("./modules/banner");
 require("./modules/roadmap");
