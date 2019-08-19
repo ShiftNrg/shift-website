@@ -46,6 +46,7 @@ studioibizz.sameheight = {
     attach: function () {
         sameHeight.init(".issues article > .issue",true);
         sameHeight.init(".issues article > .answer",true);
+        sameHeight.init(".roadmapCarousel article", true)
     },
     detach: function () {
 
