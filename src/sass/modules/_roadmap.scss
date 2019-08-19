@@ -29,6 +29,8 @@
         margin-right:calc(var(--pageoffset) * -1);
 position:relative;
         color:inherit;
+        cursor:grab;
+        &:active { cursor:grabbing; }
         .glide__arrows {
             position:absolute; right:var(--pageoffset); bottom:100%;
             @include vw-margin(0,0,50);

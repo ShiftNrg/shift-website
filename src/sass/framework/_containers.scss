@@ -94,6 +94,12 @@
             > .inner {
                 background: $xdgrey;
                 color: #fff;
+                > .aside {
+                    > h4 { color:$themecolor3; }
+                    > nav {
+                        border-color:rgba(#fff,0.3);
+                    }
+                }
             }
 
             .Intro ul > li::before, .Text ul > li::before {
@@ -105,13 +111,6 @@
                 color: #fff;
             }
 
-            > .inner {
-                > .aside {
-                    > nav {
-                        border-color:rgba(#fff,0.3);
-                    }
-                }
-            }
             @include media("min", 768, 0) {
                 &::before {
                     content: '';
