@@ -133,9 +133,9 @@ p, ul, ol {
         }
         > li {
             position:relative;
-            @include media("min",768,0) { padding:0 20px 30/14*1em 35/14*1em; }
+            @include media("min",768,0) { padding:0 20px 15/14*1em 35/14*1em; }
             @include media("min",768,1024) { padding-left:25/14*1em; }
-            @include media("max",767,0) { padding:0 20px 20/14*1em 30/14*1em; }
+            @include media("max",767,0) { padding:0 20px 15/14*1em 30/14*1em; }
         }
         > li::before {
             content:'\f00c'; font-family: 'FontAwesome';
