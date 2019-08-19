@@ -42,9 +42,11 @@ studioibizz.sameheight = {
         this.attach();
     },
     attach: function () {
-        sameHeight.init(".issues article > .issue",true);
-        sameHeight.init(".issues article > .answer",true);
-        sameHeight.init(".roadmapCarousel article", true)
+        if (window.innerWidth > 767) {
+            sameHeight.init(".issues article > .issue", true);
+            sameHeight.init(".issues article > .answer", true);
+            sameHeight.init(".roadmapCarousel article", true);
+        }
     },
     detach: function () {
 

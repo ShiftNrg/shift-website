@@ -88,6 +88,8 @@
                 min-height:235px;
 
                 p:last-child { margin-bottom:0; }
+
+                @include media("max",767,0) { display:none; }
             }
 
             &:hover {
