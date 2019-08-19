@@ -211,6 +211,10 @@
                         text-transform: uppercase;
                         @include spacing(20);
                         text-align: right;
+                        transform:scale(1);
+                        transform-origin:right top;
+                        opacity:1;
+                        transition:all .25s ease-in-out;
 
                         > span {
                             display: block;
@@ -228,16 +232,37 @@
 
                     > h3 {
                         @include vw-font-size(24);
+                        transform:scale(1);
+                        transform-origin:left bottom;
+                        transition:all .25s ease-in-out;
                     }
 
                     > nav {
                         justify-content: flex-start;
                     }
                 }
+
+                &:hover {
+                    > .inner {
+                        > time {
+                            transform:scale(1.05); opacity:0.5;
+                            transition:all .45s ease-in-out;
+                        }
+                        > h3 {
+                            transform:scale(1.05);
+                            transition:all .25s ease-in-out;
+                        }
+                        > nav .more-inline2 {
+                            &::before {
+                                content:''; left:100%;
+                            }
+                        }
+                    }
+                }
             }
 
             > .inner {
-                margin-right: calc(var(--pageoffset) * -1);
+                //margin-right: calc(var(--pageoffset) * -1);
                 @include media("min", 768, 0) {
                     padding-bottom: var(--smalloffset);
                 }

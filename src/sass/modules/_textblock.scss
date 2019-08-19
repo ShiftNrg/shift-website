@@ -28,6 +28,13 @@
                 }
             }
         }
+        &:not(:last-child) {
+            padding-bottom:0;
+            > .aside {
+                padding-left:0;
+                margin-left:auto; margin-right:auto; text-align:center;
+            }
+        }
     }
     @include media("max",767,0) {
         > figure {
