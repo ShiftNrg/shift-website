@@ -15,16 +15,37 @@
         > .inner {
             > .block-grid {
                 @include vw-margin(50, 0, 0);
+                overflow:visible;
                 > li {
+                    opacity:1;
+                    transition:all .3s ease-in-out;
                     @include media("max",767,0) {
                         width:50%;
                     }
+                    @include media("min",768,0) {
+                        &:nth-child(4n) ~ * {
+                            .Excerpt {
+                                bottom:100%; top:auto;
+                            }
+                        }
+                        &:nth-child(4n-3) .Excerpt {
+                            left:0;
+                        }
+                        &:nth-child(4n) .Excerpt {
+                            right:0;
+                        }
+                    }
+                }
+
+                &:hover > li:not(:hover) {
+                    opacity:0.5;
                 }
             }
         }
 
         article {
-            text-align: center;
+            text-align: center; position:relative; z-index:1;
+            > * { z-index:1; position:relative; }
             @include media("min",1025,0) {
                 width: 230/1600*100vw;
                 margin-left:auto; margin-right:auto;
@@ -45,6 +66,33 @@
             h5 {
                 @include vw-font-size(20);
                 @include vw-margin(0, 0, 20);
+            }
+
+            > .Text {
+                margin-bottom:0;
+            }
+
+            > .Excerpt {
+                position:absolute;
+                z-index:50;
+                opacity:0;
+                pointer-events:none;
+                visibility: hidden;
+                @include vw-margin(30,0);
+                top:100%; background:#fff; padding:calc(var(--inneroffset) * 0.75) var(--inneroffset);
+                border-radius:10px;
+                width:400%;
+                transition: all .3s ease-in-out;
+
+                p:last-child { margin-bottom:0; }
+            }
+
+            &:hover {
+                z-index:3;
+                .Excerpt {
+                    opacity:1;
+                    visibility: visible;
+                }
             }
         }
     }

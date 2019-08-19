@@ -1,0 +1,17 @@
+
+.maincontainer {
+    > section.cases {
+
+        article {
+            text-align:center;
+            > h3 {
+                @include vw-font-size(20); @include vw-margin(0,0,20);
+            }
+        }
+        > .inner {
+            > .block-grid {
+                @include vw-margin(50, 0, 0);
+            }
+        }
+    }
+}
