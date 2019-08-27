@@ -5,6 +5,7 @@
         article {
             text-align:left; align-items:flex-start;
             > figure {
+                align-self:center; 
                 @include vw-margin(0,0,15);
                 @include media("max",767,0) {
                     img { width:195/650*100vw; }
