@@ -18,6 +18,45 @@
             }
         }
     }
+    > figure + .inner > .aside {
+        align-items:flex-start;
+    }
+    > .inner:first-child:not(:last-child) {
+        @include media("min",768,0) { padding-left:var(--pageoffset); padding-right:var(--pageoffset); }
+            > .aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                overflow: hidden;
+
+                > h3 {
+                    position: relative;
+
+                    &::before, &::after {
+                        content: '';
+                        width: 50vw;
+                        top: 50%;
+                        height: 1px;
+                        background: currentColor;
+                        display: block;
+                        position: absolute;
+                    }
+
+                    &::before {
+                        right: calc(100% + 20px);
+                    }
+
+                    &::after {
+                        left: calc(100% + 20px);
+                    }
+                }
+                @include media("min",1025,0) {
+                   > .Intro { width:650/1600*100vw; }
+                }
+            }
+    }
     > .inner {
         > .aside {
             > nav {
