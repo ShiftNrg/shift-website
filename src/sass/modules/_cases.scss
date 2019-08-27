@@ -3,7 +3,10 @@
     > section.cases {
 
         article {
-            text-align:center;
+            text-align:left; align-items:flex-start;
+            > figure {
+                @include vw-margin(0,0,15);
+            }
             > h3 {
                 @include vw-font-size(20); @include vw-margin(0,0,20);
             }
