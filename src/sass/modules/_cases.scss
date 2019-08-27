@@ -6,6 +6,9 @@
             text-align:left; align-items:flex-start;
             > figure {
                 @include vw-margin(0,0,15);
+                @include media("max",767,0) {
+                    img { width:195/650*100vw; }
+                }
             }
             > h3 {
                 @include vw-font-size(20); @include vw-margin(0,0,20);

@@ -28,15 +28,24 @@
                 $issuebg : #F2F8FE;
                 background:$issuebg;
 position:relative; z-index:2;
-                &::after {
-                    content:''; left:50%; top:100%;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 20px 25px 0 25px;
-                    border-color: $issuebg transparent transparent transparent;
-                    position:absolute; display:block; transform:translate(-50%,-1px);
+                padding-bottom: calc(var(--smalloffset) * 0.3);
+                //&::after {
+                //    content:''; left:50%; top:100%;
+                //    width: 0;
+                //    height: 0;
+                //    border-style: solid;
+                //    border-width: 20px 25px 0 25px;
+                //    border-color: $issuebg transparent transparent transparent;
+                //    position:absolute; display:block; transform:translate(-50%,-1px);
+                //}
+                $offset: -15/1600*100vw;
+                $angle: 7deg;
+                &::before, &::after {
+                    top: 10/1600*100vw; bottom: $offset; position: absolute;
+                    z-index:-1; content: ''; background:$issuebg;
                 }
+                &::before { left: 0; right:calc(50% - 1px); transform: skewY($angle); }
+                &::after { left: calc(50% - 1px); right: 0px; transform: skewY(-$angle); }
                 + .answer {
                     padding-top: calc(var(--smalloffset) * 1);
                 }
