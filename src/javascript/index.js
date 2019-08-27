@@ -314,16 +314,38 @@ document.addEventListener(
                     handleHref(href, target ? target : "_self", linkdiv);
                 }
             } else {
-                while (element) {
-                    // Loop untill the <a is found, instead of the child.
-                    if (element instanceof HTMLAnchorElement) {
-                        const href = element.getAttribute("href");
-                        const target = element.getAttribute("target");
-                        handleHref(href, target ? target : "_self");
-                        break;
+                const actionarticle = element.getAttribute("data-params") ? element : getParentWithMatchingSelector(element, '[data-action]');
+                if (actionarticle) {
+                    const action = actionarticle.dataset.action;
+                    if (action === "toggleview") {
+                        const actiongrid = getParentWithMatchingSelector(actionarticle, '.block-grid');
+                        // Check if the click is inside .Excerpt if so; don't do anything.
+                        if (!element.classList.contains("Excerpt")
+                            && !getParentWithMatchingSelector(element, '.Excerpt')) {
+                            if (actionarticle.classList.contains("active")) {
+                                actionarticle.classList.remove("active");
+                                actiongrid.classList.remove("hasactive");
+                            } else {
+                                Object.entries(document.querySelectorAll("[data-action='toggleview']")).map((object) => {
+                                    object[1].classList.remove("active");
+                                });
+                                actionarticle.classList.add("active");
+                                actiongrid.classList.add("hasactive");
+                            }
+                        }
                     }
+                } else {
+                    while (element) {
+                        // Loop untill the <a is found, instead of the child.
+                        if (element instanceof HTMLAnchorElement) {
+                            const href = element.getAttribute("href");
+                            const target = element.getAttribute("target");
+                            handleHref(href, target ? target : "_self");
+                            break;
+                        }
 
-                    element = element.parentNode;
+                        element = element.parentNode;
+                    }
                 }
             }
         }
