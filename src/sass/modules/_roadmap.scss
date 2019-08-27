@@ -31,6 +31,20 @@ position:relative;
         color:inherit;
         cursor:grab;
         &:active { cursor:grabbing; }
+        .prevoverlay, .nextoverlay {
+            position:absolute; width:33.3333%; top:0; bottom:0;
+            background:none transparent; z-index:50; display:block;
+            border:0;
+        }
+        .prevoverlay {
+            right:100%;
+        }
+        .nextoverlay {
+            left:83.1%;
+        }
+        .glide__track {
+            overflow:visible !important;
+        }
         .glide__arrows {
             position:absolute; right:var(--pageoffset); bottom:100%;
             @include vw-margin(0,0,50);

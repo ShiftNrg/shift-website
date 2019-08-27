@@ -277,6 +277,10 @@ document.addEventListener(
                     duration: 700,
                     easing: 'easeInOutQuad'
                 });
+            } else if (action === "prevroadmap") {
+                studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
+            } else if (action === "nextroadmap") {
+                studioibizz.roadmap.slider && studioibizz.roadmap.slider.go(">");
             } else if (action === "togglemenu") {
                 if (document.body.classList.contains("menu-open")) {
                     document.body.classList.remove("menu-open");
