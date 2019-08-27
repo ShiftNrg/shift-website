@@ -26,13 +26,25 @@
                         &:nth-child(4n) ~ * {
                             .Excerpt {
                                 bottom:100%; top:auto;
+                                &::before {
+                                    top:100%; bottom:auto;
+                                    border-width: 20px 25px 0 25px;
+                                    border-color: #fff transparent transparent transparent;
+                                    transform:translate(-50%,-1px);
+                                }
                             }
                         }
                         &:nth-child(4n-3) .Excerpt {
                             left:0;
+                            &::before {
+                                left:12.5%;
+                            }
                         }
                         &:nth-child(4n) .Excerpt {
                             right:0;
+                            &::before {
+                                left:87.5%;
+                            }
                         }
                     }
 
@@ -88,17 +100,32 @@
                 cursor:initial;
                 visibility: hidden;
                 @include vw-margin(30,0);
-                top:100%; background:#fff; padding:calc(var(--inneroffset) * 0.75) var(--inneroffset);
+                top:100%; background:#fff;
                 border-radius:10px;
                 width:400%;
                 transition: all .3s ease-in-out;
 
                 display:flex; flex-direction:column; justify-content:center; align-items:stretch;
-                min-height:235px;
+                text-align:left;
+
+                min-height:215/1600*100vw;
+                @include vw-padding(37.5,50);
 
                 p:last-child { margin-bottom:0; }
 
-                @include media("max",767,0) { display:none; }
+                @include media("max",767,0) {
+                    display:none;
+                }
+
+                &::before {
+                    content:''; left:50%; bottom:100%;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 25px 20px 25px;
+                    border-color: transparent transparent #fff transparent;
+                    position:absolute; display:block; transform:translate(-50%,1px);
+                }
             }
         }
     }

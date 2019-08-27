@@ -261,6 +261,7 @@ function getOffset(el) {
     };
 }
 // Call to actions
+let hasactiveusp = false;
 document.addEventListener(
     "click",
     function (e) {
@@ -325,16 +326,28 @@ document.addEventListener(
                             if (actionarticle.classList.contains("active")) {
                                 actionarticle.classList.remove("active");
                                 actiongrid.classList.remove("hasactive");
+                                hasactiveusp = false;
                             } else {
                                 Object.entries(document.querySelectorAll("[data-action='toggleview']")).map((object) => {
                                     object[1].classList.remove("active");
                                 });
                                 actionarticle.classList.add("active");
                                 actiongrid.classList.add("hasactive");
+                                hasactiveusp = true;
                             }
                         }
                     }
                 } else {
+                    if (hasactiveusp) {
+                        // Revert all active usps.
+                        Object.entries(document.querySelectorAll(".hasactive")).map((object) => {
+                            object[1].classList.remove("hasactive");
+                        });
+                        Object.entries(document.querySelectorAll("[data-action='toggleview']")).map((object) => {
+                            object[1].classList.remove("active");
+                        });
+                        hasactiveusp = false;
+                    }
                     while (element) {
                         // Loop untill the <a is found, instead of the child.
                         if (element instanceof HTMLAnchorElement) {
