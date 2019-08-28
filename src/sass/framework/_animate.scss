@@ -388,7 +388,7 @@
     }
 }
 
-.textblock.invisible {
+.overview.invisible {
     opacity: 1;
 
     > .inner {
@@ -449,7 +449,9 @@
     }
 }
 
-.usps.invisible, .cases.invisible {
+.usps.invisible,
+.cases.invisible,
+.vision.invisible {
     opacity: 1;
 
     > .inner {

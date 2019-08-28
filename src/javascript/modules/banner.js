@@ -8,7 +8,7 @@ const anime = require("../../../node_modules/animejs/anime.min");
  * @returns {string} The given input as splitted by chars/letters
  */
 function wrapChars(str, tmpl) {
-    return str.replace(/\w/g, tmpl || "<span class='letter'>$&</span>");
+    return str.replace(/\S/g, tmpl || "<span class='letter'>$&</span>");
 }
 
 /**
@@ -19,7 +19,7 @@ function wrapChars(str, tmpl) {
  * @returns {string} The given input splitted by words
  */
 function wrapWords(str, tmpl) {
-    return str.replace(/\w+/g, tmpl || "<span class='word'>$&</span>");
+    return str.replace(/\S+/g, tmpl || "<span class='word'>$&</span>");
 }
 
 studioibizz.banner = {

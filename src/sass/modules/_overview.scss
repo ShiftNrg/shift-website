@@ -1,17 +1,20 @@
-.textblock {
+.overview {
     @include media("min",768,0) {
         > .inner {
-            display: flex; flex-direction: row; justify-content: flex-start; align-items:center; width:100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items:center; width:100%;
             > figure, > .aside {
                 width:50%;
             }
         }
-        &:nth-child(2n-1) > .inner {
+        > .inner:nth-child(2n-1) {
             > .aside {
                 padding-left:var(--pageoffset);
             }
         }
-        &:nth-child(2n) > .inner {
+        > .inner:nth-child(2n) {
             flex-direction:row-reverse;
             > .aside {
                 padding-right:var(--pageoffset);
@@ -21,8 +24,11 @@
     > figure + .inner > .aside {
         align-items:flex-start;
     }
-    > .inner:first-child:not(:last-child) {
-        @include media("min",768,0) { padding-left:var(--pageoffset); padding-right:var(--pageoffset); }
+    > .inner.Intro:first-child:first-child {
+        @include media("min",768,0) { 
+            padding-left:var(--pageoffset);
+            padding-right:var(--pageoffset);
+        }
             > .aside {
                 display: flex;
                 flex-direction: column;
@@ -53,14 +59,18 @@
                     }
                 }
                 @include media("min",1025,0) {
-                   > .Intro { width:650/1600*100vw; }
+                   > .Introtext {
+                        width:650/1600*100vw;
+                    }
                 }
             }
     }
     > .inner {
         > .aside {
             > nav {
-                border-top:1px solid $lgrey; margin-right:0; margin-left:0;
+                border-top:1px solid $lgrey;
+                margin-right:0;
+                margin-left:0;
                 width:100%;
                 > *:last-child {
                     margin-right:0;
@@ -69,10 +79,14 @@
         }
         &:not(:last-child) {
             padding-bottom:0;
-            > .aside {
-                padding-left:0;
-                margin-left:auto; margin-right:auto; text-align:center;
-            }
+        }
+    }
+    > .inner.Intro:first-child {
+        > .aside {
+            padding-left:0;
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
         }
     }
     @include media("max",767,0) {

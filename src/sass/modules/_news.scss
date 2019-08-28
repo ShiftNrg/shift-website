@@ -146,11 +146,11 @@
                 }
             }
         }
-        &.overview {
+        &.latest {
             background:#fff;
             position:relative; z-index:3;
             &::before {
-                content:''; left:50%; top:380px; bottom:0; background:$llgrey; position:absolute;
+                content:''; left:50%; top:380px; bottom:0; background:white; position:absolute;
                 width:100.2vw; max-width:100.2vw; transform:translate(-50%,0); display:block; z-index:-1;
             }
             @include media("min",768,0) {
