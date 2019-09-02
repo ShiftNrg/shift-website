@@ -374,10 +374,13 @@ if (window.innerWidth <= 767) {
 }
 
 window.addEventListener("scroll", function () {
+    var scrollMargin = 250;
     var bannerTarget = document.getElementsByClassName("banner")[0];
+    var roadmapTarget = document.getElementsByClassName("roadmap")[0];
     var socialTarget = document.getElementsByClassName("stickysocials")[0];
     if (bannerTarget) {
-        if (window.scrollY > (bannerTarget.offsetTop + bannerTarget.offsetHeight - 200)) {
+        if (window.scrollY > (bannerTarget.offsetTop + bannerTarget.offsetHeight - scrollMargin) && 
+            (!roadmapTarget || window.scrollY < (roadmapTarget.offsetTop - scrollMargin))) {
             socialTarget.classList.add("show");
         } else {
             socialTarget.classList.remove("show");
