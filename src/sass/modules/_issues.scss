@@ -25,11 +25,10 @@
 
             > .issue, > .answer {
                 padding: calc(var(--smalloffset) * 0.6);
-                //border:1px solid $lgrey;
             }
 
             > .issue {
-                $issuebg: #F2F8FE;
+                $issuebg:#F2F8FE;
                 background:$issuebg;
                 position:relative;
                 z-index:2;
@@ -53,7 +52,15 @@
                 &::before { left: 0; right:calc(50% - 1px); transform: skewY($angle); }
                 &::after { left: calc(50% - 1px); right: 0px; transform: skewY(-$angle); }
                 + .answer {
-                    padding-top: calc(var(--smalloffset) * 1);
+                    padding-top: calc(var(--smalloffset) * 0.9);
+                }
+                @include media("max", 767, 0) {
+                    &::before, &::after {
+                        margin: 9px 0 -9px 0;
+                    }
+                    + .answer {
+                        padding-top: calc(var(--smalloffset) * 1.8);
+                    }
                 }
             }
 
@@ -64,6 +71,7 @@
             }
 
             .Content {
+                margin-top: calc(var(--smalloffset) * 0.3);
                 @include media("min", 768, 0) {
                     @include vw-font-size(16);
                     @include media("min", 1600, 0) {

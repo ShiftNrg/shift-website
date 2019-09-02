@@ -62,11 +62,11 @@ $hamburger-types: (
     padding:18.5px 15px;
     border:0;
     background:#fff;
+    box-shadow:5px 5px 10px rgba(#000,0.1);
 
     @include media("min",768,0) {
         left:calc(var(--pageoffset) * 0.5); top:calc(var(--pageoffset) * 0.5);
         transform:translate(-50%,-50%);
-        box-shadow:5px 5px 10px rgba(#000,0.15);
     }
 
     .hamburger-label {
