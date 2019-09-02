@@ -152,8 +152,7 @@
     @include visibility($visibility);
 }
 
-@include keyframes(reveal-bg) {
-
+@include keyframes(reveal-bg-left) {
     0% {
         transform: translate(-100%, 0);
     }
@@ -168,8 +167,23 @@
     }
 }
 
-@mixin reveal-bg($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
-    @include animation-name(reveal-bg);
+@include keyframes(reveal-bg-right) {
+    0% {
+        transform: translate(100%, 0);
+    }
+    33% {
+        transform: translate(0%, 0);
+    }
+    66% {
+        transform: translate(-100%, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+@mixin reveal-bg($direction: 'right', $count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+    @include animation-name('reveal-bg-' + $direction);
     @include count($count);
     @include duration($duration);
     @include delay($delay);
@@ -450,16 +464,20 @@
 }
 
 .usps.invisible,
+.issues.invisible,
 .cases.invisible,
 .vision.invisible {
     opacity: 1;
+}
 
+.usps.invisible,
+.cases.invisible,
+.vision.invisible {
     > .inner {
         > * {
             opacity: 0;
         }
     }
-
     &.visible {
         > .inner {
             > * {
@@ -544,7 +562,6 @@
             @include fadeIn;
         }
     }
-
 
     article {
         > .inner {

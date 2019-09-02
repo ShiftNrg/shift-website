@@ -175,10 +175,15 @@
             }
             &.visible {
                 &::before {
-                    @include reveal-bg(1,1.65s,0s);
+                    @include reveal-bg('left', 1,1.65s,0s);
                 }
                 > .inner {
                     @include fadeIn(1,.3s,.375s);
+                }
+            }
+            &.visible.right {
+                &::before {
+                    @include reveal-bg('right', 1,1.65s,0s);
                 }
             }
         }

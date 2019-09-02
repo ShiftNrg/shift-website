@@ -1,4 +1,8 @@
 .maincontainer {
+    > section.issues.animating, 
+    > section.issues:not(.visible) {
+        background: $llgrey;
+    }
     > section.issues {
         > .inner {
             > .block-grid {
@@ -25,9 +29,10 @@
             }
 
             > .issue {
-                $issuebg : #F2F8FE;
+                $issuebg: #F2F8FE;
                 background:$issuebg;
-position:relative; z-index:2;
+                position:relative;
+                z-index:2;
                 padding-bottom: calc(var(--smalloffset) * 0.3);
                 //&::after {
                 //    content:''; left:50%; top:100%;
@@ -43,6 +48,7 @@ position:relative; z-index:2;
                 &::before, &::after {
                     top: 10/1600*100vw; bottom: $offset; position: absolute;
                     z-index:-1; content: ''; background:$issuebg;
+                    border: 1px solid $themecolor; border-width: 0 0 1px 0;
                 }
                 &::before { left: 0; right:calc(50% - 1px); transform: skewY($angle); }
                 &::after { left: calc(50% - 1px); right: 0px; transform: skewY(-$angle); }

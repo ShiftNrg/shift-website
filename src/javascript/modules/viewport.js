@@ -45,6 +45,9 @@ studioibizz.fakepreload = {
         if (screenWidth <= 767 || screenWidth > 1024) {
             document.querySelectorAll(studioibizz.fakepreload.selectors).forEach(function (element) {
                 element.classList.add("invisible");
+                element.addEventListener("animationend", function() {
+                    element.classList.remove("animating");
+                });
             });
         }
     },
@@ -52,12 +55,12 @@ studioibizz.fakepreload = {
 
     },
     onscroll: function () {
-
         const handler = () => raf(() => {
-            document.querySelectorAll(studioibizz.fakepreload.selectors).forEach(function (element,) {
+            document.querySelectorAll(studioibizz.fakepreload.selectors).forEach(function (element) {
                 if (isInView(element)) {
                     element.classList.add("visible");
-                    if(element.classList.contains("banner")) {
+                    element.classList.add("animating");
+                    if (element.classList.contains("banner")) {
                         studioibizz.banner.animate();
                     }
                 }
