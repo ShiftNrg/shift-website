@@ -31,7 +31,6 @@
                 $issuebg:#F2F8FE;
                 background:$issuebg;
                 position:relative;
-                z-index:2;
                 padding-bottom: calc(var(--smalloffset) * 0.3);
                 &::before, &::after {
                     content:'';
@@ -46,21 +45,16 @@
                     bottom:1px;
                     background:$issuebg;
                 }
-                $offset: -15/1600*100vw;
-                + .answer {
-                    padding-top: 20%;
-                }
-                @include media("max", 767, 0) {
-                    + .answer {
-                        padding-top: 15%;
-                    }                
-                }
             }
 
             > .answer {
-                //@include vw-margin(10,0,0);
                 background: #fff;
                 border: 0;
+                padding-top: var(--smalloffset);
+
+                @include media("max", 767, 0) {
+                    padding-top: calc(var(--smalloffset) * 1.2);
+                }
             }
 
             .Content {

@@ -482,11 +482,6 @@
 .cases.invisible,
 .vision.invisible {
     opacity: 1;
-}
-
-.usps.invisible,
-.cases.invisible,
-.vision.invisible {
     > .inner {
         > * {
             opacity: 0;
