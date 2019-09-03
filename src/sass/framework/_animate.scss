@@ -66,6 +66,9 @@
     @include function($function);
     @include fill-mode($fill);
     @include visibility($visibility);
+
+    // Force 3d acceleration (gpu)
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
 }
 
 @include keyframes(fadeInUp) {
@@ -194,6 +197,9 @@
     @include function($function);
     @include fill-mode($fill);
     @include visibility($visibility);
+
+    // Force 3d acceleration (gpu)
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
 }
 
 @include keyframes(fadeInNewsflashLabel) {
