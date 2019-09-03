@@ -68,7 +68,7 @@
     @include visibility($visibility);
 
     // Force 3d acceleration (gpu)
-    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
 }
 
 @include keyframes(fadeInUp) {
@@ -160,14 +160,16 @@
         transform: translate(-100%, 0);
     }
     33% {
-        transform: translate(0, 0);
+        transform: translate(var(--pageoffset), 0);
     }
     66% {
-        transform: translate(var(--pageoffset), 0);
+        transform: translate(var(--pageoffset), 100%);
+//        transform: translate(100%, 0);
         opacity: 1;
     }
     100% {
-        transform: translate(var(--pageoffset), 0);
+        transform: translate(var(--pageoffset), 100%);
+//        transform: translate(100%, 0);
         opacity: 0;
     }
 }
@@ -177,14 +179,16 @@
         transform: translate(100%, 0);
     }
     33% {
-        transform: translate(0, 0);
+        transform: translate(calc(var(--pageoffset) * -1), 0);
     }
     66% {
-        transform: translate(calc(var(--pageoffset) * -1), 0);
+        transform: translate(calc(var(--pageoffset) * -1), 100%);
+//        transform: translate(-100%, 0);
         opacity: 1;
     }
     100% {
-        transform: translate(calc(var(--pageoffset) * -1), 0);
+        transform: translate(calc(var(--pageoffset) * -1), 100%);
+//        transform: translate(-100%, 0);
         opacity: 0;
     }
 }
@@ -199,7 +203,7 @@
     @include visibility($visibility);
 
     // Force 3d acceleration (gpu)
-    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
 }
 
 @include keyframes(fadeInNewsflashLabel) {
