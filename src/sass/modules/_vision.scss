@@ -70,6 +70,8 @@
 
         article {
             text-align:left; align-items:flex-start;
+            cursor:pointer;
+
             > figure {
                 align-self:center;
                 @include vw-margin(0,0,15);
@@ -100,6 +102,19 @@
                 @include vw-padding(37.5,50);
 
                 p:last-child { margin-bottom:0; }
+
+                .fas {
+                    position: absolute;
+                    top: 1em; right: 1em;
+                    cursor: pointer;
+                    color: #5347c2;
+                    font-size: 1.25em;
+                }
+                @include media("min",768,0) {
+                    .fas {
+                        top: 2em; right: 2em;
+                    }
+                }
 
                 &::before {
                     content:''; left:25%; bottom:100%;

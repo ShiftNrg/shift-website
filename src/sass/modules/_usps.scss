@@ -129,6 +129,19 @@
 
                 p:last-child { margin-bottom:0; }
 
+                .fas {
+                    position: absolute;
+                    top: 1em; right: 1em;
+                    cursor: pointer;
+                    color: #5347c2;
+                    font-size: 1.25em;
+                }
+                @include media("min",768,0) {
+                    .fas {
+                        top: 2em; right: 2em;
+                    }
+                }
+
                 &::before {
                     content:''; left:50%; bottom:100%;
                     width: 0;

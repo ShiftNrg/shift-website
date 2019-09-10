@@ -262,9 +262,7 @@ function getOffset(el) {
 }
 // Call to actions
 let hasactiveusp = false;
-document.addEventListener(
-    "click",
-    function (e) {
+document.addEventListener("click", function (e) {
         e.preventDefault();
         const element = this.activeElement;
         const action = element.dataset.action;
@@ -325,8 +323,9 @@ document.addEventListener(
                     if (action === "toggleview") {
                         const actiongrid = getParentWithMatchingSelector(actionarticle, '.block-grid');
                         // Check if the click is inside .Excerpt if so; don't do anything.
-                        if (!element.classList.contains("Excerpt")
-                            && !getParentWithMatchingSelector(element, '.Excerpt')) {
+                        if ((!element.classList.contains("Excerpt")
+                            && !getParentWithMatchingSelector(element, '.Excerpt'))
+                            || element.classList.contains("fa-close")) {
                             if (actionarticle.classList.contains("active")) {
                                 actionarticle.classList.remove("active");
                                 actiongrid.classList.remove("hasactive");

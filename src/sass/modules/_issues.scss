@@ -10,8 +10,14 @@
             }
         }
 
+        .fas {
+            color: #5347c2;
+            padding-right: 0.25em;
+        }
+
         article {
             text-align: center;
+            overflow: hidden;
 
             span.icon {
                 @include vw-font-size(60);

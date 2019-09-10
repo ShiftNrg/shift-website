@@ -73,7 +73,7 @@ ol.steps {
             transition:all .3s ease-in-out;
             span.icon {
                 color:$themecolor;
-                width:1em; height:1em;
+                width:2.4em; height:3.2em;
                 opacity:var(--iconopacity,1);
                 transition:all .3s ease-in-out;
                 @include media("min",768,0) {
