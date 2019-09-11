@@ -33,6 +33,11 @@
                                 left:87.5%;
                             }
                         }
+                        &[data-action="toggleview"] {
+                            article {
+                                cursor:pointer;
+                            }
+                        }
                     }
                     @include media("max",767,0) {
                         width:50%;
@@ -60,17 +65,12 @@
                             visibility: visible;
                         }
                     }
-
-                    &[data-action="toggleview"] {
-                        article {
-                            cursor:pointer;
-                        }
-                    }
                 }
-
-                &:hover > li:not(:hover):not(.active),
-                &.hasactive > li:not(.active) {
-                    opacity:0.5;
+                @include media("min",768,0) {
+                    &:hover > li:not(:hover):not(.active),
+                    &.hasactive > li:not(.active) {
+                        opacity:0.5;
+                    }
                 }
             }
         }
