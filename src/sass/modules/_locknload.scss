@@ -112,7 +112,7 @@ ol.steps {
             &:nth-child(4n) {
                 left:-50%;
                 .next {
-                    left:50%; top:100%; margin-top:10px;
+                    left:50%; top:100%; margin-top:30px;
                     opacity:0;
                     svg {
                         transform:rotate(90deg);
@@ -130,7 +130,7 @@ ol.steps {
             }
             &:nth-child(4n-2) {
                 .next {
-                    left:50%; top:100%; margin-top:10px;
+                    left:50%; top:100%; margin-top:30px;
                     svg {
                         transform:rotate(90deg);
                     }
@@ -146,7 +146,7 @@ ol.steps {
         > li {
             article {
                 @include media("min",768,0) {
-                    margin-bottom:-300px;
+                    margin-bottom:-350px;
                 }
                 @include media("max",767,0) {
                     margin-bottom:-500px;
@@ -187,6 +187,11 @@ ol.steps {
                         padding-top:60%;
                     }
                 }
+                &:nth-child(4n) {
+                    .next {
+                        padding-top:30px;
+                    }
+                }
                 &:nth-child(4n-3) {
                     .next {
                         top:50%; margin-top:0;
@@ -195,7 +200,7 @@ ol.steps {
                 }
                 &:nth-child(4n-1) {
                     .next {
-                        top:100%; margin-top:0;
+                        top:65%; margin-top:0;
                         svg { transform:rotate(45deg); }
                     }
                 }
