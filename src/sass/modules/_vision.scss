@@ -60,8 +60,15 @@
                             visibility: visible;
                         }
                     }
+
+                    &[data-action="toggleview"] {
+                        article {
+                            cursor:pointer;
+                        }
+                    }
                 }
 
+                &:hover > li:not(:hover):not(.active),
                 &.hasactive > li:not(.active) {
                     opacity:0.5;
                 }
@@ -70,7 +77,6 @@
 
         article {
             text-align:left; align-items:flex-start;
-            cursor:pointer;
 
             > figure {
                 align-self:center;
