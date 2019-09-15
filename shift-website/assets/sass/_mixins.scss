@@ -1,0 +1,141 @@
+
+// @include spacing(100); set letter-spacing based on em. with correct multiplier.
+@mixin spacing($default : 100) {
+    letter-spacing: $default / 1150 * 1em;
+    @include media("max",991,0) { letter-spacing: $default/2 / 1150 * 1em; }
+    @include media("max",767,0) { letter-spacing: $default/3 / 1150 * 1em; }
+}
+
+// ex. @include media("min",768,0) {  }
+@mixin media($type : "min", $par1 : 0, $par2 : 0, $extra : ""){
+
+    $mobile : 767;
+    $tablet : 1024;
+
+    @if $type == "min" and $par2 != 0 {
+                // min and max
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (min-width:($par1*1px)) and (max-width:($par2*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (min-width:($par1*1px)) and (max-width:($par2*1px)) {
+                        @content
+                    }
+                }
+    }
+    @if $type == "min" and $par2 == 0 {
+                // min
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (min-width:($par1*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (min-width:($par1*1px)) {
+                        @content
+                    }
+                }
+    }
+    @if $type == "max" and $par1 != 0 {
+                // max
+                // -- with extra conditions
+                @if $extra != "" {
+                    @media (max-width:($par1*1px)) and ($extra) {
+                        @content
+                    }
+                }
+                // -- without extra conditions
+                @if $extra == "" {
+                    @media (max-width:($par1*1px)) {
+                        @content
+                    }
+                }
+    }
+}
+
+
+
+@function calculate-vw-size($size : 20, $max : 60, $multiplier : 0.02) {
+    @return $size + (1000 - 1000 * ($size / $max)) * $multiplier;
+}
+
+@mixin vw-font-size($size : 100){
+        $container : 1600px;
+        $strip_container : 1600;
+
+    // set
+    font-size:$size/$strip_container*100vw;
+
+        @include media("max",1024) {
+            $vw_size : calculate-vw-size($size,100,0.015);
+            font-size:$vw_size/$strip_container*100vw;
+        }
+        $strip_container:$mobile_vw_base;
+        $vw_size : calculate-vw-size($size);
+        @include media("max",767,0,"orientation: landscape") {
+            font-size:$vw_size/$strip_container*100vh;
+        }
+        @include media("max",767,0,"orientation: portrait") {
+            font-size:$vw_size/$strip_container*100vw;
+        }
+}
+
+
+
+@mixin vw-margin($top:0,$right:$top,$bottom:$top,$left:$right) {
+
+        $container : 1600px;
+        $strip_container : 1600;
+
+    @if $top != 0 { margin-top:$top/$strip_container*100vw; }
+    @if $right != 0 { margin-right:$right/$strip_container*100vw; }
+    @if $bottom != 0 { margin-bottom:$bottom/$strip_container*100vw; }
+    @if $left != 0 { margin-left:$left/$strip_container*100vw; }
+
+    @include media("max",767,0) {
+        $strip_container:$mobile_vw_base;
+
+        @include media("max",767,0,"orientation: landscape") {
+            @if $top != 0 { margin-top:$top/$strip_container*100vh; }
+            @if $right != 0 { margin-right:$right/$strip_container*100vh; }
+            @if $bottom != 0 { margin-bottom:$bottom/$strip_container*100vh; }
+            @if $left != 0 { margin-left:$left/$strip_container*100vh; }
+        }
+        @include media("max",767,0,"orientation: portrait") {
+            @if $top != 0 { margin-top:$top/$strip_container*100vw; }
+            @if $right != 0 { margin-right:$right/$strip_container*100vw; }
+            @if $bottom != 0 { margin-bottom:$bottom/$strip_container*100vw; }
+            @if $left != 0 { margin-left:$left/$strip_container*100vw; }
+        }
+    }
+}
+@mixin vw-padding($top:0,$right:$top,$bottom:$top,$left:$right) {
+    $container : 1600px;
+    $strip_container : 1600;
+    @if $top != 0 { padding-top:$top/$strip_container*100vw; }
+    @if $right != 0 { padding-right:$right/$strip_container*100vw; }
+    @if $bottom != 0 { padding-bottom:$bottom/$strip_container*100vw; }
+    @if $left != 0 { padding-left:$left/$strip_container*100vw; }
+
+    @include media("max",767,0) {
+        $strip_container:$mobile_vw_base;
+        @include media("max",767,0,"orientation: landscape") {
+            @if $top != 0 { padding-top:$top/$strip_container*100vh; }
+            @if $right != 0 { padding-right:$right/$strip_container*100vh; }
+            @if $bottom != 0 { padding-bottom:$bottom/$strip_container*100vh; }
+            @if $left != 0 { padding-left:$left/$strip_container*100vh; }
+        }
+        @include media("max",767,0,"orientation: portrait") {
+            @if $top != 0 { padding-top:$top/$strip_container*100vw; }
+            @if $right != 0 { padding-right:$right/$strip_container*100vw; }
+            @if $bottom != 0 { padding-bottom:$bottom/$strip_container*100vw; }
+            @if $left != 0 { padding-left:$left/$strip_container*100vw; }
+        }
+    }
+}

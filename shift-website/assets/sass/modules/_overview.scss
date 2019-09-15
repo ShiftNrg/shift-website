@@ -1,0 +1,97 @@
+.overview {
+    @include media("min",768,0) {
+        > .inner {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items:center; width:100%;
+            > figure, > .aside {
+                width:50%;
+            }
+        }
+        > .inner:nth-child(2n-1) {
+            > .aside {
+                padding-left:var(--pageoffset);
+            }
+        }
+        > .inner:nth-child(2n) {
+            flex-direction:row-reverse;
+            > .aside {
+                padding-right:var(--pageoffset);
+            }
+        }
+    }
+    > figure + .inner > .aside {
+        align-items:flex-start;
+    }
+    > .inner.Intro:first-child:first-child {
+        @include media("min",768,0) { 
+            padding-left:var(--pageoffset);
+            padding-right:var(--pageoffset);
+        }
+            > .aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                overflow: hidden;
+
+                > h3 {
+                    position: relative;
+
+                    &::before, &::after {
+                        content: '';
+                        width: 50vw;
+                        top: 50%;
+                        height: 1px;
+                        background: currentColor;
+                        display: block;
+                        position: absolute;
+                    }
+
+                    &::before {
+                        right: calc(100% + 20px);
+                    }
+
+                    &::after {
+                        left: calc(100% + 20px);
+                    }
+                }
+                @include media("min",1025,0) {
+                   > .Introtext {
+                        width:650/1600*100vw;
+                    }
+                }
+            }
+    }
+    > .inner {
+        > .aside {
+            > nav {
+                border-top:1px solid $lgrey;
+                margin-right:0;
+                margin-left:0;
+                width:100%;
+                > *:last-child {
+                    margin-right:0;
+                }
+            }
+        }
+        &:not(:last-child) {
+            padding-bottom:0;
+        }
+    }
+    > .inner.Intro:first-child {
+        > .aside {
+            padding-left:0;
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
+        }
+    }
+    @include media("max",767,0) {
+        > figure {
+            @include vw-margin(0,0,20);
+        }
+    }
+}
