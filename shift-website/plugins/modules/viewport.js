@@ -71,7 +71,7 @@ studioibizz.fakepreload = {
               element.classList.add('visible')
               element.classList.add('animating')
               if (element.classList.contains('banner')) {
-                studioibizz.banner.animate()
+                // studioibizz.banner.animate()
               }
             }
           })
