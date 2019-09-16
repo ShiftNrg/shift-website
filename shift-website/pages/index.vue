@@ -467,11 +467,8 @@
                     storage space of others.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       Shift is a decentralized cloud hosting platform. No
@@ -503,11 +500,8 @@
                     simple transaction.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       The SHIFT token is intrinsically valued because it
@@ -540,11 +534,8 @@
                     need your storage.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       Simply enter the amount of storage you want to return to
@@ -576,11 +567,8 @@
                     to the platform.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       The platform rewards storage providers that successfully
@@ -612,11 +600,8 @@
                     for guaranteed triple redundancy.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       Upload and pin your files. They will automatically be
@@ -646,11 +631,8 @@
                     you wish to remove it.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       With no central authority involved in the platform’s
@@ -683,11 +665,8 @@
                     accessible through standard web browsers.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       The process simply involves assigning a parent ID to your
@@ -718,11 +697,8 @@
                     process your private data in a secure fashion.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveUsps"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
                   <div class="inner">
                     <p>
                       The trouble with decentralized hosting of private data is
@@ -861,11 +837,8 @@
                     of the platform and ultimate governance.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveVision"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveVision"></i>
                   <div class="inner">
                     <p>
                       The CoC will be a central blockchain running through Shift
@@ -891,11 +864,8 @@
                     the need for transactions to be bundled into blocks.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveVision"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveVision"></i>
                   <div class="inner">
                     <p>
                       Transactions are made between Accounts by placing a SEND
@@ -931,11 +901,8 @@
                     spends and network attacks.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveVision"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveVision"></i>
                   <div class="inner">
                     <p>
                       Shift will operate using Byzantine Fault Detection, which
@@ -960,11 +927,8 @@
                     much of the network they want to service.
                   </p>
                 </div>
-                <div class="Excerpt">
-                  <i
-                    class="fas fa-close"
-                    @click.prevent.stop="closeActiveVision"
-                  ></i>
+                <div class="Excerpt" @click.stop.prevent="">
+                  <i class="fas fa-close" @click="closeActiveVision"></i>
                   <div class="inner">
                     <p>
                       Because the Shift network can grow to vast proportions, it

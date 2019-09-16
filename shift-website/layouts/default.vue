@@ -79,24 +79,24 @@
     <div id="topcontainer" style="opacity:0;">
       <div id="backlayer" class="backlayer"></div>
       <div id="frontlayer" class="frontlayer"></div>
-      <div class="stickysocials">
-        <div class="label">Join our community</div>
-        <a href="#" title="Discord">
-          <span class="icon">
-            <svg-icon name="discord" height="36" width="36" />
-          </span>
-        </a>
-        <a href="#" title="Facebook">
-          <span class="icon">
-            <svg-icon name="facebook" height="36" width="36" />
-          </span>
-        </a>
-        <a href="#" title="Twitter">
-          <span class="icon">
-            <svg-icon name="twitter" height="36" width="36" />
-          </span>
-        </a>
-      </div>
+    </div>
+    <div class="stickysocials">
+      <div class="label">Join our community</div>
+      <a href="#" title="Discord">
+        <span class="icon">
+          <svg-icon name="discord" height="36" width="36" />
+        </span>
+      </a>
+      <a href="#" title="Facebook">
+        <span class="icon">
+          <svg-icon name="facebook" height="36" width="36" />
+        </span>
+      </a>
+      <a href="#" title="Twitter">
+        <span class="icon">
+          <svg-icon name="twitter" height="36" width="36" />
+        </span>
+      </a>
     </div>
   </div>
 </template>

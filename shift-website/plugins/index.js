@@ -257,7 +257,7 @@ const removeCloneThatScales = () => {
 };
 
 // Call to actions
-let hasactiveusp = false;
+// let hasactiveusp = false;
 document.addEventListener("click", function (e) {
   e.preventDefault();
   const element = this.activeElement;
