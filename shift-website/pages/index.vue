@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="slogan">
-        <div ref="line1" class="line1 animating">
+        <div ref="line1" class="line1">
           <span class="spacer"></span>
           <span
             v-for="(word, key) in getWords('Reinvented Decentralized')"
@@ -27,7 +27,7 @@
             </span>
           </span>
         </div>
-        <div ref="line2" class="line2 animating">
+        <div ref="line2" class="line2">
           <span class="spacer"></span>
           <span
             v-for="(word, key) in 'Cloud Hosting'.split(' ')"
@@ -1322,7 +1322,7 @@ export default {
       this.activeUsps = index
     },
     getActiveUspsClass(index) {
-      return this.activeUsps === index ? 'active' : ''
+      return 'hasExcerpt ' + (this.activeUsps === index ? 'active' : '')
     },
     closeActiveUsps() {
       this.activeUsps = undefined
@@ -1335,7 +1335,7 @@ export default {
       this.activeVision = index
     },
     getActiveVisionClass(index) {
-      return this.activeVision === index ? 'active' : ''
+      return 'hasExcerpt ' + (this.activeVision === index ? 'active' : '')
     },
     closeActiveVision() {
       this.activeVision = undefined
