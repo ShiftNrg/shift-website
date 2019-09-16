@@ -62,13 +62,13 @@
         <a href="#3">Twitter</a>
       </div>
 
-      <button class="scrollto2" data-action="scrollto">
+      <button class="scrollto2" @click="scrollTop">
         <span class="icon">
           <svg-icon name="arrow" height="36" width="36" />
         </span>
       </button>
     </div>
-    <div class="maincontainer">
+    <div ref="mainContainer" class="maincontainer">
       <section class="locknload">
         <div class="inner">
           <h1>
@@ -446,8 +446,8 @@
           <div class="Intro">
             <p>Shift brings decentralized cloud hosting to the masses.</p>
           </div>
-          <ul class="block-grid up4">
-            <li data-action="toggleview">
+          <ul class="block-grid up4" :class="hasActiveUsps">
+            <li :class="getActiveUspsClass(1)" @click="toggleActiveUsps(1)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -464,7 +464,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       Shift is a decentralized cloud hosting platform. No
@@ -480,7 +483,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(2)" @click="toggleActiveUsps(2)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -497,7 +500,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       The SHIFT token is intrinsically valued because it
@@ -514,7 +520,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(3)" @click="toggleActiveUsps(3)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -531,7 +537,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       Simply enter the amount of storage you want to return to
@@ -547,7 +556,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(4)" @click="toggleActiveUsps(4)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -564,7 +573,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       The platform rewards storage providers that successfully
@@ -580,7 +592,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(5)" @click="toggleActiveUsps(5)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -597,7 +609,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       Upload and pin your files. They will automatically be
@@ -611,7 +626,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(6)" @click="toggleActiveUsps(6)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -628,7 +643,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       With no central authority involved in the platform’s
@@ -645,7 +663,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(7)" @click="toggleActiveUsps(7)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -662,7 +680,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       The process simply involves assigning a parent ID to your
@@ -677,7 +698,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveUspsClass(8)" @click="toggleActiveUsps(8)">
               <article>
                 <span class="icon">
                   <svg-icon
@@ -694,7 +715,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveUsps"
+                  ></i>
                   <div class="inner">
                     <p>
                       The trouble with decentralized hosting of private data is
@@ -823,8 +847,8 @@
               can match.
             </p>
           </div>
-          <ul class="block-grid up3">
-            <li data-action="toggleview">
+          <ul class="block-grid up3" :class="hasActiveVision">
+            <li :class="getActiveVisionClass(1)" @click="toggleActiveVision(1)">
               <article>
                 <h3>Chain of Command</h3>
                 <div class="Text">
@@ -834,7 +858,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveVision"
+                  ></i>
                   <div class="inner">
                     <p>
                       The CoC will be a central blockchain running through Shift
@@ -851,7 +878,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveVisionClass(2)" @click="toggleActiveVision(2)">
               <article>
                 <h3>Block Lattice</h3>
                 <div class="Text">
@@ -861,7 +888,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveVision"
+                  ></i>
                   <div class="inner">
                     <p>
                       Transactions are made between Accounts by placing a SEND
@@ -888,7 +918,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveVisionClass(3)" @click="toggleActiveVision(3)">
               <article>
                 <h3>Byzantine Fault Detection</h3>
                 <div class="Text">
@@ -898,7 +928,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveVision"
+                  ></i>
                   <div class="inner">
                     <p>
                       Shift will operate using Byzantine Fault Detection, which
@@ -914,7 +947,7 @@
                 </div>
               </article>
             </li>
-            <li data-action="toggleview">
+            <li :class="getActiveVisionClass(4)" @click="toggleActiveVision(4)">
               <article>
                 <h3>Sharding</h3>
                 <div class="Text">
@@ -924,7 +957,10 @@
                   </p>
                 </div>
                 <div class="Excerpt">
-                  <i class="fas fa-close"></i>
+                  <i
+                    class="fas fa-close"
+                    @click.prevent.stop="closeActiveVision"
+                  ></i>
                   <div class="inner">
                     <p>
                       Because the Shift network can grow to vast proportions, it
@@ -1230,9 +1266,24 @@
 <script>
 import { initializeBanner } from '../plugins/initialize-banner'
 import Footer from '../components/footer'
+import { scrollTop } from '../plugins/animations'
 
 export default {
   components: { CustomFooter: Footer },
+  data() {
+    return {
+      activeUsps: undefined,
+      activeVision: undefined
+    }
+  },
+  computed: {
+    hasActiveUsps() {
+      return this.activeUsps ? 'hasactive' : ''
+    },
+    hasActiveVision() {
+      return this.activeVision ? 'hasactive' : ''
+    }
+  },
   mounted() {
     initializeBanner(this.$refs.line1, this.$refs.line2)
   },
@@ -1242,6 +1293,35 @@ export default {
     },
     checkIfLastWord(sentence, key) {
       return key !== this.getWords(sentence).length - 1
+    },
+    scrollTop() {
+      scrollTop(this.$refs.mainContainer)
+    },
+    toggleActiveUsps(index) {
+      if (this.activeUsps === index) {
+        this.activeUsps = undefined
+        return
+      }
+      this.activeUsps = index
+    },
+    getActiveUspsClass(index) {
+      return this.activeUsps === index ? 'active' : ''
+    },
+    closeActiveUsps() {
+      this.activeUsps = undefined
+    },
+    toggleActiveVision(index) {
+      if (this.activeVision === index) {
+        this.activeVision = undefined
+        return
+      }
+      this.activeVision = index
+    },
+    getActiveVisionClass(index) {
+      return this.activeVision === index ? 'active' : ''
+    },
+    closeActiveVision() {
+      this.activeVision = undefined
     }
   }
 }

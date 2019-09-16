@@ -256,19 +256,6 @@ const removeCloneThatScales = () => {
   });
 };
 
-const scrollElement =
-  window.document.scrollingElement ||
-  window.document.body ||
-  window.document.documentElement;
-
-function getOffset(el) {
-  const rect = el.getBoundingClientRect();
-  return {
-    left: rect.left + window.scrollX,
-    top: rect.top + window.scrollY
-  };
-}
-
 // Call to actions
 let hasactiveusp = false;
 document.addEventListener("click", function (e) {
@@ -278,14 +265,14 @@ document.addEventListener("click", function (e) {
 
   if (action) {
     if (action === "scrollto") {
-      anime({
-        targets: scrollElement,
-        scrollTop: getOffset(
-          document.getElementsByClassName("maincontainer")[0]
-        ).top,
-        duration: 700,
-        easing: "easeInOutQuad"
-      });
+      // anime({
+      //   targets: scrollElement,
+      //   scrollTop: getOffset(
+      //     document.getElementsByClassName("maincontainer")[0]
+      //   ).top,
+      //   duration: 700,
+      //   easing: "easeInOutQuad"
+      // });
     } else if (action === "prevroadmap") {
       studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
     } else if (action === "nextroadmap") {
@@ -343,58 +330,34 @@ document.addEventListener("click", function (e) {
       if (actionarticle) {
         const action = actionarticle.dataset.action;
         if (action === "toggleview") {
-          const actiongrid = getParentWithMatchingSelector(
-            actionarticle,
-            ".block-grid"
-          );
-          // Check if the click is inside .Excerpt if so; don't do anything.
-          if (
-            (!element.classList.contains("Excerpt") &&
-              !getParentWithMatchingSelector(element, ".Excerpt")) ||
-            element.classList.contains("fa-close")
-          ) {
-            if (actionarticle.classList.contains("active")) {
-              actionarticle.classList.remove("active");
-              actiongrid.classList.remove("hasactive");
-              hasactiveusp = false;
-            } else {
-              Object.entries(
-                document.querySelectorAll("[data-action='toggleview']")
-              ).map((object) => {
-                object[1].classList.remove("active");
-              });
-              actionarticle.classList.add("active");
-              actiongrid.classList.add("hasactive");
-              hasactiveusp = true;
-            }
-          }
+
         }
       } else {
         if (hasactiveusp) {
-          // Revert all active usps.
-          Object.entries(document.querySelectorAll(".hasactive")).map(
-            (object) => {
-              object[1].classList.remove("hasactive");
-            }
-          );
-          Object.entries(
-            document.querySelectorAll("[data-action='toggleview']")
-          ).map((object) => {
-            object[1].classList.remove("active");
-          });
-          hasactiveusp = false;
+          // // Revert all active usps.
+          // Object.entries(document.querySelectorAll(".hasactive")).map(
+          //   (object) => {
+          //     object[1].classList.remove("hasactive");
+          //   }
+          // );
+          // Object.entries(
+          //   document.querySelectorAll("[data-action='toggleview']")
+          // ).map((object) => {
+          //   object[1].classList.remove("active");
+          // });
+          // hasactiveusp = false;
         }
-        while (element) {
-          // Loop untill the <a is found, instead of the child.
-          if (element instanceof HTMLAnchorElement) {
-            const href = element.getAttribute("href");
-            const target = element.getAttribute("target");
-            handleHref(href, target || "_self");
-            break;
-          }
-
-          element = element.parentNode;
-        }
+        // while (element) {
+        //   // Loop untill the <a is found, instead of the child.
+        //   if (element instanceof HTMLAnchorElement) {
+        //     const href = element.getAttribute("href");
+        //     const target = element.getAttribute("target");
+        //     handleHref(href, target || "_self");
+        //     break;
+        //   }
+        //
+        //   element = element.parentNode;
+        // }
       }
     }
   }
