@@ -78,7 +78,7 @@
           <div class="Intro">
             <p>Store your files by following these simple steps.</p>
           </div>
-          <ol class="steps">
+          <ol class="steps" :class="activeLockNLoad ? 'inactive' : ''">
             <li>
               <article>
                 <span class="icon">
@@ -201,7 +201,11 @@
             <p>
               ...and when you’re done, retrieve your tokens by reversing these
               steps.
-              <button type="button" class="more-inline" data-action="locknload">
+              <button
+                type="button"
+                class="more-inline"
+                @click="activeLockNLoad = !activeLockNLoad"
+              >
                 Reverse the steps
               </button>
             </p>
@@ -1005,13 +1009,13 @@
           <div class="roadmapCarousel">
             <button
               type="button"
-              data-action="prevroadmap"
               class="prevoverlay"
+              @click="slider.go('<')"
             ></button>
             <button
               type="button"
-              data-action="nextroadmap"
               class="nextoverlay"
+              @click="slider.go('>')"
             ></button>
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides">
@@ -1183,7 +1187,11 @@
           <h3 class="h5">Latest Updates and News</h3>
           <ul class="block-grid up3">
             <li>
-              <article class="newsarticle linkdiv">
+              <article
+                ref="newsarticle-1"
+                class="newsarticle"
+                @click="goToNewsArticle(1)"
+              >
                 <div class="inner">
                   <time datetime="2019-07-03">
                     <span class="day">03</span>
@@ -1191,22 +1199,24 @@
                   </time>
                   <div class="category">category</div>
                   <h3>
-                    <nuxt-link :to="{ name: 'news' }">
-                      3 Myths About <br />
-                      Decentralized Distributed <br />
-                      Blockchain Network
-                    </nuxt-link>
+                    3 Myths About <br />
+                    Decentralized Distributed <br />
+                    Blockchain Network
                   </h3>
                   <nav>
-                    <nuxt-link :to="{ name: 'news' }" class="more-inline2">
+                    <a href="#" class="more-inline2">
                       Read more
-                    </nuxt-link>
+                    </a>
                   </nav>
                 </div>
               </article>
             </li>
             <li>
-              <article class="newsarticle linkdiv">
+              <article
+                ref="newsarticle-2"
+                class="newsarticle"
+                @click="goToNewsArticle(2)"
+              >
                 <div class="inner">
                   <time datetime="2019-07-02">
                     <span class="day">02</span>
@@ -1214,21 +1224,23 @@
                   </time>
                   <div class="category">category</div>
                   <h3>
-                    <nuxt-link :to="{ name: 'news' }">
-                      Fighting Fakes With Blockchain: How To Make
-                      Anti-Counterfeiting...
-                    </nuxt-link>
+                    Fighting Fakes With Blockchain: How To Make
+                    Anti-Counterfeiting...
                   </h3>
                   <nav>
-                    <nuxt-link :to="{ name: 'news' }" class="more-inline2">
+                    <a href="#" class="more-inline2">
                       Read more
-                    </nuxt-link>
+                    </a>
                   </nav>
                 </div>
               </article>
             </li>
             <li>
-              <article class="newsarticle linkdiv">
+              <article
+                ref="newsarticle-3"
+                class="newsarticle"
+                @click="goToNewsArticle(3)"
+              >
                 <div class="inner">
                   <time datetime="2019-05-29">
                     <span class="day">29</span>
@@ -1236,16 +1248,14 @@
                   </time>
                   <div class="category">category</div>
                   <h3>
-                    <nuxt-link :to="{ name: 'news' }">
-                      How To Establish Protocols Between Parties With
-                      <br />
-                      Competing Interests
-                    </nuxt-link>
+                    How To Establish Protocols Between Parties With
+                    <br />
+                    Competing Interests
                   </h3>
                   <nav>
-                    <nuxt-link :to="{ name: 'news' }" class="more-inline2">
+                    <a href="#" class="more-inline2">
                       Read more
-                    </nuxt-link>
+                    </a>
                   </nav>
                 </div>
               </article>
@@ -1266,14 +1276,17 @@
 <script>
 import { initializeBanner } from '../plugins/initialize-banner'
 import Footer from '../components/footer'
-import { scrollTop } from '../plugins/animations'
+import { animatePage, scrollTop } from '../plugins/animations'
+import { initializeRoadmap } from '../plugins/modules/roadmap'
 
 export default {
   components: { CustomFooter: Footer },
   data() {
     return {
       activeUsps: undefined,
-      activeVision: undefined
+      activeVision: undefined,
+      activeLockNLoad: false,
+      slider: undefined
     }
   },
   computed: {
@@ -1286,6 +1299,10 @@ export default {
   },
   mounted() {
     initializeBanner(this.$refs.line1, this.$refs.line2)
+    this.slider = initializeRoadmap()
+  },
+  beforeDestroy() {
+    this.slider.destroy()
   },
   methods: {
     getWords(word) {
@@ -1322,6 +1339,11 @@ export default {
     },
     closeActiveVision() {
       this.activeVision = undefined
+    },
+    goToNewsArticle(id) {
+      animatePage(this.$refs['newsarticle-' + id], () =>
+        this.$router.push({ name: 'news' })
+      )
     }
   }
 }

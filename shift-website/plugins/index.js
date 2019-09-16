@@ -6,7 +6,7 @@ require("./modules/nojs");
 require("./modules/dimensions");
 require("./modules/viewport");
 // require('./modules/banner')
-require("./modules/roadmap");
+// require("./modules/roadmap");
 require("./modules/sameheight");
 
 // const topcontainer = document.querySelector("#topcontainer");
@@ -74,13 +74,13 @@ const enableScrolling = () => {
   window.ontouchmove = null;
 };
 const attachAll = () => {
-  studioibizz.roadmap.attach();
+  // studioibizz.roadmap.attach();
   // studioibizz.banner.attach()
   studioibizz.sameheight.attach();
 };
 const detachAll = () => {
   // Detach all events, so the ram won't overload.
-  studioibizz.roadmap.detach();
+  // studioibizz.roadmap.detach();
   studioibizz.sameheight.detach();
 };
 
@@ -138,31 +138,31 @@ const handleHref = (href, target = "_self", linkdiv = null) => {
 const _hasAnimatedOut = () => {
   return hasAnimatedOut;
 };
-const animatePage = (href) => {
-  setStyles(backLayer, {
-    opacity: 0,
-    visibility: "visible"
-  });
-  // backLayer.appendChild(newNode);
-  // oldLayer.remove()
-  window.scrollTo(0, 0);
-
-  anime({
-    targets: backLayer,
-    opacity: 1,
-    duration: 600,
-    easing: "easeInOutQuad",
-    complete() {
-      setTimeout(enableScrolling(), 20);
-      // topcontainer.appendChild(newNode);
-      frontLayer.style.visibility = backLayer.style.visibility = "hidden";
-      // newNode = "";
-      const oldLayer = document.getElementById('scene');// @TODO reset the layer
-      attachAll();
-    }
-  });
-  $nuxt._router.push(href);
-};
+// const animatePage = (href) => {
+//   setStyles(backLayer, {
+//     opacity: 0,
+//     visibility: "visible"
+//   });
+//   // backLayer.appendChild(newNode);
+//   // oldLayer.remove()
+//   window.scrollTo(0, 0);
+//
+//   anime({
+//     targets: backLayer,
+//     opacity: 1,
+//     duration: 600,
+//     easing: "easeInOutQuad",
+//     complete() {
+//       setTimeout(enableScrolling(), 20);
+//       // topcontainer.appendChild(newNode);
+//       frontLayer.style.visibility = backLayer.style.visibility = "hidden";
+//       // newNode = "";
+//       const oldLayer = document.getElementById('scene');// @TODO reset the layer
+//       attachAll();
+//     }
+//   });
+//   $nuxt._router.push(href);
+// };
 // const loadPage = (href) => {
 //   return new Promise((resolve) => {
 //     // Preload new page
@@ -274,9 +274,9 @@ document.addEventListener("click", function (e) {
       //   easing: "easeInOutQuad"
       // });
     } else if (action === "prevroadmap") {
-      studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
+      // studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
     } else if (action === "nextroadmap") {
-      studioibizz.roadmap.slider && studioibizz.roadmap.slider.go(">");
+      // studioibizz.roadmap.slider && studioibizz.roadmap.slider.go(">");
     } else if (action === "togglemenu") {
       if (document.body.classList.contains("menu-open")) {
         document.body.classList.remove("menu-open");
@@ -299,41 +299,41 @@ document.addEventListener("click", function (e) {
         disableScrolling();
       }
     } else if (action === "locknload") {
-      if (
-        document
-          .getElementsByClassName("steps")[0]
-          .classList.contains("inactive")
-      ) {
-        document.getElementsByClassName("steps")[0].classList.remove("inactive");
-      } else {
-        document.getElementsByClassName("steps")[0].classList.add("inactive");
-      }
+      // if (
+      //   document
+      //     .getElementsByClassName("steps")[0]
+      //     .classList.contains("inactive")
+      // ) {
+      //   document.getElementsByClassName("steps")[0].classList.remove("inactive");
+      // } else {
+      //   document.getElementsByClassName("steps")[0].classList.add("inactive");
+      // }
     }
   } else {
-    var e = e || window.event;
-    let element = e.target || e.srcElement;
-    const linkdiv = element.classList.contains("linkdiv")
-      ? element
-      : getParentWithMatchingSelector(element, ".linkdiv");
-
-    if (linkdiv) {
-      // Href with linkdiv & custom animations when needed
-      if (linkdiv.querySelector("a")) {
-        const href = linkdiv.querySelector("a").getAttribute("href");
-        const target = linkdiv.querySelector("a").getAttribute("target");
-        handleHref(href, target || "_self", linkdiv);
-      }
-    } else {
-      const actionarticle = element.getAttribute("data-params")
-        ? element
-        : getParentWithMatchingSelector(element, "[data-action]");
-      if (actionarticle) {
-        const action = actionarticle.dataset.action;
-        if (action === "toggleview") {
-
-        }
-      } else {
-        if (hasactiveusp) {
+    // var e = e || window.event;
+    // let element = e.target || e.srcElement;
+    // const linkdiv = element.classList.contains("linkdiv")
+    //   ? element
+    //   : getParentWithMatchingSelector(element, ".linkdiv");
+    //
+    // if (linkdiv) {
+    //   // Href with linkdiv & custom animations when needed
+    //   if (linkdiv.querySelector("a")) {
+    //     const href = linkdiv.querySelector("a").getAttribute("href");
+    //     const target = linkdiv.querySelector("a").getAttribute("target");
+    //     handleHref(href, target || "_self", linkdiv);
+    //   }
+    // } else {
+    //   const actionarticle = element.getAttribute("data-params")
+    //     ? element
+    //     : getParentWithMatchingSelector(element, "[data-action]");
+    //   if (actionarticle) {
+    //     const action = actionarticle.dataset.action;
+    //     if (action === "toggleview") {
+    //
+    //     }
+    //   } else {
+    //     if (hasactiveusp) {
           // // Revert all active usps.
           // Object.entries(document.querySelectorAll(".hasactive")).map(
           //   (object) => {
@@ -358,9 +358,9 @@ document.addEventListener("click", function (e) {
         //
         //   element = element.parentNode;
         // }
-      }
-    }
-  }
+      // }
+    // }
+  // }
 });
 
 if (window.innerWidth <= 767) {
