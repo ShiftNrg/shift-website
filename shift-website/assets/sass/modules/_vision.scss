@@ -42,8 +42,25 @@
                 left: 87.5%;
               }
             }
-            article {
-              cursor: pointer;
+            &.hasExcerpt {
+              article {
+                cursor:pointer;
+              }
+              h3 {
+                position:relative;
+                &::before {
+                  transition:all .25s ease-in-out;
+                  content:''; left:0; right:100%; top:1.5em; height:2px;
+                  background:$themecolor; position:absolute; display:block;
+                }
+              }
+              &:hover h3 {
+                color:$themecolor;
+                &::before {
+                  content:'';
+                  right:0;
+                }
+              }
             }
           }
           @include media("max", 767, 0) {
@@ -77,17 +94,15 @@
           }
         }
 
-        @include media("min", 768, 0) {
-          &:hover > li:not(:hover):not(.active),
-          &.hasactive > li:not(.active) {
-            opacity: 0.5;
-          }
+        &.hasactive > li:not(.active) {
+          opacity: 0.5;
         }
       }
     }
 
     article {
       text-align: left;
+      position: relative;
       align-items: flex-start;
 
       > figure {
@@ -112,7 +127,7 @@
         cursor: initial;
         visibility: hidden;
         @include vw-margin(30, 0);
-        top: 100%;
+        top: 80%;
         background: #fff;
         border-radius: 10px;
         width: 200%;

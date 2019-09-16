@@ -53,6 +53,26 @@
                 left: 87.5%;
               }
             }
+            &.hasExcerpt {
+              article {
+                cursor:pointer;
+              }
+              h5 {
+                position:relative;
+                &::before {
+                  transition:all .25s ease-in-out;
+                  content:''; left:0; right:100%; top:1.5em; height:2px;
+                  background:$themecolor; position:absolute; display:block;
+                }
+              }
+              &:hover h5 {
+                color:$themecolor;
+                &::before {
+                  content:'';
+                  right:0;
+                }
+              }
+            }
           }
           @include media("max", 767, 0) {
             width: 50%;
@@ -85,11 +105,8 @@
           }
         }
 
-        @include media("min", 768, 0) {
-          &:hover > li:not(:hover):not(.active),
-          &.hasactive > li:not(.active) {
-            opacity: 0.5;
-          }
+        &.hasactive > li:not(.active) {
+          opacity: 0.5;
         }
       }
     }
