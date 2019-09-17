@@ -7,7 +7,7 @@ const screenWidth =
 if (process.client) {
   studioibizz.fakepreload = {
     selectors:
-      '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible)',
+      '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible):not(.usps)',
     init() {
       this.attach()
       this.onscroll()
@@ -69,8 +69,12 @@ const isInView = (el) => {
 }
 
 // Viewport checker
-export const scrollHandler = () => {
+export const scrollHandler = (x) => {
   console.debug('scrollHandler')
+  if (isInView(x[0])) {
+    x[0].classList.add('visible')
+    x[0].classList.add('animating')
+  }
   raf(() => {
     document
       .querySelectorAll(studioibizz.fakepreload.selectors)

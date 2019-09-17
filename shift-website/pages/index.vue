@@ -443,7 +443,7 @@
           </ul>
         </div>
       </section>
-      <section class="usps">
+      <section ref="usps" class="usps">
         <div class="inner">
           <h4>Decentralized hosting</h4>
           <h3>Simply A Better Cloud</h3>
@@ -453,7 +453,7 @@
           <ul :class="['block-grid', 'up4', hasActiveUsps]">
             <li
               :class="['hasExcerpt', getActiveUspsClass(1)]"
-              @click="toggleActiveUsps(1)"
+              @click.stop.prevent="toggleActiveUsps(1)"
             >
               <article>
                 <span class="icon">
@@ -1344,8 +1344,8 @@ export default {
       )
     },
     handleScroll() {
-      window.addEventListener('scroll', scrollHandler)
-      setTimeout(scrollHandler, 500)
+      window.addEventListener('scroll', () => scrollHandler([this.$refs.usps]))
+      // setTimeout(scrollHandler, 500)
     }
   }
 }
