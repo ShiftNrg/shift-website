@@ -34,6 +34,7 @@ sameHeight = {
   }
 }
 
+studioibizz = {}
 studioibizz.sameheight = {
   slider: null,
   init() {

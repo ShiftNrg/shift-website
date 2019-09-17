@@ -1,6 +1,6 @@
 import anime from 'animejs/anime.min'
 
-function getOffset(el) {
+const getOffset = (el) => {
   const rect = el.getBoundingClientRect()
   return {
     left: rect.left + window.scrollX,

@@ -1278,6 +1278,7 @@ import { initializeBanner } from '../plugins/initialize-banner'
 import Footer from '../components/footer'
 import { animatePage, scrollTop } from '../plugins/animations'
 import { initializeRoadmap } from '../plugins/modules/roadmap'
+import { scrollHandler } from '../plugins/modules/viewport'
 
 export default {
   components: { CustomFooter: Footer },
@@ -1342,7 +1343,10 @@ export default {
         this.$router.push({ name: 'news' })
       )
     },
-    handleScroll() {}
+    handleScroll() {
+      window.addEventListener('scroll', scrollHandler)
+      setTimeout(scrollHandler, 500)
+    }
   }
 }
 </script>

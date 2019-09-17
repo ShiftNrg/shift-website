@@ -4,7 +4,7 @@ import anime from "animejs/anime.min";
 
 require("./modules/nojs");
 require("./modules/dimensions");
-require("./modules/viewport");
+// require("./modules/viewport");
 // require('./modules/banner')
 // require("./modules/roadmap");
 require("./modules/sameheight");
@@ -412,5 +412,3 @@ window.addEventListener("scroll", function () {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
-
-studioibizz.fakepreload.init();
