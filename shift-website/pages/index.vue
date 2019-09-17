@@ -450,8 +450,11 @@
           <div class="Intro">
             <p>Shift brings decentralized cloud hosting to the masses.</p>
           </div>
-          <ul class="block-grid up4" :class="hasActiveUsps">
-            <li :class="getActiveUspsClass(1)" @click="toggleActiveUsps(1)">
+          <ul :class="['block-grid', 'up4', hasActiveUsps]">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(1)]"
+              @click="toggleActiveUsps(1)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -484,7 +487,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(2)" @click="toggleActiveUsps(2)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(2)]"
+              @click="toggleActiveUsps(2)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -518,7 +524,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(3)" @click="toggleActiveUsps(3)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(3)]"
+              @click="toggleActiveUsps(3)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -551,7 +560,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(4)" @click="toggleActiveUsps(4)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(4)]"
+              @click="toggleActiveUsps(4)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -584,7 +596,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(5)" @click="toggleActiveUsps(5)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(5)]"
+              @click="toggleActiveUsps(5)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -615,7 +630,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(6)" @click="toggleActiveUsps(6)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(6)]"
+              @click="toggleActiveUsps(6)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -649,7 +667,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(7)" @click="toggleActiveUsps(7)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(7)]"
+              @click="toggleActiveUsps(7)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -681,7 +702,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveUspsClass(8)" @click="toggleActiveUsps(8)">
+            <li
+              :class="['hasExcerpt', getActiveUspsClass(8)]"
+              @click="toggleActiveUsps(8)"
+            >
               <article>
                 <span class="icon">
                   <svg-icon
@@ -827,8 +851,11 @@
               can match.
             </p>
           </div>
-          <ul class="block-grid up3" :class="hasActiveVision">
-            <li :class="getActiveVisionClass(1)" @click="toggleActiveVision(1)">
+          <ul :class="['block-grid', 'up3', hasActiveVision]">
+            <li
+              :class="['hasExcerpt', getActiveVisionClass(1)]"
+              @click="toggleActiveVision(1)"
+            >
               <article>
                 <h3>Chain of Command</h3>
                 <div class="Text">
@@ -855,7 +882,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveVisionClass(2)" @click="toggleActiveVision(2)">
+            <li
+              :class="['hasExcerpt', getActiveVisionClass(2)]"
+              @click="toggleActiveVision(2)"
+            >
               <article>
                 <h3>Block Lattice</h3>
                 <div class="Text">
@@ -892,7 +922,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveVisionClass(3)" @click="toggleActiveVision(3)">
+            <li
+              :class="['hasExcerpt', getActiveVisionClass(3)]"
+              @click="toggleActiveVision(3)"
+            >
               <article>
                 <h3>Byzantine Fault Detection</h3>
                 <div class="Text">
@@ -918,7 +951,10 @@
                 </div>
               </article>
             </li>
-            <li :class="getActiveVisionClass(4)" @click="toggleActiveVision(4)">
+            <li
+              :class="['hasExcerpt', getActiveVisionClass(4)]"
+              @click="toggleActiveVision(4)"
+            >
               <article>
                 <h3>Sharding</h3>
                 <div class="Text">
@@ -1246,12 +1282,13 @@ import { initializeRoadmap } from '../plugins/modules/roadmap'
 export default {
   components: { CustomFooter: Footer },
   data() {
-    return {
-      activeUsps: undefined,
-      activeVision: undefined,
+    const data = {
+      activeUsps: false,
+      activeVision: false,
       activeLockNLoad: false,
       slider: undefined
     }
+    return data
   },
   computed: {
     hasActiveUsps() {
@@ -1261,11 +1298,15 @@ export default {
       return this.activeVision ? 'hasactive' : ''
     }
   },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
   mounted() {
     initializeBanner(this.$refs.line1, this.$refs.line2)
     this.slider = initializeRoadmap()
   },
   beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
     this.slider.destroy()
   },
   methods: {
@@ -1279,36 +1320,29 @@ export default {
       scrollTop(this.$refs.mainContainer)
     },
     toggleActiveUsps(index) {
-      if (this.activeUsps === index) {
-        this.activeUsps = undefined
-        return
-      }
-      this.activeUsps = index
+      this.activeUsps = this.activeUsps === index ? false : index
     },
     getActiveUspsClass(index) {
-      return 'hasExcerpt ' + (this.activeUsps === index ? 'active' : '')
+      return this.activeUsps === index ? 'active' : ''
     },
     closeActiveUsps() {
-      this.activeUsps = undefined
+      this.activeUsps = false
     },
     toggleActiveVision(index) {
-      if (this.activeVision === index) {
-        this.activeVision = undefined
-        return
-      }
-      this.activeVision = index
+      this.activeVision = this.activeVision === index ? false : index
     },
     getActiveVisionClass(index) {
-      return 'hasExcerpt ' + (this.activeVision === index ? 'active' : '')
+      return this.activeVision === index ? 'active' : ''
     },
     closeActiveVision() {
-      this.activeVision = undefined
+      this.activeVision = false
     },
     goToNewsArticle(id) {
       animatePage(this.$refs['newsarticle-' + id], () =>
         this.$router.push({ name: 'news' })
       )
-    }
+    },
+    handleScroll() {}
   }
 }
 </script>
