@@ -4,34 +4,32 @@ const screenWidth =
     document.documentElement.clientWidth ||
     document.body.clientWidth)
 
-if (process.client) {
-  studioibizz.fakepreload = {
-    selectors:
-      '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible):not(.usps)',
-    init() {
-      this.attach()
-      this.onscroll()
-    },
-    attach() {
-      if (screenWidth <= 767 || screenWidth > 1024) {
-        document
-          .querySelectorAll(studioibizz.fakepreload.selectors)
-          .forEach(function(element) {
-            element.classList.add('invisible')
-            element.addEventListener('animationend', function() {
-              element.classList.remove('animating')
-            })
+const fakepreload = {
+  selectors:
+    '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible):not(.usps):not(.vision)',
+  init() {
+    this.attach()
+    this.onscroll()
+  },
+  attach() {
+    if (process.client && (screenWidth <= 767 || screenWidth > 1024)) {
+      document
+        .querySelectorAll(fakepreload.selectors)
+        .forEach(function(element) {
+          element.classList.add('invisible')
+          element.addEventListener('animationend', function() {
+            element.classList.remove('animating')
           })
-      }
-    },
-    detach() {},
-    onscroll() {
-      // window.addEventListener('scroll', scrollHandler)
-      // setTimeout(scrollHandler, 500)
+        })
     }
+  },
+  detach() {},
+  onscroll() {
+    // window.addEventListener('scroll', scrollHandler)
+    // setTimeout(scrollHandler, 500)
   }
-  studioibizz.fakepreload.init()
 }
+fakepreload.init()
 
 // requestAnimationFrame
 const raf =
@@ -69,15 +67,17 @@ const isInView = (el) => {
 }
 
 // Viewport checker
-export const scrollHandler = (x) => {
+export const scrollHandler = (elems) => {
   console.debug('scrollHandler')
-  if (isInView(x[0])) {
-    x[0].classList.add('visible')
-    x[0].classList.add('animating')
-  }
+  elems.forEach(function(elem) {
+    if (isInView(elem)) {
+      elem.classList.add('visible')
+      elem.classList.add('animating')
+    }
+  })
   raf(() => {
     document
-      .querySelectorAll(studioibizz.fakepreload.selectors)
+      .querySelectorAll(fakepreload.selectors)
       .forEach(function(element) {
         if (isInView(element)) {
           element.classList.add('visible')

@@ -1,6 +1,6 @@
 <template>
   <div id="scene" class="scene">
-    <div class="banner">
+    <div ref="banner" class="banner">
       <div class="newsflash">
         <div class="label">Update</div>
         <div class="title">
@@ -69,7 +69,7 @@
       </button>
     </div>
     <div ref="mainContainer" class="maincontainer">
-      <section class="locknload">
+      <section ref="locknload" class="locknload">
         <div class="inner">
           <h1>
             Shift reinvents decentralized cloud hosting with
@@ -223,7 +223,7 @@
           </nav>
         </div>
       </section>
-      <section class="issues right">
+      <section ref="issues" class="issues right">
         <div class="inner">
           <h4>The foundation of a new token utility</h4>
           <h3>Simply A Better Service Model</h3>
@@ -302,7 +302,7 @@
               <article>
                 <div class="issue">
                   <div class="corner-ribbon top-right sticky purple">
-                    Future
+                    Upcoming
                   </div>
                   <h3>Operability</h3>
                   <span class="icon">
@@ -337,7 +337,7 @@
               <article>
                 <div class="issue">
                   <div class="corner-ribbon top-right sticky purple">
-                    Future
+                    Upcoming
                   </div>
                   <h3>Scalability</h3>
                   <span class="icon">
@@ -374,7 +374,7 @@
           </ul>
         </div>
       </section>
-      <section class="cases">
+      <section ref="cases" class="cases">
         <div class="inner">
           <h4>Traditional web development</h4>
           <h3>Simply Better Use Cases</h3>
@@ -740,7 +740,7 @@
           </ul>
         </div>
       </section>
-      <article class="overview">
+      <article ref="overview" class="overview">
         <div class="inner Intro">
           <div class="aside">
             <h4>Software applications that communicate</h4>
@@ -840,7 +840,7 @@
           </div>
         </div>
       </article>
-      <section class="vision right">
+      <section ref="vision" class="vision right">
         <div class="inner">
           <h4>Vision</h4>
           <h3>A New Blockchain Core</h3>
@@ -994,7 +994,7 @@
           </ul>
         </div>
       </section>
-      <section class="roadmap">
+      <section ref="roadmap" class="roadmap">
         <div class="inner">
           <h4>Milestones to production</h4>
           <h3>Roadmap</h3>
@@ -1181,7 +1181,7 @@
           </div>
         </div>
       </section>
-      <section class="news latest">
+      <section ref="news" class="news latest">
         <div class="payoff">updates</div>
         <div class="inner">
           <h3 class="h5">Latest Updates and News</h3>
@@ -1344,7 +1344,9 @@ export default {
       )
     },
     handleScroll() {
-      window.addEventListener('scroll', () => scrollHandler([this.$refs.usps]))
+      window.addEventListener('scroll', () =>
+        scrollHandler([this.$refs.usps, this.$refs.vision])
+      )
       // setTimeout(scrollHandler, 500)
     }
   }
