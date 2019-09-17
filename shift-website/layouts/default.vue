@@ -75,10 +75,10 @@
         <li class="cta"><a href="#">Get started</a></li>
       </ol>
     </header>
-    <nuxt />
     <div id="topcontainer" style="opacity:0;">
       <div id="backlayer" class="backlayer"></div>
       <div id="frontlayer" class="frontlayer"></div>
+      <nuxt />
     </div>
     <div class="stickysocials">
       <div class="label">Join our community</div>

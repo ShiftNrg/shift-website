@@ -10,7 +10,6 @@
           opacity: 1;
           align-self: flex-start;
           transition: all .3s ease-in-out;
-          cursor: pointer;
 
           &:nth-child(3n) ~ * {
             .Excerpt {
@@ -43,9 +42,7 @@
               }
             }
             &.hasExcerpt {
-              article {
-                cursor:pointer;
-              }
+              cursor: pointer;
               h3 {
                 position:relative;
                 &::before {

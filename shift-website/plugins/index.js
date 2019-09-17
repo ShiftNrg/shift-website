@@ -346,7 +346,7 @@ document.addEventListener("click", function (e) {
           //   object[1].classList.remove("active");
           // });
           // hasactiveusp = false;
-        }
+        // }
         // while (element) {
         //   // Loop untill the <a is found, instead of the child.
         //   if (element instanceof HTMLAnchorElement) {
@@ -360,7 +360,7 @@ document.addEventListener("click", function (e) {
         // }
       // }
     // }
-  // }
+  }
 });
 
 if (window.innerWidth <= 767) {
