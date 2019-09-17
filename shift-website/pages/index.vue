@@ -301,7 +301,7 @@
             <li>
               <article>
                 <div class="issue">
-                  <div class="corner-ribbon top-right sticky purple">
+                  <div class="corner-ribbon top-right purple">
                     Upcoming
                   </div>
                   <h3>Operability</h3>
@@ -336,7 +336,7 @@
             <li>
               <article>
                 <div class="issue">
-                  <div class="corner-ribbon top-right sticky purple">
+                  <div class="corner-ribbon top-right purple">
                     Upcoming
                   </div>
                   <h3>Scalability</h3>
