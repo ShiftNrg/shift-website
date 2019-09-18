@@ -6,7 +6,7 @@ const screenWidth =
 
 export const fakepreload = {
   selectors:
-    '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible):not(.usps):not(.vision)',
+    '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible)',
   init() {
     this.attach()
     this.onscroll()
@@ -33,15 +33,17 @@ export const fakepreload = {
   }
 }
 
-// requestAnimationFrame
-const raf =
-  (process.client &&
-    (window.requestAnimationFrame ||
+// requestAnimationFrame: adds delay to event handler!
+let raf = function(callback) {
+  setTimeout(callback, 1000 / 60)
+}
+if (process.client) {
+  raf =
+    window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame)) ||
-  function(callback) {
-    window.setTimeout(callback, 1000 / 60)
-  }
+      window.mozRequestAnimationFrame ||
+      raf
+}
 
 // The checker
 const isInView = (el) => {
@@ -79,15 +81,9 @@ const makeVisible = (element) => {
 
 // Viewport checker
 export const scrollHandler = (elems) => {
-  console.debug('scrollHandler')
-  elems.forEach(function(elem) {
-    makeVisible(elem)
-  })
   raf(() => {
-    document
-      .querySelectorAll(fakepreload.selectors)
-      .forEach(function(elem) {
-        makeVisible(elem)
-      })
+    elems.forEach(function(elem) {
+      makeVisible(elem)
+    })
   })
 }

@@ -1287,7 +1287,8 @@ export default {
       activeUsps: false,
       activeVision: false,
       activeLockNLoad: false,
-      slider: undefined
+      slider: undefined,
+      debounce: undefined
     }
     return data
   },
@@ -1345,10 +1346,15 @@ export default {
       )
     },
     handleScroll() {
-      window.addEventListener('scroll', () =>
-        scrollHandler([this.$refs.usps, this.$refs.vision])
-      )
-      // setTimeout(scrollHandler, 500)
+      const elems = document.querySelectorAll(fakepreload.selectors)
+      window.addEventListener('scroll', () => {
+        if (this.debounce) {
+          window.clearTimeout(this.debounce)
+        }
+        this.debounce = window.setTimeout(function() {
+          scrollHandler(elems)
+        }, 16)
+      })
     }
   }
 }
