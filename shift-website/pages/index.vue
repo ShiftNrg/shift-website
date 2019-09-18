@@ -1278,7 +1278,7 @@ import { initializeBanner } from '../plugins/initialize-banner'
 import Footer from '../components/footer'
 import { animatePage, scrollTop } from '../plugins/animations'
 import { initializeRoadmap } from '../plugins/modules/roadmap'
-import { scrollHandler } from '../plugins/modules/viewport'
+import { fakepreload, scrollHandler } from '../plugins/modules/viewport'
 
 export default {
   components: { CustomFooter: Footer },
@@ -1303,6 +1303,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
   },
   mounted() {
+    fakepreload.init()
     initializeBanner(this.$refs.line1, this.$refs.line2)
     this.slider = initializeRoadmap()
   },

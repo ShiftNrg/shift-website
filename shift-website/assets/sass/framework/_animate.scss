@@ -328,6 +328,12 @@
     }
 
     &.visible {
+        .slogan {
+            > * {
+                opacity: 1;
+            }
+        }
+
         .newsflash {
             @include fadeInDownTransform;
             @include delay(2.8s);

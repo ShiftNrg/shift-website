@@ -4,7 +4,7 @@ const screenWidth =
     document.documentElement.clientWidth ||
     document.body.clientWidth)
 
-const fakepreload = {
+export const fakepreload = {
   selectors:
     '.scene .banner:not(.visible), .scene article:not(.visible), .scene section:not(.visible):not(.usps):not(.vision)',
   init() {
@@ -12,15 +12,18 @@ const fakepreload = {
     this.onscroll()
   },
   attach() {
-    if (process.client && (screenWidth <= 767 || screenWidth > 1024)) {
-      document
-        .querySelectorAll(fakepreload.selectors)
-        .forEach(function(element) {
-          element.classList.add('invisible')
-          element.addEventListener('animationend', function() {
-            element.classList.remove('animating')
+    if (process.client){
+      if (screenWidth <= 767 || screenWidth > 1024) {
+        document
+          .querySelectorAll(fakepreload.selectors)
+          .forEach(function(element) {
+            element.classList.add('invisible')
+            element.addEventListener('animationend', function() {
+              element.classList.remove('animating')
+            })
           })
-        })
+        makeVisible(document.getElementsByClassName('banner')[0])
+      }
     }
   },
   detach() {},
@@ -29,7 +32,6 @@ const fakepreload = {
     // setTimeout(scrollHandler, 500)
   }
 }
-fakepreload.init()
 
 // requestAnimationFrame
 const raf =
@@ -43,7 +45,7 @@ const raf =
 
 // The checker
 const isInView = (el) => {
-  if (!process.client) {
+  if (!el || !process.client) {
     return
   }
 
@@ -66,26 +68,26 @@ const isInView = (el) => {
   )
 }
 
+const makeVisible = (element) => {
+  if (isInView(element)) {
+    element.classList.add('visible')
+    if (element.classList.contains('banner')) {
+      // studioibizz.banner.animate()
+    }
+  }
+}
+
 // Viewport checker
 export const scrollHandler = (elems) => {
   console.debug('scrollHandler')
   elems.forEach(function(elem) {
-    if (isInView(elem)) {
-      elem.classList.add('visible')
-      elem.classList.add('animating')
-    }
+    makeVisible(elem)
   })
   raf(() => {
     document
       .querySelectorAll(fakepreload.selectors)
-      .forEach(function(element) {
-        if (isInView(element)) {
-          element.classList.add('visible')
-          element.classList.add('animating')
-          if (element.classList.contains('banner')) {
-            // studioibizz.banner.animate()
-          }
-        }
+      .forEach(function(elem) {
+        makeVisible(elem)
       })
   })
 }
