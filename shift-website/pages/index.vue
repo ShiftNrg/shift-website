@@ -1031,13 +1031,13 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Improved Shift Chain</h3>
+                    <h3>Proof-of-Capacity</h3>
                     <div class="Content">
                       <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
+                        <li>Storage provider registration</li>
+                        <li>Storage deposits/withdrawals</li>
+                        <li>Generation of plot files</li>
+                        <li>Zero Knowledge Proofs (zkrp)</li>
                       </ul>
                     </div>
                   </article>
@@ -1054,13 +1054,13 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Lorem ipsum dolor</h3>
+                    <h3>Proof-of-Storage</h3>
                     <div class="Content">
                       <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
+                        <li>Distributed Hash Table (DHT)</li>
+                        <li>Re-pin functionality</li>
+                        <li>Zero Knowledge Proofs (zkrp)</li>
+                        <li>Peer entanglement challenges</li>
                       </ul>
                     </div>
                   </article>
@@ -1077,13 +1077,13 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Lorem ipsum dolor</h3>
+                    <h3>Incentive Model</h3>
                     <div class="Content">
                       <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
+                        <li>Dynamic transaction fees</li>
+                        <li>Dynamic block rewards</li>
+                        <li>Token burning/redistribution</li>
+                        <li>Run experimental (artificial) data</li>
                       </ul>
                     </div>
                   </article>
@@ -1100,13 +1100,12 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Lorem ipsum dolor</h3>
+                    <h3>Phoenix v1.0.0</h3>
                     <div class="Content">
                       <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
+                        <li>Pin queueing</li>
+                        <li>IPNS resolution at blockchain (IPFS)</li>
+                        <li>Blacklisting functionality for hashes</li>
                       </ul>
                     </div>
                   </article>
@@ -1123,36 +1122,13 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Lorem ipsum dolor</h3>
+                    <h3>Content Encryption</h3>
                     <div class="Content">
                       <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
-                      </ul>
-                    </div>
-                  </article>
-                </li>
-                <li class="glide__slide">
-                  <article>
-                    <div class="state">
-                      <div class="label">Q4</div>
-                      <div class="c100 p37">
-                        <span>100%</span>
-                        <div class="slice">
-                          <div class="bar"></div>
-                          <div class="fill"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <h3>Lorem ipsum dolor</h3>
-                    <div class="Content">
-                      <ul>
-                        <li>Inventory Management</li>
-                        <li>p2p Trade of Inventory Items</li>
-                        <li>Aliquam lorem ante</li>
-                        <li>Eget condimentum rhoncus</li>
+                        <li>Encrypt before upload</li>
+                        <li>Decrypt on load</li>
+                        <li>Content sharing (asymetric keys)</li>
+                        <li>Recursive encryption</li>
                       </ul>
                     </div>
                   </article>
@@ -1279,6 +1255,7 @@ import Footer from '../components/footer'
 import { animatePage, scrollTop } from '../plugins/animations'
 import { initializeRoadmap } from '../plugins/modules/roadmap'
 import { fakepreload, scrollHandler } from '../plugins/modules/viewport'
+import { sameheight } from '../plugins/modules/sameheight'
 
 export default {
   components: { CustomFooter: Footer },
@@ -1305,6 +1282,7 @@ export default {
   },
   mounted() {
     fakepreload.init()
+    sameheight.init()
     initializeBanner(this.$refs.line1, this.$refs.line2)
     this.slider = initializeRoadmap()
   },
@@ -1353,7 +1331,7 @@ export default {
         }
         this.debounce = window.setTimeout(function() {
           scrollHandler(elems)
-        }, 16)
+        }, 8)
       })
     }
   }

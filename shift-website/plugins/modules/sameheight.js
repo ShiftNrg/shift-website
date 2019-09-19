@@ -1,4 +1,4 @@
-sameHeight = {
+const sameHeight = {
   init(className, useHeight) {
     var useHeight = useHeight !== undefined ? useHeight : false
     const colHeight = sameHeight.calculate(className)
@@ -34,8 +34,7 @@ sameHeight = {
   }
 }
 
-studioibizz = {}
-studioibizz.sameheight = {
+export const sameheight = {
   slider: null,
   init() {
     this.attach()
@@ -49,4 +48,3 @@ studioibizz.sameheight = {
   },
   detach() {}
 }
-studioibizz.sameheight.init()

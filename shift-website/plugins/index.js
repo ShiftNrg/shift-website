@@ -7,7 +7,7 @@ require("./modules/dimensions");
 // require("./modules/viewport");
 // require('./modules/banner')
 // require("./modules/roadmap");
-require("./modules/sameheight");
+// require("./modules/sameheight");
 
 // const topcontainer = document.querySelector("#topcontainer");
 // const backLayer = document.querySelector("#topcontainer .backlayer");
@@ -76,68 +76,68 @@ const enableScrolling = () => {
 const attachAll = () => {
   // studioibizz.roadmap.attach();
   // studioibizz.banner.attach()
-  studioibizz.sameheight.attach();
+  // studioibizz.sameheight.attach();
 };
 const detachAll = () => {
   // Detach all events, so the ram won't overload.
   // studioibizz.roadmap.detach();
-  studioibizz.sameheight.detach();
+  // studioibizz.sameheight.detach();
 };
 
 // Handle href
-const handleHref = (href, target = "_self", linkdiv = null) => {
-  const oldLayer = document.getElementById('scene');
-  if (linkdiv) {
-    // Handle linkdiv animations when needed
-    if (linkdiv.classList.contains("newsarticle")) {
-      const li = linkdiv.parentNode;
-      const index = Array.prototype.slice
-        .call(li.parentNode.children)
-        .indexOf(li);
+// const handleHref = (href, target = "_self", linkdiv = null) => {
+//   const oldLayer = document.getElementById('scene');
+//   if (linkdiv) {
+//     // Handle linkdiv animations when needed
+//     if (linkdiv.classList.contains("newsarticle")) {
+//       const li = linkdiv.parentNode;
+//       const index = Array.prototype.slice
+//         .call(li.parentNode.children)
+//         .indexOf(li);
 
-      // Create clone with correct color based on index
-      makeCloneThatScales(linkdiv, index);
-      anime({
-        targets: oldLayer,
-        opacity: 0,
-        duration: 600,
-        easing: "easeInOutQuad"
-      });
-    }
-  } else {
-    // Just animate out the oldLayer
-    anime.timeline({ loop: false }).add({
-      targets: oldLayer,
-      opacity: 0,
-      top: "-200px",
-      duration: 600,
-      easing: "easeInOutQuad",
-      complete() {
-        hasAnimatedOut = true;
-      }
-    });
-  }
+//       // Create clone with correct color based on index
+//       makeCloneThatScales(linkdiv, index);
+//       anime({
+//         targets: oldLayer,
+//         opacity: 0,
+//         duration: 600,
+//         easing: "easeInOutQuad"
+//       });
+//     }
+//   } else {
+//     // Just animate out the oldLayer
+//     anime.timeline({ loop: false }).add({
+//       targets: oldLayer,
+//       opacity: 0,
+//       top: "-200px",
+//       duration: 600,
+//       easing: "easeInOutQuad",
+//       complete() {
+//         hasAnimatedOut = true;
+//       }
+//     });
+//   }
 
-  if (target === "_self") {
-    detachAll();
-    disableScrolling();
-    // loadPage(href).then((newNode) => {
-      waitfor(_hasAnimatedOut, true, 50, 0, function () {
-        animatePage(href);
-        if (linkdiv && linkdiv.classList.contains("newsarticle")) {
-          removeCloneThatScales();
-        }
-        hasAnimatedOut = false;
-      });
-    // });
-  } else {
-    window.location.href = href;
-  }
-};
+//   if (target === "_self") {
+//     detachAll();
+//     disableScrolling();
+//     // loadPage(href).then((newNode) => {
+//       waitfor(_hasAnimatedOut, true, 50, 0, function () {
+//         animatePage(href);
+//         if (linkdiv && linkdiv.classList.contains("newsarticle")) {
+//           removeCloneThatScales();
+//         }
+//         hasAnimatedOut = false;
+//       });
+//     // });
+//   } else {
+//     window.location.href = href;
+//   }
+// };
 
-const _hasAnimatedOut = () => {
-  return hasAnimatedOut;
-};
+// const _hasAnimatedOut = () => {
+//   return hasAnimatedOut;
+// };
 // const animatePage = (href) => {
 //   setStyles(backLayer, {
 //     opacity: 0,
@@ -195,66 +195,66 @@ const _hasAnimatedOut = () => {
 
 // Scaleable clone
 // Scale transition helper
-let clonedBaseNode = null;
-const pageOffset =
-  window.innerWidth >= 1301
-    ? 130
-    : window.innerWidth >= 1025
-    ? 90
-    : window.innerWidth >= 768
-      ? 50
-      : 0;
+// let clonedBaseNode = null;
+// const pageOffset =
+//   window.innerWidth >= 1301
+//     ? 130
+//     : window.innerWidth >= 1025
+//     ? 90
+//     : window.innerWidth >= 768
+//       ? 50
+//       : 0;
 
-const makeCloneThatScales = (target, index = 0) => {
-  const i = target.getBoundingClientRect();
-  // clonedBaseNode = target.cloneNode(!0);
-  clonedBaseNode = document.createElement("div");
-  clonedBaseNode.classList.add("clone");
-  clonedBaseNode.classList.add("index" + index);
-  document.body.appendChild(clonedBaseNode);
+// const makeCloneThatScales = (target, index = 0) => {
+//   const i = target.getBoundingClientRect();
+//   // clonedBaseNode = target.cloneNode(!0);
+//   clonedBaseNode = document.createElement("div");
+//   clonedBaseNode.classList.add("clone");
+//   clonedBaseNode.classList.add("index" + index);
+//   document.body.appendChild(clonedBaseNode);
 
-  setStyles(clonedBaseNode, {
-    position: "fixed",
-    left: i.left + "px",
-    top: i.top + "px",
-    width: i.width + "px",
-    height: i.height + "px",
-    margin: "0",
-    zIndex: "500"
-  });
+//   setStyles(clonedBaseNode, {
+//     position: "fixed",
+//     left: i.left + "px",
+//     top: i.top + "px",
+//     width: i.width + "px",
+//     height: i.height + "px",
+//     margin: "0",
+//     zIndex: "500"
+//   });
 
-  anime
-    .timeline({ loop: false })
-    .add({
-      targets: clonedBaseNode,
-      duration: 600,
-      left: pageOffset,
-      width: window.innerWidth - pageOffset,
-      easing: "easeInOutQuad"
-    })
-    .add({
-      targets: clonedBaseNode,
-      duration: 400,
-      height: window.innerHeight * 1.2,
-      easing: "easeInOutQuad",
-      complete() {
-        // Set finished boolean, so we can animate in the new page.
-        hasAnimatedOut = true;
-      }
-    });
-};
-const removeCloneThatScales = () => {
-  anime.timeline({ loop: false }).add({
-    targets: clonedBaseNode,
-    duration: 400,
-    top: window.innerHeight,
-    height: 0,
-    easing: "easeInOutQuad",
-    complete() {
-      clonedBaseNode.remove();
-    }
-  });
-};
+//   anime
+//     .timeline({ loop: false })
+//     .add({
+//       targets: clonedBaseNode,
+//       duration: 600,
+//       left: pageOffset,
+//       width: window.innerWidth - pageOffset,
+//       easing: "easeInOutQuad"
+//     })
+//     .add({
+//       targets: clonedBaseNode,
+//       duration: 400,
+//       height: window.innerHeight * 1.2,
+//       easing: "easeInOutQuad",
+//       complete() {
+//         // Set finished boolean, so we can animate in the new page.
+//         hasAnimatedOut = true;
+//       }
+//     });
+// };
+// const removeCloneThatScales = () => {
+//   anime.timeline({ loop: false }).add({
+//     targets: clonedBaseNode,
+//     duration: 400,
+//     top: window.innerHeight,
+//     height: 0,
+//     easing: "easeInOutQuad",
+//     complete() {
+//       clonedBaseNode.remove();
+//     }
+//   });
+// };
 
 // Call to actions
 // let hasactiveusp = false;
@@ -367,45 +367,51 @@ if (window.innerWidth <= 767) {
   document.body.classList.add("menu-mobile");
 }
 
+let debounce = undefined
 window.addEventListener("scroll", function () {
-  const scrollMargin = 250;
-  const bannerTarget = document.getElementsByClassName("banner")[0];
-  const roadmapTarget = document.getElementsByClassName("roadmap")[0];
-  const socialTarget = document.getElementsByClassName("stickysocials")[0];
-  if (bannerTarget) {
+  if (debounce) {
+    window.clearTimeout(debounce)
+  }
+  debounce = window.setTimeout(function() {
+    const scrollMargin = 250;
+    const bannerTarget = document.getElementsByClassName("banner")[0];
+    const roadmapTarget = document.getElementsByClassName("roadmap")[0];
+    const socialTarget = document.getElementsByClassName("stickysocials")[0];
+    if (bannerTarget) {
+      if (
+        window.scrollY >
+        bannerTarget.offsetTop + bannerTarget.offsetHeight - scrollMargin &&
+        (!roadmapTarget ||
+          window.scrollY < roadmapTarget.offsetTop - scrollMargin)
+      ) {
+        socialTarget.classList.add("show");
+      } else {
+        socialTarget.classList.remove("show");
+      }
+    } else {
+      socialTarget.classList.add("show");
+    }
+    const maincontainerTarget = document.getElementsByClassName(
+      "maincontainer"
+    )[0];
     if (
       window.scrollY >
-      bannerTarget.offsetTop + bannerTarget.offsetHeight - scrollMargin &&
-      (!roadmapTarget ||
-        window.scrollY < roadmapTarget.offsetTop - scrollMargin)
+      maincontainerTarget.offsetTop +
+      maincontainerTarget.offsetHeight -
+      window.innerHeight
     ) {
-      socialTarget.classList.add("show");
+      maincontainerTarget.classList.add("past");
     } else {
-      socialTarget.classList.remove("show");
+      maincontainerTarget.classList.remove("past");
     }
-  } else {
-    socialTarget.classList.add("show");
-  }
-  const maincontainerTarget = document.getElementsByClassName(
-    "maincontainer"
-  )[0];
-  if (
-    window.scrollY >
-    maincontainerTarget.offsetTop +
-    maincontainerTarget.offsetHeight -
-    window.innerHeight
-  ) {
-    maincontainerTarget.classList.add("past");
-  } else {
-    maincontainerTarget.classList.remove("past");
-  }
 
-  // Set mobile-toggle visible for desktop when past first screen
-  if (window.scrollY > window.innerHeight) {
-    document.getElementById("mobile-toggle").classList.add("show");
-  } else {
-    document.getElementById("mobile-toggle").classList.remove("show");
-  }
+    // Set mobile-toggle visible for desktop when past first screen
+    if (window.scrollY > window.innerHeight) {
+      document.getElementById("mobile-toggle").classList.add("show");
+    } else {
+      document.getElementById("mobile-toggle").classList.remove("show");
+    }
+  }, 16);
 });
 
 // Force to start at top of page, because of the animations.

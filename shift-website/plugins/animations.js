@@ -114,7 +114,14 @@ export const scrollTop = (mainContainer) => {
 
 export const animatePage = (element, callback) => {
   const oldLayer = document.getElementById('scene')
-  makeCloneThatScales(element)
+
+  let index = 0
+  if (element.classList.contains('newsarticle')) {
+    const li = element.parentNode
+    index = Array.prototype.slice.call(li.parentNode.children).indexOf(li)
+  }
+
+  makeCloneThatScales(element, index)
   anime({
     targets: oldLayer,
     opacity: 0,

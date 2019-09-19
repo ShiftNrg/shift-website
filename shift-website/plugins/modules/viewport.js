@@ -74,7 +74,7 @@ const makeVisible = (element) => {
   if (isInView(element)) {
     element.classList.add('visible')
     if (element.classList.contains('banner')) {
-      // studioibizz.banner.animate()
+      // banner.animate()
     }
   }
 }
