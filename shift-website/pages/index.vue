@@ -4,7 +4,7 @@
       <div class="newsflash">
         <div class="label">Update</div>
         <div class="title">
-          Development Update: Phoenix v0.9 by Shift Team
+          Development Update: Phoenix v0.9.3 by Shift Team
         </div>
       </div>
       <div class="slogan">
@@ -388,7 +388,7 @@
             <li>
               <article>
                 <figure>
-                  <img src="~/assets/images/cases/static-hosting.png" alt="" />
+                  <img src="~/assets/images/cases/static-hosting.svg" alt="" />
                 </figure>
                 <h3>Static hosting</h3>
                 <div class="Content">
@@ -405,7 +405,7 @@
             <li>
               <article>
                 <figure>
-                  <img src="~/assets/images/cases/dynamic-hosting.png" alt="" />
+                  <img src="~/assets/images/cases/dynamic-hosting.svg" alt="" />
                 </figure>
                 <h3>Dynamic hosting</h3>
                 <div class="Content">
@@ -423,7 +423,7 @@
               <article>
                 <figure>
                   <img
-                    src="~/assets/images/cases/encrypted-hosting.png"
+                    src="~/assets/images/cases/encrypted-hosting.svg"
                     alt=""
                   />
                 </figure>
@@ -756,7 +756,7 @@
         </div>
         <div class="inner">
           <figure>
-            <img src="~/assets/images/overview/phoenix.png" alt="" />
+            <img src="~/assets/images/overview/phoenix.svg" alt="" />
           </figure>
           <div class="aside">
             <h4>Stand-alone application</h4>
@@ -793,7 +793,7 @@
         </div>
         <div class="inner">
           <figure>
-            <img src="~/assets/images/overview/blockchain.png" alt="" />
+            <img src="~/assets/images/overview/blockchain.svg" alt="" />
           </figure>
           <div class="aside">
             <h4>Delegated Proof-of-Stake (DPoS)</h4>
@@ -1106,6 +1106,7 @@
                         <li>Pin queueing</li>
                         <li>IPNS resolution at blockchain (IPFS)</li>
                         <li>Blacklisting functionality for hashes</li>
+                        <li>Auto recovery</li>
                       </ul>
                     </div>
                   </article>
@@ -1127,7 +1128,7 @@
                       <ul>
                         <li>Encrypt before upload</li>
                         <li>Decrypt on load</li>
-                        <li>Content sharing (asymetric keys)</li>
+                        <li>Content sharing (asymetric key pairs)</li>
                         <li>Recursive encryption</li>
                       </ul>
                     </div>
