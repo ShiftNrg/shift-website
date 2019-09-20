@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '@/plugins/index.js', mode: 'client' }],
+  plugins: [
+    { src: '@/data/index/data.json.js', mode: 'client' },
+    { src: '@/plugins/index.js', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

@@ -2,8 +2,8 @@
   <footer id="footer">
     <div id="footer-top">
       <div class="left">
-        <div class="subtitle">Stay updated</div>
-        <div class="title">Newsletter</div>
+        <div class="subtitle">{{ footerData.subtitle }}</div>
+        <div class="title">{{ footerData.title }}</div>
       </div>
       <form class="right">
         <div class="input-group">
@@ -29,44 +29,18 @@
       </div>
       <div class="right">
         <ul class="linkgroups block-grid up4">
-          <li>
-            <h5>Company info</h5>
+          <li
+            v-for="(footerItem, footerKey) of footerData.footerItems"
+            :key="'footer-' + footerKey"
+          >
+            <h5>{{ footerItem.title }}</h5>
             <ul class="linkgroup">
-              <li><a href="#">Lorem ipsum dolor sit</a></li>
-              <li><a href="#">Nascetur ridiculus mus ae</a></li>
-              <li><a href="#">Nam pretium turpise</a></li>
-              <li><a href="#">Tincidunt non euismod</a></li>
-              <li><a href="#">Hasellus nec sem</a></li>
-            </ul>
-          </li>
-          <li>
-            <h5>Tincidunt non</h5>
-            <ul class="linkgroup">
-              <li><a href="#">Lorem ipsum dolor sit</a></li>
-              <li><a href="#">Nascetur ridiculus mus ae</a></li>
-              <li><a href="#">Nam pretium turpise</a></li>
-              <li><a href="#">Tincidunt non euismod</a></li>
-              <li><a href="#">Hasellus nec sem</a></li>
-            </ul>
-          </li>
-          <li>
-            <h5>Pretium turpise</h5>
-            <ul class="linkgroup">
-              <li><a href="#">Lorem ipsum dolor sit</a></li>
-              <li><a href="#">Nascetur ridiculus mus ae</a></li>
-              <li><a href="#">Nam pretium turpise</a></li>
-              <li><a href="#">Tincidunt non euismod</a></li>
-              <li><a href="#">Hasellus nec sem</a></li>
-            </ul>
-          </li>
-          <li>
-            <h5>Hasellus nec</h5>
-            <ul class="linkgroup">
-              <li><a href="#">Lorem ipsum dolor sit</a></li>
-              <li><a href="#">Nascetur ridiculus mus ae</a></li>
-              <li><a href="#">Nam pretium turpise</a></li>
-              <li><a href="#">Tincidunt non euismod</a></li>
-              <li><a href="#">Hasellus nec sem</a></li>
+              <li
+                v-for="footerItemLink of footerItem.links"
+                :key="footerItemLink.text"
+              >
+                <a :href="footerItemLink.link">{{ footerItemLink.text }}</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -74,26 +48,32 @@
     </div>
     <div id="footer-bottom">
       <ol class="nav footernav">
-        <li>© Shift 2019 - All rights reserved</li>
-        <li><a href="#">Terms and Conditions</a></li>
-        <li><a href="#">Privacy Statement</a></li>
-        <li><a href="#">Cookies</a></li>
+        <li
+          v-for="footerBottomItem of footerData.bottomItems"
+          :key="footerBottomItem.text"
+        >
+          <a v-if="footerBottomItem.link" :href="footerBottomItem.link">
+            {{ footerBottomItem.text }}
+          </a>
+          <span v-else>
+            {{ footerBottomItem.text }}
+          </span>
+        </li>
       </ol>
       <div class="socials">
-        <div class="label">Join our community</div>
-        <a href="#" title="Discord">
+        <div class="label">{{ socialData.label }}</div>
+        <a
+          v-for="(socialLink, socialKey) of socialData.links"
+          :key="socialKey"
+          :title="socialKey"
+          :href="socialLink"
+        >
           <span class="icon">
-            <svg-icon name="discord" width="36" height="36"></svg-icon>
-          </span>
-        </a>
-        <a href="#" title="Facebook">
-          <span class="icon">
-            <svg-icon name="facebook" width="36" height="36"></svg-icon>
-          </span>
-        </a>
-        <a href="#" title="Twitter">
-          <span class="icon">
-            <svg-icon name="twitter" width="36" height="36"></svg-icon>
+            <svg-icon
+              :name="socialKey.toLowerCase()"
+              width="36"
+              height="36"
+            ></svg-icon>
           </span>
         </a>
       </div>
@@ -105,7 +85,21 @@
 import Logo from './logo'
 export default {
   name: 'Footer',
-  components: { Logo }
+  components: { Logo },
+  computed: {
+    socialData() {
+      if (!process.client) {
+        return {}
+      }
+      return (window.indexData || {}).social || {}
+    },
+    footerData() {
+      if (!process.client) {
+        return {}
+      }
+      return (window.indexData || {}).footer || {}
+    }
+  }
 }
 </script>
 
