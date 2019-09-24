@@ -2,7 +2,7 @@ window.indexData = {
   banner: {
     newsFlash: {
       badge: 'Update',
-      description: 'Development Update: Phoenix v0.9.3 by Shift Team'
+      description: 'Development Update: Phoenix v0.9.3 by the Shift Team'
     },
     line1: 'Reinvented Decentralized',
     line2: 'Cloud Hosting',
@@ -60,10 +60,12 @@ window.indexData = {
     buttons: [
       {
         link: 'https://demo.shiftproject.com',
+        target: '_blank',
         text: 'Try our demo now'
       },
       {
         link: 'https://github.com/ShiftProject/shift-cluster-setup',
+        target: '_blank',
         text: 'Set up a storage node'
       }
     ]
@@ -313,7 +315,7 @@ window.indexData = {
     items: [
       {
         label: 'TBD',
-        percentage: '25%',
+        percentage: '25',
         title: 'Phoenix v1.0.0',
         items: [
           { item: 'Pin queueing', class: 'checked' },
@@ -324,7 +326,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '50%',
+        percentage: '50',
         title: 'Content Encryption',
         items: [
           { item: 'Encrypt before uploading', class: 'checked' },
@@ -335,7 +337,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '2%',
+        percentage: '2',
         title: 'Proof-of-Capacity',
         items: [
           { item: 'Storage provider registration' },
@@ -346,7 +348,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '1%',
+        percentage: '1',
         title: 'Proof-of-Storage',
         items: [
           { item: 'Distributed Hash Table (DHT)' },
@@ -357,7 +359,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '1%',
+        percentage: '1',
         title: 'Incentive Model',
         items: [
           { item: 'Dynamic transaction fees' },
@@ -372,16 +374,36 @@ window.indexData = {
     label: 'updates',
     title: 'Latest Updates and News',
     readMore: 'Read more',
+    readMoreInsights: 'Read more insights from Shift',
     items: [
       {
         id: 1,
-        datetime: '2019-07-03',
-        day: '03',
-        month: 'jul',
-        category: 'category',
-        title: '3 Myths About Decentralized Distributed Blockchain Network',
-        intro: '<p>Text here</p>',
-        content: '<p>Text here</p>'
+        datetime: '2019-09-26',
+        day: '26',
+        month: 'sep',
+        category: 'general',
+        title: 'New Shift Project Website - The Project Reborn',
+        intro:
+          '<p class="Intro">As many of you will be aware, this is our first newsletter after an extended period during which we have been devoting a great deal of time and energy to the fulfilment of several important objectives designed to bring Shift to the next stage in its evolution as a platform, some of which we have been able to discuss publicly and others we have had to be more discreet about. While those users of our project Discord have had some hint of what has been going on in the background, we are happy, today, to be able to release to the community as a whole information on many of these exciting developments. Building towards an announcement we believe many of you have been eagerly awaiting, we’d now like to outline some of the Shift Project’s latest and most important news.</p>',
+        content: `<p>Dear Community,<br/><br/>Welcome to the new Shift Project website!</p>\
+          <p>As many of you will be aware, this is our first newsletter after an extended period during which we have been devoting a great deal of time and energy to the fulfilment of several important objectives designed to bring Shift to the next stage in its evolution as a platform, some of which we have been able to discuss publicly and others we have had to be more discreet about. While those users of our project Discord have had some hint of what has been going on in the background, we are happy, today, to be able to release to the community as a whole information on many of these exciting developments. Building towards an announcement we believe many of you have been eagerly awaiting, we’d now like to outline some of the Shift Project’s latest and most important news.</p>\
+          <h3>The New Shift Project Website</h3><p>As we are sure you are aware, our much anticipated new website is live! Created in collaboration with Ibizz, a respected web development agency based in the Netherlands, the Shift Project now benefits from a professional public face that both outlines our core values and offerings, while also demonstrating the innovation and potential of our technology. Hosted on the Shift development network running the latest version of Phoenix Cluster and IPFS, this new website presents for the first time in one place our vision for the project. Over the coming weeks the site will be further improved, with the addition of dynamic content, pages that go into greater depth by covering the specifics of our token locking model, economic formula and other technical information on the Phoenix/IPFS network. Perhaps the most exciting aspect of the new website for longtime Shift Community members, however, is that it already presents for the first time essential information on our transition to a new blockchain core, an ambition we are now pleased to be moving forward with.</p>\
+          <h3>Visionary Blockchain Core</h3><p>It is no secret that for a long time we have had some dissatisfaction with the historic Lisk Core. While it has served the purpose of protecting the blockchain against 51% attacks that have afflicted many Proof-of-Work projects admirably, we believe a migration to a more optimized core is required to meet our objective of provisioning an invaluable decentralized hosting application. In light of this, we have been intensively researching existing secure and well-established modular cores and reaching out to their developers. From among these we intend to select the one that will provide the optimal foundation for our specific use case and its need for scalability. The advantage of a modular core is that maintenance will be far less labor-intensive, allowing us to devote more time to our custom transaction modules and to Phoenix, our main value proposition. Thanks to the assistance of a new member to the Shift Team, our research is close to completion and we plan to start on the migration during quarter three of 2019, finalizing the process by the conclusion of quarter four. Though we are not yet able to reveal the modular core we shall be adopting due to ongoing discussions with several projects, we would like to assure the community that a binding decision to port will soon be made and announced.</p>\
+          <h3>New Developer</h3><p>Since the beginning of September, Shift has had the benefit of an additional talented member working on its development team. Arriving at Shift following the conclusion of a long term role at another blockchain project, Francis M. has been taking the lead in researching the various modular cores we have been considering for migration. Once this task is complete, it will be he and Ralf who will then be managing the core migration collaboratively, after which they will devote themselves to Shift’s custom transaction modules and features related to the Shift Core.</p><p>We consider Francis an asset to Shift and are excited to see his contributions as a member of the growing Shift Team.</p>\
+          <h3>Next Development Phase: Proof-of-Capacity, Proof-of-Storage & Incentive Model</h3><p>In addition to research and preparation for the core migration, a further reason we have been very busy lately is the time we have been devoting to laying the groundwork for our next major development phase. Once core migration has been completed, we shall be fully instigating work towards the completion of three major development milestones that will be responsible for the extension of platform functionality to include compensated storage provision. In chronological order, these are: a Proof-of-Capacity (PoC) algorithm, a Proof-of-Storage (PoS) algorithm and an incentive model for the storage node operators. These three components have already passed the initial design stage and are now ready to be moved into full development status once core migration is complete. Furthermore, in order to speed this process once it is fully underway, we have submitted several grant applications intended to support this development phase, some of which we hope to shortly hear responses from.</p>\
+          <h3>Recap: Shift Core v7.0t and Phoenix v0.9</h3><p>Prior to concluding this newsletter with the long-awaited <strong>partnership announcement</strong>, we would like to provide a brief recap of the updates that we’ve recently made to the two key components of Shift Project’s technology suite, the Shift Core, our blockchain, and Phoenix, our IPFS daemon. These updates have allowed us to ensure our testnet cluster has the necessary stability that our partner needs in order to meet their expectations and thereby play a major role in the important work they do.</p>
+          <p>Since the release of our last newsletter, we succeeded in troubleshooting a message relaying issue with Phoenix that had resulted in the postponement of Shift Core v7.0t until its release in July. Prior to its release, we had discovered that messages were not being relayed effectively to all peers in the network and, as a result, Phoenix peers were reporting very different values for the cluster size. As cluster size consensus is integral for the correct functioning of the economic formula used to dynamically determine the value of tSHIFT tokens relative to storage capacity, and a lack of consensus would result in forking of the testnet blockchain (due these values being stored in blocks), we turned our full attention to finding the root of the problem. After a great deal code changes and testing, we finally solved the issue. It was successfully combated by adjusting the way Phoenix works to allow messages to be received by peers even if the sending peer is not recognized from the recipient’s peer list. This change, released in the form of Phoenix v0.9, has resulted in all storage peers of the Phoenix Cluster now reporting the exact same values for the cluster size, the major breakthrough necessary to activate Shift Core v7.0t.</p>
+          <p>During the period of troubleshooting, we also created a working demo of the hosting abilities of Phoenix and the blockchain released as the interactive storage demo. This demo was released shortly after the release of Shift Core v7.0t and was positively received. The demo, being a proof-of-concept for the end user interaction of our decentralized cloud hosting platform, showed the simple steps involved in our blockchain-enabled storage and file management. With a faucet created to allow anyone to try it out for themselves, it can be accessed <a href="http://faucet.testnet.shiftproject.com" target="_blank">here</a>.</p>\
+          <h3>Partnership: GreatFire and Shift to Tear Down the Great Firewall</h3><p>We on the Shift Team are incredibly happy and proud to be able to announce that GreatFire (greatfire.org) and Shift are partnering to transform how users in China browse the uncensored Internet and read uncensored news.</p>\
+          <p>Since 2011, GreatFire’s on-the-ground perspective has helped them fashion the most unique and groundbreaking anti-censorship initiatives in China. Having launched various products to help fight domestic censorship carried out in collusion with internet platforms (such as FreeBrowser, FreeBooks and Circumvention Central), GreatFire provides invaluable circumvention methods to those wishing to access legitimate information banned by the Chinese government. Through the integration of GreatFire’s FreeBrowser (freebrowser.org) with Shift’s distributed hosting technology, millions of users will now be able to browse censorship-resistant websites and access content that authorities have blocked at the server level. Complete and upcoming components of the partnership include:</p>\
+          <ul><li>A mirror of the FreeBrowser home page, a news aggregator, hosted on Shift’s cluster and set up to update from its source automatically, now allows anybody in China to access uncensored news regardless of whether or not those news sources are unjustly restricted.</li>\
+          <li>FreeBrowser users will benefit from the implementation of a 'hash address bar' (much like a search bar) that will allow them to easily navigate the decentralized Internet.</li>
+          <li>Functionality allowing FreeBrowser users to upload media or files of their own to Shift’s storage cluster will also be included, granting them the ability to share media and browse it peer-to-peer in a manner safe from external censorship.</li></ul>
+          <p>GreatFire and the Shift Team had the following to say about their partnership:</p>\
+          <p><blockquote>“In the battle between authoritarian governments and the developers of circumvention tools, developers are losing. While censorship has existed for generations, the online anti-censorship community has existed for only a short period of time. While we have had success in building our own circumvention solutions, our experience at GreatFire has shown us that other solutions likely exist. Solutions that are not just circumvention tools. Solutions that nobody has yet imagined. Solutions that could be available if only people, like the team at Shift, put their minds to solving this problem.” - Martin Johnson at GreatFire</blockquote>
+          <blockquote>“Draconian censorship laws suffocate human welfare and impede personal betterment by repressing what may be humanity's greatest moral and intellectual asset: our yearning for truth. We believe that an uncensored knowledge of the world is what ensures humanity’s empowerment, instead of its oppression, so this must be protected for all people, at all costs. Together, Shift and GreatFire are bringing about a new internet in China.” - The Shift Project</blockquote></p>
+          <h3>Conclusion</h3><p>While it has been a long road, we are incredibly happy to have reached this point in our journey with the support of our community. We believe that partnering with GreatFire allows us to clearly demonstrate to the community and others our vision for the project and commitment to seeing that vision met. The Internet owes its creation to an ambition to connect people directly, peer-to-peer, without the incursion of state actors of large corporations into the management of communication protocols. By facilitating the provision and use of peer-to-peer hosting infrastructure free from unjust censorship, we hope the fundamental right to legitimately shared information will be better protected. This could then help unite people previously segregated, empower them to oppose their repression and, through their actions, subsequently achieve greater equality and liberty for all.</p>\
+          <p>Sincerely,</p><p>The Shift Team</p>`
       },
       {
         id: 2,

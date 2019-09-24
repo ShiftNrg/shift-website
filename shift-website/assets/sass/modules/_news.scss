@@ -75,7 +75,7 @@
 
         @include media("min", 1025, 0) {
           > h1 {
-            max-width: 770/1600*100vw;
+            // max-width: 770/1600*100vw;
           }
         }
         @include media("max", 767, 0) {
@@ -100,6 +100,15 @@
           display: block;
           clear: both;
           margin-right: auto;
+
+          ul {
+            margin-bottom: auto;
+          }
+
+          > h3 {
+            margin-bottom: 1em;
+          }
+
           @include media("min", 768, 0) {
             width: 790px;
             max-width: 100%;

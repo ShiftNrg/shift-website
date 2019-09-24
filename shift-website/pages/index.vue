@@ -152,7 +152,7 @@
               v-for="button of (indexData.lockNLoad || {}).buttons"
               :key="button.link"
               :href="button.link"
-              target="_blank"
+              :target="button.target"
               class="more"
             >
               {{ button.text }}
@@ -419,8 +419,8 @@
                   <article>
                     <div class="state">
                       <div class="label">{{ roadmap.label }}</div>
-                      <div class="c100 p33">
-                        <span>{{ roadmap.percentage }}</span>
+                      <div class="c100" :class="'p' + roadmap.percentage">
+                        <span>{{ roadmap.percentage }}%</span>
                         <div class="slice">
                           <div class="bar"></div>
                           <div class="fill"></div>
@@ -466,9 +466,11 @@
         </div>
       </section>
       <section ref="news" class="news latest">
+        <!--
         <div class="payoff">
           {{ (indexData.news || {}).label }}
         </div>
+        -->
         <div class="inner">
           <h3 class="h5">
             {{ (indexData.news || {}).title }}
@@ -499,14 +501,16 @@
               </article>
             </li>
           </ul>
+          <!--
           <nav>
             <nuxt-link
               :to="{ name: 'news-:id', params: { id: 1 } }"
               class="more-inline"
             >
-              Read more insights from Shift
+              {{ (indexData.news || {}).readMoreInsights }}
             </nuxt-link>
           </nav>
+          -->
         </div>
       </section>
     </div>
@@ -524,6 +528,10 @@ import { sameheight } from '../plugins/modules/sameheight'
 
 export default {
   components: { CustomFooter: Footer },
+  transition: {
+    name: 'fadeup',
+    mode: 'out-in'
+  },
   data() {
     return {
       activeUsps: false,

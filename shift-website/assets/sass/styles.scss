@@ -114,17 +114,18 @@ p {
 .Intro, .Text {
     @include vw-margin(0,0,30);
     &:last-child { margin-bottom:0; }
-p, ul, ol {
-    @include vw-margin(0,0,30);
-    &:last-child { margin-bottom:0; }
-}
+    p, ul, ol {
+        @include vw-margin(0,0,30);
+        &:last-child { margin-bottom:0; }
+    }
     h4 {
         @include vw-font-size(19); line-height:1.1;
         @include vw-margin(0,0,15);
     }
     ul {
         list-style:none; margin-left:0;
-        margin-bottom:-30/14*1em; margin-right:-20px;
+        margin-bottom:-30/14*1em;
+        margin-right:-20px;
         padding:0;
         @include media("min",768,1024) {
             margin-right:-5px;
@@ -199,4 +200,19 @@ a::before, a::after,
 input[type="submit"]::before, input[type="submit"]::after,
 button::before, button::after {
   transition: all .3s ease-in-out;
+}
+
+.fadein-enter-active, .fadein-leave-active {
+  transition: opacity .5s;
+}
+.fadein-enter, .fadein-leave-to {
+  opacity: 0;
+}
+
+.fadeup-leave-active {
+  transition: all .5s ease;
+}
+.fadeup-leave-to {
+  opacity: 0;
+  transform: translateY(-200px);
 }

@@ -7,7 +7,6 @@
           <h1>{{ article.title }}</h1>
         </div>
         <div class="inner">
-          <div class="Intro" v-html="article.intro"></div>
           <div class="Text" v-html="article.content"></div>
           <div class="aside">
             <nuxt-link :to="{ name: 'index' }" class="back">
@@ -15,6 +14,7 @@
                 <svg-icon name="arrow" width="20" height="20"></svg-icon>
               </span>
             </nuxt-link>
+            <!--
             <div class="socialshare">
               <ul class="social">
                 <li class="toggle">
@@ -71,6 +71,7 @@
                 </li>
               </ul>
             </div>
+            -->
           </div>
         </div>
       </article>
@@ -105,14 +106,16 @@
               </article>
             </li>
           </ul>
+          <!--
           <nav>
             <nuxt-link
               :to="{ name: 'news-:id', params: { id: 1 } }"
               class="more-inline"
             >
-              Read more insights from Shift
+              {{ newsData.readMoreInsights }}
             </nuxt-link>
           </nav>
+          -->
         </div>
       </section>
     </div>
@@ -126,6 +129,10 @@ import { animatePage } from '../../plugins/animations'
 export default {
   name: 'News',
   components: { CustomFooter: Footer },
+  transition: {
+    name: 'fadein',
+    mode: 'out-in'
+  },
   computed: {
     newsData() {
       if (!process.client) {

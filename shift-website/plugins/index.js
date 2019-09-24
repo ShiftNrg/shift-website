@@ -259,7 +259,7 @@ const detachAll = () => {
 // Call to actions
 // let hasactiveusp = false;
 document.addEventListener("click", function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   const element = this.activeElement;
   const action = element.dataset.action;
 

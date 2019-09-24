@@ -55,8 +55,8 @@ const makeCloneThatScales = (target, index = 0) => {
     top: i.top + 'px',
     width: i.width + 'px',
     height: i.height + 'px',
-    margin: '0',
-    zIndex: '500'
+    margin: 0,
+    zIndex: 999
   })
 
   anime

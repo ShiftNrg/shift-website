@@ -1,6 +1,7 @@
 .maincontainer {
     > section.locknload {
         .Intro {
+            p > .more-inline { font-size: inherit; }
             p > .more-inline:last-child { margin-left:20px; }
             + ol.steps {
                 @include vw-margin(70,0,0);
