@@ -433,8 +433,9 @@
                         <li
                           v-for="roadmapItem of roadmap.items"
                           :key="roadmapItem"
+                          :class="roadmapItem.class"
                         >
-                          {{ roadmapItem }}
+                          {{ roadmapItem.item }}
                         </li>
                       </ul>
                     </div>

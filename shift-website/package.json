@@ -1,8 +1,9 @@
 {
   "name": "shift-website",
+  "title": "Shift Project",
   "version": "1.0.0",
-  "description": "My incredible Nuxt.js project",
-  "author": "Jasper Hu",
+  "description": "Shift combines the transparency, immutability and decentralization of blockchain with the distributed hosting of the InterPlanetary File System",
+  "author": "Jasper Hu, Ralf S.",
   "private": true,
   "scripts": {
     "dev": "nuxt",

@@ -7,7 +7,7 @@ window.indexData = {
     line1: 'Reinvented Decentralized',
     line2: 'Cloud Hosting',
     line3:
-      'Shift combines the transparency, immutability and decentralization of blockchain with the distributed hosting of the InterPlanetary File System'
+      'Shift combines the transparency, immutability and decentralization of blockchain with distributed hosting'
   },
   lockNLoad: {
     title: {
@@ -234,9 +234,9 @@ window.indexData = {
         ],
         image: '/images/overview/phoenix.svg',
         items: [
-          '<strong>Phoenix-core</strong> is a p2p library and responsible for networking and message relaying between peers',
-          '<strong>Phoenix-cluster</strong> is a pinset orchestration layer for IPFS and responsible for the allocation and replication of data (pin)',
-          '<strong>IPFS (InterPlanetary File System)</strong> is a p2p distributed file system and responsible for storing and accessing'
+          '<strong>Phoenix-core</strong> is a p2p library and responsible for networking and message relaying between peers of the Phoenix Cluster. Phoenix-core is equipped with a very simple programming API that is used by Phoenix-cluster.',
+          '<strong>Phoenix-cluster</strong> is a pinset orchestration layer for IPFS and responsible for the allocation and replication of data (pinsets) to multiple nodes across a cluster of IPFS daemons. Phoenix-cluster is stateless and does not depend on any cluster leader or DHT, a factor that makes it very stable.',
+          '<strong>IPFS (InterPlanetary File System)</strong> is a p2p distributed file system and responsible for storing and accessing data. Phoenix-cluster has been implemented with a custom IPFS daemon that adds support to URL rewriting (routing), URL redirecting, custom 404 error pages and the implementation of Regex (a superset of wildcards) support for IPFS rewrites. All to improve the use case of web hosting.'
         ]
       },
       {
@@ -313,57 +313,57 @@ window.indexData = {
     items: [
       {
         label: 'TBD',
-        percentage: '33%',
-        title: 'Proof-of-Capacity',
-        items: [
-          'Storage provider registration',
-          'Storage deposits/withdrawals',
-          'Generation of plot files',
-          'Zero Knowledge Proofs (zkrp)'
-        ]
-      },
-      {
-        label: 'TBD',
-        percentage: '37%',
-        title: 'Proof-of-Storage',
-        items: [
-          'Distributed Hash Table (DHT)',
-          'Storage deposits/withdrawals',
-          'Zero Knowledge Proofs (zkrp)',
-          'Peer entanglement challenges'
-        ]
-      },
-      {
-        label: 'TBD',
-        percentage: '5%',
-        title: 'Incentive Model',
-        items: [
-          'Dynamic transaction fees',
-          'Dynamic block rewards',
-          'Token burning/redistribution',
-          'Run experimental (artificial) data'
-        ]
-      },
-      {
-        label: 'TBD',
-        percentage: '0%',
+        percentage: '25%',
         title: 'Phoenix v1.0.0',
         items: [
-          'Pin queueing',
-          'IPNS resolution at blockchain (IPFS)',
-          'Blacklisting functionality for hashes',
-          'Auto recovery'
+          { item: 'Pin queueing', class: 'checked' },
+          { item: 'IPNS resolution at blockchain (IPFS)' },
+          { item: 'Blacklisting functionality for hashes' },
+          { item: 'Auto recovery' }
         ]
       },
       {
         label: 'TBD',
-        percentage: '0%',
+        percentage: '50%',
         title: 'Content Encryption',
         items: [
-          'Encrypt before upload',
-          'Decrypt on load',
-          'Content sharing (asymetric key pairs)',
-          'Recursive encryption'
+          { item: 'Encrypt before uploading', class: 'checked' },
+          { item: 'Decrypt on loading', class: 'checked' },
+          { item: 'Content sharing (asymmetric key pairs)' },
+          { item: 'Recursive encryption' }
+        ]
+      },
+      {
+        label: 'TBD',
+        percentage: '2%',
+        title: 'Proof-of-Capacity',
+        items: [
+          { item: 'Storage provider registration' },
+          { item: 'Storage deposits/withdrawals' },
+          { item: 'Generation of plot files' },
+          { item: 'Zero Knowledge Proofs (zkrp)' }
+        ]
+      },
+      {
+        label: 'TBD',
+        percentage: '1%',
+        title: 'Proof-of-Storage',
+        items: [
+          { item: 'Distributed Hash Table (DHT)' },
+          { item: 'Storage deposits/withdrawals' },
+          { item: 'Zero Knowledge Proofs (zkrp)' },
+          { item: 'Peer entanglement challenges' }
+        ]
+      },
+      {
+        label: 'TBD',
+        percentage: '1%',
+        title: 'Incentive Model',
+        items: [
+          { item: 'Dynamic transaction fees' },
+          { item: 'Dynamic block rewards' },
+          { item: 'Token burning/redistribution' },
+          { item: 'Run experimental (artificial) data' }
         ]
       }
     ]

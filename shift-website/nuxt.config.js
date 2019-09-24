@@ -1,10 +1,10 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_title || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,6 +15,9 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  },
+  router: {
+    base: '/'
   },
   /*
    ** Customize the progress-bar color
@@ -49,6 +52,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    filenames: {
+      app: '[name].js', // [chunkhash].js',
+      chunk: '[name].js', // [chunkhash].js',
+      css: '[name].css', // [contenthash].css',
+      img: '[path][name].[ext]', // img/[hash:7].[ext]'
+      font: '[path][name].[ext]', // fonts/[hash:7].[ext]'
+      video: '[path][name].[ext]' // videos/[hash:7].[ext]
+    }
   }
 }
