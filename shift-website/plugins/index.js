@@ -18,6 +18,13 @@ const frontLayer = document.getElementById("frontlayer");
 let hasAnimatedOut = false;
 
 // Helpers
+const getOffset = (el) => {
+  const rect = el.getBoundingClientRect()
+  return {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY
+  }
+};
 const setStyles = (t, e) => {
   let n;
   for (n in e) {
@@ -257,22 +264,25 @@ const detachAll = () => {
 // };
 
 // Call to actions
-// let hasactiveusp = false;
 document.addEventListener("click", function (e) {
-  // e.preventDefault();
   const element = this.activeElement;
+  const href = element.getAttribute('href');
+  const hash = href && href.substr(href.indexOf("#") + 1);
   const action = element.dataset.action;
+  const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
   if (action) {
-    if (action === "scrollto") {
-      // anime({
-      //   targets: scrollElement,
-      //   scrollTop: getOffset(
-      //     document.getElementsByClassName("maincontainer")[0]
-      //   ).top,
-      //   duration: 700,
-      //   easing: "easeInOutQuad"
-      // });
+    e.preventDefault();
+
+    if (action === "scrollto" && hash) {
+      anime({
+        targets: scrollElement,
+        scrollTop: getOffset(
+          document.getElementById('section-' + hash)
+        ).top,
+        duration: 700,
+        easing: "easeInOutQuad"
+      });
     } else if (action === "prevroadmap") {
       // studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
     } else if (action === "nextroadmap") {
@@ -312,6 +322,7 @@ document.addEventListener("click", function (e) {
   } else {
     // var e = e || window.event;
     // let element = e.target || e.srcElement;
+    // let hasactiveusp = false;
     // const linkdiv = element.classList.contains("linkdiv")
     //   ? element
     //   : getParentWithMatchingSelector(element, ".linkdiv");

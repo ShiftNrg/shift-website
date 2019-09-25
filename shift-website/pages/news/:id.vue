@@ -76,15 +76,21 @@
         </div>
       </article>
       <section class="news latest">
+        <!--
         <div class="payoff">
           {{ newsData.label }}
         </div>
+        -->
         <div class="inner">
           <h3 class="h5">
             {{ newsData.title }}
           </h3>
           <ul class="block-grid up3">
-            <li v-for="(news, key) of newsData.items" :key="'news-' + key">
+            <li
+              v-for="(news, key) of newsData.items.slice(0, 4)"
+              v-show="article.id != news.id"
+              :key="'news-' + key"
+            >
               <article
                 :ref="'newsarticle-' + news.id"
                 class="newsarticle"

@@ -465,7 +465,7 @@
           </div>
         </div>
       </section>
-      <section ref="news" class="news latest">
+      <section ref="news" class="news latest" id="section-news">
         <!--
         <div class="payoff">
           {{ (indexData.news || {}).label }}
@@ -477,7 +477,7 @@
           </h3>
           <ul class="block-grid up3">
             <li
-              v-for="(news, key) of (indexData.news || {}).items"
+              v-for="(news, key) of (indexData.news || {}).items.slice(0, 3)"
               :key="'news-' + key"
             >
               <article

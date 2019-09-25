@@ -19,6 +19,10 @@
             Home
           </nuxt-link>
         </li>
+        <li>
+          <a href="#news" data-action="scrollto">Blog & Updates</a>
+        </li>
+        <!--
         <li class="dropdown">
           <a href="#">Blog & Updates</a>
           <div class="dropdown-menu">
@@ -66,6 +70,7 @@
             </div>
           </div>
         </li>
+        -->
         <li><a href="#">Solutions</a></li>
         <li><a href="#">Contact</a></li>
       </ol>
