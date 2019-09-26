@@ -64,21 +64,20 @@ const preventEvent = (e) => {
 const disableScrolling = () => {
   // disable real scroll events
   if (window.addEventListener) {
-    // older FF
-    window.addEventListener("DOMMouseScroll", preventEvent, false);
+    window.addEventListener("DOMMouseScroll", preventEvent, false); // older FF
+    window.addEventListener("wheel", preventEvent, { passive: false }); // modern standard
+    window.addEventListener("mousewheel", preventEvent, { passive: false }); // older browsers, IE
+    window.addEventListener("touchmove", preventEvent, { passive: false }); // mobile
   }
-  window.onwheel = preventEvent; // modern standard
-  window.onmousewheel = preventEvent; // older browsers, IE
-  window.ontouchmove = preventEvent; // mobile
 };
 const enableScrolling = () => {
   // enable real scroll events
   if (window.removeEventListener) {
     window.removeEventListener("DOMMouseScroll", preventEvent, false);
+    window.removeEventListener("wheel", preventEvent, { passive: false });
+    window.removeEventListener("mousewheel", preventEvent, { passive: false });
+    window.removeEventListener("touchmove", preventEvent, { passive: false });
   }
-  window.onmousewheel = document.onmousewheel = null;
-  window.onwheel = null;
-  window.ontouchmove = null;
 };
 const attachAll = () => {
   // studioibizz.roadmap.attach();
@@ -90,203 +89,39 @@ const detachAll = () => {
   // studioibizz.roadmap.detach();
   // studioibizz.sameheight.detach();
 };
+const animateScroll = (el, to) => {
+  if (!el || !to) return;
 
-// Handle href
-// const handleHref = (href, target = "_self", linkdiv = null) => {
-//   const oldLayer = document.getElementById('scene');
-//   if (linkdiv) {
-//     // Handle linkdiv animations when needed
-//     if (linkdiv.classList.contains("newsarticle")) {
-//       const li = linkdiv.parentNode;
-//       const index = Array.prototype.slice
-//         .call(li.parentNode.children)
-//         .indexOf(li);
-
-//       // Create clone with correct color based on index
-//       makeCloneThatScales(linkdiv, index);
-//       anime({
-//         targets: oldLayer,
-//         opacity: 0,
-//         duration: 600,
-//         easing: "easeInOutQuad"
-//       });
-//     }
-//   } else {
-//     // Just animate out the oldLayer
-//     anime.timeline({ loop: false }).add({
-//       targets: oldLayer,
-//       opacity: 0,
-//       top: "-200px",
-//       duration: 600,
-//       easing: "easeInOutQuad",
-//       complete() {
-//         hasAnimatedOut = true;
-//       }
-//     });
-//   }
-
-//   if (target === "_self") {
-//     detachAll();
-//     disableScrolling();
-//     // loadPage(href).then((newNode) => {
-//       waitfor(_hasAnimatedOut, true, 50, 0, function () {
-//         animatePage(href);
-//         if (linkdiv && linkdiv.classList.contains("newsarticle")) {
-//           removeCloneThatScales();
-//         }
-//         hasAnimatedOut = false;
-//       });
-//     // });
-//   } else {
-//     window.location.href = href;
-//   }
-// };
-
-// const _hasAnimatedOut = () => {
-//   return hasAnimatedOut;
-// };
-// const animatePage = (href) => {
-//   setStyles(backLayer, {
-//     opacity: 0,
-//     visibility: "visible"
-//   });
-//   // backLayer.appendChild(newNode);
-//   // oldLayer.remove()
-//   window.scrollTo(0, 0);
-//
-//   anime({
-//     targets: backLayer,
-//     opacity: 1,
-//     duration: 600,
-//     easing: "easeInOutQuad",
-//     complete() {
-//       setTimeout(enableScrolling(), 20);
-//       // topcontainer.appendChild(newNode);
-//       frontLayer.style.visibility = backLayer.style.visibility = "hidden";
-//       // newNode = "";
-//       const oldLayer = document.getElementById('scene');// @TODO reset the layer
-//       attachAll();
-//     }
-//   });
-//   $nuxt._router.push(href);
-// };
-// const loadPage = (href) => {
-//   return new Promise((resolve) => {
-//     // Preload new page
-//     // Should be changed to vue(?) page based on the target href
-//     const xmlhttp = new XMLHttpRequest();
-//     xmlhttp.onreadystatechange = function () {
-//       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//         setPage(href).then((newNode) => {
-//           resolve(newNode);
-//         });
-//       }
-//     };
-//     xmlhttp.open("GET", href, true);
-//     xmlhttp.send();
-//   });
-// };
-// const setPage = (result) => {
-  // return new Promise((resolve) => {
-    // Destory previous page events
-    // detachAll(), disableScrolling();
-    // Reset positions
-    // frontLayer.style.top = backLayer.style.top = 0;
-    //
-    // ;(newNode = document.createElement("div")),
-    //   (newNode.className = "scene"),
-      // (newNode.innerHTML = result)
-      // resolve(newNode);
-  // });
-// };
-
-// Scaleable clone
-// Scale transition helper
-// let clonedBaseNode = null;
-// const pageOffset =
-//   window.innerWidth >= 1301
-//     ? 130
-//     : window.innerWidth >= 1025
-//     ? 90
-//     : window.innerWidth >= 768
-//       ? 50
-//       : 0;
-
-// const makeCloneThatScales = (target, index = 0) => {
-//   const i = target.getBoundingClientRect();
-//   // clonedBaseNode = target.cloneNode(!0);
-//   clonedBaseNode = document.createElement("div");
-//   clonedBaseNode.classList.add("clone");
-//   clonedBaseNode.classList.add("index" + index);
-//   document.body.appendChild(clonedBaseNode);
-
-//   setStyles(clonedBaseNode, {
-//     position: "fixed",
-//     left: i.left + "px",
-//     top: i.top + "px",
-//     width: i.width + "px",
-//     height: i.height + "px",
-//     margin: "0",
-//     zIndex: "500"
-//   });
-
-//   anime
-//     .timeline({ loop: false })
-//     .add({
-//       targets: clonedBaseNode,
-//       duration: 600,
-//       left: pageOffset,
-//       width: window.innerWidth - pageOffset,
-//       easing: "easeInOutQuad"
-//     })
-//     .add({
-//       targets: clonedBaseNode,
-//       duration: 400,
-//       height: window.innerHeight * 1.2,
-//       easing: "easeInOutQuad",
-//       complete() {
-//         // Set finished boolean, so we can animate in the new page.
-//         hasAnimatedOut = true;
-//       }
-//     });
-// };
-// const removeCloneThatScales = () => {
-//   anime.timeline({ loop: false }).add({
-//     targets: clonedBaseNode,
-//     duration: 400,
-//     top: window.innerHeight,
-//     height: 0,
-//     easing: "easeInOutQuad",
-//     complete() {
-//       clonedBaseNode.remove();
-//     }
-//   });
-// };
+  anime({
+    targets: el,
+    scrollTop: getOffset(to).top,
+    duration: 700,
+    easing: "easeInOutQuad"
+  });
+}
 
 // Call to actions
+const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 document.addEventListener("click", function (e) {
   const element = this.activeElement;
   const href = element.getAttribute('href');
   const hash = href && href.substr(href.indexOf("#") + 1);
   const action = element.dataset.action;
-  const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
   if (action) {
-    e.preventDefault();
+    if (e) preventEvent(e);
+
+    if (action !== "togglemenu") {
+      document.body.classList.remove("menu-open");
+      document.getElementById('hamburger-menu').classList.remove("is-active");
+      enableScrolling();
+      if (window.innerWidth > 767) {
+        document.body.classList.remove("menu-mobile");
+      }
+    }
 
     if (action === "scrollto" && hash) {
-      anime({
-        targets: scrollElement,
-        scrollTop: getOffset(
-          document.getElementById('section-' + hash)
-        ).top,
-        duration: 700,
-        easing: "easeInOutQuad"
-      });
-    } else if (action === "prevroadmap") {
-      // studioibizz.roadmap.slider && studioibizz.roadmap.slider.go("<");
-    } else if (action === "nextroadmap") {
-      // studioibizz.roadmap.slider && studioibizz.roadmap.slider.go(">");
+      animateScroll(scrollElement, document.getElementById('section-' + hash));
     } else if (action === "togglemenu") {
       if (document.body.classList.contains("menu-open")) {
         document.body.classList.remove("menu-open");
@@ -308,69 +143,7 @@ document.addEventListener("click", function (e) {
         element.classList.add("is-active");
         disableScrolling();
       }
-    } else if (action === "locknload") {
-      // if (
-      //   document
-      //     .getElementsByClassName("steps")[0]
-      //     .classList.contains("inactive")
-      // ) {
-      //   document.getElementsByClassName("steps")[0].classList.remove("inactive");
-      // } else {
-      //   document.getElementsByClassName("steps")[0].classList.add("inactive");
-      // }
     }
-  } else {
-    // var e = e || window.event;
-    // let element = e.target || e.srcElement;
-    // let hasactiveusp = false;
-    // const linkdiv = element.classList.contains("linkdiv")
-    //   ? element
-    //   : getParentWithMatchingSelector(element, ".linkdiv");
-    //
-    // if (linkdiv) {
-    //   // Href with linkdiv & custom animations when needed
-    //   if (linkdiv.querySelector("a")) {
-    //     const href = linkdiv.querySelector("a").getAttribute("href");
-    //     const target = linkdiv.querySelector("a").getAttribute("target");
-    //     handleHref(href, target || "_self", linkdiv);
-    //   }
-    // } else {
-    //   const actionarticle = element.getAttribute("data-params")
-    //     ? element
-    //     : getParentWithMatchingSelector(element, "[data-action]");
-    //   if (actionarticle) {
-    //     const action = actionarticle.dataset.action;
-    //     if (action === "toggleview") {
-    //
-    //     }
-    //   } else {
-    //     if (hasactiveusp) {
-          // // Revert all active usps.
-          // Object.entries(document.querySelectorAll(".hasactive")).map(
-          //   (object) => {
-          //     object[1].classList.remove("hasactive");
-          //   }
-          // );
-          // Object.entries(
-          //   document.querySelectorAll("[data-action='toggleview']")
-          // ).map((object) => {
-          //   object[1].classList.remove("active");
-          // });
-          // hasactiveusp = false;
-        // }
-        // while (element) {
-        //   // Loop untill the <a is found, instead of the child.
-        //   if (element instanceof HTMLAnchorElement) {
-        //     const href = element.getAttribute("href");
-        //     const target = element.getAttribute("target");
-        //     handleHref(href, target || "_self");
-        //     break;
-        //   }
-        //
-        //   element = element.parentNode;
-        // }
-      // }
-    // }
   }
 });
 
@@ -429,3 +202,19 @@ window.addEventListener("scroll", function () {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+// Move to anchor on load if any
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    animateScroll(scrollElement, document.getElementById('section-' + window.location.hash.split('#')[1]));
+  }
+}, true);
+
+// Toggle mobile menu
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 767) {
+    document.body.classList.remove("menu-mobile");
+  } else {
+    document.body.classList.add("menu-mobile");    
+  }
+}, true);

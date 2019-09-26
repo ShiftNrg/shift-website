@@ -2,6 +2,7 @@
   <div>
     <div id="mobile-toggle">
       <button
+        id="hamburger-menu"
         class="hamburger hamburger--squeeze responsive-menu-button"
         type="button"
         data-action="togglemenu"
@@ -20,7 +21,20 @@
           </nuxt-link>
         </li>
         <li>
-          <a href="#news" data-action="scrollto">Blog & Updates</a>
+          <a
+            href="/#roadmap"
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
+          >
+            Roadmap
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#news"
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
+          >
+            Blog & Updates
+          </a>
         </li>
         <!--
         <li class="dropdown">
@@ -71,13 +85,32 @@
           </div>
         </li>
         -->
-        <li><a href="#">Solutions</a></li>
-        <li><a href="#">Contact</a></li>
       </ol>
       <ol class="nav topnav">
-        <li><a href="#">Company</a></li>
-        <li><a href="#">Resources</a></li>
-        <li class="cta"><a href="#">Get started</a></li>
+        <li>
+          <a
+            href="/#footer"
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
+          >
+            Contact
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#footer"
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
+          >
+            Resources
+          </a>
+        </li>
+        <li class="cta">
+          <a
+            href="https://github.com/ShiftProject/shift-nano/releases"
+            target="_blank"
+          >
+            Nano Wallet
+          </a>
+        </li>
       </ol>
     </header>
     <div id="topcontainer" style="opacity:0;">
@@ -87,19 +120,35 @@
     </div>
     <div class="stickysocials">
       <div class="label">Join our community</div>
-      <a href="#" title="Discord">
+      <a href="https://discord.gg/fgzxABX" title="Discord" target="_blank">
         <span class="icon">
           <svg-icon name="discord" height="36" width="36" />
         </span>
       </a>
-      <a href="#" title="Facebook">
+      <!--
+      <a href="https://www.facebook.com/ShiftNrg" title="Facebook" target="_blank">
         <span class="icon">
           <svg-icon name="facebook" height="36" width="36" />
         </span>
       </a>
-      <a href="#" title="Twitter">
+      -->
+      <a href="https://t.me/ShiftProject" title="Telegram" target="_blank">
+        <span class="icon">
+          <svg-icon name="telegram" height="36" width="36" />
+        </span>
+      </a>
+      <a href="https://twitter.com/ShiftNrg" title="Twitter" target="_blank">
         <span class="icon">
           <svg-icon name="twitter" height="36" width="36" />
+        </span>
+      </a>
+      <a
+        href="https://www.youtube.com/ShiftProject"
+        title="Youtube"
+        target="_blank"
+      >
+        <span class="icon">
+          <svg-icon name="youtube" height="36" width="36" />
         </span>
       </a>
     </div>

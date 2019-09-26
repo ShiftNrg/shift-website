@@ -384,7 +384,7 @@
           </ul>
         </div>
       </section>
-      <section ref="roadmap" class="roadmap">
+      <section ref="roadmap" class="roadmap" id="section-roadmap">
         <div class="inner">
           <h4>
             {{ (indexData.roadmap || {}).subtitle }}

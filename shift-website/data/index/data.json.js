@@ -448,102 +448,105 @@ window.indexData = {
     subtitle: 'Stay updated',
     footerItems: [
       {
-        title: 'Company info',
+        title: 'Resources',
         links: [
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'GitHub',
+            link: 'https://github.com/ShiftProject'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Explorer',
+            link: 'https://explorer.shiftnrg.org'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Web Wallet',
+            link: 'https://wallet.shiftnrg.org'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Interactive Demo',
+            link: 'https://demo.shiftproject.com'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Testnet Faucet',
+            link: 'https://faucet.testnet.shiftproject.com'
           }
         ]
       },
       {
-        title: 'Company info',
+        title: 'Downloads',
         links: [
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Nano Wallet',
+            link: 'https://github.com/ShiftProject/shift-nano/releases'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Phoenix',
+            link: 'https://github.com/ShiftProject/shift-cluster-setup'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'White Paper',
+            link:
+              'https://www.shiftproject.com/download/shift-introductory-paper.pdf'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Chinese Paper',
+            link:
+              'https://www.shiftproject.com/download/shift-%E5%85%A5%E9%97%A8%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Korean Paper',
+            link:
+              'https://www.shiftproject.com/download/shift-%EC%86%8C%EA%B0%9C%20%EB%B0%B1%EC%84%9C.pdf'
           }
         ]
       },
       {
-        title: 'Company info',
+        title: 'Contact',
         links: [
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'E-mail',
+            link: 'mailto:connect@shiftnrg.org'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Discord',
+            link: 'https://www.shiftproject.com/discord'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Twitter',
+            link: 'https://twitter.com/ShiftNrg'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Telegram',
+            link: 'https://telega.one/ShiftProject'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Reddit',
+            link: 'https://old.reddit.com/r/ShiftProject'
           }
         ]
       },
       {
-        title: 'Company info',
+        title: 'Market Listings',
         links: [
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Bittrex (BTC)',
+            link: 'https://bittrex.com/Market/Index?MarketName=BTC-SHIFT'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Livecoin (BTC/ETH/USD)',
+            link: 'https://www.livecoin.net/en/trading/SHIFT_BTC'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Upbit (BTC)',
+            link: 'https://upbit.com/exchange?code=CRIX.UPBIT.BTC-SHIFT'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'IDAX (BTC/ETH)',
+            link: 'https://www.idax.pro/#/exchange?pairname=SHIFT_BTC'
           },
           {
-            text: 'Lorem ipsum dolor sit',
-            link: '#'
+            text: 'Cryptofacil (BTC)',
+            link: 'https://cryptofacil.com/trading-view?id=121'
           }
         ]
       }
@@ -551,27 +554,19 @@ window.indexData = {
     bottomItems: [
       {
         text: '© Shift 2019 - All rights reserved'
-      },
-      {
-        text: 'Terms and Conditions',
-        link: '#'
-      },
-      {
-        text: 'Privacy Statement',
-        link: '#'
-      },
-      {
-        text: 'Cookies',
-        link: '#'
       }
     ]
   },
   social: {
     label: 'Join our community',
     links: {
-      Discord: '#1',
-      Facebook: '#2',
-      Twitter: '#3'
+      Discord: 'https://discord.gg/fgzxABX',
+      Telegram: 'https://t.me/ShiftProject',
+      Twitter: 'https://twitter.com/ShiftNrg',
+      Youtube: 'https://www.youtube.com/ShiftProject'
+    },
+    unused: {
+      Facebook: 'https://www.facebook.com/ShiftNrg'
     }
   }
 }

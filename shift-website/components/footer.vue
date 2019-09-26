@@ -24,7 +24,7 @@
       </form>
     </div>
     <div id="footer-middle">
-      <div class="left">
+      <div class="left" id="section-footer">
         <logo />
       </div>
       <div class="right">
@@ -39,7 +39,9 @@
                 v-for="footerItemLink of footerItem.links"
                 :key="footerItemLink.text"
               >
-                <a :href="footerItemLink.link">{{ footerItemLink.text }}</a>
+                <a :href="footerItemLink.link" target="_blank">
+                  {{ footerItemLink.text }}
+                </a>
               </li>
             </ul>
           </li>
@@ -52,7 +54,11 @@
           v-for="footerBottomItem of footerData.bottomItems"
           :key="footerBottomItem.text"
         >
-          <a v-if="footerBottomItem.link" :href="footerBottomItem.link">
+          <a
+            v-if="footerBottomItem.link"
+            :href="footerBottomItem.link"
+            target="_blank"
+          >
             {{ footerBottomItem.text }}
           </a>
           <span v-else>
