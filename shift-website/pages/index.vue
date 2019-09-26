@@ -70,6 +70,7 @@
           v-for="(socialLink, socialKey) of (indexData.social || {}).links"
           :key="socialKey"
           :href="socialLink"
+          target="_blank"
           >{{ socialKey }}</a
         >
       </div>
@@ -307,8 +308,8 @@
             <img :src="overviewItem.image" alt="" />
           </figure>
           <div class="aside">
-            <h4>{{ overviewItem.title }}</h4>
-            <h3>{{ overviewItem.subtitle }}</h3>
+            <h4>{{ overviewItem.subtitle }}</h4>
+            <h3>{{ overviewItem.title }}</h3>
             <div class="Text">
               <p
                 v-for="(overviewItemText,

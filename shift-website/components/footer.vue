@@ -1,6 +1,7 @@
 <template>
   <footer id="footer">
     <div id="footer-top">
+      <!--
       <div class="left">
         <div class="subtitle">{{ footerData.subtitle }}</div>
         <div class="title">{{ footerData.title }}</div>
@@ -22,6 +23,7 @@
           </div>
         </div>
       </form>
+      -->
     </div>
     <div id="footer-middle">
       <div class="left" id="section-footer">
@@ -73,6 +75,7 @@
           :key="socialKey"
           :title="socialKey"
           :href="socialLink"
+          target="_blank"
         >
           <span class="icon">
             <svg-icon
