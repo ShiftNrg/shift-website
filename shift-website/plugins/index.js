@@ -12,10 +12,10 @@ require("./modules/dimensions");
 // const topcontainer = document.querySelector("#topcontainer");
 // const backLayer = document.querySelector("#topcontainer .backlayer");
 // const frontLayer = document.querySelector("#topcontainer .frontlayer");
-const backLayer = document.getElementById("backlayer");
-const frontLayer = document.getElementById("frontlayer");
+// const backLayer = document.getElementById("backlayer");
+// const frontLayer = document.getElementById("frontlayer");
 // let newNode;
-let hasAnimatedOut = false;
+const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
 // Helpers
 const getOffset = (el) => {
@@ -32,8 +32,8 @@ const setStyles = (t, e) => {
   }
 };
 const getParentWithMatchingSelector = (target, selector) => {
-  let result = null
-  ;[...document.querySelectorAll(selector)].forEach(function (el) {
+  let result = null;
+  [...document.querySelectorAll(selector)].forEach(function (el) {
     if (el !== target && el.contains(target)) {
       result = el;
     }
@@ -100,52 +100,39 @@ const animateScroll = (el, to) => {
   });
 }
 
-// Call to actions
-const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
-document.addEventListener("click", function (e) {
-  const element = this.activeElement;
-  const href = element.getAttribute('href');
-  const hash = href && href.substr(href.indexOf("#") + 1);
-  const action = element.dataset.action;
-
-  if (action) {
-    if (e) preventEvent(e);
-
-    if (action !== "togglemenu") {
-      document.body.classList.remove("menu-open");
-      document.getElementById('hamburger-menu').classList.remove("is-active");
-      enableScrolling();
-      if (window.innerWidth > 767) {
-        document.body.classList.remove("menu-mobile");
-      }
+export const toggleMenu = (close) => {
+  const element = document.getElementById('hamburger-menu');
+  if (close || document.body.classList.contains("menu-open")) {
+    document.body.classList.remove("menu-open");
+    if (window.innerWidth > 767) {
+      document.body.classList.remove("menu-mobile");
     }
-
-    if (action === "scrollto" && hash) {
-      animateScroll(scrollElement, document.getElementById('section-' + hash));
-    } else if (action === "togglemenu") {
-      if (document.body.classList.contains("menu-open")) {
-        document.body.classList.remove("menu-open");
-        if (window.innerWidth > 767) {
-          document.body.classList.remove("menu-mobile");
-        }
-        element.classList.remove("is-active");
-        enableScrolling();
-      } else {
-        if (window.innerWidth > 767) {
-          document.body.classList.add("menu-mobile");
-        }
-        setTimeout(
-          function () {
-            document.body.classList.add("menu-open");
-          },
-          window.innerWidth > 767 ? 450 : 10
-        );
-        element.classList.add("is-active");
-        disableScrolling();
-      }
+    element.classList.remove("is-active");
+    enableScrolling();
+  } else {
+    if (window.innerWidth > 767) {
+      document.body.classList.add("menu-mobile");
     }
+    setTimeout(
+      function () {
+        document.body.classList.add("menu-open");
+      },
+      window.innerWidth > 767 ? 450 : 10
+    );
+    element.classList.add("is-active");
+    disableScrolling();
   }
-});
+}
+
+// Call to actions
+// document.addEventListener("click", function (e) {
+//   const element = this.activeElement;
+//   const action = element.dataset.action;
+
+//   if (action) {
+//     if (e) preventEvent(e);
+//   }
+// });
 
 if (window.innerWidth <= 767) {
   document.body.classList.add("menu-mobile");
@@ -206,8 +193,20 @@ window.onbeforeunload = function () {
 // Move to anchor on load if any
 window.addEventListener('load', function() {
   if (window.location.hash) {
-    animateScroll(scrollElement, document.getElementById('section-' + window.location.hash.split('#')[1]));
+    animateScroll(scrollElement, document.getElementById(window.location.hash.split('#')[1]));
   }
+
+  [...document.querySelectorAll("[data-action='scrollto']")].forEach(function (el) {
+    el.addEventListener("click", function(e) {
+      e = e || window.event;
+      const element = e.target || e.srcElement || document.activeElement;
+      const href = element.getAttribute('href');
+      const hash = href && href.substr(href.indexOf("#") + 1);
+
+      animateScroll(scrollElement, document.getElementById(hash));
+      toggleMenu(true);
+    });
+  });
 }, true);
 
 // Toggle mobile menu

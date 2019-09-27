@@ -6,6 +6,7 @@
         class="hamburger hamburger--squeeze responsive-menu-button"
         type="button"
         data-action="togglemenu"
+        @click="toggleMenu"
       >
         <span class="hamburger-box"><span class="hamburger-inner"></span></span>
       </button>
@@ -16,7 +17,10 @@
 
       <ol class="nav mainnav">
         <li>
-          <nuxt-link :to="{ name: 'index' }">
+          <nuxt-link
+            :to="{ name: 'index', hash: '#top' }"
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
+          >
             Home
           </nuxt-link>
         </li>
@@ -158,7 +162,14 @@
 <style></style>
 <script>
 import Logo from '../components/logo'
+import { toggleMenu } from '../plugins/index'
+
 export default {
-  components: { Logo }
+  components: { Logo },
+  methods: {
+    toggleMenu() {
+      toggleMenu()
+    }
+  }
 }
 </script>

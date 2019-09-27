@@ -55,7 +55,8 @@ window.indexData = {
     intro: {
       description:
         '...and when you’re done, retrieve your tokens by reversing these steps',
-      linkText: 'Reverse the steps'
+      linkText: 'Reverse the steps',
+      activeText: 'Restart the cycle'
     },
     buttons: [
       {

@@ -144,7 +144,11 @@
                 class="more-inline"
                 @click="activeLockNLoad = !activeLockNLoad"
               >
-                {{ ((indexData.lockNLoad || {}).intro || {}).linkText }}
+                {{
+                  !activeLockNLoad
+                    ? ((indexData.lockNLoad || {}).intro || {}).linkText
+                    : ((indexData.lockNLoad || {}).intro || {}).activeText
+                }}
               </button>
             </p>
           </div>
@@ -385,7 +389,7 @@
           </ul>
         </div>
       </section>
-      <section ref="roadmap" class="roadmap" id="section-roadmap">
+      <section id="roadmap" ref="roadmap" class="roadmap">
         <div class="inner">
           <h4>
             {{ (indexData.roadmap || {}).subtitle }}
@@ -466,7 +470,7 @@
           </div>
         </div>
       </section>
-      <section ref="news" class="news latest" id="section-news">
+      <section id="news" ref="news" class="news latest">
         <!--
         <div class="payoff">
           {{ (indexData.news || {}).label }}
@@ -562,6 +566,7 @@ export default {
   mounted() {
     fakepreload.init()
     sameheight.init()
+    scrollHandler(document.querySelectorAll(fakepreload.selectors))
     initializeBanner(this.$refs.line1, this.$refs.line2)
     this.slider = initializeRoadmap()
   },

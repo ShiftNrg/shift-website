@@ -9,7 +9,7 @@
         <div class="inner">
           <div class="Text" v-html="article.content"></div>
           <div class="aside">
-            <nuxt-link :to="{ name: 'index' }" class="back">
+            <nuxt-link :to="{ name: 'index', hash: '#news' }" class="back">
               <span class="icon">
                 <svg-icon name="arrow" width="20" height="20"></svg-icon>
               </span>

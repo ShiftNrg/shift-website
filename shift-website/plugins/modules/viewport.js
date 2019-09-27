@@ -27,10 +27,7 @@ export const fakepreload = {
     }
   },
   detach() {},
-  onscroll() {
-    // window.addEventListener('scroll', scrollHandler)
-    // setTimeout(scrollHandler, 500)
-  }
+  onscroll() {}
 }
 
 // requestAnimationFrame: adds delay to event handler!
