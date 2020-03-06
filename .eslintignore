@@ -1,0 +1,3 @@
+plugins/libraries/*.js
+plugins/modules/*.js
+plugins/index.js
