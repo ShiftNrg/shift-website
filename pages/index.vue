@@ -79,7 +79,7 @@
         >
       </div>
 
-      <button class="scrollto2" @click="scrollTop">
+      <button @click="scrollTop" class="scrollto2">
         <span class="icon">
           <svg-icon name="arrow" height="36" width="36" />
         </span>
@@ -98,7 +98,7 @@
               {{ (indexData.lockNLoad || {}).subtitle }}
             </p>
           </div>
-          <ol class="steps" :class="activeLockNLoad ? 'inactive' : ''">
+          <ol :class="activeLockNLoad ? 'inactive' : ''" class="steps">
             <li
               v-for="step of (indexData.lockNLoad || {}).steps"
               :key="step.title"
@@ -144,9 +144,9 @@
             <p>
               {{ ((indexData.lockNLoad || {}).intro || {}).description }}
               <button
+                @click="activeLockNLoad = !activeLockNLoad"
                 type="button"
                 class="more-inline"
-                @click="activeLockNLoad = !activeLockNLoad"
               >
                 {{
                   !activeLockNLoad
@@ -278,8 +278,8 @@
                     {{ usps.description }}
                   </p>
                 </div>
-                <div class="Excerpt" @click.stop.prevent="">
-                  <i class="fas fa-close" @click="closeActiveUsps()"></i>
+                <div @click.stop.prevent="" class="Excerpt">
+                  <i @click="closeActiveUsps()" class="fas fa-close"></i>
                   <div class="inner">
                     <p>
                       {{ usps.excerpt }}
@@ -378,10 +378,10 @@
                 </div>
                 <div
                   v-if="!!vision.excerpt"
-                  class="Excerpt"
                   @click.stop.prevent=""
+                  class="Excerpt"
                 >
-                  <i class="fas fa-close" @click="closeActiveVision"></i>
+                  <i @click="closeActiveVision" class="fas fa-close"></i>
                   <div class="inner">
                     <p>
                       {{ vision.excerpt }}
@@ -409,14 +409,14 @@
 
           <div class="roadmapCarousel">
             <button
+              @click="slider.go('<')"
               type="button"
               class="prevoverlay"
-              @click="slider.go('<')"
             ></button>
             <button
+              @click="slider.go('>')"
               type="button"
               class="nextoverlay"
-              @click="slider.go('>')"
             ></button>
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides">
@@ -428,7 +428,7 @@
                   <article>
                     <div class="state">
                       <div class="label">{{ roadmap.label }}</div>
-                      <div class="c100" :class="'p' + roadmap.percentage">
+                      <div :class="'p' + roadmap.percentage" class="c100">
                         <span>{{ roadmap.percentage }}%</span>
                         <div class="slice">
                           <div class="bar"></div>
@@ -491,8 +491,8 @@
             >
               <article
                 :ref="'newsarticle-' + news.id"
-                class="newsarticle"
                 @click="goToNewsArticle(news.id)"
+                class="newsarticle"
               >
                 <div class="inner">
                   <time :datetime="news.datetime">

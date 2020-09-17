@@ -7,7 +7,7 @@
           <h1>{{ article.title }}</h1>
         </div>
         <div class="inner">
-          <div class="Text" v-html="article.content"></div>
+          <div v-html="article.content" class="Text"></div>
           <div class="aside">
             <nuxt-link :to="{ name: 'index', hash: '#news' }" class="back">
               <span class="icon">
@@ -93,8 +93,8 @@
             >
               <article
                 :ref="'newsarticle-' + news.id"
-                class="newsarticle"
                 @click="goToNewsArticle(news.id)"
+                class="newsarticle"
               >
                 <div class="inner">
                   <time :datetime="news.datetime">

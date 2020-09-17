@@ -3,10 +3,10 @@
     <div id="mobile-toggle">
       <button
         id="hamburger-menu"
+        @click="toggleMenu"
         class="hamburger hamburger--squeeze responsive-menu-button"
         type="button"
         data-action="togglemenu"
-        @click="toggleMenu"
       >
         <span class="hamburger-box"><span class="hamburger-inner"></span></span>
       </button>
@@ -26,16 +26,16 @@
         </li>
         <li>
           <a
-            href="/#roadmap"
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
+            href="/#roadmap"
           >
             Roadmap
           </a>
         </li>
         <li>
           <a
-            href="/#news"
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
+            href="/#news"
           >
             Blog & Updates
           </a>
@@ -93,23 +93,23 @@
       <ol class="nav topnav">
         <li>
           <a
-            href="/#footer"
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
+            href="/#footer"
           >
             Contact
           </a>
         </li>
         <li>
           <a
-            href="/#footer"
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
+            href="/#footer"
           >
             Resources
           </a>
         </li>
         <li class="cta">
           <a
-            href="https://github.com/ShiftProject/shift-nano/releases"
+            href="https://github.com/shiftnrg/shift-nano/releases"
             target="_blank"
           >
             Nano Wallet

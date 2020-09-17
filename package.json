@@ -1,9 +1,9 @@
 {
   "name": "shift-website",
   "title": "Shift Project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shift combines the transparency, immutability and decentralization of blockchain with the distributed hosting of the InterPlanetary File System",
-  "author": "Jasper Hu, Ralf S.",
+  "author": "Matthew Swezey, Jasper Hu, Ralf S.",
   "private": true,
   "scripts": {
     "dev": "nuxt",

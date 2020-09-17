@@ -26,7 +26,7 @@
       -->
     </div>
     <div id="footer-middle">
-      <div class="left" id="section-footer">
+      <div id="section-footer" class="left">
         <logo />
       </div>
       <div class="right">
