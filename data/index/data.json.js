@@ -654,6 +654,11 @@ window.indexData = {
             link: 'https://wallet.shiftnrg.org'
           },
           {
+            text: 'Code of Conduct',
+            link:
+              'https://docs.google.com/document/d/e/2PACX-1vRrPJ6uQbjEwpPLs0Tg3XiVL1Xbj6C1_CBCndE1Q4D0r2LsUalhL6kxodFYsSZmCPjfSh8ZV1Jb0dMq/pub'
+          },
+          {
             text: 'Interactive Demo',
             link: 'https://demo.shiftproject.com'
           },
