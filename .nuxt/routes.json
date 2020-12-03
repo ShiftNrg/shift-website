@@ -2,15 +2,13 @@
   {
     "name": "news-:id",
     "path": "/news/:id",
-    "component": "/Users/matthewswezy/GitHub/shift-website/pages/news/:id.vue",
-    "chunkName": "pages/news/:id",
-    "_name": "_dc8231dc"
+    "component": "/Users/matthewswezy/GitHub/MSwezey23/Shift Community Project/shift-website/pages/news/:id.vue",
+    "chunkName": "pages/news/:id"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/matthewswezy/GitHub/shift-website/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_e39f6aae"
+    "component": "/Users/matthewswezy/GitHub/MSwezey23/Shift Community Project/shift-website/pages/index.vue",
+    "chunkName": "pages/index"
   }
 ]

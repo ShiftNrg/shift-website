@@ -682,17 +682,17 @@ window.indexData = {
           {
             text: 'White Paper',
             link:
-              'https://www.shiftproject.com/download/shift-introductory-paper.pdf'
+              'https://www.shiftnrg.org/downloads/english-shift-whitepaper.pdf'
           },
           {
             text: 'Chinese Paper',
             link:
-              'https://www.shiftproject.com/download/shift-%E5%85%A5%E9%97%A8%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf'
+              'https://www.shiftnrg.org/downloads/chinese-shift-whitepaper.pdf'
           },
           {
             text: 'Korean Paper',
             link:
-              'https://www.shiftproject.com/download/shift-%EC%86%8C%EA%B0%9C%20%EB%B0%B1%EC%84%9C.pdf'
+              'https://www.shiftnrg.org/downloads/korean-shift-whitepaper.pdf'
           }
         ]
       },
@@ -745,6 +745,10 @@ window.indexData = {
           {
             text: 'Altilly (BTC/ETH/XQR)',
             link: 'https://www.altilly.com/market/SHIFT_BTC'
+          },
+          {
+            text: 'Bilaxy (USDT)',
+            link: 'https://bilaxy.com/trade/SHIFT_USDT'
           }
         ]
       }
