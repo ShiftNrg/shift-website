@@ -658,14 +658,6 @@ window.indexData = {
             link:
               'https://docs.google.com/document/d/e/2PACX-1vRrPJ6uQbjEwpPLs0Tg3XiVL1Xbj6C1_CBCndE1Q4D0r2LsUalhL6kxodFYsSZmCPjfSh8ZV1Jb0dMq/pub'
           },
-          {
-            text: 'Interactive Demo',
-            link: 'https://demo.shiftproject.com'
-          },
-          {
-            text: 'Testnet Faucet',
-            link: 'https://faucet.testnet.shiftproject.com'
-          }
         ]
       },
       {
@@ -717,7 +709,7 @@ window.indexData = {
           },
           {
             text: 'Reddit',
-            link: 'https://old.reddit.com/r/ShiftProject'
+            link: 'https://reddit.com/r/ShiftProject'
           }
         ]
       },
@@ -755,7 +747,7 @@ window.indexData = {
     ],
     bottomItems: [
       {
-        text: '© Shift 2019 - All rights reserved'
+        text: '© Shift 2021 - All Rights Reserved'
       }
     ]
   },
