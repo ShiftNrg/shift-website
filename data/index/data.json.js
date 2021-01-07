@@ -47,9 +47,10 @@ window.indexData = {
         '2020.12.03: We have given the green light for MonteLabs to audit our wSHIFT smart contract',
       link: 'https://github.com/ShiftNrg/wrappedShift'
     },
-    line1: 'Decentralized Cloud Hosting',
-    line2:
-      'Shift combines the transparency, immutability, and decentralization of blockchain technology with distributed hosting'
+    line1: 'Decentralized',
+    line2: 'Cloud-Hosting',
+    line3:
+      'SHIFT combines the transparency, immutability, and decentralization of blockchain technology with distributed hosting'
   },
   lockNLoad: {
     title: {
