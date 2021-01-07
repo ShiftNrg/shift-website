@@ -1,15 +1,55 @@
 window.indexData = {
+  header: {
+    headerItems: [
+      {
+        title: 'Menu',
+        links: [
+          {
+            text: 'WHAT: Lock n Load Technology',
+            link: 'https://shiftnrg.org/#LockNLoad'
+          },
+          {
+            text: 'HOW: A Better Platform',
+            link: 'https://shiftnrg.org/#Phoenix'
+          },
+          {
+            text: 'WHEN: Roadmap',
+            link: 'https://shiftnrg.org/#Roadmap'
+          },
+          {
+            text: 'WHO: Team',
+            link: 'https://shiftnrg.org/#Team'
+          },
+          {
+            text: 'STAY WITH US: News, Updates, and Announcements',
+            link: 'https://shiftnrg.org/#News'
+          },
+          {
+            text: 'CODE: GitHub',
+            link: 'https://github.com/shiftnrg'
+          },
+          {
+            text: 'EXPLORE: Explorer',
+            link: 'https://explorer.shiftnrg.org'
+          },
+          {
+            text: 'WALLET: Web Wallet',
+            link: 'https://wallet.shiftnrg.org'
+          }
+        ]
+      }
+    ]
+  },
   banner: {
     newsFlash: {
       badge: 'Update',
       description:
-        'Development Update: Core Migration to Polkadot/Substrate by the Shift Team',
-      link: '/#news'
+        '2020.12.03: We have given the green light for MonteLabs to audit our wSHIFT smart contract',
+      link: 'https://github.com/ShiftNrg/wrappedShift'
     },
-    line1: 'Reinvented Decentralized',
-    line2: 'Cloud Hosting',
-    line3:
-      'Shift combines the transparency, immutability and decentralization of blockchain with distributed hosting'
+    line1: 'Decentralized Cloud Hosting',
+    line2:
+      'Shift combines the transparency, immutability, and decentralization of blockchain technology with distributed hosting'
   },
   lockNLoad: {
     title: {
@@ -317,6 +357,38 @@ window.indexData = {
       'Shift has entered a new development phase that focuses on the storage validation protocols that form the foundation of the compensation system that will reward node operators.',
     items: [
       {
+        label: 'January 2021',
+        percentage: '75',
+        title: 'wrapped SHIFT',
+        items: [
+          { item: 'wSHIFT coded', class: 'checked' },
+          { item: 'submitted for audit', class: 'checked' },
+          { item: 'audit complete', class: 'checked' },
+          { item: 'integration' }
+        ]
+      },
+      {
+        label: 'March 2021',
+        percentage: '50',
+        title: 'Substrate Migration',
+        items: [
+          { item: 'Substrate', class: 'checked' },
+          { item: 'NPoS', class: 'checked' },
+          { item: 'Account conversion' },
+          { item: 'Node installer' }
+        ]
+      },
+      {
+        label: 'May 2021',
+        percentage: '50',
+        title: 'Phoenix Integration',
+        items: [
+          { item: 'Phoenix-Substrate Fusion' },
+          { item: 'Demo Launch' },
+          { item: 'Creativity Contests' }
+        ]
+      },
+      {
         label: 'TBD',
         percentage: '50',
         title: 'Core Migration',
@@ -351,7 +423,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '2',
+        percentage: '25',
         title: 'Proof-of-Capacity',
         items: [
           { item: 'Storage provider registration' },
@@ -362,7 +434,7 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '1',
+        percentage: '25',
         title: 'Proof-of-Storage',
         items: [
           { item: 'Distributed Hash Table (DHT)' },
@@ -373,13 +445,39 @@ window.indexData = {
       },
       {
         label: 'TBD',
-        percentage: '1',
+        percentage: '5',
         title: 'Incentive Model',
         items: [
           { item: 'Dynamic transaction fees' },
           { item: 'Dynamic block rewards' },
           { item: 'Token burning/redistribution' },
           { item: 'Run experimental (artificial) data' }
+        ]
+      }
+    ]
+  },
+  Team: {
+    title: 'Team members',
+    subtitle: 'Milestones to production',
+    description:
+      'Shift has revamped its team to include 2 world-class developers who lead the project with the help of a dedicated and strong community of willing and able probem-solvers.',
+    items: [
+      {
+        label: 'Matt Swezey ',
+        percentage: '100',
+        title: 'Software Engineer',
+        items: [
+          { item: '> 1000 GitHub Contributions this year', class: 'checked' },
+          { item: '> 10 years experience', class: 'checked' }
+        ]
+      },
+      {
+        label: 'Richard Merrill ',
+        percentage: '100',
+        title: 'Software Engineer',
+        items: [
+          { item: 'Experienced coder in multiple languages', class: 'checked' },
+          { item: '> 10 years experience', class: 'checked' }
         ]
       }
     ]
@@ -652,11 +750,6 @@ window.indexData = {
           {
             text: 'Web Wallet',
             link: 'https://wallet.shiftnrg.org'
-          },
-          {
-            text: 'Code of Conduct',
-            link:
-              'https://docs.google.com/document/d/e/2PACX-1vRrPJ6uQbjEwpPLs0Tg3XiVL1Xbj6C1_CBCndE1Q4D0r2LsUalhL6kxodFYsSZmCPjfSh8ZV1Jb0dMq/pub'
           }
         ]
       },
@@ -674,17 +767,7 @@ window.indexData = {
           {
             text: 'White Paper',
             link:
-              'https://www.shiftnrg.org/downloads/english-shift-whitepaper.pdf'
-          },
-          {
-            text: 'Chinese Paper',
-            link:
-              'https://www.shiftnrg.org/downloads/chinese-shift-whitepaper.pdf'
-          },
-          {
-            text: 'Korean Paper',
-            link:
-              'https://www.shiftnrg.org/downloads/korean-shift-whitepaper.pdf'
+              'https://pdfhost.io/v/WUg~hSshl_Shift_NRG_Project_White_Paper.pdf'
           }
         ]
       },
@@ -717,6 +800,10 @@ window.indexData = {
         title: 'Market Listings',
         removed: [
           {
+            text: 'Altilly (BTC/ETH/XQR)',
+            link: 'https://www.altilly.com/market/SHIFT_BTC'
+          },
+          {
             text: 'Bittrex (BTC)',
             link: 'https://bittrex.com/Market/Index?MarketName=BTC-SHIFT'
           },
@@ -734,10 +821,6 @@ window.indexData = {
           }
         ],
         links: [
-          {
-            text: 'Altilly (BTC/ETH/XQR)',
-            link: 'https://www.altilly.com/market/SHIFT_BTC'
-          },
           {
             text: 'Bilaxy (USDT)',
             link: 'https://bilaxy.com/trade/SHIFT_USDT'
