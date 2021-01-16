@@ -32,6 +32,7 @@ jobs:
           ${{ runner.OS }}-  
     - run: yarn --frozen-lockfile
     - run: yarn build
+    - run: ls -la
     - uses: actions/checkout@master
     - uses: shallwefootball/s3-upload-action@master
       with:
