@@ -38,4 +38,4 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_bucket: ${{ secrets.AWS_BUCKET_1 }}
         source_dir: "dist"
-        destination_dir: "/"  
+        destination_dir: "./"  
