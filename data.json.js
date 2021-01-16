@@ -839,11 +839,11 @@ window.indexData = {
     links: {
       Discord: 'https://discord.gg/fgzxABX',
       Telegram: 'https://t.me/ShiftProject',
-      Twitter: 'https://twitter.com/ShiftNrg',
-      Youtube: 'https://www.youtube.com/ShiftProject'
+      Twitter: 'https://twitter.com/ShiftNrg'
     },
     unused: {
-      Facebook: 'https://www.facebook.com/ShiftNrg'
+      Facebook: 'https://www.facebook.com/ShiftNrg',
+      Youtube: 'https://www.youtube.com/ShiftProject'
     }
   }
 }

@@ -146,7 +146,7 @@
           <svg-icon name="twitter" height="36" width="36" />
         </span>
       </a>
-      <a
+      <!-- <a
         href="https://www.youtube.com/ShiftProject"
         title="Youtube"
         target="_blank"
@@ -154,7 +154,7 @@
         <span class="icon">
           <svg-icon name="youtube" height="36" width="36" />
         </span>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

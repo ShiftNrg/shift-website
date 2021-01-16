@@ -102,16 +102,16 @@ window.indexData = {
       activeText: 'Restart the cycle'
     },
     buttons: [
-      {
-        link: 'https://demo.shiftproject.com',
-        target: '_blank',
-        text: 'Try our demo now'
-      },
-      {
-        link: 'https://github.com/shiftnrg/shift-cluster-setup',
-        target: '_blank',
-        text: 'Set up a storage node'
-      }
+      // {
+      //   link: 'https://demo.shiftproject.com',
+      //   target: '_blank',
+      //   text: 'Try our demo now'
+      // },
+      // {
+      //   link: 'https://github.com/shiftnrg/shift-cluster-setup',
+      //   target: '_blank',
+      //   text: 'Set up a storage node'
+      // }
     ]
   },
   issues: {
@@ -789,12 +789,12 @@ window.indexData = {
           },
           {
             text: 'Telegram',
-            link: 'https://telega.one/ShiftProject'
-          },
-          {
-            text: 'Reddit',
-            link: 'https://reddit.com/r/ShiftProject'
+            link: 'https://t.me/shiftnrgnews'
           }
+          // {
+          //   text: 'Reddit',
+          //   link: 'https://reddit.com/r/ShiftProject'
+          // }
         ]
       },
       {
@@ -823,6 +823,10 @@ window.indexData = {
         ],
         links: [
           {
+            text: 'Uniswap',
+            link: 'https://uniswap.wshift.trade'
+          },
+          {
             text: 'Bilaxy (USDT)',
             link: 'https://bilaxy.com/trade/SHIFT_USDT'
           }
@@ -839,12 +843,12 @@ window.indexData = {
     label: 'Join our community',
     links: {
       Discord: 'https://discord.gg/fgzxABX',
-      Telegram: 'https://t.me/ShiftProject',
-      Twitter: 'https://twitter.com/ShiftNrg',
-      Youtube: 'https://www.youtube.com/ShiftProject'
+      Telegram: 'https://t.me/shiftnrgnews',
+      Twitter: 'https://twitter.com/ShiftNrg'
     },
     unused: {
-      Facebook: 'https://www.facebook.com/ShiftNrg'
+      Facebook: 'https://www.facebook.com/ShiftNrg',
+      Youtube: 'https://www.youtube.com/ShiftProject'
     }
   }
 }
