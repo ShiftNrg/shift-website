@@ -1,4 +1,5 @@
 # shift-website
+![Node.js CI](https://github.com/ShiftNrg/shift-website/workflows/Node.js%20CI/badge.svg?branch=master)
 
 > The Shift Community Project combines the transparency, immutability, and decentralization of blockchain with IPFS
 
