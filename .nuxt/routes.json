@@ -1,22 +1,14 @@
 [
   {
-    "name": "icons-list",
-    "path": "/_icons",
-    "component": "/Users/matthewswezy/GitHub/MSwezey23/Shift Community Project/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue",
-    "_name": "_2c79e528"
-  },
-  {
     "name": "news-:id",
     "path": "/news/:id",
     "component": "/Users/matthewswezy/GitHub/MSwezey23/Shift Community Project/shift-website/pages/news/:id.vue",
-    "chunkName": "pages/news/:id",
-    "_name": "_597a6d9e"
+    "chunkName": "pages/news/:id"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/matthewswezy/GitHub/MSwezey23/Shift Community Project/shift-website/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3f4c962c"
+    "chunkName": "pages/index"
   }
 ]
