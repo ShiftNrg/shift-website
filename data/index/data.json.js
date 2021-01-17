@@ -44,8 +44,8 @@ window.indexData = {
     newsFlash: {
       badge: 'Update',
       description:
-        '2020.12.03: We have given the green light for MonteLabs to audit our wSHIFT smart contract',
-      link: 'https://github.com/ShiftNrg/wrappedShift'
+        '2021.1.12: ShiftNrg Announces Redenomination of SHIFT to Wrapped Shift (wSHIFT)',
+      link: 'https://t.co/FStVz9O5CO?amp=1'
     },
     line1: 'Decentralized',
     line2: 'Cloud-Hosting',
@@ -366,7 +366,7 @@ window.indexData = {
           { item: 'submitted for audit', class: 'checked' },
           { item: 'audit complete', class: 'checked' },
           { item: 'migration integration' },
-          { item: 'increasing liquidity' }
+          { item: 'increase liquidity' }
         ]
       },
       {
@@ -374,9 +374,9 @@ window.indexData = {
         percentage: '33',
         title: 'Substrate testnet',
         items: [
-          { item: 'launched', class: 'checked' },
+          { item: 'launch', class: 'checked' },
           { item: 'new features' },
-          { item: 'parachain launched' }
+          { item: 'parachain launch' }
         ]
       },
       {
@@ -384,9 +384,9 @@ window.indexData = {
         percentage: '0',
         title: 'Substrate mainnet',
         items: [
-          { item: 'launched' },
+          { item: 'launch' },
           { item: 'parachain auction' },
-          { item: 'parachain launched' }
+          { item: 'parachain launch' }
         ]
       },
       {
