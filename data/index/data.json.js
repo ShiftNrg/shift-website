@@ -598,6 +598,10 @@ window.indexData = {
             text: 'White Paper',
             link:
               'https://pdfhost.io/v/WUg~hSshl_Shift_NRG_Project_White_Paper.pdf'
+          },
+          {
+            text: 'Bitcoin White Paper',
+            link: 'https://pdfhost.io/v/LuGjYtBe3_bitcoinpdf.pdf'
           }
         ]
       },
