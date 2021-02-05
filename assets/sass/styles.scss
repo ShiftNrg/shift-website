@@ -220,3 +220,42 @@ button::before, button::after {
   opacity: 0;
   transform: translateY(-200px);
 }
+.cookie-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2f3640;
+    color: #f5f6fa;
+    padding: 5px 0px 0px 0px;
+    height: 35px;
+    box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+    transition: 400ms;
+    z-index: 99999999 !important;
+    text-align: center;
+  }
+  .cookie-container.active {
+    bottom: 0;
+    z-index: 99999;
+  }
+  .cookie-container a {
+    color: #f5f6fa;
+  }
+  .cookie-btn {
+    background: #e84118;
+    border: 0;
+    color: #f5f6fa;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .cookie-policy-btn {
+    background-color: #f7fafe;
+    margin: 3px;
+    padding: 2px;
+    text-align: center;
+    color: black !important;
+    border: 0px;
+    border-radius: 2px;
+  }

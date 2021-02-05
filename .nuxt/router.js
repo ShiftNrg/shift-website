@@ -3,8 +3,9 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _597a6d9e = () => interopDefault(import('../pages/news/:id.vue' /* webpackChunkName: "pages/news/:id" */))
-const _3f4c962c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _f680affc = () => interopDefault(import('../node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue' /* webpackChunkName: "" */))
+const _40b66447 = () => interopDefault(import('../pages/news/:id.vue' /* webpackChunkName: "pages/news/:id" */))
+const _ee183cd8 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -23,12 +24,16 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/_icons",
+    component: _f680affc,
+    name: "icons-list"
+  }, {
     path: "/news/:id",
-    component: _597a6d9e,
+    component: _40b66447,
     name: "news-:id"
   }, {
     path: "/",
-    component: _3f4c962c,
+    component: _ee183cd8,
     name: "index"
   }],
 

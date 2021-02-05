@@ -1,5 +1,21 @@
 <template>
   <div>
+    <div v-if="cookieConsentAcknowledged == 'false'" class="cookie-container">
+      <p>
+        We use cookies to provide you with the best experience. By using our
+        website, you consent to cookies.
+        <a
+          class="cookie-policy-btn"
+          href="downloads/cookie_policy.docx"
+          target="_blank"
+        >
+          Learn More
+        </a>
+        <button @click="acknowledgedCookieConsent" class="cookie-btn">
+          Accept
+        </button>
+      </p>
+    </div>
     <div id="mobile-toggle">
       <button
         id="hamburger-menu"
@@ -166,9 +182,22 @@ import { toggleMenu } from '../plugins/index'
 
 export default {
   components: { Logo },
+  data() {
+    return {
+      cookieConsentAcknowledged: 'false'
+    }
+  },
+  beforeMount() {
+    this.cookieConsentAcknowledged =
+      window.localStorage.getItem('cookieConsentAcknowledged') || 'false'
+  },
   methods: {
     toggleMenu() {
       toggleMenu()
+    },
+    acknowledgedCookieConsent() {
+      window.localStorage.setItem('cookieConsentAcknowledged', 'true')
+      this.cookieConsentAcknowledged = 'true'
     }
   }
 }
