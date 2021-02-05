@@ -595,12 +595,12 @@ window.indexData = {
             link: 'https://github.com/shiftnrg/shift-cluster-setup'
           },
           {
-            text: 'White Paper',
-            link: 'downloads/whitepaper.pdf'
+            text: 'ShiftNrg Whitepaper',
+            link: '/downloads/Whitepaper.pdf'
           },
           {
-            text: 'Bitcoin White Paper',
-            link: 'https://pdfhost.io/v/LuGjYtBe3_bitcoinpdf.pdf'
+            text: 'Bitcoin Whitepaper',
+            link: '/downloads/Bitcoin.pdf'
           }
         ]
       },

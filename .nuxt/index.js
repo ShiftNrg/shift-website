@@ -12,7 +12,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_nuxtsvgsprite_6ac21628 from 'nuxt_plugin_nuxtsvgsprite_6ac21628' // Source: ./nuxt-svg-sprite.js (mode: 'all')
+import nuxt_plugin_nuxtsvgsprite_a6180188 from 'nuxt_plugin_nuxtsvgsprite_a6180188' // Source: ./nuxt-svg-sprite.js (mode: 'all')
 import nuxt_plugin_datajson_0541d330 from 'nuxt_plugin_datajson_0541d330' // Source: ../data/index/data.json.js (mode: 'client')
 import nuxt_plugin_index_5e7689d9 from 'nuxt_plugin_index_5e7689d9' // Source: ../plugins/index.js (mode: 'client')
 
@@ -167,8 +167,8 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_nuxtsvgsprite_6ac21628 === 'function') {
-    await nuxt_plugin_nuxtsvgsprite_6ac21628(app.context, inject)
+  if (typeof nuxt_plugin_nuxtsvgsprite_a6180188 === 'function') {
+    await nuxt_plugin_nuxtsvgsprite_a6180188(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_datajson_0541d330 === 'function') {

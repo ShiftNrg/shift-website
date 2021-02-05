@@ -3,9 +3,9 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _f680affc = () => interopDefault(import('../node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue' /* webpackChunkName: "" */))
-const _40b66447 = () => interopDefault(import('../pages/news/:id.vue' /* webpackChunkName: "pages/news/:id" */))
-const _ee183cd8 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _1c2f7dd4 = () => interopDefault(import('../node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue' /* webpackChunkName: "" */))
+const _36fca74a = () => interopDefault(import('../pages/news/:id.vue' /* webpackChunkName: "pages/news/:id" */))
+const _2707b200 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -25,15 +25,15 @@ export const routerOptions = {
 
   routes: [{
     path: "/_icons",
-    component: _f680affc,
+    component: _1c2f7dd4,
     name: "icons-list"
   }, {
     path: "/news/:id",
-    component: _40b66447,
+    component: _36fca74a,
     name: "news-:id"
   }, {
     path: "/",
-    component: _ee183cd8,
+    component: _2707b200,
     name: "index"
   }],
 
