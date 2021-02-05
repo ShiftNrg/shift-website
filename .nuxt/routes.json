@@ -2,18 +2,21 @@
   {
     "name": "icons-list",
     "path": "/_icons",
-    "component": "/Users/josephgotesman/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue"
+    "component": "/Users/iMac/Documents/GitHub/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue",
+    "_name": "_f680affc"
   },
   {
     "name": "news-:id",
     "path": "/news/:id",
-    "component": "/Users/josephgotesman/shift-website/pages/news/:id.vue",
-    "chunkName": "pages/news/:id"
+    "component": "/Users/iMac/Documents/GitHub/shift-website/pages/news/:id.vue",
+    "chunkName": "pages/news/:id",
+    "_name": "_40b66447"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/josephgotesman/shift-website/pages/index.vue",
-    "chunkName": "pages/index"
+    "component": "/Users/iMac/Documents/GitHub/shift-website/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_ee183cd8"
   }
 ]
