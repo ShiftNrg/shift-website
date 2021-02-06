@@ -1,20 +1,24 @@
 <template>
   <div>
     <div v-if="cookieConsentAcknowledged == 'false'" class="cookie-container">
-      <p>
-        We use cookies to provide you with the best experience. By using our
-        website, you consent to cookies.
-        <a
-          class="cookie-policy-btn"
-          href="downloads/cookie_policy.docx"
-          target="_blank"
-        >
-          Learn More
-        </a>
-        <button @click="acknowledgedCookieConsent" class="cookie-btn">
-          Accept
-        </button>
-      </p>
+      <div class="cookie-body">
+        <p class="H4 maincontainer Intro Text">
+          We use cookies to provide you with the best experience. By using our
+          website, you consent to cookies.
+          <a
+            class="cookie-policy-btn"
+            href="downloads/cookie_policy.docx"
+            target="_blank"
+          >
+            Learn More
+          </a>
+          <button @click="acknowledgedCookieConsent" class="cookie-btn">
+            <span class="cookie-btn-span">
+              Accept
+            </span>
+          </button>
+        </p>
+      </div>
     </div>
     <div id="mobile-toggle">
       <button
