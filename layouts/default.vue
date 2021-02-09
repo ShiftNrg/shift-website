@@ -1,10 +1,9 @@
 <template>
   <div>
-    <div v-if="cookieConsentAcknowledged == 'false'" class="cookie-container">
+    <div v-if="cookieConsentAcknowledged" class="cookie-container">
       <div class="cookie-body">
         <p class="H4 maincontainer Intro Text">
-          We use cookies to provide you with the best experience. By using our
-          website, you consent to cookies.
+          We use cookies to provide you with the best experience.
           <a
             class="cookie-policy-btn"
             href="downloads/cookie_policy.docx"
@@ -12,9 +11,14 @@
           >
             Learn More
           </a>
-          <button @click="acknowledgedCookieConsent" class="cookie-btn">
+          <button @click="ackCookieConsent('true')" class="cookie-btn bg-green">
             <span class="cookie-btn-span">
               Accept
+            </span>
+          </button>
+          <button @click="ackCookieConsent('false')" class="cookie-btn bg-red">
+            <span class="cookie-btn-span">
+              Disable Cookies
             </span>
           </button>
         </p>
@@ -199,9 +203,9 @@ export default {
     toggleMenu() {
       toggleMenu()
     },
-    acknowledgedCookieConsent() {
-      window.localStorage.setItem('cookieConsentAcknowledged', 'true')
-      this.cookieConsentAcknowledged = 'true'
+    ackCookieConsent(choice) {
+      window.localStorage.setItem('cookieConsentAcknowledged', choice)
+      this.cookieConsentAcknowledged = choice
     }
   }
 }
