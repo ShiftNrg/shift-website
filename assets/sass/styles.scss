@@ -240,31 +240,36 @@ button::before, button::after {
   .cookie-container a button{
     color: #f5f6fa;
   }
+  .bg-green {
+    background: green;
+  }
+  .bg-red {
+    background: #e84118;
+  }
   .cookie-btn {
     position: absolute;
     padding-right: 10px !important;
-    background: #e84118;
+    font-weight: 600;
+    line-height: 1.83333em;
+    padding: 0 0.83333em;
     border: 0;
     color: #f5f6fa;
-    margin-bottom: 16px;
-    border-radius: 8px;
+    margin-bottom: 12px;
+    border-radius: 0.91667em;
     cursor: pointer;
     text-align: center;
   }
   .cookie-btn-span {
-
     text-align: center;
     position: relative;
-    font-size: 18px;
+    font-size: 0.9rem;
   }
   .cookie-policy-btn {
-    background-color: #f7fafe;
-    margin: 3px;
-    padding: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
     text-align: center;
-    color: black !important;
+    text-decoration: underline;
     border: 0px;
-    border-radius: 2px;
   }
   .cookie-body {
       padding-top: 5px;
