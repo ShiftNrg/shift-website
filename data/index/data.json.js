@@ -567,20 +567,30 @@ window.indexData = {
     subtitle: 'Stay updated',
     footerItems: [
       {
-        title: 'Resources',
+        title: 'In The Press',
         links: [
-          {
-            text: 'GitHub',
-            link: 'https://github.com/shiftnrg'
+          /* eslint-disable */
+          {  
+            text: 'LinkedIn: ShiftNrg Disrupting the Web',
+            link: 'https://www.linkedin.com/pulse/blockchain-questions-you-were-too-shy-ask-industries-being-anuj-varma/'
           },
           {
-            text: 'Explorer',
-            link: 'https://explorer.shiftnrg.org'
+            text: 'Medium: ShiftNrg Unstoppable Content',
+            link: 'https://medium.com/swlh/project-shift-unstoppable-content-1f10d0461827'
           },
           {
-            text: 'Web Wallet',
-            link: 'https://wallet.shiftnrg.org'
+            text: 'SteemIt: Brief Review of SHIFT',
+            link: 'https://steemit.com/cryptocurrency/@techblogger/crypto-report-a-brief-review-of-shift-token'
+          },
+          {
+            text: 'Crypto360: What is SHIFT? Beginner\'s Guide',
+            link: 'https://cryptomarket360.com/what-is-shift-shift-a-beginners-guide-in-360-words/'
+          },
+          {
+            text: 'Medium: Shift Reborn: The Vision',
+            link: 'https://medium.com/paradigm-fund/shift-the-project-reborn-learn-more-about-shifts-future-vision-and-next-development-phases-49b46182dd93'
           }
+        /* eslint-enable */
         ]
       },
       {
@@ -609,6 +619,23 @@ window.indexData = {
           {
             text: 'Bitcoin Whitepaper',
             link: '/downloads/Bitcoin.pdf'
+          }
+        ]
+      },
+      {
+        title: 'Resources',
+        links: [
+          {
+            text: 'GitHub',
+            link: 'https://github.com/shiftnrg'
+          },
+          {
+            text: 'Explorer',
+            link: 'https://explorer.shiftnrg.org'
+          },
+          {
+            text: 'Web Wallet',
+            link: 'https://wallet.shiftnrg.org'
           }
         ]
       },
