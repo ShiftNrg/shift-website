@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="cookieConsentAcknowledged" class="cookie-container">
+    <div v-if="!cookieConsentAcknowledged" class="cookie-container">
       <div class="cookie-body">
         <p class="H4 maincontainer Intro Text">
           We use cookies to provide you with the best experience.
@@ -192,12 +192,12 @@ export default {
   components: { Logo },
   data() {
     return {
-      cookieConsentAcknowledged: 'false'
+      cookieConsentAcknowledged: null
     }
   },
   beforeMount() {
     this.cookieConsentAcknowledged =
-      window.localStorage.getItem('cookieConsentAcknowledged') || 'false'
+      window.localStorage.getItem('cookieConsentAcknowledged') || null
   },
   methods: {
     toggleMenu() {
