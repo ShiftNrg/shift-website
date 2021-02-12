@@ -474,6 +474,33 @@
           </div>
         </div>
       </section>
+      <section id="team" ref="team" class="news latest">
+        <div class="inner">
+          <h3 class="h4">
+            {{ indexData.team.title }}
+          </h3>
+          <h4 class="h5">
+            {{ indexData.team.subtitle }}
+          </h4>
+          <h5 class="h6">
+            {{ indexData.team.description }}
+          </h5>
+          <ul>
+            <li
+              v-for="(team, items) of (indexData.team || {}).items.slice(0, 5)"
+              :key="'team-' + items"
+            >
+              <h3>{{ experience }}</h3>
+              <h3>{{ description }}</h3>
+              <a v-bind:href="team.link">LinkedIn</a>
+              <a v-bind:href="team.social">Twitter</a>
+              <div>
+                <img v-bind:src="team.image" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
       <section id="news" ref="news" class="news latest">
         <!--
         <div class="payoff">

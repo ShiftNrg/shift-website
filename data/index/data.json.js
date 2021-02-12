@@ -358,19 +358,19 @@ window.indexData = {
       'Shift has entered a new development phase that focuses on the storage validation protocols that form the foundation of the compensation system that will reward node operators.',
     items: [
       {
-        label: 'January 2021',
-        percentage: '60',
+        label: 'March 2021',
+        percentage: '80',
         title: 'wrapped SHIFT',
         items: [
           { item: 'wSHIFT coded', class: 'checked' },
           { item: 'submitted for audit', class: 'checked' },
           { item: 'audit complete', class: 'checked' },
-          { item: 'migration integration' },
-          { item: 'increase liquidity' }
+          { item: 'increase liquidity', class: 'checked' },
+          { item: 'migration integration' }
         ]
       },
       {
-        label: 'February 2021',
+        label: 'May 2021',
         percentage: '33',
         title: 'Substrate testnet',
         items: [
@@ -480,26 +480,115 @@ window.indexData = {
   },
   Team: {
     title: 'Team members',
-    subtitle: 'Milestones to production',
+    subtitle: 'A Dedicated Community Led by a Solid Team',
     description:
-      'Shift has revamped its team to include 2 world-class developers who lead the project with the help of a dedicated and strong community of willing and able probem-solvers.',
+      'Shift has revamped its team to include 3 world-class developers who lead the project with the help of a dedicated and strong community of willing and able probem-solvers.',
     items: [
       {
-        label: 'Matt Swezey ',
+        label: 'Matthew Swezey ',
         percentage: '100',
-        title: 'Software Engineer',
+        title: 'Head of Development',
         items: [
-          { item: '> 1000 GitHub Contributions this year', class: 'checked' },
-          { item: '> 10 years experience', class: 'checked' }
+          {
+            description: '> 1000 GitHub Contributions this year',
+            class: 'checked'
+          },
+          { experience: '> 10 years experience', class: 'checked' },
+          {
+            link: 'https://www.linkedin.com/in/matt-swezey-46691755/'
+          },
+          {
+            social: 'https://twitter.com/M8Swezey'
+          },
+          {
+            image: '/downloads/ms.jpg'
+          }
         ]
       },
       {
         label: 'Richard Merrill ',
         percentage: '100',
-        title: 'Software Engineer',
+        title: 'Senior Architect',
         items: [
-          { item: 'Experienced coder in multiple languages', class: 'checked' },
-          { item: '> 10 years experience', class: 'checked' }
+          {
+            description: 'Experienced coder in multiple languages',
+            class: 'checked'
+          },
+          { experience: '> 10 years experience', class: 'checked' },
+          {
+            link: 'https://www.linkedin.com/in/rich-merrill-0196092/'
+          },
+          {
+            social: 'https://twitter.com/texasl68'
+          },
+          {
+            image: '/downloads/rm.jpg'
+          }
+        ]
+      },
+      {
+        label: 'Michael Giles ',
+        percentage: '100',
+        title: 'Developer',
+        items: [
+          {
+            description: 'Java, SQL, and Solidity expert',
+            class: 'checked'
+          },
+          { experience: '> 10 years experience', class: 'checked' },
+          {
+            link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/'
+          },
+          {
+            social: 'https://twitter.com/MikeGGiles'
+          },
+          {
+            image: '/downloads/mg.jpeg'
+          }
+        ]
+      },
+      {
+        label: 'Sara Frankel ',
+        percentage: '100',
+        title: 'Head of Marketing',
+        items: [
+          {
+            description:
+              'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control',
+            class: 'checked'
+          },
+          { experience: '> 10 years experience', class: 'checked' },
+          {
+            link: 'https://www.linkedin.com/in/sara-frankel-466857203/'
+          },
+          {
+            social: 'https://twitter.com/shift2btc'
+          },
+          {
+            image: '/downloads/sf.jpg'
+          }
+        ]
+      },
+      {
+        label: 'Drew Fiore ',
+        percentage: '100',
+        title: 'Head of Community',
+        items: [
+          {
+            description:
+              'Natural-born leader, self-directed learner, and community manager',
+            class: 'checked'
+          },
+          { experience: '> 10 years experience', class: 'checked' },
+          {
+            link: 'www.linkedin.com/in/drew-f'
+          },
+          {
+            social: 'https://twitter.com/PNWDrew'
+          },
+          {
+            image: '/downloads/df.jpg'
+          }
         ]
       }
     ]
@@ -510,6 +599,22 @@ window.indexData = {
     readMore: 'Read more',
     readMoreInsights: 'Read more insights from Shift',
     items: [
+      {
+        id: 4,
+        datetime: '2021-02-09',
+        day: '09',
+        month: 'feb',
+        category: 'announcement',
+        title: 'ShiftNrg 2020: Q3 & Q4 Update',
+        intro: 'ShiftNrg Announces Progress Achieved Through Q3 & Q4 of 2020',
+        content: `
+        <p> 
+          ShiftNrg made incredible progress on the development front, pushing the needle definitively forward with several updates throughout 2H2020. 
+        </p>
+        <p> Catch up on details of our progress during the last six months of 2020... </p>
+        Read the entire article <a href="https://medium.com/shiftnrg/shiftnrg-2020-q3-q4-update-39cd7f1dfc6" target="_blank"> here </a>
+        `
+      },
       {
         id: 3,
         datetime: '2021-01-12',
@@ -571,24 +676,28 @@ window.indexData = {
         links: [
           /* eslint-disable */
           {  
-            text: 'LinkedIn: ShiftNrg Disrupting the Web',
+            text: 'LinkedIn: Disrupting the Web',
             link: 'https://www.linkedin.com/pulse/blockchain-questions-you-were-too-shy-ask-industries-being-anuj-varma/'
           },
           {
-            text: 'Medium: ShiftNrg Unstoppable Content',
+            text: 'Medium: Unstoppable Content',
             link: 'https://medium.com/swlh/project-shift-unstoppable-content-1f10d0461827'
           },
           {
-            text: 'SteemIt: Brief Review of SHIFT',
+            text: 'SteemIt: Brief Review',
             link: 'https://steemit.com/cryptocurrency/@techblogger/crypto-report-a-brief-review-of-shift-token'
           },
           {
-            text: 'Crypto360: What is SHIFT? Beginner\'s Guide',
+            text: 'Crypto360: Beginner\'s Guide',
             link: 'https://cryptomarket360.com/what-is-shift-shift-a-beginners-guide-in-360-words/'
           },
           {
             text: 'Medium: Shift Reborn: The Vision',
             link: 'https://medium.com/paradigm-fund/shift-the-project-reborn-learn-more-about-shifts-future-vision-and-next-development-phases-49b46182dd93'
+          },
+          {
+            text: 'Medium: Shift Q3/4 2020 Update',
+            link: 'https://medium.com/shiftnrg/shiftnrg-2020-q3-q4-update-39cd7f1dfc6'
           }
         /* eslint-enable */
         ]
@@ -636,6 +745,14 @@ window.indexData = {
           {
             text: 'Web Wallet',
             link: 'https://wallet.shiftnrg.org'
+          },
+          {
+            text: 'Market Listing: Uniswap',
+            link: 'https://uniswap.wshift.trade'
+          },
+          {
+            text: 'Market Listing: Bilaxy (USDT)',
+            link: 'https://bilaxy.com/trade/SHIFT_USDT'
           }
         ]
       },
@@ -665,7 +782,7 @@ window.indexData = {
         ]
       },
       {
-        title: 'Market Listings',
+        // title: 'Market Listings',
         removed: [
           {
             text: 'Altilly (BTC/ETH/XQR)',
@@ -686,16 +803,6 @@ window.indexData = {
           {
             text: 'IDAX (BTC/ETH)',
             link: 'https://www.idax.pro/#/exchange?pairname=SHIFT_BTC'
-          }
-        ],
-        links: [
-          {
-            text: 'Uniswap',
-            link: 'https://uniswap.wshift.trade'
-          },
-          {
-            text: 'Bilaxy (USDT)',
-            link: 'https://bilaxy.com/trade/SHIFT_USDT'
           }
         ]
       }
