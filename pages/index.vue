@@ -488,10 +488,11 @@
           <ul>
             <li
               v-for="(team, items) of (indexData.team || {}).items.slice(0, 5)"
-              :key="'team-' + items"
+              :key="items.label"
             >
-              <h3>{{ experience }}</h3>
+              <h2>{{ title }}</h2>
               <h3>{{ description }}</h3>
+              <h4>{{ experience }}</h4>
               <a v-bind:href="team.link">LinkedIn</a>
               <a v-bind:href="team.social">Twitter</a>
               <div>
