@@ -478,7 +478,7 @@ window.indexData = {
       }
     ]
   },
-  Team: {
+  team: {
     title: 'Team members',
     subtitle: 'A Dedicated Community Led by a Solid Team',
     description:
