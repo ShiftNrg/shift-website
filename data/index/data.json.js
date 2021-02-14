@@ -488,103 +488,53 @@ window.indexData = {
         label: 'Matthew Swezey ',
         percentage: '100',
         title: 'Head of Development',
-        items: [
-          {
-            description: '> 1000 GitHub Contributions this year'
-          },
-          { experience: '> 10 years experience' },
-          {
-            link: 'https://www.linkedin.com/in/matt-swezey-46691755/'
-          },
-          {
-            social: 'https://twitter.com/M8Swezey'
-          },
-          {
-            image: '/downloads/ms.jpg'
-          }
-        ]
+        description: '> 1000 GitHub Contributions this year',
+        experience: '> 10 years experience',
+        link: 'https://www.linkedin.com/in/matt-swezey-46691755/',
+        social: 'https://twitter.com/M8Swezey',
+        image: 'downloads/ms.jpg'
       },
       {
         label: 'Richard Merrill ',
         percentage: '100',
         title: 'Senior Architect',
-        items: [
-          {
-            description: 'Experienced coder in multiple languages'
-          },
-          { experience: '> 10 years experience' },
-          {
-            link: 'https://www.linkedin.com/in/rich-merrill-0196092/'
-          },
-          {
-            social: 'https://twitter.com/texasl68'
-          },
-          {
-            image: '/downloads/rm.jpeg'
-          }
-        ]
+        description: 'Experienced coder in multiple languages',
+        experience: '> 10 years experience',
+        link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
+        social: 'https://twitter.com/texasl68',
+        image: '/downloads/rm.jpeg'
       },
       {
         label: 'Michael Giles ',
         percentage: '100',
         title: 'Developer',
-        items: [
-          {
-            description: 'Java, SQL, and Solidity expert'
-          },
-          { experience: '> 10 years experience' },
-          {
-            link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/'
-          },
-          {
-            social: 'https://twitter.com/MikeGGiles'
-          },
-          {
-            image: '/downloads/mg.jpeg'
-          }
-        ]
+        description: 'Javascript, web3, Fullstack.',
+        experience: '> 10 years experience',
+        link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/',
+        social: 'https://twitter.com/MikeGGiles',
+        image: '/downloads/mg.jpeg'
       },
       {
         label: 'Sara Frankel ',
         percentage: '100',
         title: 'Head of Marketing',
-        items: [
-          {
-            description:
-              'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control'
-          },
-          { experience: '> 10 years experience' },
-          {
-            link: 'https://www.linkedin.com/in/sara-frankel-466857203/'
-          },
-          {
-            social: 'https://twitter.com/shift2btc'
-          },
-          {
-            image: '/downloads/sf.jpeg'
-          }
-        ]
+        description:
+          'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control',
+        experience: '> 10 years experience',
+        link: 'https://www.linkedin.com/in/sara-frankel-466857203/',
+        social: 'https://twitter.com/shift2btc',
+        image: '/downloads/sf.jpeg'
       },
       {
         label: 'Drew Fiore ',
         percentage: '100',
         title: 'Head of Community',
-        items: [
-          {
-            description:
-              'Natural-born leader, self-directed learner, and community manager'
-          },
-          { experience: '> 10 years experience' },
-          {
-            link: 'www.linkedin.com/in/drew-f'
-          },
-          {
-            social: 'https://twitter.com/PNWDrew'
-          },
-          {
-            image: '/downloads/df.jpe g'
-          }
-        ]
+        description:
+          'Natural-born leader, self-directed learner, and community manager',
+        experience: '> 10 years experience',
+        link: 'www.linkedin.com/in/drew-f',
+        social: 'https://twitter.com/PNWDrew',
+        image: '/downloads/df.jpe g'
       }
     ]
   },
