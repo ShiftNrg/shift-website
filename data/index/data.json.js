@@ -482,7 +482,7 @@ window.indexData = {
     title: 'Team members',
     subtitle: 'A Dedicated Community Led by a Solid Team',
     description:
-      'Shift has revamped its team to include 3 world-class developers who lead the project with the help of a dedicated and strong community of willing and able probem-solvers.',
+      'Our team includes 3 world-class developers who lead the project with the help of our dedicated community of willing and able probem-solvers.',
     items: [
       {
         label: 'Matthew Swezey ',
@@ -490,10 +490,9 @@ window.indexData = {
         title: 'Head of Development',
         items: [
           {
-            description: '> 1000 GitHub Contributions this year',
-            class: 'checked'
+            description: '> 1000 GitHub Contributions this year'
           },
-          { experience: '> 10 years experience', class: 'checked' },
+          { experience: '> 10 years experience' },
           {
             link: 'https://www.linkedin.com/in/matt-swezey-46691755/'
           },
@@ -511,10 +510,9 @@ window.indexData = {
         title: 'Senior Architect',
         items: [
           {
-            description: 'Experienced coder in multiple languages',
-            class: 'checked'
+            description: 'Experienced coder in multiple languages'
           },
-          { experience: '> 10 years experience', class: 'checked' },
+          { experience: '> 10 years experience' },
           {
             link: 'https://www.linkedin.com/in/rich-merrill-0196092/'
           },
@@ -522,7 +520,7 @@ window.indexData = {
             social: 'https://twitter.com/texasl68'
           },
           {
-            image: '/downloads/rm.jpg'
+            image: '/downloads/rm.jpeg'
           }
         ]
       },
@@ -532,10 +530,9 @@ window.indexData = {
         title: 'Developer',
         items: [
           {
-            description: 'Java, SQL, and Solidity expert',
-            class: 'checked'
+            description: 'Java, SQL, and Solidity expert'
           },
-          { experience: '> 10 years experience', class: 'checked' },
+          { experience: '> 10 years experience' },
           {
             link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/'
           },
@@ -554,10 +551,9 @@ window.indexData = {
         items: [
           {
             description:
-              'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control',
-            class: 'checked'
+              'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control'
           },
-          { experience: '> 10 years experience', class: 'checked' },
+          { experience: '> 10 years experience' },
           {
             link: 'https://www.linkedin.com/in/sara-frankel-466857203/'
           },
@@ -565,7 +561,7 @@ window.indexData = {
             social: 'https://twitter.com/shift2btc'
           },
           {
-            image: '/downloads/sf.jpg'
+            image: '/downloads/sf.jpeg'
           }
         ]
       },
@@ -576,10 +572,9 @@ window.indexData = {
         items: [
           {
             description:
-              'Natural-born leader, self-directed learner, and community manager',
-            class: 'checked'
+              'Natural-born leader, self-directed learner, and community manager'
           },
-          { experience: '> 10 years experience', class: 'checked' },
+          { experience: '> 10 years experience' },
           {
             link: 'www.linkedin.com/in/drew-f'
           },
@@ -587,7 +582,7 @@ window.indexData = {
             social: 'https://twitter.com/PNWDrew'
           },
           {
-            image: '/downloads/df.jpg'
+            image: '/downloads/df.jpe g'
           }
         ]
       }

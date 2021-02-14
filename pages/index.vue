@@ -475,14 +475,14 @@
         </div>
       </section>
       <section id="team" ref="team" class="news latest">
-        <div class="inner">
-          <h3 class="h4">
+        <div class="Intro">
+          <h5 class="h5">
             {{ indexData.team.title }}
-          </h3>
+          </h5>
           <h4 class="h5">
             {{ indexData.team.subtitle }}
           </h4>
-          <h5 class="h6">
+          <h5 class="h1">
             {{ indexData.team.description }}
           </h5>
           <ul>
@@ -490,13 +490,14 @@
               v-for="(team, items) of (indexData.team || {}).items.slice(0, 5)"
               :key="items.label"
             >
-              <h2>{{ title }}</h2>
-              <h3>{{ description }}</h3>
-              <h4>{{ experience }}</h4>
+              <h3>{{ team.label }}</h3>
+              <h2>{{ team.title }}</h2>
+              <h4>{{ team.experience }}</h4>
               <a v-bind:href="team.link">LinkedIn</a>
+              <h5></h5>
               <a v-bind:href="team.social">Twitter</a>
               <div>
-                <img v-bind:src="team.image" />
+                <img v-bind:src="team.image" class="rounded-lg object-fit" />
               </div>
             </li>
           </ul>
