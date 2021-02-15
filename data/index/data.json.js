@@ -43,9 +43,8 @@ window.indexData = {
   banner: {
     newsFlash: {
       badge: 'Update',
-      description:
-        '2021.1.12: ShiftNrg Announces Redenomination of SHIFT to Wrapped Shift (wSHIFT)',
-      link: 'https://t.co/FStVz9O5CO?amp=1'
+      description: '2021.02.09: ShiftNrg 2020: Q3 & Q4 Update',
+      link: 'https://link.medium.com/co4aUvvsKdb'
     },
     line1: 'Decentralized',
     line2: 'Cloud-Hosting',
@@ -486,55 +485,43 @@ window.indexData = {
     items: [
       {
         label: 'Matthew Swezey ',
-        percentage: '100',
         title: 'Head of Development',
-        description: '> 1000 GitHub Contributions this year',
-        experience: '> 10 years experience',
+        description: 'Pro with >1500 GitHub contributions last year',
         link: 'https://www.linkedin.com/in/matt-swezey-46691755/',
         social: 'https://twitter.com/M8Swezey',
         image: 'downloads/ms.jpg'
       },
       {
         label: 'Richard Merrill ',
-        percentage: '100',
         title: 'Senior Architect',
         description: 'Experienced coder in multiple languages',
-        experience: '> 10 years experience',
         link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
         social: 'https://twitter.com/texasl68',
         image: '/downloads/rm.jpeg'
       },
       {
         label: 'Michael Giles ',
-        percentage: '100',
         title: 'Developer',
-        description: 'Javascript, web3, Fullstack.',
-        experience: '> 10 years experience',
+        description: 'Javascript, web3, and Fullstack',
         link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/',
         social: 'https://twitter.com/MikeGGiles',
         image: '/downloads/mg.jpeg'
       },
       {
         label: 'Sara Frankel ',
-        percentage: '100',
         title: 'Head of Marketing',
-        description:
-          'Seasoned marketer and talented PR specialist; skilled in sales and crisis-control',
-        experience: '> 10 years experience',
+        description: 'Seasoned marketer and talented PR specialist',
         link: 'https://www.linkedin.com/in/sara-frankel-466857203/',
         social: 'https://twitter.com/shift2btc',
-        image: '/downloads/sf.jpeg'
+        image: '/downloads/sf.jpg'
       },
       {
         label: 'Drew Fiore ',
-        percentage: '100',
         title: 'Head of Community',
-        description:
-          'Natural-born leader, self-directed learner, and community manager',
-        experience: '> 10 years experience',
+        description: 'Experienced community manager; Anthropologist',
         link: 'www.linkedin.com/in/drew-f',
         social: 'https://twitter.com/PNWDrew',
-        image: '/downloads/df.jpe g'
+        image: '/downloads/df.jpeg'
       }
     ]
   },
