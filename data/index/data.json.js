@@ -484,7 +484,7 @@ window.indexData = {
       'Our team includes 3 world-class developers who lead the project with the help of our dedicated community of willing and able probem-solvers.',
     items: [
       {
-        label: 'Matthew Swezey ',
+        label: 'Matt Swezey ',
         title: 'Head of Development',
         description: 'Pro with >1500 GitHub contributions last year',
         link: 'https://www.linkedin.com/in/matt-swezey-46691755/',
@@ -492,7 +492,7 @@ window.indexData = {
         image: 'downloads/ms.jpg'
       },
       {
-        label: 'Richard Merrill ',
+        label: 'Rich Merrill ',
         title: 'Senior Architect',
         description: 'Experienced coder in multiple languages',
         link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
