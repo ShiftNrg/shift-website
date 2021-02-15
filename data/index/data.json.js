@@ -479,9 +479,9 @@ window.indexData = {
   },
   team: {
     title: 'Team members',
-    subtitle: 'A Dedicated Community Led by a Solid Team',
+    subtitle: 'A Solid Team Backed by a Dedicated Community',
     description:
-      'Our team includes 3 world-class developers who lead the project with the help of our dedicated community of willing and able probem-solvers.',
+      'Our team includes 3 world-class developers who lead the project with the help of our community of willing and able probem-solvers.',
     items: [
       {
         label: 'Matt Swezey ',
