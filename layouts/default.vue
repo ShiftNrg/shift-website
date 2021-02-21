@@ -59,17 +59,17 @@
         <li>
           <a
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
-            href="/#news"
+            href="/#team"
           >
-            News
+            Team
           </a>
         </li>
         <li>
           <a
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
-            href="/#team"
+            href="/#news"
           >
-            Team
+            News
           </a>
         </li>
         <!--
