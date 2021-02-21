@@ -475,7 +475,7 @@
         </div>
       </section>
       <section id="team" ref="team" class="news latest">
-        <div class="Intro">
+        <div class="inner">
           <h1 class="h1">
             {{ indexData.team.title }}
           </h1>
@@ -483,14 +483,17 @@
             {{ indexData.team.subtitle }}
           </h2>
           <p></p>
-          <h4 class="h4">
-            {{ indexData.team.description }}
-          </h4>
+          <div class="Intro">
+            <h4 class="h4">
+              {{ indexData.team.description }}
+            </h4>
+          </div>
           <p></p>
           <ul class="block-grid up5">
             <li
               v-for="(team, items) of (indexData.team || {}).items.slice(0, 5)"
               :key="items.label"
+              class="hasExcerpt"
             >
               <h3>{{ team.label }}</h3>
               <h2>{{ team.title }}</h2>
@@ -501,7 +504,7 @@
               <a v-bind:href="team.link" class="more-inline">LinkedIn</a>
               <a v-bind:href="team.social" class="more-inline">Twitter</a>
               <p></p>
-              <div>
+              <div class="image">
                 <img v-bind:src="team.image" class="rounded-lg object-fit" />
               </div>
             </li>

@@ -489,7 +489,7 @@ window.indexData = {
         description: 'Pro with >1500 GitHub contributions last year',
         link: 'https://www.linkedin.com/in/matt-swezey-46691755/',
         social: 'https://twitter.com/M8Swezey',
-        image: 'downloads/ms.jpg'
+        image: '/images/team/ms.jpg'
       },
       {
         label: 'Rich Merrill ',
@@ -497,15 +497,15 @@ window.indexData = {
         description: 'Experienced coder in multiple languages',
         link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
         social: 'https://twitter.com/texasl68',
-        image: '/downloads/rm.jpeg'
+        image: '/images/team/rm.jpeg'
       },
       {
         label: 'Michael Giles ',
         title: 'Developer',
-        description: 'Javascript, web3, and Fullstack',
+        description: 'Javascript, web3, .Net, developer since 2017',
         link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/',
         social: 'https://twitter.com/MikeGGiles',
-        image: '/downloads/mg.jpeg'
+        image: '/images/team/mg.jpeg'
       },
       {
         label: 'Sara Frankel ',
@@ -513,7 +513,7 @@ window.indexData = {
         description: 'Seasoned marketer and talented PR specialist',
         link: 'https://www.linkedin.com/in/sara-frankel-466857203/',
         social: 'https://twitter.com/shift2btc',
-        image: '/downloads/sf.jpg'
+        image: '/images/team/sf.jpg'
       },
       {
         label: 'Drew Fiore ',
@@ -521,7 +521,7 @@ window.indexData = {
         description: 'Experienced community manager; Anthropologist',
         link: 'www.linkedin.com/in/drew-f',
         social: 'https://twitter.com/PNWDrew',
-        image: '/downloads/df.jpeg'
+        image: '/images/team/df.jpeg'
       }
     ]
   },
