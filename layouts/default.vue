@@ -59,9 +59,17 @@
         <li>
           <a
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
+            href="/#team"
+          >
+            Team
+          </a>
+        </li>
+        <li>
+          <a
+            :data-action="$route.name === 'index' ? 'scrollto' : ''"
             href="/#news"
           >
-            Blog & Updates
+            News
           </a>
         </li>
         <!--
