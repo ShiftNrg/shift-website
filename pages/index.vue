@@ -507,7 +507,6 @@
               <div class="image">
                 <img v-bind:src="team.image" class="rounded-lg object-fit" />
               </div>
-              <div class="hline"></div>
             </li>
           </ul>
         </div>
