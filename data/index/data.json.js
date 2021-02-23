@@ -22,7 +22,7 @@ window.indexData = {
           },
           {
             text: 'STAY WITH US: News, Updates, and Announcements',
-            link: 'https://shiftnrg.org/#News'
+            link: 'https://news.shiftnrg.org/'
           },
           {
             text: 'CODE: GitHub',

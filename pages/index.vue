@@ -493,7 +493,7 @@
             <li
               v-for="(team, items) of (indexData.team || {}).items.slice(0, 5)"
               :key="items.label"
-              class="hasExcerpt"
+              class="hasExcerpt team-box"
             >
               <h3>{{ team.label }}</h3>
               <h2>{{ team.title }}</h2>
@@ -507,6 +507,7 @@
               <div class="image">
                 <img v-bind:src="team.image" class="rounded-lg object-fit" />
               </div>
+              <div class="hline"></div>
             </li>
           </ul>
         </div>
