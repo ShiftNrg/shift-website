@@ -272,5 +272,14 @@ button::before, button::after {
     border: 0px;
   }
   .cookie-body {
-      padding-top: 5px;
+    padding-top: 5px;
+  }
+  .team-box {
+    padding: 5px;
+    border-bottom: 2px solid $themecolor;
+    border-right: 2px solid $themecolor;
+  }
+  .shiftcost {
+    width: 40%;
+    font-size: 0.9rem;
   }

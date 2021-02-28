@@ -22,7 +22,7 @@ window.indexData = {
           },
           {
             text: 'STAY WITH US: News, Updates, and Announcements',
-            link: 'https://shiftnrg.org/#News'
+            link: 'https://news.shiftnrg.org/'
           },
           {
             text: 'CODE: GitHub',
@@ -486,7 +486,7 @@ window.indexData = {
       {
         label: 'Matt Swezey ',
         title: 'Head of Development',
-        description: 'Pro coder with >1500 GitHub contributions last year',
+        description: 'Pro with >1500 GitHub contributions last year',
         link: 'https://www.linkedin.com/in/matt-swezey-46691755/',
         social: 'https://twitter.com/M8Swezey',
         image: '/images/team/ms.jpg'
@@ -494,15 +494,15 @@ window.indexData = {
       {
         label: 'Rich Merrill ',
         title: 'Senior Architect',
-        description: 'Experienced in multiple languages, including Java and SQL',
+        description: 'Experienced coder in multiple languages',
         link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
         social: 'https://twitter.com/texasl68',
         image: '/images/team/rm.jpeg'
       },
       {
         label: 'Michael Giles ',
-        title: 'Junior Architect',
-        description: 'Proficient in Javascript, web3, .Net; developer since 2017',
+        title: 'Developer',
+        description: 'Javascript, web3, .Net, developer since 2017',
         link: 'https://www.linkedin.com/in/micheal-giles-9b36b3b6/',
         social: 'https://twitter.com/MikeGGiles',
         image: '/images/team/mg.jpeg'
@@ -510,7 +510,7 @@ window.indexData = {
       {
         label: 'Sara Frankel ',
         title: 'Head of Marketing',
-        description: 'Seasoned marketer, talented PR specialist, and sales expert',
+        description: 'Seasoned marketer and talented PR specialist',
         link: 'https://www.linkedin.com/in/sara-frankel-466857203/',
         social: 'https://twitter.com/shift2btc',
         image: '/images/team/sf.jpg'
