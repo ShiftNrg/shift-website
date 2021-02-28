@@ -73,6 +73,9 @@
             Team
           </a>
         </li>
+        <li>
+          <NuxtLink to="/shift-info">Info</NuxtLink>
+        </li>
         <!--
         <li class="dropdown">
           <a href="#">Blog & Updates</a>

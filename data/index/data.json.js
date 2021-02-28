@@ -599,6 +599,12 @@ window.indexData = {
       }
     ]
   },
+  shift: {
+    tokenAddress: '0x4b4571925e94ccd8C546b39462A270cC9b3ed1e4',
+    name: 'SHIFT',
+    symbol: 'wSHIFT',
+    decimals: 18
+  },
   footer: {
     title: 'Newsletter',
     subtitle: 'Stay updated',

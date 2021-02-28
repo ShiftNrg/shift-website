@@ -4,6 +4,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _f680affc = () => interopDefault(import('../node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue' /* webpackChunkName: "" */))
+const _32d57772 = () => interopDefault(import('../pages/shift-info.vue' /* webpackChunkName: "pages/shift-info" */))
 const _40b66447 = () => interopDefault(import('../pages/news/:id.vue' /* webpackChunkName: "pages/news/:id" */))
 const _ee183cd8 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -27,6 +28,10 @@ export const routerOptions = {
     path: "/_icons",
     component: _f680affc,
     name: "icons-list"
+  }, {
+    path: "/shift-info",
+    component: _32d57772,
+    name: "shift-info"
   }, {
     path: "/news/:id",
     component: _40b66447,
