@@ -565,6 +565,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { initializeBanner } from '../plugins/initialize-banner'
 import Footer from '../components/footer'
 import { animatePage, scrollTop } from '../plugins/animations'
@@ -584,7 +585,9 @@ export default {
       activeVision: false,
       activeLockNLoad: false,
       slider: undefined,
-      debounce: undefined
+      debounce: undefined,
+      gasData: {},
+      shiftData: {}
     }
   },
   computed: {
@@ -610,6 +613,7 @@ export default {
     scrollHandler(document.querySelectorAll(fakepreload.selectors))
     initializeBanner(this.$refs.line1, this.$refs.line2)
     this.slider = initializeRoadmap()
+    // this.getEthData()
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
@@ -661,6 +665,21 @@ export default {
           scrollHandler(elems)
         }, 8)
       })
+    },
+    getEthData() {
+      axios
+        .get(
+          '...api key here.................................................................',
+          {
+            method: 'GET',
+            mode: 'no-cors'
+          }
+        )
+        .then((response) => {
+          // eslint-disable-next-line
+          console.log(response.data)
+          this.gasData = response.data
+        })
     }
   }
 }
