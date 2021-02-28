@@ -2,24 +2,24 @@
   {
     "name": "icons-list",
     "path": "/_icons",
-    "component": "/Users/iMac/Documents/GitHub/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue"
+    "component": "/Users/josephgotesman/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue"
   },
   {
     "name": "shift-info",
     "path": "/shift-info",
-    "component": "/Users/iMac/Documents/GitHub/shift-website/pages/shift-info.vue",
+    "component": "/Users/josephgotesman/shift-website/pages/shift-info.vue",
     "chunkName": "pages/shift-info"
   },
   {
     "name": "news-:id",
     "path": "/news/:id",
-    "component": "/Users/iMac/Documents/GitHub/shift-website/pages/news/:id.vue",
+    "component": "/Users/josephgotesman/shift-website/pages/news/:id.vue",
     "chunkName": "pages/news/:id"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/iMac/Documents/GitHub/shift-website/pages/index.vue",
+    "component": "/Users/josephgotesman/shift-website/pages/index.vue",
     "chunkName": "pages/index"
   }
 ]

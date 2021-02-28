@@ -4,7 +4,7 @@
       <div class="Info">
         <ul class="block-grid">
           <li>
-            {{ 'Name: ' + shiftInfo.name }}
+            {{ 'Name: Wrapped ' + shiftInfo.name }}
           </li>
           <li>
             {{ 'Token Address: ' + shiftInfo.tokenAddress }}
@@ -15,12 +15,77 @@
           <li>
             {{ 'Decimals: ' + shiftInfo.decimals }}
           </li>
-          <li><br /></li>
           <li>
             {{ shiftData.ShiftToWeth }}
           </li>
           <li>
             {{ shiftData.WethToShift }}
+          </li>
+          <li>
+            {{ 'Supply: ' + '10 * SHIFT Supply from explorer API' }}
+          </li>
+          <li>
+            {{ 'Market Cap: ' + 'Supply *  Price' }}
+          </li>
+          <li>
+            {{ 'Exchange: ' +
+            <a href="https://info.uniswap.wshift.trade/" target="_blank"></a>}}
+          </li>
+          <li>
+            {{ 'Coinmarketcap: ' + 'link' }}
+          </li>
+          <li>
+            {{ 'Coingecko: ' + 'link' }}
+          </li>
+          <li>
+            {{ 'Contract: ' + 'link' }}
+          </li>
+          <li>
+            {{ 'Etherscan: ' + 'link' }}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul class="block-grid">
+          <li><br /></li>
+          <li><br /></li>
+          <li><br /></li>
+          <li><br /></li>
+          <li><br /></li>
+          <li>
+            {{ 'Name: ' + shiftInfo.name }}
+          </li>
+          <li>
+            {{ 'Symbol: SHIFT' }}
+          </li>
+          <li>
+            {{ 'Supply: ' + 'from explorer API' }}
+          </li>
+          <li>
+            {{ '1 SHIFT = XXX BTC from wSHIFT data' }}
+          </li>
+          <li>
+            {{ '1 BTC = XXX SHIFT' }}
+          </li>
+          <li>
+            {{ 'Supply: ' + 'SHIFT Supply from explorer API' }}
+          </li>
+          <li>
+            {{ 'Market Cap: ' + 'Supply *  Price' }}
+          </li>
+          <li>
+            {{ 'Exchange: ' +
+            <a href="https://bilaxy.com/trade/SHIFT_USDT" target="_blank"></a>}}
+          </li>
+          <li>
+            {{ 'Coinmarketcap: ' + 'link' }}
+          </li>
+          <li>
+            {{ 'Coingecko: ' + 'link' }}
+          </li>
+          <li>
+            {{ 'Explorer: ' +
+            <a href="https://explorer.shiftnrg.org/" target="_blank"></a>}}
           </li>
         </ul>
       </div>
