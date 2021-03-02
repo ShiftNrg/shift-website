@@ -68,16 +68,6 @@
           </span>
         </li>
       </ol>
-      <div class="shiftcost">
-        <ul class="linkgroups block-grid up2">
-          <li>
-            {{ shiftData.ShiftToWeth ? shiftData.ShiftToWeth : '' }}
-          </li>
-          <li>
-            {{ shiftData.WethToShift ? shiftData.WethToShift : '' }}
-          </li>
-        </ul>
-      </div>
       <div class="socials">
         <div class="label">{{ socialData.label }}</div>
         <a
@@ -101,19 +91,10 @@
 </template>
 
 <script>
-import { ChainId, Token, WETH, Fetcher, Route } from '@uniswap/sdk'
 import Logo from './logo'
 export default {
   name: 'Footer',
   components: { Logo },
-  data() {
-    return {
-      shiftData: {
-        WethToShift: null,
-        ShiftToWeth: null
-      }
-    }
-  },
   computed: {
     socialData() {
       if (!process.client) {
@@ -126,34 +107,6 @@ export default {
         return {}
       }
       return (window.indexData || {}).footer || {}
-    }
-  },
-  mounted() {
-    this.getDataFromUniswap()
-  },
-  methods: {
-    async getDataFromUniswap() {
-      const chainId = ChainId.MAINNET
-      const tokenAddress = '0x4b4571925e94ccd8C546b39462A270cC9b3ed1e4'
-      const tokenName = 'SHIFT'
-      const tokenSymbol = 'wSHIFT'
-      const tokenDecimals = 18
-      const SHIFT = new Token(
-        chainId,
-        tokenAddress,
-        tokenDecimals,
-        tokenSymbol,
-        tokenName
-      )
-
-      const pair = await Fetcher.fetchPairData(SHIFT, WETH[SHIFT.chainId])
-      const route = new Route([pair], WETH[SHIFT.chainId])
-      this.shiftData.WethToShift =
-        '1 ETH = ' + route.midPrice.toSignificant(6) + ' wSHIFT'
-      this.shiftData.ShiftToWeth =
-        '1 wSHIFT = ' + route.midPrice.invert().toSignificant(6) + ' ETH'
-      // eslint-disable-next-line
-      console.log(SHIFT, pair, route)
     }
   }
 }
