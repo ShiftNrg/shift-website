@@ -22,7 +22,7 @@
             {{ shiftData.WethToShift }}
           </li>
           <li>
-            {{ 'Supply: ' + '10 * SHIFT Supply from explorer API' }}
+            {{ 'Maximum Supply: ' + '10 * SHIFT Supply from explorer API' }}
           </li>
           <li>
             {{ 'Market Cap: ' + 'Supply *  Price' }}
@@ -43,6 +43,9 @@
           <li>
             {{ 'Etherscan: ' + 'link' }}
           </li>
+          <li>
+            {{ 'Audit: ' + 'link' }}
+          </li>
         </ul>
       </div>
       <div>
@@ -50,10 +53,8 @@
           <li><br /></li>
           <li><br /></li>
           <li><br /></li>
-          <li><br /></li>
-          <li><br /></li>
           <li>
-            {{ 'Name: ' + shiftInfo.name }}
+            {{ 'Name: Lisk-based ' + shiftInfo.name }}
           </li>
           <li>
             {{ 'Symbol: SHIFT' }}
@@ -65,10 +66,10 @@
             {{ '1 SHIFT = XXX BTC from wSHIFT data' }}
           </li>
           <li>
-            {{ '1 BTC = XXX SHIFT' }}
+            {{ '1 BTC = XXX SHIFT from wSHIFT data' }}
           </li>
           <li>
-            {{ 'Supply: ' + 'SHIFT Supply from explorer API' }}
+            {{ 'Maximum Supply: ' + 'SHIFT Supply from explorer API' }}
           </li>
           <li>
             {{ 'Market Cap: ' + 'Supply *  Price' }}
@@ -86,6 +87,24 @@
           <li>
             {{ 'Explorer: ' +
             <a href="https://explorer.shiftnrg.org/" target="_blank"></a>}}
+          </li>
+          <li><br /></li>
+          <li>
+            {{
+              '1 SHIFT = 10 wSHIFT; "Maximum Supply" for each token represents a hypothetical, mutually dependent combination of both tokens.'
+            }}
+          </li>
+          <li>
+            {{
+              'Prices are based on most recently available data and are subject to market conditions.'
+            }}
+          </li>
+          <li>
+            {{ 'ShiftNrg does not endorse any centralized exchanges.' }}
+          </li>
+          <li><br /></li>
+          <li>
+            {{ '© Shift 2021 - All Rights Reserved' }}
           </li>
         </ul>
       </div>

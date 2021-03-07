@@ -2,24 +2,28 @@
   {
     "name": "icons-list",
     "path": "/_icons",
-    "component": "/Users/josephgotesman/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue"
+    "component": "/Users/josephgotesman/shift-website/node_modules/@nuxtjs/svg-sprite/lib/pages/icons-list.vue",
+    "_name": "_1c2f7dd4"
   },
   {
     "name": "shift-info",
     "path": "/shift-info",
     "component": "/Users/josephgotesman/shift-website/pages/shift-info.vue",
-    "chunkName": "pages/shift-info"
+    "chunkName": "pages/shift-info",
+    "_name": "_76a2514a"
   },
   {
     "name": "news-:id",
     "path": "/news/:id",
     "component": "/Users/josephgotesman/shift-website/pages/news/:id.vue",
-    "chunkName": "pages/news/:id"
+    "chunkName": "pages/news/:id",
+    "_name": "_36fca74a"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/josephgotesman/shift-website/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_2707b200"
   }
 ]
