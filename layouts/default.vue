@@ -59,17 +59,18 @@
         <li>
           <a
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
-            href="/#team"
+            href="https://news.shiftnrg.org/"
+            target="_blank"
           >
-            Team
+            News
           </a>
         </li>
         <li>
           <a
             :data-action="$route.name === 'index' ? 'scrollto' : ''"
-            href="/#news"
+            href="/#team"
           >
-            News
+            Team
           </a>
         </li>
         <!--
