@@ -29,22 +29,47 @@
           </li>
           <li>
             {{ 'Exchange: ' +
+            <a href="https://uniswap.wshift.trade/" target="_blank"></a>}}
+          </li>
+          <li>
+            {{ 'Trading Pair Info: ' +
             <a href="https://info.uniswap.wshift.trade/" target="_blank"></a>}}
           </li>
           <li>
-            {{ 'Coinmarketcap: ' + 'link' }}
+            {{ 'Coinmarketcap: ' +
+            <a
+              href="https://coinmarketcap.com/currencies/wshift/"
+              target="_blank"
+            ></a>
+            }}
           </li>
           <li>
-            {{ 'Coingecko: ' + 'link' }}
+            {{ 'Coingecko: ' +
+            <a href="LINK" target="_blank"></a> }}
           </li>
           <li>
-            {{ 'Contract: ' + 'link' }}
+            {{ 'Etherscan: ' +
+            <a
+              href="https://etherscan.io/address/0x96efd428c8f17df05d316b741f4fab9d9f4a6588"
+              target="_blank"
+            ></a>
+            }}
           </li>
           <li>
-            {{ 'Etherscan: ' + 'link' }}
+            {{ 'Contract: ' +
+            <a
+              href="https://etherscan.io/address/0x96efd428c8f17df05d316b741f4fab9d9f4a6588#code"
+              target="_blank"
+            ></a>
+            }}
           </li>
           <li>
-            {{ 'Audit: ' + 'link' }}
+            {{ 'Audit: ' +
+            <a
+              href="https://github.com/ShiftNrg/wrappedShift/blob/master/wShift_audit.pdf"
+              target="_blank"
+            ></a>
+            }}
           </li>
         </ul>
       </div>
@@ -79,14 +104,71 @@
             <a href="https://bilaxy.com/trade/SHIFT_USDT" target="_blank"></a>}}
           </li>
           <li>
-            {{ 'Coinmarketcap: ' + 'link' }}
+            {{ 'Coinmarketcap: ' +
+            <a
+              href="https://coinmarketcap.com/currencies/shift/"
+              target="_blank"
+            ></a>
+            }}
           </li>
           <li>
-            {{ 'Coingecko: ' + 'link' }}
+            {{ 'Coingecko: ' +
+            <a href="LINK" target="_blank"></a>}}
           </li>
           <li>
             {{ 'Explorer: ' +
             <a href="https://explorer.shiftnrg.org/" target="_blank"></a>}}
+          </li>
+          <li><br /></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="block-grid">
+          <li><br /></li>
+          <li><br /></li>
+          <li>
+            {{
+              'Uniswap Stats: ' +
+                'VOLUME/LIQUIDITY/POOLEDTOKENS/FEES/TRANSACTIONS'
+            }}
+          </li>
+          <li>
+            {{ 'Migrations/Swaps completed/pending/volume' }}
+          </li>
+          <li>
+            {{ 'Current GAS/GWEI PRICES: ' + 'from https://ethgas.watch/ API' }}
+          </li>
+          <li>
+            {{ 'Swap Cost Estimates from GAS/GWEI prices' }}
+          </li>
+          <li>
+            {{ 'Swap Options w/pics from Matts graphics' }}
+          </li>
+          <li>
+            {{ 'Thanks to LPs' }}
+          </li>
+          <li>
+            {{ 'Inflation' }}
+          </li>
+          <li>
+            {{ 'Why wSHIFT?: '
+            <a
+              href="https://news.shiftnrg.org/shiftnrg-announces-redenomination-of-shift-to-wrapped-shift-wshift-68e2f65ffc1"
+              target="_blank"
+            ></a>
+          </li>
+          <li>
+            {{ 'ShiftNrg Website: ' +
+            <a href="https://shiftnrg.org/" target="_blank"></a>
+            }}
+          </li>
+          <li>
+            {{ 'ShiftNrg News Site: ' +
+            <a href="https://news.shiftnrg.org/" target="_blank"></a>
+            }}
+          </li>
+          <li>
+            {{ 'Discord, Twitter, Email' }}
           </li>
           <li><br /></li>
           <li>
@@ -106,6 +188,8 @@
           <li>
             {{ '© Shift 2021 - All Rights Reserved' }}
           </li>
+          <li><br /></li>
+          <li><br /></li>
         </ul>
       </div>
     </div>
