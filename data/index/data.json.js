@@ -748,7 +748,7 @@ window.indexData = {
   social: {
     label: 'Join our community',
     links: {
-      Discord: 'https://discord.gg/fgzxABX',
+      Discord: 'https://discord.gg/vpQY5Eh',
       Telegram: 'https://t.me/shiftnrgnews',
       Twitter: 'https://twitter.com/ShiftNrg'
     },
