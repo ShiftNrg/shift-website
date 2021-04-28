@@ -43,8 +43,9 @@ window.indexData = {
   banner: {
     newsFlash: {
       badge: 'Update',
-      description: '2021.02.09: ShiftNrg 2020: Q3 & Q4 Update',
-      link: 'https://link.medium.com/co4aUvvsKdb'
+      description: '2021.03.26: ShiftNrg Developers’ Update #2',
+      link:
+        'https://news.shiftnrg.org/shiftnrg-developers-update-2-9135fca7bdbe'
     },
     line1: 'Decentralized',
     line2: 'Cloud-Hosting',
@@ -359,7 +360,7 @@ window.indexData = {
       {
         label: 'March 2021',
         percentage: '80',
-        title: 'wrapped SHIFT',
+        title: 'Wrapped SHIFT',
         items: [
           { item: 'wSHIFT coded', class: 'checked' },
           { item: 'submitted for audit', class: 'checked' },
@@ -400,24 +401,13 @@ window.indexData = {
         ]
       },
       {
-        label: 'May 2021',
+        label: 'TBD',
         percentage: '50',
         title: 'Phoenix Integration',
         items: [
           { item: 'Phoenix-Substrate Fusion' },
           { item: 'Demo Launch' },
           { item: 'Creativity Contests' }
-        ]
-      },
-      {
-        label: 'TBD',
-        percentage: '50',
-        title: 'Core Migration',
-        items: [
-          { item: 'Substrate', class: 'checked' },
-          { item: 'NPoS', class: 'checked' },
-          { item: 'Account conversion' },
-          { item: 'Node installer' }
         ]
       },
       {
@@ -497,7 +487,7 @@ window.indexData = {
         description: 'Experienced coder in multiple languages',
         link: 'https://www.linkedin.com/in/rich-merrill-0196092/',
         social: 'https://twitter.com/texasl68',
-        image: '/images/team/rm.jpeg'
+        image: '/images/team/rm.jpg'
       },
       {
         label: 'Michael Giles ',
@@ -512,14 +502,14 @@ window.indexData = {
         title: 'Head of Marketing',
         description: 'Seasoned marketer and talented PR specialist',
         link: 'https://www.linkedin.com/in/sara-frankel-466857203/',
-        social: 'https://twitter.com/shift2btc',
+        social: 'https://twitter.com/shiftnrg_sara',
         image: '/images/team/sf.jpg'
       },
       {
         label: 'Drew Fiore ',
         title: 'Head of Community',
         description: 'Experienced community manager; Anthropologist',
-        link: 'www.linkedin.com/in/drew-f',
+        link: 'https://www.linkedin.com/in/drew-f',
         social: 'https://twitter.com/PNWDrew',
         image: '/images/team/df.jpeg'
       }
@@ -624,12 +614,12 @@ window.indexData = {
             link: 'https://cryptomarket360.com/what-is-shift-shift-a-beginners-guide-in-360-words/'
           },
           {
-            text: 'Medium: Shift Reborn: The Vision',
-            link: 'https://medium.com/paradigm-fund/shift-the-project-reborn-learn-more-about-shifts-future-vision-and-next-development-phases-49b46182dd93'
-          },
-          {
             text: 'Medium: Shift Q3/4 2020 Update',
             link: 'https://medium.com/shiftnrg/shiftnrg-2020-q3-q4-update-39cd7f1dfc6'
+          },
+          {
+            text: 'NewsBit: What is Shift (Dutch)',
+            link: 'https://newsbit.nl/wat-is-shiftnrg/'
           }
         /* eslint-enable */
         ]
